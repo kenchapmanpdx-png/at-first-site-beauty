@@ -16,7 +16,7 @@ export default function Header() {
       {/* Main Logo Header */}
       <header className="relative bg-white" style={{ height: '400px' }}>
         {/* Logo Section */}
-        <div className="flex items-center justify-center pt-8 pb-2">
+        <div className="flex items-center justify-center pt-8 pb-1">
           <div className="container mx-auto px-4 flex justify-center">
             <img
               src={logo}
@@ -28,7 +28,7 @@ export default function Header() {
         </div>
         
         {/* Navigation Menu Bar */}
-        <nav className="flex justify-center pb-6">
+        <nav className="flex justify-center pb-3">
           <div className="flex space-x-8 px-8 py-3">
             <button
               onClick={() => scrollToSection("home")}
