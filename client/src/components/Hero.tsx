@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@assets/IMG_0945.png";
+import heroImage from "@assets/IMG_0970_1749066905982.png";
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
