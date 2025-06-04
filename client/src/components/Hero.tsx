@@ -53,7 +53,7 @@ export default function Hero() {
         </p>
         <Button
           onClick={() => scrollToSection("booking")}
-          className={`bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-500 transform hover:scale-105 shadow-lg floating-animation fade-slide-up ${
+          className={`bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-500 transform hover:scale-105 shadow-lg fade-slide-up ${
             isLoaded ? 'stagger-3' : ''
           }`}
         >
