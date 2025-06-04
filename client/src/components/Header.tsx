@@ -20,10 +20,11 @@ export default function Header() {
             src={logo}
             alt="At First Site Beauty On Location"
             className="h-auto object-contain"
-            style={{ maxWidth: '1000px', maxHeight: '200px' }}
+            style={{ maxWidth: '1200px', maxHeight: '280px' }}
           />
         </div>
-
+        {/* Soft white transition to hero photo */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
       </header>
 
       {/* Sticky Book Now Button */}
