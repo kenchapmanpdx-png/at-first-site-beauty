@@ -34,7 +34,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="font-playfair text-2xl font-semibold text-gray-900">
-            At First Site Beauty
+            At First Sight Beauty On Location
           </div>
 
           {/* Desktop Navigation */}
