@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 // Import images for the design session
-import studioImage1 from "@assets/IMG_0945.png";
+import studioImage1 from "@assets/IMG_0973_1749066905983.png";
 import studioImage2 from "@assets/IMG_0944.png";
 import makeupProcess from "@assets/IMG_0943.png";
 import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";

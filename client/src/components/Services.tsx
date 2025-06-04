@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
-import bridalImage from "@assets/IMG_0945.png";
+import bridalImage from "@assets/IMG_0971_1749066905983.png";
 import makeupImage from "@assets/IMG_0944.png";
 import hairImage from "@assets/IMG_0943.png";
 import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";

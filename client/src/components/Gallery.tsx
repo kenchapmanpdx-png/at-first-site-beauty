@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import bridalImage1 from "@assets/IMG_0945.png";
+import bridalImage1 from "@assets/IMG_0970_1749066905982.png";
 import makeupApplication from "@assets/IMG_0944.png";
 import bridalHair from "@assets/IMG_0943.png";
 import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
