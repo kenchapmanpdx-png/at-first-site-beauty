@@ -100,11 +100,11 @@ export default function About() {
           </div>
 
           {/* Cedar Lapp-Ngauamo */}
-          <div className="scroll-animation text-center flex flex-col justify-center mt-8">
+          <div className="scroll-animation text-center">
             <img
               src={cedarPhoto}
               alt="Cedar Lapp-Ngauamo - Professional makeup artist"
-              className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105 object-center"
+              className="w-80 h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
               Cedar Lapp-Ngauamo
