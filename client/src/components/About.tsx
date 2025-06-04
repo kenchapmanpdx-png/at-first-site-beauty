@@ -76,7 +76,7 @@ export default function About() {
           <p className={`text-lg leading-relaxed transition-all duration-500 ${
             isHeaderOverPhoto ? 'text-gray-100' : 'text-gray-600'
           }`}>
-            Together, we created At First Site Beauty to offer the most seamless, luxury on-location glam experience in the Pacific Northwest. Our team is professionally trained, experienced, and known for executing stunning results — without stress.
+            Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
           </p>
         </div>
 
