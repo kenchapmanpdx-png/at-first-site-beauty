@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
-import teamPhoto2 from "@assets/IMG_0943.png";
+import cedarPhoto from "@assets/IMG_8201.jpeg";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -100,12 +100,11 @@ export default function About() {
           </div>
 
           {/* Cedar Lapp-Ngauamo */}
-          <div className="scroll-animation text-center">
+          <div className="scroll-animation text-center flex flex-col justify-center mt-8">
             <img
-              src={teamPhoto2}
-              alt="Professional makeup artist"
-              className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
-              style={{ animationDelay: '2s' }}
+              src={cedarPhoto}
+              alt="Cedar Lapp-Ngauamo - Professional makeup artist"
+              className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105 object-center"
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
               Cedar Lapp-Ngauamo

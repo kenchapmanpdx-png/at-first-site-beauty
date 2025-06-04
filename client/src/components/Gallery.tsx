@@ -4,6 +4,7 @@ import bridalImage1 from "@assets/IMG_0945.png";
 import makeupApplication from "@assets/IMG_0944.png";
 import bridalHair from "@assets/IMG_0943.png";
 import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
+import cedarPhoto from "@assets/IMG_8201.jpeg";
 
 export default function Gallery() {
   const [filter, setFilter] = useState("all");
@@ -58,8 +59,8 @@ export default function Gallery() {
       category: "party",
     },
     {
-      src: makeupApplication,
-      alt: "Behind the scenes makeup artistry",
+      src: cedarPhoto,
+      alt: "Cedar Lapp-Ngauamo professional makeup artist portrait",
       category: "bridal",
     },
   ];
