@@ -17,6 +17,8 @@ export default function TeethWhitening() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -50,11 +52,6 @@ export default function TeethWhitening() {
       before: beforeImage1,
       after: afterImage1,
       description: "Professional whitening results - immediate brightness improvement"
-    },
-    {
-      before: beforeImage2,
-      after: afterImage2,
-      description: "FDA-registered treatment delivering noticeable whitening"
     }
   ];
 
