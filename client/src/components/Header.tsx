@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@assets/At First Site Logo.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,8 +34,12 @@ export default function Header() {
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <div className="font-playfair text-xl md:text-2xl font-semibold text-gray-900">
-            At First Sight Beauty On Location
+          <div className="flex items-center">
+            <img
+              src={logo}
+              alt="At First Site Beauty On Location"
+              className="h-12 md:h-16 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}
