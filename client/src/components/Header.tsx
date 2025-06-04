@@ -23,8 +23,7 @@ export default function Header() {
             style={{ maxWidth: '1000px', maxHeight: '200px' }}
           />
         </div>
-        {/* Gradient transition to hero photo */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-gray-900/40"></div>
+
       </header>
 
       {/* Sticky Book Now Button */}
