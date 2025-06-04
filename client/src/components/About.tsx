@@ -58,7 +58,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg">
+    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg" itemScope itemType="https://schema.org/AboutPage">
       <div className="container mx-auto px-4">
         <div 
           ref={headerRef}
@@ -82,40 +82,54 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
           {/* Hollie DeMarais */}
-          <div className="scroll-animation text-center">
+          <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
             <img
               src={holliePhoto}
-              alt="Hollie DeMarais - Professional bridal hair stylist"
+              alt="Hollie DeMarais - Professional bridal hair stylist and owner of Vata Salon with 18+ years experience in Pacific Northwest wedding beauty"
               className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              loading="lazy"
+              itemProp="image"
+              width="320"
+              height="384"
             />
-            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
               Hollie DeMarais
             </h3>
-            <p className="text-blush-400 mb-4 font-medium">
+            <p className="text-blush-400 mb-4 font-medium" itemProp="jobTitle">
               Owner of Vata Salon, Aveda Educator
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed" itemProp="description">
               Award-winning salon owner with over 18 years of experience. Hollie provides quality control and has selected elite artists for hair design training, ensuring every client receives perfection through our carefully curated team.
             </p>
-          </div>
+            <meta itemProp="worksFor" content="At First Sight Beauty On Location" />
+            <meta itemProp="knowsAbout" content="Bridal Hair Styling, Hair Design Training, Salon Management" />
+            <meta itemProp="yearsExperience" content="18" />
+          </article>
 
           {/* Cedar Lapp-Ngauamo */}
-          <div className="scroll-animation text-center">
+          <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
             <img
               src={cedarPhoto}
-              alt="Cedar Lapp-Ngauamo - Professional makeup artist"
+              alt="Cedar Lapp-Ngauamo - Professional makeup artist and founder of Cedars Academy of Makeup Artistry, owner of exclusive makeup college in Pacific Northwest"
               className="w-80 h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              loading="lazy"
+              itemProp="image"
+              width="320"
+              height="384"
             />
-            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
               Cedar Lapp-Ngauamo
             </h3>
-            <p className="text-blush-400 mb-4 font-medium">
+            <p className="text-blush-400 mb-4 font-medium" itemProp="jobTitle">
               Founder of Cedars Academy of Makeup Artistry
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 leading-relaxed" itemProp="description">
               Owner of the only private care college in the Pacific Northwest focused solely on makeup artistry. Cedar personally trains and certifies all makeup artists on our team, ensuring consistent quality control and expertise.
             </p>
-          </div>
+            <meta itemProp="worksFor" content="At First Sight Beauty On Location" />
+            <meta itemProp="knowsAbout" content="Makeup Artistry, Bridal Makeup, Makeup Education, Artist Training" />
+            <meta itemProp="founder" content="Cedars Academy of Makeup Artistry" />
+          </article>
         </div>
 
         {/* Team Excellence Section */}
