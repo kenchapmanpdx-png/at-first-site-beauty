@@ -25,7 +25,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative h-screen flex items-center justify-center">
+    <section id="home" className="relative h-screen flex items-center justify-center" itemScope itemType="https://schema.org/Organization">
       {/* Background Image with Parallax */}
       <div
         className="absolute inset-0 bg-cover bg-center parallax-bg filter grayscale"
@@ -33,6 +33,8 @@ export default function Hero() {
           backgroundImage: `url(${heroImage})`,
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
+        role="img"
+        aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"
       >
         <div className="hero-overlay absolute inset-0"></div>
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>

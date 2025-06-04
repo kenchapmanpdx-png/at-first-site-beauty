@@ -35,33 +35,45 @@ export default function Gallery() {
   const galleryImages = [
     {
       src: bridalImage1,
-      alt: "Beautiful bridal styling with natural outdoor setting",
+      alt: "Beautiful bridal styling with natural outdoor setting by At First Sight Beauty On Location - Pacific Northwest wedding makeup and hair",
       category: "bridal",
+      title: "Outdoor Bridal Styling",
+      description: "Natural bridal beauty with outdoor elegance in the Pacific Northwest",
     },
     {
       src: makeupApplication,
-      alt: "Professional makeup application in progress",
+      alt: "Professional bridal makeup application in progress by certified makeup artist - luxury on-location beauty services",
       category: "bridal",
+      title: "Professional Makeup Application",
+      description: "Expert bridal makeup application using premium products",
     },
     {
       src: bridalHair,
-      alt: "Elegant bridal hair styling with intricate details",
+      alt: "Elegant bridal hair styling with intricate details - Pacific Northwest wedding hair artist specializing in luxury updos",
       category: "bridal",
+      title: "Bridal Hair Artistry",
+      description: "Sophisticated bridal hair styling with attention to detail",
     },
     {
       src: holliePhoto,
-      alt: "Hollie DeMarais professional bridal artist portrait",
+      alt: "Hollie DeMarais professional bridal makeup and hair artist - 18+ years salon experience in Pacific Northwest wedding beauty",
       category: "bridal",
+      title: "Hollie DeMarais - Founder",
+      description: "18+ years of professional salon experience",
     },
     {
       src: bridalImage1,
-      alt: "Bride and bridal party outdoor portrait",
+      alt: "Bride and bridal party outdoor portrait showcasing coordinated beauty looks by At First Sight Beauty On Location team",
       category: "party",
+      title: "Bridal Party Coordination",
+      description: "Coordinated bridal party looks maintaining bride as focal point",
     },
     {
       src: cedarPhoto,
-      alt: "Cedar Lapp-Ngauamo professional makeup artist portrait",
+      alt: "Cedar Lapp-Ngauamo professional makeup artist and founder - owner of exclusive makeup college in Pacific Northwest",
       category: "bridal",
+      title: "Cedar Lapp-Ngauamo - Founder",
+      description: "Owner of exclusive makeup college in Pacific Northwest",
     },
   ];
 
@@ -104,19 +116,32 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Masonry Gallery Grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+        {/* Masonry Gallery Grid with SEO optimization */}
+        <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6" itemScope itemType="https://schema.org/ImageGallery">
           {filteredImages.map((image, index) => (
-            <div
+            <figure
               key={index}
               className="scroll-animation gallery-item break-inside-avoid"
+              itemScope
+              itemType="https://schema.org/ImageObject"
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full rounded-2xl shadow-lg"
+                title={image.title}
+                className="w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                loading="lazy"
+                itemProp="contentUrl"
+                width="400"
+                height="auto"
+                style={{ aspectRatio: 'auto' }}
               />
-            </div>
+              <meta itemProp="name" content={image.title} />
+              <meta itemProp="description" content={image.description} />
+              <meta itemProp="author" content="At First Sight Beauty On Location" />
+              <meta itemProp="copyrightHolder" content="At First Sight Beauty On Location" />
+              <meta itemProp="keywords" content={`bridal makeup, bridal hair, Pacific Northwest wedding, ${image.category}, luxury beauty services`} />
+            </figure>
           ))}
         </div>
       </div>
