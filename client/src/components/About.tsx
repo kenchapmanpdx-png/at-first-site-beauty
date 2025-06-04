@@ -4,10 +4,25 @@ import teamPhoto2 from "@assets/IMG_0943.png";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
+  const [isHeaderOverPhoto, setIsHeaderOverPhoto] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      
+      // Check if header is over photo area
+      if (headerRef.current && sectionRef.current) {
+        const headerRect = headerRef.current.getBoundingClientRect();
+        const sectionRect = sectionRef.current.getBoundingClientRect();
+        
+        // Check if header is in the lower portion of the section (over photos)
+        const isOverPhotos = headerRect.top < sectionRect.top + (sectionRect.height * 0.6);
+        setIsHeaderOverPhoto(isOverPhotos);
+      }
+    };
+    
     window.addEventListener('scroll', handleScroll);
 
     const observer = new IntersectionObserver(
@@ -47,11 +62,22 @@ export default function About() {
   return (
     <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg">
       <div className="container mx-auto px-4">
-        <div className="scroll-slow max-w-3xl mx-auto text-center mb-20">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Meet Your <span className="text-blush-400">Dream Team</span>
+        <div 
+          ref={headerRef}
+          className={`scroll-slow max-w-3xl mx-auto text-center mb-20 transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-gray-900'
+          }`}
+        >
+          <h2 className={`font-playfair text-4xl md:text-5xl font-bold mb-6 transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-white' : 'text-gray-900'
+          }`}>
+            Meet Your <span className={`transition-all duration-500 ${
+              isHeaderOverPhoto ? 'text-blush-200' : 'text-blush-400'
+            }`}>Dream Team</span>
           </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className={`text-lg leading-relaxed transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-gray-100' : 'text-gray-600'
+          }`}>
             Together, we created At First Site Beauty to offer the most seamless, luxury on-location glam experience in the Pacific Northwest. Our team is professionally trained, experienced, and known for executing stunning results — without stress.
           </p>
         </div>
