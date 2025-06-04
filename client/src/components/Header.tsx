@@ -29,7 +29,7 @@ export default function Header() {
         
         {/* Navigation Menu Bar */}
         <nav className="flex justify-center pb-8">
-          <div className="flex space-x-8 bg-white/90 backdrop-blur-sm rounded-full px-8 py-3 shadow-lg border border-gray-100">
+          <div className="flex space-x-8 px-8 py-3">
             <button
               onClick={() => scrollToSection("home")}
               className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
