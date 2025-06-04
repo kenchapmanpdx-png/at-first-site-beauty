@@ -38,7 +38,7 @@ export default function Header() {
             <img
               src={logo}
               alt="At First Site Beauty On Location"
-              className="h-24 md:h-32 w-64 md:w-80 object-contain"
+              className="h-20 md:h-24 w-80 md:w-96 object-contain"
             />
           </div>
 
