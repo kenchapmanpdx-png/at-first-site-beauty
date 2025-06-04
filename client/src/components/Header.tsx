@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <>
       {/* Main Logo Header */}
-      <header className="bg-gradient-to-b from-white to-gray-50 flex items-center justify-center" style={{ height: '350px' }}>
+      <header className="relative bg-gradient-to-b from-white to-gray-50 flex items-center justify-center" style={{ height: '350px' }}>
         <div className="container mx-auto px-4 flex justify-center">
           <img
             src={logo}
@@ -23,6 +23,8 @@ export default function Header() {
             style={{ maxWidth: '1000px', maxHeight: '200px' }}
           />
         </div>
+        {/* Gradient transition to hero photo */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-gray-900/40"></div>
       </header>
 
       {/* Sticky Book Now Button */}
