@@ -95,7 +95,7 @@ export default function About() {
               Owner of Vata Salon, Aveda Educator
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Award-winning bridal stylist with over a decade of experience creating breathtaking looks for the most important day of your life. Specializes in timeless elegance with modern touches.
+              Award-winning salon owner with over 18 years of experience. Hollie provides quality control and has selected elite artists for hair design training, ensuring every client receives perfection through our carefully curated team.
             </p>
           </div>
 
@@ -113,7 +113,29 @@ export default function About() {
               Founder of Cedars Academy of Makeup Artistry
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Beauty industry educator and school director with expertise in creating flawless, camera-ready looks that enhance natural beauty and last throughout your special day.
+              Owner of the only private care college in the Pacific Northwest focused solely on makeup artistry. Cedar personally trains and certifies all makeup artists on our team, ensuring consistent quality control and expertise.
+            </p>
+          </div>
+        </div>
+
+        {/* Team Excellence Section */}
+        <div className="scroll-animation mt-20 text-center max-w-4xl mx-auto">
+          <h3 className="font-playfair text-3xl font-semibold text-gray-900 mb-6">
+            Our Elite Team of Artists
+          </h3>
+          <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            Our makeup is applied by artists that Cedar has personally trained and certified through her program. 
+            Our hair styling is performed by elite artists that Hollie has carefully selected and trained in hair design. 
+            Together, we maintain strict quality control to ensure that every client receives the absolute perfection they deserve.
+          </p>
+          <div className="bg-blush-50 rounded-2xl p-8">
+            <h4 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
+              Trust in Our Brand Promise
+            </h4>
+            <p className="text-gray-700 leading-relaxed">
+              When you book with At First Site Beauty, you're not just hiring artists — you're investing in a system of excellence. 
+              Our makeup will wear beautifully throughout your entire day, and our styling will photograph flawlessly. 
+              This is the trust and quality control that sets us apart in the Pacific Northwest.
             </p>
           </div>
         </div>
