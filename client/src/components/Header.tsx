@@ -14,7 +14,7 @@ export default function Header() {
   return (
     <>
       {/* Main Logo Header */}
-      <header className="relative bg-gradient-to-b from-white to-gray-50 flex items-center justify-center" style={{ height: '350px' }}>
+      <header className="relative bg-white flex items-center justify-center" style={{ height: '350px' }}>
         <div className="container mx-auto px-4 flex justify-center">
           <img
             src={logo}
