@@ -20,7 +20,7 @@ export default function Header() {
             src={logo}
             alt="At First Site Beauty On Location"
             className="h-auto object-contain"
-            style={{ maxWidth: '800px', maxHeight: '200px' }}
+            style={{ maxWidth: '1000px', maxHeight: '200px' }}
           />
         </div>
       </header>
