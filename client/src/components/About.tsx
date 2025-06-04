@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import teamPhoto1 from "@assets/IMG_0944.png";
+import teamPhoto2 from "@assets/IMG_0943.png";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -41,7 +43,7 @@ export default function About() {
           {/* Holli DeMarais */}
           <div className="scroll-animation text-center">
             <img
-              src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500"
+              src={teamPhoto1}
               alt="Professional bridal hair stylist"
               className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg"
             />
@@ -59,7 +61,7 @@ export default function About() {
           {/* Cedar Lapp-Ngauamo */}
           <div className="scroll-animation text-center">
             <img
-              src="https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=500"
+              src={teamPhoto2}
               alt="Professional makeup artist"
               className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg"
             />

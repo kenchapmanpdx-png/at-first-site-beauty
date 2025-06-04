@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import bridalImage1 from "@assets/IMG_0945.png";
+import makeupApplication from "@assets/IMG_0944.png";
+import bridalHair from "@assets/IMG_0943.png";
 
 export default function Gallery() {
   const [filter, setFilter] = useState("all");
@@ -29,43 +32,33 @@ export default function Gallery() {
 
   const galleryImages = [
     {
-      src: "https://images.unsplash.com/photo-1594736797933-d0f26d1d5c04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=600",
-      alt: "Elegant bridal makeup and styling",
+      src: bridalImage1,
+      alt: "Beautiful bridal styling with natural outdoor setting",
       category: "bridal",
     },
     {
-      src: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      alt: "Bridal party preparation",
+      src: makeupApplication,
+      alt: "Professional makeup application in progress",
+      category: "bridal",
+    },
+    {
+      src: bridalHair,
+      alt: "Elegant bridal hair styling with intricate details",
+      category: "bridal",
+    },
+    {
+      src: bridalImage1,
+      alt: "Bride and bridal party outdoor portrait",
       category: "party",
     },
     {
-      src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500",
-      alt: "Intricate bridal hair styling",
+      src: makeupApplication,
+      alt: "Behind the scenes makeup artistry",
       category: "bridal",
     },
     {
-      src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=600",
-      alt: "Professional wedding makeup application",
-      category: "bridal",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500",
-      alt: "Natural bridal makeup look",
-      category: "bridal",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400",
-      alt: "Bridesmaids hair styling session",
-      category: "party",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=500",
-      alt: "Elegant wedding preparation",
-      category: "bridal",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-      alt: "Pacific Northwest wedding venue",
+      src: bridalHair,
+      alt: "Detailed bridal hair work showing craftsmanship",
       category: "bridal",
     },
   ];
