@@ -14,16 +14,24 @@ export default function About() {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const animations = entry.target.querySelectorAll('.scroll-animation');
-            animations.forEach((animation, index) => {
+            const slowAnimations = entry.target.querySelectorAll('.scroll-slow');
+            const normalAnimations = entry.target.querySelectorAll('.scroll-animation');
+            
+            // Animate slow elements first (heading)
+            slowAnimations.forEach((animation) => {
+              animation.classList.add('animate');
+            });
+            
+            // Then animate normal elements with stagger
+            normalAnimations.forEach((animation, index) => {
               setTimeout(() => {
                 animation.classList.add('animate');
-              }, index * 150);
+              }, 400 + (index * 300));
             });
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+      { threshold: 0.15, rootMargin: '50px 0px 0px 0px' }
     );
 
     if (sectionRef.current) {
@@ -39,7 +47,7 @@ export default function About() {
   return (
     <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg">
       <div className="container mx-auto px-4">
-        <div className="scroll-animation max-w-3xl mx-auto text-center mb-16">
+        <div className="scroll-slow max-w-3xl mx-auto text-center mb-20">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Meet Your <span className="text-blush-400">Dream Team</span>
           </h2>
