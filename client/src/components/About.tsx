@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import teamPhoto1 from "@assets/IMG_0944.png";
+import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
 import teamPhoto2 from "@assets/IMG_0943.png";
 
 export default function About() {
@@ -84,8 +84,8 @@ export default function About() {
           {/* Holli DeMarais */}
           <div className="scroll-animation text-center">
             <img
-              src={teamPhoto1}
-              alt="Professional bridal hair stylist"
+              src={holliePhoto}
+              alt="Holli DeMarais - Professional bridal hair stylist"
               className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">

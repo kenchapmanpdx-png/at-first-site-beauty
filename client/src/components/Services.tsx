@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import bridalImage from "@assets/IMG_0945.png";
 import makeupImage from "@assets/IMG_0944.png";
 import hairImage from "@assets/IMG_0943.png";
+import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -47,7 +48,7 @@ export default function Services() {
       description: "Professional teeth whitening services available both in-salon and on-location for your brightest, most confident smile.",
     },
     {
-      image: bridalImage,
+      image: holliePhoto,
       title: "Spray Tanning",
       description: "Using premium Dolce Glow products for a natural, radiant tan that enhances your natural beauty and complements your wedding look.",
     },

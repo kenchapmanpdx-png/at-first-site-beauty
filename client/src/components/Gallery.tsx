@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import bridalImage1 from "@assets/IMG_0945.png";
 import makeupApplication from "@assets/IMG_0944.png";
 import bridalHair from "@assets/IMG_0943.png";
+import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
 
 export default function Gallery() {
   const [filter, setFilter] = useState("all");
@@ -47,6 +48,11 @@ export default function Gallery() {
       category: "bridal",
     },
     {
+      src: holliePhoto,
+      alt: "Holli DeMarais professional bridal artist portrait",
+      category: "bridal",
+    },
+    {
       src: bridalImage1,
       alt: "Bride and bridal party outdoor portrait",
       category: "party",
@@ -54,11 +60,6 @@ export default function Gallery() {
     {
       src: makeupApplication,
       alt: "Behind the scenes makeup artistry",
-      category: "bridal",
-    },
-    {
-      src: bridalHair,
-      alt: "Detailed bridal hair work showing craftsmanship",
       category: "bridal",
     },
   ];
