@@ -81,15 +81,15 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
-          {/* Holli DeMarais */}
+          {/* Hollie DeMarais */}
           <div className="scroll-animation text-center">
             <img
               src={holliePhoto}
-              alt="Holli DeMarais - Professional bridal hair stylist"
+              alt="Hollie DeMarais - Professional bridal hair stylist"
               className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
-              Holli DeMarais
+              Hollie DeMarais
             </h3>
             <p className="text-blush-400 mb-4 font-medium">
               Owner of Vata Salon, Aveda Educator

@@ -50,7 +50,7 @@ export default function Gallery() {
     },
     {
       src: holliePhoto,
-      alt: "Holli DeMarais professional bridal artist portrait",
+      alt: "Hollie DeMarais professional bridal artist portrait",
       category: "bridal",
     },
     {
