@@ -6,10 +6,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 // Import before/after images
-import beforeImage1 from "@assets/IMG_0941.jpeg";
-import afterImage1 from "@assets/IMG_0943.png";
-import beforeImage2 from "@assets/IMG_3265.jpeg";
-import afterImage2 from "@assets/IMG_0944.png";
+import beforeImage1 from "@assets/IMG_0959.jpeg";
+import afterImage1 from "@assets/IMG_6201.jpeg";
+import beforeImage2 from "@assets/IMG_6202.jpeg";
+import afterImage2 from "@assets/IMG_0943.png";
 
 export default function TeethWhitening() {
   const [, setLocation] = useLocation();
@@ -49,12 +49,12 @@ export default function TeethWhitening() {
     {
       before: beforeImage1,
       after: afterImage1,
-      description: "Complete smile transformation - 6 shades whiter"
+      description: "Professional whitening results - immediate brightness improvement"
     },
     {
       before: beforeImage2,
       after: afterImage2,
-      description: "Professional whitening results - dramatic improvement"
+      description: "FDA-registered treatment delivering noticeable whitening"
     }
   ];
 
