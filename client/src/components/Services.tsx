@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Crown, Users, Smile, Sun, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import bridalImage from "@assets/IMG_0945.png";
+import makeupImage from "@assets/IMG_0944.png";
+import hairImage from "@assets/IMG_0943.png";
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -29,22 +32,22 @@ export default function Services() {
 
   const services = [
     {
-      icon: Crown,
+      image: bridalImage,
       title: "Bridal Hair & Makeup",
       description: "Complete bridal transformation with trial session included. Timeless elegance that photographs beautifully and lasts all day.",
     },
     {
-      icon: Users,
+      image: makeupImage,
       title: "Bridal Party Hair & Makeup",
       description: "Coordinated looks for your entire bridal party. We ensure everyone looks stunning while maintaining the bride as the focal point.",
     },
     {
-      icon: Smile,
+      image: hairImage,
       title: "Teeth Whitening",
       description: "Professional teeth whitening services available both in-salon and on-location for your brightest, most confident smile.",
     },
     {
-      icon: Sun,
+      image: bridalImage,
       title: "Spray Tanning",
       description: "Using premium Dolce Glow products for a natural, radiant tan that enhances your natural beauty and complements your wedding look.",
     },
@@ -62,28 +65,39 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <div
               key={index}
-              className="scroll-animation bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className={`scroll-animation stagger-${index + 1} relative group overflow-hidden rounded-3xl h-96 cursor-pointer transform hover:scale-105 transition-all duration-700`}
             >
-              <div className="text-blush-400 text-4xl mb-6 text-center">
-                <service.icon size={48} className="mx-auto" />
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                style={{
+                  backgroundImage: `url(${service.image})`,
+                }}
+              >
+                <div className="image-overlay absolute inset-0"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-700"></div>
               </div>
-              <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-4 text-center">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 text-center mb-6 leading-relaxed">
-                {service.description}
-              </p>
-              <div className="text-center">
-                <Button
-                  variant="ghost"
-                  className="text-blush-400 hover:text-blush-500 font-medium transition-colors duration-200"
-                >
-                  Learn More <ArrowRight size={16} className="ml-2" />
-                </Button>
+              
+              {/* Content Overlay */}
+              <div className="relative z-10 h-full flex flex-col justify-end p-8 text-white">
+                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                  <h3 className="font-playfair text-2xl font-semibold mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  <Button
+                    variant="ghost"
+                    className="text-white border-white border hover:bg-white hover:text-gray-900 transition-all duration-300 opacity-0 group-hover:opacity-100"
+                  >
+                    Learn More <ArrowRight size={16} className="ml-2" />
+                  </Button>
+                </div>
               </div>
             </div>
           ))}

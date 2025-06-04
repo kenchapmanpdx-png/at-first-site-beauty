@@ -13,24 +13,24 @@
   --card-foreground: 240 10% 3.9%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
-  --primary: 343 77% 78%; /* Blush pink */
+  --primary: 343 35% 85%; /* Softer pastel pink */
   --primary-foreground: 0 0% 100%;
   --secondary: 240 4.8% 95.9%;
   --secondary-foreground: 240 5.9% 10%;
-  --accent: 343 77% 78%;
+  --accent: 343 35% 85%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
   --ring: 240 5% 64.9%;
   --radius: 0.5rem;
   
-  /* Custom colors for bridal theme */
-  --blush-50: 343 100% 98%;
-  --blush-100: 343 100% 95%;
-  --blush-200: 343 95% 88%;
-  --blush-300: 343 77% 78%;
-  --blush-400: 343 73% 68%;
-  --blush-500: 343 69% 58%;
+  /* Custom colors for bridal theme - softer pastels */
+  --blush-50: 343 50% 98%;
+  --blush-100: 343 45% 95%;
+  --blush-200: 343 40% 90%;
+  --blush-300: 343 35% 85%;
+  --blush-400: 343 30% 80%;
+  --blush-500: 343 25% 75%;
   
   --sage-50: 120 60% 98%;
   --sage-100: 120 30% 95%;
@@ -80,18 +80,18 @@
   
   .watercolor-bg {
     background-image: 
-      radial-gradient(circle at 20% 50%, hsla(343, 95%, 88%, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsla(343, 95%, 88%, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 20% 50%, hsla(343, 40%, 90%, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsla(343, 40%, 90%, 0.04) 0%, transparent 50%);
   }
   
   .hero-overlay {
-    background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
   }
   
   .scroll-animation {
     opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
+    transform: translateY(50px);
+    transition: all 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
   .scroll-animation.animate {
@@ -99,13 +99,56 @@
     transform: translateY(0);
   }
   
+  .parallax-bg {
+    will-change: transform;
+    transform-style: preserve-3d;
+  }
+  
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .fade-slide-up {
+    animation: fadeSlideUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes fadeSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  
   .gallery-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: grayscale(100%);
   }
   
   .gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transform: translateY(-8px) scale(1.02);
+    filter: grayscale(0%);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  }
+  
+  .image-overlay {
+    background: linear-gradient(45deg, 
+      rgba(0,0,0,0.1) 0%, 
+      rgba(0,0,0,0.05) 50%, 
+      rgba(0,0,0,0.1) 100%);
   }
   
   .text-blush-300 {

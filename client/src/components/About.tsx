@@ -1,18 +1,24 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import teamPhoto1 from "@assets/IMG_0944.png";
 import teamPhoto2 from "@assets/IMG_0943.png";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const animations = entry.target.querySelectorAll('.scroll-animation');
-            animations.forEach((animation) => {
-              animation.classList.add('animate');
+            animations.forEach((animation, index) => {
+              setTimeout(() => {
+                animation.classList.add('animate');
+              }, index * 150);
             });
           }
         });
@@ -24,7 +30,10 @@ export default function About() {
       observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
