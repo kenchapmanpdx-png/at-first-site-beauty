@@ -14,13 +14,13 @@ export default function Header() {
   return (
     <>
       {/* Main Logo Header */}
-      <header className="bg-white py-12">
+      <header className="bg-gradient-to-b from-white to-gray-50 flex items-center justify-center" style={{ height: '350px' }}>
         <div className="container mx-auto px-4 flex justify-center">
           <img
             src={logo}
             alt="At First Site Beauty On Location"
-            className="w-full max-w-5xl h-auto object-contain"
-            style={{ maxWidth: '1000px' }}
+            className="h-auto object-contain"
+            style={{ maxWidth: '800px', maxHeight: '200px' }}
           />
         </div>
       </header>
