@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useLocation } from "wouter";
 import bridalImage from "@assets/IMG_0945.png";
 import makeupImage from "@assets/IMG_0944.png";
 import hairImage from "@assets/IMG_0943.png";
@@ -8,6 +9,7 @@ import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [, setLocation] = useLocation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,11 +36,12 @@ export default function Services() {
   const services = [
     {
       image: bridalImage,
-      title: "Bridal Hair & Makeup",
-      description: "Complete bridal transformation with trial session included. Timeless elegance that photographs beautifully and lasts all day.",
-      alt: "Luxury bridal hair and makeup transformation by At First Sight Beauty On Location - Pacific Northwest wedding beauty services with trial session",
-      keywords: "bridal makeup, bridal hair, wedding makeup artist, bridal transformation, makeup trial",
-      category: "Bridal Beauty Services"
+      title: "Bridal Design Session",
+      description: "Our signature luxury experience where your dream look begins. Set in our private bridal suite, this isn't your average trial — it's a complete design session with wear testing and personalized touch-up kit.",
+      alt: "Luxury bridal design session at private bridal suite - comprehensive hair and makeup trial with wear testing",
+      keywords: "bridal design session, makeup trial, bridal consultation, wedding beauty planning",
+      category: "Bridal Beauty Services",
+      link: "/bridal-design-session"
     },
     {
       image: makeupImage,
@@ -54,7 +57,8 @@ export default function Services() {
       description: "Our teeth whitening system stands apart from store-bought brands by offering a professional-grade solution that delivers immediate and noticeable results. We use a higher percentage of Hydrogen Peroxide, safely activated with a specialized light to enhance effectiveness while remaining gentle on your teeth.",
       alt: "Professional teeth whitening services for brides - on-location dental beauty treatment in Pacific Northwest",
       keywords: "teeth whitening, bridal teeth whitening, wedding smile, dental beauty, cosmetic dentistry",
-      category: "Cosmetic Services"
+      category: "Cosmetic Services",
+      link: "/teeth-whitening"
     },
     {
       image: holliePhoto,
@@ -62,7 +66,8 @@ export default function Services() {
       description: "At First Site's spray tan is expertly formulated to deliver a flawless, bronzed glow without the risk of orange undertones. Our unique blend is enriched with hydrating ingredients like hyaluronic acid, jojoba oil, and squalane, providing a natural, radiant tan that enhances your glow without clogging pores.",
       alt: "Premium spray tanning services with hydrating formula for brides - natural radiant tan for wedding day",
       keywords: "spray tanning, bridal tanning, hyaluronic acid, wedding tan, natural tanning",
-      category: "Cosmetic Services"
+      category: "Cosmetic Services",
+      link: "/spray-tanning"
     },
   ];
 
@@ -112,6 +117,7 @@ export default function Services() {
                     variant="ghost"
                     className="text-white border-white border hover:bg-white hover:text-gray-900 active:bg-white active:text-gray-900 transition-all duration-300 opacity-0 group-hover:opacity-100 md:opacity-100 touch-manipulation text-sm md:text-base"
                     aria-label={`Learn more about ${service.title}`}
+                    onClick={() => service.link && setLocation(service.link)}
                   >
                     Learn More <ArrowRight size={14} className="ml-2" />
                   </Button>

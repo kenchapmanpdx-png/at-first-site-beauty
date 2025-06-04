@@ -7,6 +7,7 @@ import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
 import TeethWhitening from "@/pages/teeth-whitening";
 import SprayTanning from "@/pages/spray-tanning";
+import BridalDesignSession from "@/pages/bridal-design-session";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/teeth-whitening" component={TeethWhitening} />
       <Route path="/spray-tanning" component={SprayTanning} />
+      <Route path="/bridal-design-session" component={BridalDesignSession} />
       <Route component={NotFound} />
     </Switch>
   );
