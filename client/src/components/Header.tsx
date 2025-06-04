@@ -25,106 +25,106 @@ export default function Header() {
   };
 
   return (
-    <>
-      {/* Main Logo Header */}
-      <header className="bg-white py-8">
-        <div className="container mx-auto px-4 flex justify-center">
-          <img
-            src={logo}
-            alt="At First Site Beauty On Location"
-            className="w-full max-w-4xl h-auto object-contain"
-            style={{ maxWidth: '1000px' }}
-          />
-        </div>
-      </header>
+    <header
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white shadow-sm"
+          : "bg-white/95 backdrop-blur-sm"
+      } border-b border-gray-100`}
+    >
+      <nav className="container mx-auto px-4 py-4">
+        <div className="flex justify-between items-center">
+          <div className="flex items-center">
+            <img
+              src={logo}
+              alt="At First Site Beauty On Location"
+              className="h-20 md:h-24 w-80 md:w-96 object-contain"
+            />
+          </div>
 
-      {/* Floating Navigation */}
-      <nav className={`fixed top-4 right-4 z-50 transition-all duration-300 ${
-        isScrolled ? 'opacity-100' : 'opacity-70'
-      }`}>
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-4 bg-white/90 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-          <button
-            onClick={() => scrollToSection("home")}
-            className="text-gray-700 hover:text-blush-400 transition-colors duration-200 px-3 py-1"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => scrollToSection("about")}
-            className="text-gray-700 hover:text-blush-400 transition-colors duration-200 px-3 py-1"
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection("services")}
-            className="text-gray-700 hover:text-blush-400 transition-colors duration-200 px-3 py-1"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => scrollToSection("gallery")}
-            className="text-gray-700 hover:text-blush-400 transition-colors duration-200 px-3 py-1"
-          >
-            Gallery
-          </button>
-          <Button
-            onClick={() => scrollToSection("booking")}
-            className="bg-blush-300 hover:bg-blush-400 text-white px-4 py-1 rounded-full transition-colors duration-200"
-          >
-            Book Now
-          </Button>
-        </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex space-x-8 items-center">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection("gallery")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200"
+            >
+              Gallery
+            </button>
+            <Button
+              onClick={() => scrollToSection("booking")}
+              className="bg-blush-300 hover:bg-blush-400 text-white px-6 py-2 rounded-full transition-colors duration-200"
+            >
+              Book Now
+            </Button>
+          </div>
 
-        {/* Mobile Menu */}
-        <div className="md:hidden">
+          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
-            className="bg-white/90 backdrop-blur-sm rounded-full shadow-lg text-gray-700 hover:text-blush-400"
+            className="md:hidden text-gray-700 hover:text-blush-400"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
-
-          {isMenuOpen && (
-            <div className="absolute right-0 top-14 bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-4 min-w-48">
-              <div className="flex flex-col space-y-3">
-                <button
-                  onClick={() => scrollToSection("home")}
-                  className="text-gray-700 hover:text-blush-400 transition-colors duration-200 text-left py-2"
-                >
-                  Home
-                </button>
-                <button
-                  onClick={() => scrollToSection("about")}
-                  className="text-gray-700 hover:text-blush-400 transition-colors duration-200 text-left py-2"
-                >
-                  About
-                </button>
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="text-gray-700 hover:text-blush-400 transition-colors duration-200 text-left py-2"
-                >
-                  Services
-                </button>
-                <button
-                  onClick={() => scrollToSection("gallery")}
-                  className="text-gray-700 hover:text-blush-400 transition-colors duration-200 text-left py-2"
-                >
-                  Gallery
-                </button>
-                <Button
-                  onClick={() => scrollToSection("booking")}
-                  className="bg-blush-300 hover:bg-blush-400 text-white px-4 py-2 rounded-full transition-colors duration-200"
-                >
-                  Book Now
-                </Button>
-              </div>
-            </div>
-          )}
         </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pt-4 border-t border-gray-100">
+            <div className="flex flex-col space-y-4">
+              <button
+                onClick={() => scrollToSection("home")}
+                className="text-gray-700 hover:text-blush-400 transition-colors duration-200 text-left"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => scrollToSection("about")}
+                className="text-gray-700 hover:text-blush-400 transition-colors duration-200 text-left"
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection("services")}
+                className="text-gray-700 hover:text-blush-400 transition-colors duration-200 text-left"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => scrollToSection("gallery")}
+                className="text-gray-700 hover:text-blush-400 transition-colors duration-200 text-left"
+              >
+                Gallery
+              </button>
+              <Button
+                onClick={() => scrollToSection("booking")}
+                className="bg-blush-300 hover:bg-blush-400 text-white px-6 py-2 rounded-full transition-colors duration-200 text-center"
+              >
+                Book Now
+              </Button>
+            </div>
+          </div>
+        )}
       </nav>
-    </>
+    </header>
   );
 }
