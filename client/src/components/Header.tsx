@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@assets/At First Site Logo.png";
+import logo from "@assets/At First Site Logo 2.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,7 +38,7 @@ export default function Header() {
             <img
               src={logo}
               alt="At First Site Beauty On Location"
-              className="h-12 md:h-16 w-auto object-contain"
+              className="h-16 md:h-20 w-auto object-contain"
             />
           </div>
 
