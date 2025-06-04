@@ -7,6 +7,7 @@ import makeupImage from "@assets/IMG_0944.png";
 import hairImage from "@assets/IMG_0943.png";
 import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
 import teethWhiteningImage from "@assets/IMG_0964.jpeg";
+import sprayTanningImage from "@assets/IMG_0969.webp";
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -62,7 +63,7 @@ export default function Services() {
       link: "/teeth-whitening"
     },
     {
-      image: holliePhoto,
+      image: sprayTanningImage,
       title: "Spray Tanning",
       description: "At First Site's spray tan is expertly formulated to deliver a flawless, bronzed glow without the risk of orange undertones. Our unique blend is enriched with hydrating ingredients like hyaluronic acid, jojoba oil, and squalane, providing a natural, radiant tan that enhances your glow without clogging pores.",
       alt: "Premium spray tanning services with hydrating formula for brides - natural radiant tan for wedding day",
