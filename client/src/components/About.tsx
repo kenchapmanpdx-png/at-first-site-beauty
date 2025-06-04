@@ -10,15 +10,13 @@ export default function About() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
-      
       // Check if header is over photo area
       if (headerRef.current && sectionRef.current) {
         const headerRect = headerRef.current.getBoundingClientRect();
         const sectionRect = sectionRef.current.getBoundingClientRect();
         
         // Check if header is in the lower portion of the section (over photos)
-        const isOverPhotos = headerRect.top < sectionRect.top + (sectionRect.height * 0.6);
+        const isOverPhotos = headerRect.top < sectionRect.top + (sectionRect.height * 0.5);
         setIsHeaderOverPhoto(isOverPhotos);
       }
     };
@@ -41,12 +39,12 @@ export default function About() {
             normalAnimations.forEach((animation, index) => {
               setTimeout(() => {
                 animation.classList.add('animate');
-              }, 400 + (index * 300));
+              }, 600 + (index * 400));
             });
           }
         });
       },
-      { threshold: 0.15, rootMargin: '50px 0px 0px 0px' }
+      { threshold: 0.1, rootMargin: '0px 0px 0px 0px' }
     );
 
     if (sectionRef.current) {
@@ -88,10 +86,7 @@ export default function About() {
             <img
               src={teamPhoto1}
               alt="Professional bridal hair stylist"
-              className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
-              style={{
-                transform: `translateY(${scrollY * 0.05}px)`,
-              }}
+              className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105 floating-animation"
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
               Holli DeMarais
@@ -110,9 +105,7 @@ export default function About() {
               src={teamPhoto2}
               alt="Professional makeup artist"
               className="w-80 h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
-              style={{
-                transform: `translateY(${scrollY * -0.03}px)`,
-              }}
+              style={{ animationDelay: '2s' }}
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
               Cedar Lapp-Ngauamo
