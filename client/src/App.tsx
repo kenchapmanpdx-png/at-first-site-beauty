@@ -5,11 +5,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
+import TeethWhitening from "@/pages/teeth-whitening";
+import SprayTanning from "@/pages/spray-tanning";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/teeth-whitening" component={TeethWhitening} />
+      <Route path="/spray-tanning" component={SprayTanning} />
       <Route component={NotFound} />
     </Switch>
   );

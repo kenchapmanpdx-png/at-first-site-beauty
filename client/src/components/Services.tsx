@@ -51,7 +51,7 @@ export default function Services() {
     {
       image: hairImage,
       title: "Teeth Whitening",
-      description: "Professional teeth whitening services available both in-salon and on-location for your brightest, most confident smile.",
+      description: "Our teeth whitening system stands apart from store-bought brands by offering a professional-grade solution that delivers immediate and noticeable results. We use a higher percentage of Hydrogen Peroxide, safely activated with a specialized light to enhance effectiveness while remaining gentle on your teeth.",
       alt: "Professional teeth whitening services for brides - on-location dental beauty treatment in Pacific Northwest",
       keywords: "teeth whitening, bridal teeth whitening, wedding smile, dental beauty, cosmetic dentistry",
       category: "Cosmetic Services"
@@ -59,9 +59,9 @@ export default function Services() {
     {
       image: holliePhoto,
       title: "Spray Tanning",
-      description: "Using premium Dolce Glow products for a natural, radiant tan that enhances your natural beauty and complements your wedding look.",
-      alt: "Premium spray tanning services using Dolce Glow products for brides - natural radiant tan for wedding day",
-      keywords: "spray tanning, bridal tanning, Dolce Glow, wedding tan, natural tanning",
+      description: "At First Site's spray tan is expertly formulated to deliver a flawless, bronzed glow without the risk of orange undertones. Our unique blend is enriched with hydrating ingredients like hyaluronic acid, jojoba oil, and squalane, providing a natural, radiant tan that enhances your glow without clogging pores.",
+      alt: "Premium spray tanning services with hydrating formula for brides - natural radiant tan for wedding day",
+      keywords: "spray tanning, bridal tanning, hyaluronic acid, wedding tan, natural tanning",
       category: "Cosmetic Services"
     },
   ];

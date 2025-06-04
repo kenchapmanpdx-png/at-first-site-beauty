@@ -73,13 +73,7 @@ export default function Header() {
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
       </header>
 
-      {/* Sticky Book Now Button */}
-      <Button
-        onClick={() => scrollToSection("booking")}
-        className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation text-sm md:text-base"
-      >
-        Book Now
-      </Button>
+
     </>
   );
 }
