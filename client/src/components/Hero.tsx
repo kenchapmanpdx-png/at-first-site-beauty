@@ -43,20 +43,20 @@ export default function Hero() {
       <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transform transition-all duration-1000 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
-        <h1 className={`font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight fade-slide-up ${
+        <h1 className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight fade-slide-up ${
           isLoaded ? 'stagger-1' : ''
         }`}>
           Luxury Bridal Hair & Makeup,{" "}
           <span className="text-blush-300">On Location</span>
         </h1>
-        <p className={`text-xl md:text-2xl mb-8 font-light opacity-90 fade-slide-up ${
+        <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-light opacity-90 fade-slide-up ${
           isLoaded ? 'stagger-2' : ''
         }`}>
           Serving the Pacific Northwest with elegance, expertise, and ease
         </p>
         <Button
           onClick={() => scrollToSection("booking")}
-          className={`bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-500 transform hover:scale-105 shadow-lg fade-slide-up ${
+          className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
             isLoaded ? 'stagger-3' : ''
           }`}
         >

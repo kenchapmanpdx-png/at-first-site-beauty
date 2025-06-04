@@ -28,41 +28,41 @@ export default function Header() {
         </div>
         
         {/* Navigation Menu Bar */}
-        <nav className="flex justify-center pb-3">
-          <div className="flex space-x-8 px-8 py-3">
+        <nav className="flex justify-center pb-3 overflow-x-auto">
+          <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
-              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Testimonials
             </button>
             <button
               onClick={() => scrollToSection("booking")}
-              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Booking
             </button>
@@ -76,7 +76,7 @@ export default function Header() {
       {/* Sticky Book Now Button */}
       <Button
         onClick={() => scrollToSection("booking")}
-        className="fixed bottom-6 right-6 z-50 bg-blush-300 hover:bg-blush-400 text-white px-8 py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+        className="fixed bottom-4 md:bottom-6 right-4 md:right-6 z-50 bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation text-sm md:text-base"
       >
         Book Now
       </Button>

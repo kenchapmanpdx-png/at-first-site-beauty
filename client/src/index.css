@@ -66,6 +66,25 @@
 
   body {
     @apply font-lato antialiased bg-background text-foreground;
+    /* Mobile optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Better touch scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent zoom on input focus on iOS */
+  input, select, textarea {
+    font-size: 16px;
+  }
+
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
@@ -97,6 +116,59 @@
   .scroll-animation.animate {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Mobile performance optimizations */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+
+  /* Smooth scrolling for all devices */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent layout shifts */
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Mobile-friendly hover states */
+  @media (hover: none) and (pointer: coarse) {
+    .hover\:scale-105:hover {
+      transform: none;
+    }
+    
+    .hover\:grayscale-0:hover {
+      filter: none;
+    }
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-animation,
+    .fade-slide-up,
+    .animate-bounce {
+      animation: none;
+      transition: none;
+    }
+    
+    .parallax-bg {
+      transform: none !important;
+    }
+  }
+
+  /* Fixed positioning improvements for mobile */
+  .fixed {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+
+  /* Ensure no horizontal overflow */
+  .container {
+    max-width: 100%;
+    overflow-x: hidden;
   }
   
   .scroll-slow {

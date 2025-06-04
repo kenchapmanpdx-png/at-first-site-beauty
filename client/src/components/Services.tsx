@@ -78,11 +78,11 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <article
               key={index}
-              className={`scroll-animation stagger-${index + 1} relative group overflow-hidden rounded-3xl h-96 cursor-pointer transform hover:scale-105 transition-all duration-700`}
+              className={`scroll-animation stagger-${index + 1} relative group overflow-hidden rounded-3xl h-80 md:h-96 cursor-pointer transform hover:scale-105 transition-all duration-700 touch-manipulation`}
               itemScope
               itemType="https://schema.org/Service"
             >
@@ -100,20 +100,20 @@ export default function Services() {
               </div>
               
               {/* Content Overlay */}
-              <div className="relative z-10 h-full flex flex-col justify-end p-8 text-white">
+              <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-8 text-white">
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="font-playfair text-2xl font-semibold mb-3" itemProp="name">
+                  <h3 className="font-playfair text-xl md:text-2xl font-semibold mb-2 md:mb-3" itemProp="name">
                     {service.title}
                   </h3>
-                  <p className="text-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed mb-4" itemProp="description">
+                  <p className="text-gray-100 opacity-0 group-hover:opacity-100 md:opacity-100 transition-opacity duration-500 leading-relaxed mb-3 md:mb-4 text-sm md:text-base" itemProp="description">
                     {service.description}
                   </p>
                   <Button
                     variant="ghost"
-                    className="text-white border-white border hover:bg-white hover:text-gray-900 transition-all duration-300 opacity-0 group-hover:opacity-100"
+                    className="text-white border-white border hover:bg-white hover:text-gray-900 active:bg-white active:text-gray-900 transition-all duration-300 opacity-0 group-hover:opacity-100 md:opacity-100 touch-manipulation text-sm md:text-base"
                     aria-label={`Learn more about ${service.title}`}
                   >
-                    Learn More <ArrowRight size={16} className="ml-2" />
+                    Learn More <ArrowRight size={14} className="ml-2" />
                   </Button>
                 </div>
                 {/* Structured Data */}
