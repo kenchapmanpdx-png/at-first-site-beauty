@@ -14,15 +14,61 @@ export default function Header() {
   return (
     <>
       {/* Main Logo Header */}
-      <header className="relative bg-white flex items-center justify-center" style={{ height: '350px' }}>
-        <div className="container mx-auto px-4 flex justify-center">
-          <img
-            src={logo}
-            alt="At First Site Beauty On Location"
-            className="h-auto object-contain"
-            style={{ maxWidth: '1200px', maxHeight: '280px' }}
-          />
+      <header className="relative bg-white" style={{ height: '400px' }}>
+        {/* Logo Section */}
+        <div className="flex items-center justify-center pt-8 pb-4">
+          <div className="container mx-auto px-4 flex justify-center">
+            <img
+              src={logo}
+              alt="At First Site Beauty On Location"
+              className="h-auto object-contain"
+              style={{ maxWidth: '1200px', maxHeight: '280px' }}
+            />
+          </div>
         </div>
+        
+        {/* Navigation Menu Bar */}
+        <nav className="flex justify-center pb-8">
+          <div className="flex space-x-8 bg-white/90 backdrop-blur-sm rounded-full px-8 py-3 shadow-lg border border-gray-100">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection("gallery")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+            >
+              Gallery
+            </button>
+            <button
+              onClick={() => scrollToSection("testimonials")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+            >
+              Testimonials
+            </button>
+            <button
+              onClick={() => scrollToSection("booking")}
+              className="text-gray-700 hover:text-blush-400 transition-colors duration-200 font-medium"
+            >
+              Booking
+            </button>
+          </div>
+        </nav>
+        
         {/* Soft white transition to hero photo */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
       </header>
