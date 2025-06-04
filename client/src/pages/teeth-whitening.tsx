@@ -1,0 +1,282 @@
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Star, CheckCircle, Clock, Shield } from "lucide-react";
+import { useLocation } from "wouter";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+// Import before/after images
+import beforeImage1 from "@assets/IMG_0941.jpeg";
+import afterImage1 from "@assets/IMG_0943.png";
+import beforeImage2 from "@assets/IMG_3265.jpeg";
+import afterImage2 from "@assets/IMG_0944.png";
+
+export default function TeethWhitening() {
+  const [, setLocation] = useLocation();
+  const [activeTab, setActiveTab] = useState("before-after");
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const animations = entry.target.querySelectorAll('.scroll-animation');
+            animations.forEach((animation) => {
+              animation.classList.add('animate');
+            });
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const beforeAfterImages = [
+    {
+      before: beforeImage1,
+      after: afterImage1,
+      description: "Complete smile transformation - 6 shades whiter"
+    },
+    {
+      before: beforeImage2,
+      after: afterImage2,
+      description: "Professional whitening results - dramatic improvement"
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: <Star className="w-6 h-6" />,
+      title: "Professional Grade Formula",
+      description: "Higher percentage Hydrogen Peroxide for superior results"
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: "Immediate Results",
+      description: "See noticeable whitening in just one session"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "FDA Registered",
+      description: "Safe, quality treatment with peace of mind"
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6" />,
+      title: "Custom Take-Home Kit",
+      description: "Maintain your results with personalized care"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      
+      <main ref={sectionRef} className="pt-8">
+        {/* Hero Section */}
+        <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+          <div className="container mx-auto px-4">
+            <Button
+              onClick={() => setLocation("/")}
+              variant="ghost"
+              className="mb-8 text-gray-600 hover:text-blush-400"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
+            </Button>
+            
+            <div className="scroll-animation text-center max-w-4xl mx-auto">
+              <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                Professional <span className="text-blush-400">Teeth Whitening</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                Our teeth whitening system stands apart from store-bought brands by offering a professional-grade solution that delivers immediate and noticeable results. We use a higher percentage of Hydrogen Peroxide, safely activated with a specialized light to enhance effectiveness while remaining gentle on your teeth.
+              </p>
+              <p className="text-lg text-gray-600 mb-12">
+                Unlike over-the-counter options, our treatment is tailored to your individual needs, and includes a custom take-home kit designed to help you maintain your brighter, whiter smile long after your visit. Best of all, our system is FDA-registered, ensuring safety, quality, and peace of mind.
+              </p>
+              
+              <Button
+                onClick={() => scrollToSection("booking")}
+                className="bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium"
+              >
+                Book Your Whitening Session
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="scroll-animation text-center mb-16">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Why Choose Professional Whitening?
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="scroll-animation text-center">
+                  <div className="w-16 h-16 bg-blush-100 rounded-full flex items-center justify-center text-blush-400 mx-auto mb-4">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-3">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Before & After Gallery */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="scroll-animation text-center mb-16">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Real Results from <span className="text-blush-400">Real Clients</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                See the dramatic transformations our professional teeth whitening system delivers.
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto">
+              {beforeAfterImages.map((images, index) => (
+                <div key={index} className="scroll-animation mb-16 last:mb-0">
+                  <div className="bg-white rounded-3xl p-8 shadow-lg">
+                    <div className="grid md:grid-cols-2 gap-8 items-center">
+                      {/* Before Image */}
+                      <div className="text-center">
+                        <h3 className="font-playfair text-xl font-semibold text-gray-700 mb-4">
+                          Before
+                        </h3>
+                        <img
+                          src={images.before}
+                          alt="Before teeth whitening treatment"
+                          className="w-full h-64 object-cover rounded-2xl shadow-md"
+                          loading="lazy"
+                        />
+                      </div>
+                      
+                      {/* After Image */}
+                      <div className="text-center">
+                        <h3 className="font-playfair text-xl font-semibold text-blush-400 mb-4">
+                          After
+                        </h3>
+                        <img
+                          src={images.after}
+                          alt="After professional teeth whitening treatment"
+                          className="w-full h-64 object-cover rounded-2xl shadow-md"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="text-center mt-6">
+                      <p className="text-gray-600 font-medium">
+                        {images.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="scroll-animation text-center mb-16">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our Whitening Process
+              </h2>
+            </div>
+            
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="scroll-animation text-center">
+                  <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                    1
+                  </div>
+                  <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-3">
+                    Consultation
+                  </h3>
+                  <p className="text-gray-600">
+                    We assess your teeth and discuss your whitening goals to create a personalized treatment plan.
+                  </p>
+                </div>
+                
+                <div className="scroll-animation text-center">
+                  <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                    2
+                  </div>
+                  <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-3">
+                    Professional Treatment
+                  </h3>
+                  <p className="text-gray-600">
+                    Application of professional-grade whitening gel activated with specialized light for optimal results.
+                  </p>
+                </div>
+                
+                <div className="scroll-animation text-center">
+                  <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+                    3
+                  </div>
+                  <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-3">
+                    Take-Home Kit
+                  </h3>
+                  <p className="text-gray-600">
+                    Custom kit with professional-grade products to maintain your brilliant white smile at home.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section id="booking" className="py-20 bg-blush-50">
+          <div className="container mx-auto px-4 text-center">
+            <div className="scroll-animation max-w-3xl mx-auto">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Ready for Your Brightest Smile?
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Book your professional teeth whitening session today and see immediate results with our FDA-registered system.
+              </p>
+              
+              <Button className="bg-blush-300 hover:bg-blush-400 text-white px-12 py-4 rounded-full text-lg font-medium">
+                Schedule Your Appointment
+              </Button>
+              
+              <p className="text-sm text-gray-500 mt-4">
+                Professional consultation included • Custom take-home kit • FDA-registered treatment
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+}
