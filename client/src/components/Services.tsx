@@ -6,7 +6,7 @@ import bridalImage from "@assets/IMG_0945.png";
 import makeupImage from "@assets/IMG_0944.png";
 import hairImage from "@assets/IMG_0943.png";
 import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
-import teethWhiteningImage from "@assets/IMG_6201.jpeg";
+import teethWhiteningImage from "@assets/IMG_6202.jpeg";
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
