@@ -6,6 +6,7 @@ import bridalImage from "@assets/IMG_0945.png";
 import makeupImage from "@assets/IMG_0944.png";
 import hairImage from "@assets/IMG_0943.png";
 import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
+import teethWhiteningImage from "@assets/IMG_6201.jpeg";
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -52,7 +53,7 @@ export default function Services() {
       category: "Bridal Party Services"
     },
     {
-      image: hairImage,
+      image: teethWhiteningImage,
       title: "Teeth Whitening",
       description: "Our teeth whitening system stands apart from store-bought brands by offering a professional-grade solution that delivers immediate and noticeable results. We use a higher percentage of Hydrogen Peroxide, safely activated with a specialized light to enhance effectiveness while remaining gentle on your teeth.",
       alt: "Professional teeth whitening services for brides - on-location dental beauty treatment in Pacific Northwest",
