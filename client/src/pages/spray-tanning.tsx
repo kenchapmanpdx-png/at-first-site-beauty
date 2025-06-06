@@ -1,15 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Droplets, Heart, Sparkles, Shield } from "lucide-react";
+import { ArrowLeft, Droplets, Heart, Sparkles, Shield, Users, CheckCircle } from "lucide-react";
 import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-// Import before/after images
-import beforeImage1 from "@assets/IMG_0941.jpeg";
-import afterImage1 from "@assets/IMG_8201.jpeg";
-import beforeImage2 from "@assets/IMG_3265.jpeg";
-import afterImage2 from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
 
 export default function SprayTanning() {
   const [, setLocation] = useLocation();
@@ -46,16 +40,26 @@ export default function SprayTanning() {
     }
   };
 
-  const beforeAfterImages = [
+  const whyChooseUs = [
     {
-      before: beforeImage1,
-      after: afterImage1,
-      description: "Natural bronzed glow - no orange undertones"
+      icon: <Users className="w-6 h-6" />,
+      title: "Artist Formula Expertise",
+      description: "Our artists are trained specifically on our unique formula and know exactly how to achieve the perfect shade match for your skin tone"
     },
     {
-      before: beforeImage2,
-      after: afterImage2,
-      description: "Hydrated, radiant skin with perfect tan"
+      icon: <CheckCircle className="w-6 h-6" />,
+      title: "Consistent Results",
+      description: "Using the same formula and techniques for your entire bridal party ensures a cohesive, professional look across all members"
+    },
+    {
+      icon: <Sparkles className="w-6 h-6" />,
+      title: "Perfect Color Matching",
+      description: "Our team understands the nuances of our formula to create the ideal bronzed glow that complements your wedding day makeup"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Quality Assurance",
+      description: "Professional application by trained artists eliminates the risk of streaking, orange tones, or uneven coverage"
     }
   ];
 
@@ -162,58 +166,45 @@ export default function SprayTanning() {
           </div>
         </section>
 
-        {/* Before & After Gallery */}
-        <section className="py-20 bg-gray-50">
+        {/* Why Choose Our Team */}
+        <section className="py-20 bg-gradient-to-r from-blush-400 to-blush-500 text-white">
           <div className="container mx-auto px-4">
             <div className="scroll-animation text-center mb-16">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Natural Results, <span className="text-blush-400">Never Orange</span>
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">
+                Why Brides Must Spray Tan With <span className="text-white">Our Team</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                See the beautiful, natural bronze glow our expert spray tanning delivers.
+              <p className="text-xl max-w-3xl mx-auto opacity-90 leading-relaxed">
+                If you're planning to spray tan for your wedding, it's crucial to use our services for consistency. Our artists know our formula inside and out, ensuring perfect color matching and cohesive results across your entire bridal party.
               </p>
             </div>
 
-            <div className="max-w-5xl mx-auto">
-              {beforeAfterImages.map((images, index) => (
-                <div key={index} className="scroll-animation mb-16 last:mb-0">
-                  <div className="bg-white rounded-3xl p-8 shadow-lg">
-                    <div className="grid md:grid-cols-2 gap-8 items-center">
-                      {/* Before Image */}
-                      <div className="text-center">
-                        <h3 className="font-playfair text-xl font-semibold text-gray-700 mb-4">
-                          Before
-                        </h3>
-                        <img
-                          src={images.before}
-                          alt="Before spray tanning treatment"
-                          className="w-full h-64 object-cover rounded-2xl shadow-md"
-                          loading="lazy"
-                        />
-                      </div>
-                      
-                      {/* After Image */}
-                      <div className="text-center">
-                        <h3 className="font-playfair text-xl font-semibold text-blush-400 mb-4">
-                          After
-                        </h3>
-                        <img
-                          src={images.after}
-                          alt="After professional spray tanning treatment"
-                          className="w-full h-64 object-cover rounded-2xl shadow-md"
-                          loading="lazy"
-                        />
-                      </div>
-                    </div>
-                    
-                    <div className="text-center mt-6">
-                      <p className="text-gray-600 font-medium">
-                        {images.description}
-                      </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              {whyChooseUs.map((reason, index) => (
+                <div key={index} className="scroll-animation text-center">
+                  <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div className="text-white">
+                      {reason.icon}
                     </div>
                   </div>
+                  <h3 className="font-playfair text-xl font-semibold mb-4">
+                    {reason.title}
+                  </h3>
+                  <p className="opacity-90 leading-relaxed">
+                    {reason.description}
+                  </p>
                 </div>
               ))}
+            </div>
+
+            <div className="scroll-animation text-center mt-16">
+              <div className="bg-white bg-opacity-10 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 className="font-playfair text-2xl font-semibold mb-4">
+                  Professional Consistency Guarantee
+                </h3>
+                <p className="text-lg opacity-90 leading-relaxed">
+                  Don't risk mismatched tans on your wedding day. Our team's expertise with our exclusive formula ensures every member of your bridal party achieves the same beautiful, natural bronze glow that perfectly complements your wedding day makeup and photography.
+                </p>
+              </div>
             </div>
           </div>
         </section>
