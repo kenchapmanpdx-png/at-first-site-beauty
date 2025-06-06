@@ -170,37 +170,7 @@ export default function BridalDesignSession() {
           </div>
         </section>
 
-        {/* The Experience */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-16">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                The Complete Design Experience
-              </h2>
-            </div>
-            
-            <div className="max-w-4xl mx-auto">
-              <div className="scroll-animation bg-white rounded-3xl p-8 md:p-12 shadow-lg mb-12">
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Here, our professionally trained artists collaborate with you to co-create your bridal look in a relaxed, attentive setting. You'll sit down with one of our expert stylists to walk through every detail of your vision — from texture, tone, and structure of your hairstyle to the glow, finish, and feature-enhancing artistry of your makeup.
-                </p>
-                
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Your comfort is key. This is your moment to give feedback, explore styles, and make adjustments — nothing is off limits. Our goal? That you leave glowing with confidence, knowing your wedding look is perfectly dialed in.
-                </p>
-                
-                <div className="bg-blush-50 rounded-2xl p-6">
-                  <h3 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
-                    But it doesn't end there.
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    Once your look is designed, we ask you to wear it for at least six hours. Every two hours, we'll have you snap photos — in natural light and with flash — to show us how your glam wears throughout the day. This feedback allows us to fine-tune every element, so when we arrive on your wedding day, we're bringing flawless execution and peace of mind.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Process Steps */}
         <section className="py-20 bg-white">
