@@ -138,33 +138,28 @@ export default function BridalDesignSession() {
           </div>
         </section>
 
-        {/* Studio Gallery */}
-        <section className="py-20 bg-white">
+        {/* Your Look Locked In */}
+        <section className="py-20 bg-blush-50">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              <div className="scroll-animation">
-                <img
-                  src={studioImage1}
-                  alt="Luxury bridal design session in private suite"
-                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  loading="lazy"
-                />
-              </div>
-              <div className="scroll-animation">
-                <img
-                  src={makeupProcess}
-                  alt="Professional makeup application during design session"
-                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  loading="lazy"
-                />
-              </div>
-              <div className="scroll-animation">
-                <img
-                  src={studioImage2}
-                  alt="Bridal hair styling consultation"
-                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  loading="lazy"
-                />
+            <div className="scroll-animation text-center max-w-4xl mx-auto">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Your Look. <span className="text-blush-400">Locked In.</span>
+              </h2>
+              
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored. You'll also receive a personalized touch-up kit, complete with your lip color, blotting papers, and our professional-grade bridal setting spray — so your look stays radiant from "I do" to your last dance.
+              </p>
+              
+              <div className="bg-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center justify-center mb-4">
+                  <Star className="w-6 h-6 text-blush-400 mr-2" />
+                  <span className="font-semibold text-gray-900">Personalized Touch-Up Kit Included</span>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+                  <div>Custom lip color</div>
+                  <div>Professional blotting papers</div>
+                  <div>Bridal setting spray</div>
+                </div>
               </div>
             </div>
           </div>
@@ -205,36 +200,38 @@ export default function BridalDesignSession() {
           </div>
         </section>
 
-        {/* Your Look Locked In */}
-        <section className="py-20 bg-blush-50">
-          <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center max-w-4xl mx-auto">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Your Look. <span className="text-blush-400">Locked In.</span>
-              </h2>
-              
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored. You'll also receive a personalized touch-up kit, complete with your lip color, blotting papers, and our professional-grade bridal setting spray — so your look stays radiant from "I do" to your last dance.
-              </p>
-              
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-blush-400 mr-2" />
-                  <span className="font-semibold text-gray-900">Personalized Touch-Up Kit Included</span>
-                </div>
-                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
-                  <div>Custom lip color</div>
-                  <div>Professional blotting papers</div>
-                  <div>Bridal setting spray</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Pro Tips */}
+
+        {/* Studio Gallery */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+              <div className="scroll-animation">
+                <img
+                  src={studioImage1}
+                  alt="Luxury bridal design session in private suite"
+                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="scroll-animation">
+                <img
+                  src={makeupProcess}
+                  alt="Professional makeup application during design session"
+                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+              <div className="scroll-animation">
+                <img
+                  src={studioImage2}
+                  alt="Bridal hair styling consultation"
+                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
             <div className="scroll-animation text-center mb-16">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Pro Tips for <span className="text-blush-400">Timeless Bridal Glam</span>
