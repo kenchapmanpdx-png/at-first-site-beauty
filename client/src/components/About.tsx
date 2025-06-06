@@ -43,11 +43,11 @@ export default function About() {
       <div className="absolute top-0 left-0 right-0 h-20 md:h-0 bg-gradient-to-b from-gray-50 via-gray-50/95 to-gray-50/80 -mt-4 md:mt-0"></div>
       <div className="container mx-auto px-4">
         <div className="scroll-slow max-w-3xl mx-auto text-center mb-20">
-          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-gray-900" style={{ textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}>
-              Meet Your <span className="text-blush-400">Dream Team</span>
+          <div className="premium-gradient rounded-3xl p-8 md:p-10 shadow-2xl luxury-hover sparkle">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-gray-900 luxury-text">
+              Meet Your <span className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent">Dream Team</span>
             </h2>
-            <p className="text-lg leading-relaxed text-gray-600" style={{ textShadow: '1px 1px 2px rgba(255,255,255,0.6)' }}>
+            <p className="text-lg leading-relaxed text-gray-700">
               Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
             </p>
           </div>
@@ -55,23 +55,26 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
           {/* Hollie DeMarais */}
-          <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
-            <img
-              src={holliePhoto}
-              alt="Hollie DeMarais - Professional bridal hair stylist and owner of Vata Salon with 18+ years experience in Pacific Northwest wedding beauty"
-              className="w-44 md:w-56 h-56 md:h-64 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
-              loading="lazy"
-              itemProp="image"
-              width="224"
-              height="256"
-            />
-            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
+          <article className="scroll-animation text-center premium-gradient rounded-3xl p-8 luxury-hover sparkle" itemScope itemType="https://schema.org/Person">
+            <div className="relative inline-block">
+              <img
+                src={holliePhoto}
+                alt="Hollie DeMarais - Professional bridal hair stylist and owner of Vata Salon with 18+ years experience in Pacific Northwest wedding beauty"
+                className="w-44 md:w-56 h-56 md:h-64 object-cover rounded-2xl mx-auto mb-6 shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105 floating-element"
+                loading="lazy"
+                itemProp="image"
+                width="224"
+                height="256"
+              />
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blush-400 to-blush-600 rounded-full opacity-80"></div>
+            </div>
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2 luxury-text" itemProp="name">
               Hollie DeMarais
             </h3>
-            <p className="text-blush-400 mb-4 font-medium" itemProp="jobTitle">
+            <p className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent mb-4 font-medium" itemProp="jobTitle">
               Owner of Vata Salon, Aveda Educator
             </p>
-            <p className="text-gray-600 leading-relaxed" itemProp="description">
+            <p className="text-gray-700 leading-relaxed" itemProp="description">
               Award-winning salon owner with over 18 years of experience. Hollie provides quality control and has selected elite artists for hair design training, ensuring every client receives perfection through our carefully curated team.
             </p>
             <meta itemProp="worksFor" content="At First Sight Beauty On Location" />
