@@ -120,7 +120,7 @@ export default function BridalDesignSession() {
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                At At First Site Beauty, your bridal glam starts well before the big day. Our Design Session isn't just a "trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
+                Your bridal glam starts well before the big day. Our Design Session isn't just a "trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
               </p>
               
               <div className="flex items-center justify-center text-gray-600 mb-8">
@@ -138,32 +138,7 @@ export default function BridalDesignSession() {
           </div>
         </section>
 
-        {/* Your Look Locked In */}
-        <section className="py-12 bg-blush-50">
-          <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center max-w-4xl mx-auto">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Your Look. <span className="text-blush-400">Locked In.</span>
-              </h2>
-              
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored. You'll also receive a personalized touch-up kit, complete with your lip color, blotting papers, and our professional-grade bridal setting spray — so your look stays radiant from "I do" to your last dance.
-              </p>
-              
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-blush-400 mr-2" />
-                  <span className="font-semibold text-gray-900">Personalized Touch-Up Kit Included</span>
-                </div>
-                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
-                  <div>Custom lip color</div>
-                  <div>Professional blotting papers</div>
-                  <div>Bridal setting spray</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
 
 
