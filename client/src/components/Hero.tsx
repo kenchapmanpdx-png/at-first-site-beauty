@@ -28,12 +28,12 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" itemScope itemType="https://schema.org/Organization">
       {/* Background Image with Enhanced Parallax */}
       <div
-        className="absolute inset-0 bg-cover bg-center parallax-bg filter grayscale scale-110 transition-all duration-700"
+        className="absolute inset-0 bg-cover bg-center parallax-bg filter grayscale scale-105 transition-all duration-700"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundPosition: 'center center',
           backgroundSize: 'cover',
-          transform: window.innerWidth > 768 ? `translateY(${scrollY * 0.3}px) scale(1.1)` : 'scale(1.1)',
+          transform: window.innerWidth > 768 ? `translateY(${scrollY * 0.3}px) scale(1.05)` : 'scale(1.05)',
         }}
         role="img"
         aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"
@@ -73,9 +73,7 @@ export default function Hero() {
         </Button>
       </div>
 
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-        <ChevronDown size={24} className="md:size-32 opacity-70" />
-      </div>
+
     </section>
   );
 }
