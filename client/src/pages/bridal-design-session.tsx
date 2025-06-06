@@ -123,9 +123,16 @@ export default function BridalDesignSession() {
                 Your bridal glam starts well before the big day. Set in our private bridal suite, our Design Session isn't just a "Trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
               </p>
               
-              <div className="flex items-center justify-center text-gray-600 mb-8">
-                <MapPin className="w-5 h-5 mr-2 text-blush-400" />
-                <span>Set in our private bridal suite inside Vata Salon, downtown Vancouver, Washington</span>
+              <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+                <div className="flex items-center justify-center mb-4">
+                  <Star className="w-6 h-6 text-blush-400 mr-2" />
+                  <span className="font-semibold text-gray-900">Personalized Touch-Up Kit Included so your look stays radiant from "I do" to your last dance.</span>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+                  <div>Custom lip color</div>
+                  <div>Professional blotting papers</div>
+                  <div>Bridal setting spray</div>
+                </div>
               </div>
               
               <Button
@@ -138,24 +145,7 @@ export default function BridalDesignSession() {
           </div>
         </section>
 
-        {/* Your Look Locked In */}
-        <section className="py-12 bg-blush-50">
-          <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center max-w-4xl mx-auto">
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-blush-400 mr-2" />
-                  <span className="font-semibold text-gray-900">Personalized Touch-Up Kit Included so your look stays radiant from "I do" to your last dance.</span>
-                </div>
-                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
-                  <div>Custom lip color</div>
-                  <div>Professional blotting papers</div>
-                  <div>Bridal setting spray</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Process Steps */}
         <section className="py-12 bg-white">
