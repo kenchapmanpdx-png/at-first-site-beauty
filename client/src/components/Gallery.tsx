@@ -99,12 +99,12 @@ export default function Gallery() {
           </p>
 
           {/* Gallery Filter */}
-          <div className="flex justify-center space-x-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 md:mb-12">
             {filterButtons.map((button) => (
               <Button
                 key={button.id}
                 onClick={() => setFilter(button.id)}
-                className={`px-6 py-2 rounded-full transition-colors duration-200 ${
+                className={`px-4 sm:px-6 py-2 rounded-full transition-colors duration-200 text-sm sm:text-base touch-manipulation ${
                   filter === button.id
                     ? "bg-blush-300 text-white"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -117,7 +117,7 @@ export default function Gallery() {
         </div>
 
         {/* Masonry Gallery Grid with SEO optimization */}
-        <div className="columns-1 sm:columns-2 md:columns-2 lg:columns-3 xl:columns-4 gap-4 md:gap-6 space-y-4 md:space-y-6" itemScope itemType="https://schema.org/ImageGallery">
+        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-3 md:gap-4 lg:gap-6 space-y-3 md:space-y-4 lg:space-y-6" itemScope itemType="https://schema.org/ImageGallery">
           {filteredImages.map((image, index) => (
             <figure
               key={index}
@@ -129,7 +129,7 @@ export default function Gallery() {
                 src={image.src}
                 alt={image.alt}
                 title={image.title}
-                className="w-full rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="w-full rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                 loading="lazy"
                 itemProp="contentUrl"
                 width="400"
