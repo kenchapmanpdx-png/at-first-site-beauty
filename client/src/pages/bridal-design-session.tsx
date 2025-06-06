@@ -116,7 +116,7 @@ export default function BridalDesignSession() {
               </div>
               
               <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Where Your Dream Look <span className="text-blush-400">Begins</span>
+                Where Your Dream Look Begins. Your Look, <span className="text-blush-400">Locked In.</span>
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
