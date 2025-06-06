@@ -38,12 +38,12 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg relative -mt-32 md:-mt-8" itemScope itemType="https://schema.org/AboutPage">
+    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg noise-overlay relative -mt-32 md:-mt-8" itemScope itemType="https://schema.org/AboutPage">
       {/* Mobile overlay to cover more of hero image */}
       <div className="absolute top-0 left-0 right-0 h-20 md:h-0 bg-gradient-to-b from-gray-50 via-gray-50/95 to-gray-50/80 -mt-4 md:mt-0"></div>
       <div className="container mx-auto px-4">
         <div className="scroll-slow max-w-3xl mx-auto text-center mb-20">
-          <div className="premium-gradient rounded-3xl p-8 md:p-10 shadow-2xl luxury-hover sparkle">
+          <div className="premium-gradient marble-texture rounded-3xl p-8 md:p-10 shadow-2xl luxury-hover sparkle luxury-texture">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-gray-900 luxury-text">
               Meet Your <span className="text-blush-400">Dream Team</span>
             </h2>
@@ -55,7 +55,7 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
           {/* Hollie DeMarais */}
-          <article className="scroll-animation text-center premium-gradient rounded-3xl p-8 luxury-hover sparkle" itemScope itemType="https://schema.org/Person">
+          <article className="scroll-animation text-center premium-gradient marble-texture rounded-3xl p-8 luxury-hover sparkle luxury-texture brush-accent" itemScope itemType="https://schema.org/Person">
             <div className="relative inline-block">
               <img
                 src={holliePhoto}
@@ -83,7 +83,7 @@ export default function About() {
           </article>
 
           {/* Cedar Lapp-Ngauamo */}
-          <article className="scroll-animation text-center premium-gradient rounded-3xl p-8 luxury-hover sparkle" itemScope itemType="https://schema.org/Person">
+          <article className="scroll-animation text-center premium-gradient marble-texture rounded-3xl p-8 luxury-hover sparkle luxury-texture brush-accent" itemScope itemType="https://schema.org/Person">
             <div className="relative inline-block">
               <img
                 src={cedarPhoto}

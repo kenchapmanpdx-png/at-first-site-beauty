@@ -227,6 +227,117 @@
     transition: transform 0.1s;
   }
 
+  /* Luxury texture overlays */
+  .luxury-texture {
+    position: relative;
+  }
+
+  .luxury-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255,255,255,0.05) 0%, transparent 50%),
+      linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.02) 50%, transparent 100%);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Silk fabric texture effect */
+  .silk-texture {
+    background-image: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 1px,
+        rgba(255,255,255,0.03) 1px,
+        rgba(255,255,255,0.03) 2px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 1px,
+        rgba(255,255,255,0.02) 1px,
+        rgba(255,255,255,0.02) 2px
+      );
+  }
+
+  /* Premium marble-like gradient */
+  .marble-texture {
+    background: 
+      linear-gradient(110deg, 
+        rgba(255,255,255,0.95) 0%, 
+        rgba(248,245,250,0.97) 25%, 
+        rgba(255,255,255,0.95) 50%, 
+        rgba(250,248,252,0.97) 75%, 
+        rgba(255,255,255,0.95) 100%
+      );
+    background-size: 200% 100%;
+    animation: marbleShimmer 8s ease-in-out infinite;
+  }
+
+  @keyframes marbleShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Elegant brush stroke accents */
+  .brush-accent {
+    position: relative;
+  }
+
+  .brush-accent::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: 
+      radial-gradient(ellipse 60% 20% at 30% 20%, rgba(251, 207, 232, 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 30% at 70% 80%, rgba(251, 207, 232, 0.2) 0%, transparent 50%);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Luxury paper texture */
+  .paper-texture {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
+
+  /* Sophisticated noise overlay */
+  .noise-overlay {
+    position: relative;
+  }
+
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    animation: subtleNoise 15s ease-in-out infinite;
+  }
+
+  @keyframes subtleNoise {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
   /* Mobile performance optimizations */
   .touch-manipulation {
     touch-action: manipulation;
