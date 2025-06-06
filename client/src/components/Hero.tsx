@@ -31,7 +31,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center parallax-bg filter grayscale scale-105 transition-all duration-700"
         style={{
           backgroundImage: `url(${heroImage})`,
-          backgroundPosition: 'center 40%',
+          backgroundPosition: 'center 30%',
           backgroundSize: 'cover',
           transform: window.innerWidth > 768 ? `translateY(${scrollY * 0.3}px) scale(1.05)` : 'scale(1.05)',
         }}
