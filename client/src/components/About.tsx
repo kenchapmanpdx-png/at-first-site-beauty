@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
+import holliePhoto from "@assets/Untitled design (1) (1).png";
 import cedarPhoto from "@assets/IMG_8201.jpeg";
 
 export default function About() {
