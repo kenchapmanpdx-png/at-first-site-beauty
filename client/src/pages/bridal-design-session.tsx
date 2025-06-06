@@ -314,7 +314,7 @@ export default function BridalDesignSession() {
                     Bride Hair and Makeup Design Session
                   </h3>
                   <p className="text-gray-600 mb-6">
-                    Complete design session with trial, consultation, and personalized touch-up kit
+                    Complete package includes design session trial AND day of wedding hair & makeup
                   </p>
                 </div>
 
@@ -338,7 +338,11 @@ export default function BridalDesignSession() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="flex items-start">
                       <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700">Complete hair and makeup trial</span>
+                      <span className="text-gray-700">Complete hair and makeup trial session</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Wedding day hair and makeup application</span>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
@@ -351,10 +355,6 @@ export default function BridalDesignSession() {
                     <div className="flex items-start">
                       <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
                       <span className="text-gray-700">Custom touch-up kit</span>
-                    </div>
-                    <div className="flex items-start">
-                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700">Wear testing and adjustments</span>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
