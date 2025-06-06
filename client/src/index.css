@@ -133,7 +133,7 @@
     transform: translateY(0) scale(1);
   }
 
-  /* Premium floating elements */
+  /* Premium floating elements - only for decorative dots */
   .floating-element {
     animation: float 6s ease-in-out infinite;
   }

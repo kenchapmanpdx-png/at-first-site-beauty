@@ -45,7 +45,7 @@ export default function About() {
         <div className="scroll-slow max-w-3xl mx-auto text-center mb-20">
           <div className="premium-gradient rounded-3xl p-8 md:p-10 shadow-2xl luxury-hover sparkle">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-gray-900 luxury-text">
-              Meet Your <span className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent">Dream Team</span>
+              Meet Your <span className="text-blush-400">Dream Team</span>
             </h2>
             <p className="text-lg leading-relaxed text-gray-700">
               Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
@@ -60,7 +60,7 @@ export default function About() {
               <img
                 src={holliePhoto}
                 alt="Hollie DeMarais - Professional bridal hair stylist and owner of Vata Salon with 18+ years experience in Pacific Northwest wedding beauty"
-                className="w-44 md:w-56 h-56 md:h-64 object-cover rounded-2xl mx-auto mb-6 shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105 floating-element"
+                className="w-44 md:w-56 h-56 md:h-64 object-cover rounded-2xl mx-auto mb-6 shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
                 loading="lazy"
                 itemProp="image"
                 width="224"
@@ -88,12 +88,11 @@ export default function About() {
               <img
                 src={cedarPhoto}
                 alt="Cedar Lapp-Ngauamo - Professional makeup artist and founder of Cedars Academy of Makeup Artistry, owner of exclusive makeup college in Pacific Northwest"
-                className="w-44 md:w-56 h-56 md:h-64 object-cover object-top rounded-2xl mx-auto mb-6 shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105 floating-element"
+                className="w-44 md:w-56 h-56 md:h-64 object-cover object-top rounded-2xl mx-auto mb-6 shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
                 loading="lazy"
                 itemProp="image"
                 width="224"
                 height="256"
-                style={{animationDelay: '1s'}}
               />
               <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blush-400 to-blush-600 rounded-full opacity-80"></div>
             </div>
