@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [, setLocation] = useLocation();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -11,6 +15,13 @@ export default function Header() {
       element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false); // Close mobile menu after navigation
+    setIsServicesDropdownOpen(false); // Close dropdown after navigation
+  };
+
+  const navigateToPage = (path: string) => {
+    setLocation(path);
+    setIsMenuOpen(false);
+    setIsServicesDropdownOpen(false);
   };
 
   return (
@@ -61,12 +72,51 @@ export default function Header() {
             >
               About
             </button>
-            <button
-              onClick={() => scrollToSection("services")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
-            >
-              Services
-            </button>
+            <div className="relative group">
+              <button
+                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                onMouseEnter={() => setIsServicesDropdownOpen(true)}
+                className="flex items-center text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
+              >
+                Services
+                <ChevronDown className="w-4 h-4 ml-1" />
+              </button>
+              
+              {/* Services Dropdown Menu */}
+              {isServicesDropdownOpen && (
+                <div 
+                  className="absolute top-full left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+                  onMouseLeave={() => setIsServicesDropdownOpen(false)}
+                >
+                  <div className="py-2">
+                    <button
+                      onClick={() => navigateToPage("/bridal-design-session")}
+                      className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blush-400 hover:bg-gray-50 transition-colors duration-200"
+                    >
+                      Bridal Design Session
+                    </button>
+                    <button
+                      onClick={() => navigateToPage("/bridal-party")}
+                      className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blush-400 hover:bg-gray-50 transition-colors duration-200"
+                    >
+                      Bridal Party
+                    </button>
+                    <button
+                      onClick={() => navigateToPage("/spray-tanning")}
+                      className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blush-400 hover:bg-gray-50 transition-colors duration-200"
+                    >
+                      Spray Tanning
+                    </button>
+                    <button
+                      onClick={() => navigateToPage("/teeth-whitening")}
+                      className="block w-full text-left px-4 py-3 text-gray-700 hover:text-blush-400 hover:bg-gray-50 transition-colors duration-200"
+                    >
+                      Teeth Whitening
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
             <button
               onClick={() => scrollToSection("gallery")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
@@ -105,12 +155,45 @@ export default function Header() {
                 >
                   About
                 </button>
-                <button
-                  onClick={() => scrollToSection("services")}
-                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
-                >
-                  Services
-                </button>
+                <div>
+                  <button
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    className="flex items-center justify-between w-full text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
+                  >
+                    Services
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {/* Mobile Services Submenu */}
+                  {isMobileServicesOpen && (
+                    <div className="ml-4 mt-2 space-y-2 border-l-2 border-blush-200 pl-4">
+                      <button
+                        onClick={() => navigateToPage("/bridal-design-session")}
+                        className="block w-full text-left px-4 py-2 text-gray-600 hover:text-blush-400 hover:bg-gray-50 transition-colors duration-200 rounded-lg"
+                      >
+                        Bridal Design Session
+                      </button>
+                      <button
+                        onClick={() => navigateToPage("/bridal-party")}
+                        className="block w-full text-left px-4 py-2 text-gray-600 hover:text-blush-400 hover:bg-gray-50 transition-colors duration-200 rounded-lg"
+                      >
+                        Bridal Party
+                      </button>
+                      <button
+                        onClick={() => navigateToPage("/spray-tanning")}
+                        className="block w-full text-left px-4 py-2 text-gray-600 hover:text-blush-400 hover:bg-gray-50 transition-colors duration-200 rounded-lg"
+                      >
+                        Spray Tanning
+                      </button>
+                      <button
+                        onClick={() => navigateToPage("/teeth-whitening")}
+                        className="block w-full text-left px-4 py-2 text-gray-600 hover:text-blush-400 hover:bg-gray-50 transition-colors duration-200 rounded-lg"
+                      >
+                        Teeth Whitening
+                      </button>
+                    </div>
+                  )}
+                </div>
                 <button
                   onClick={() => scrollToSection("gallery")}
                   className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"

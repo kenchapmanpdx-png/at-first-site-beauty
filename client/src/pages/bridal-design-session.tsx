@@ -150,7 +150,7 @@ export default function BridalDesignSession() {
         {/* Process Steps */}
         <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-16">
+            <div className="scroll-animation text-center mb-8">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Your Design Session Process
               </h2>
