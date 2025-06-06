@@ -57,11 +57,11 @@ export default function About() {
             <img
               src={holliePhoto}
               alt="Hollie DeMarais - Professional bridal hair stylist and owner of Vata Salon with 18+ years experience in Pacific Northwest wedding beauty"
-              className="w-64 md:w-80 h-80 md:h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              className="w-44 md:w-56 h-56 md:h-64 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
               loading="lazy"
               itemProp="image"
-              width="320"
-              height="384"
+              width="224"
+              height="256"
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
               Hollie DeMarais
@@ -82,11 +82,11 @@ export default function About() {
             <img
               src={cedarPhoto}
               alt="Cedar Lapp-Ngauamo - Professional makeup artist and founder of Cedars Academy of Makeup Artistry, owner of exclusive makeup college in Pacific Northwest"
-              className="w-64 md:w-80 h-80 md:h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              className="w-44 md:w-56 h-56 md:h-64 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
               loading="lazy"
               itemProp="image"
-              width="320"
-              height="384"
+              width="224"
+              height="256"
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
               Cedar Lapp-Ngauamo
