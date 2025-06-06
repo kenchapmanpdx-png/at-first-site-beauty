@@ -51,37 +51,37 @@ export default function Header() {
           <div className="flex space-x-6 lg:space-x-8 px-4 py-3">
             <button
               onClick={() => scrollToSection("home")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-3 py-2 touch-manipulation"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-3 py-2 touch-manipulation"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-3 py-2 touch-manipulation"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("gallery")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-3 py-2 touch-manipulation"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
             >
               Gallery
             </button>
             <button
               onClick={() => scrollToSection("testimonials")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-3 py-2 touch-manipulation"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
             >
               Testimonials
             </button>
             <button
               onClick={() => scrollToSection("booking")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-3 py-2 touch-manipulation"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-xl px-3 py-2 touch-manipulation"
             >
               Booking
             </button>
@@ -95,37 +95,37 @@ export default function Header() {
               <div className="flex flex-col space-y-2 px-4">
                 <button
                   onClick={() => scrollToSection("home")}
-                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
+                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
                 >
                   Home
                 </button>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
+                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
                 >
                   About
                 </button>
                 <button
                   onClick={() => scrollToSection("services")}
-                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
+                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
                 >
                   Services
                 </button>
                 <button
                   onClick={() => scrollToSection("gallery")}
-                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
+                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
                 >
                   Gallery
                 </button>
                 <button
                   onClick={() => scrollToSection("testimonials")}
-                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
+                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
                 >
                   Testimonials
                 </button>
                 <button
                   onClick={() => scrollToSection("booking")}
-                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-base px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
+                  className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-lg px-4 py-3 text-left touch-manipulation rounded-lg hover:bg-gray-50"
                 >
                   Booking
                 </button>
