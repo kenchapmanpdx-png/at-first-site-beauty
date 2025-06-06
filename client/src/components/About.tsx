@@ -41,12 +41,14 @@ export default function About() {
     <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg" itemScope itemType="https://schema.org/AboutPage">
       <div className="container mx-auto px-4">
         <div className="scroll-slow max-w-3xl mx-auto text-center mb-20">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-            Meet Your <span className="text-blush-400">Dream Team</span>
-          </h2>
-          <p className="text-lg leading-relaxed text-gray-600">
-            Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
-          </p>
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-gray-900" style={{ textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}>
+              Meet Your <span className="text-blush-400">Dream Team</span>
+            </h2>
+            <p className="text-lg leading-relaxed text-gray-600" style={{ textShadow: '1px 1px 2px rgba(255,255,255,0.6)' }}>
+              Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
