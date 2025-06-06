@@ -81,7 +81,7 @@ export default function Gallery() {
     : galleryImages.filter(image => image.category === filter);
 
   return (
-    <section ref={sectionRef} id="gallery" className="py-20 bg-gray-50">
+    <section ref={sectionRef} id="gallery" className="py-20 bg-gray-50 paper-texture">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
           <div className="premium-gradient marble-texture rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture">
