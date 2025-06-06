@@ -55,25 +55,11 @@ export default function Gallery() {
       description: "Sophisticated bridal hair styling with attention to detail",
     },
     {
-      src: holliePhoto,
-      alt: "Hollie DeMarais professional bridal makeup and hair artist - 18+ years salon experience in Pacific Northwest wedding beauty",
-      category: "bridal",
-      title: "Hollie DeMarais - Founder",
-      description: "18+ years of professional salon experience",
-    },
-    {
       src: bridalImage1,
       alt: "Bride and bridal party outdoor portrait showcasing coordinated beauty looks by At First Sight Beauty On Location team",
       category: "party",
       title: "Bridal Party Coordination",
       description: "Coordinated bridal party looks maintaining bride as focal point",
-    },
-    {
-      src: cedarPhoto,
-      alt: "Cedar Lapp-Ngauamo professional makeup artist and founder - owner of exclusive makeup college in Pacific Northwest",
-      category: "bridal",
-      title: "Cedar Lapp-Ngauamo - Founder",
-      description: "Owner of exclusive makeup college in Pacific Northwest",
     },
   ];
 
