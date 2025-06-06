@@ -137,7 +137,7 @@ export default function BridalDesignSession() {
               
               <Button
                 onClick={() => scrollToSection("booking")}
-                className="bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium mb-8"
+                className="bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium mb-8 mt-8"
               >
                 Book Your Design Session
               </Button>
@@ -175,7 +175,7 @@ export default function BridalDesignSession() {
         </section>
 
         {/* Studio Gallery */}
-        <section className="py-6 bg-white">
+        <section className="py-3 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
               <div className="scroll-animation">
