@@ -123,12 +123,12 @@ export default function BridalDesignSession() {
                 Your bridal glam starts well before the big day. Set in our private bridal suite, our Design Session isn't just a "Trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
               </p>
               
-              <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-                <div className="flex items-center justify-center mb-4">
-                  <Star className="w-6 h-6 text-blush-400 mr-2" />
-                  <span className="font-semibold text-gray-900">Personalized Touch-Up Kit Included so your look stays radiant from "I do" to your last dance.</span>
+              <div className="bg-white rounded-2xl p-4 shadow-lg mb-4">
+                <div className="flex items-center justify-center mb-2">
+                  <Star className="w-5 h-5 text-blush-400 mr-2" />
+                  <span className="font-semibold text-gray-900 text-sm">Personalized Touch-Up Kit Included so your look stays radiant from "I do" to your last dance.</span>
                 </div>
-                <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+                <div className="grid md:grid-cols-3 gap-2 text-xs text-gray-600">
                   <div>Custom lip color</div>
                   <div>Professional blotting papers</div>
                   <div>Bridal setting spray</div>
@@ -137,55 +137,47 @@ export default function BridalDesignSession() {
               
               <Button
                 onClick={() => scrollToSection("booking")}
-                className="bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium"
+                className="bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium mb-8"
               >
                 Book Your Design Session
               </Button>
-            </div>
-          </div>
-        </section>
-
-
-
-        {/* Process Steps */}
-        <section className="py-12 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-8">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Your Design Session Process
-              </h2>
-            </div>
-            
-            <div className="max-w-5xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8">
-                {processSteps.map((step, index) => (
-                  <div key={index} className="scroll-animation">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
-                        {step.number}
+              
+              {/* Design Session Process - Moved here */}
+              <div className="scroll-animation text-center">
+                <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                  Your Design Session Process
+                </h2>
+                
+                <div className="max-w-4xl mx-auto">
+                  <div className="grid md:grid-cols-2 gap-8">
+                    {processSteps.map((step, index) => (
+                      <div key={index} className="scroll-animation">
+                        <div className="flex items-start space-x-4">
+                          <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
+                            {step.number}
+                          </div>
+                          <div>
+                            <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-3">
+                              {step.title}
+                            </h3>
+                            <p className="text-gray-600 leading-relaxed">
+                              {step.description}
+                            </p>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-3">
-                          {step.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed">
-                          {step.description}
-                        </p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-
-
         {/* Studio Gallery */}
-        <section className="py-12 bg-white">
+        <section className="py-6 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
               <div className="scroll-animation">
                 <img
                   src={studioImage1}
