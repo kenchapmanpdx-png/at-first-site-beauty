@@ -142,10 +142,6 @@ export default function BridalDesignSession() {
         <section className="py-12 bg-blush-50">
           <div className="container mx-auto px-4">
             <div className="scroll-animation text-center max-w-4xl mx-auto">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Your Look. <span className="text-blush-400">Locked In.</span>
-              </h2>
-              
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-blush-400 mr-2" />
