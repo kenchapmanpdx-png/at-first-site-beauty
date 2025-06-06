@@ -39,7 +39,7 @@ export default function Hero() {
         aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"
       >
         <div className="hero-overlay absolute inset-0"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 md:h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-32 md:h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
       </div>
 
       <div className={`relative z-10 text-center text-white px-4 py-8 max-w-4xl mx-auto transform transition-all duration-1000 ${
