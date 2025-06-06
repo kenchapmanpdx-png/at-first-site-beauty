@@ -53,16 +53,22 @@ export default function Booking() {
   };
 
   return (
-    <section ref={sectionRef} id="booking" className="py-20 bg-gray-900 text-white">
-      <div className="container mx-auto px-4">
+    <section ref={sectionRef} id="booking" className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-10 left-10 w-40 h-40 bg-blush-500/10 rounded-full blur-3xl floating-element"></div>
+      <div className="absolute bottom-10 right-10 w-60 h-60 bg-blush-400/5 rounded-full blur-3xl floating-element" style={{animationDelay: '2s'}}></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="scroll-animation mb-12">
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
-              Let's Design Your <span className="text-blush-300">Dream Bridal Look</span>
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Ready to experience luxury bridal beauty services? Contact us today to schedule your consultation and design session.
-            </p>
+            <div className="premium-gradient rounded-3xl p-8 md:p-10 sparkle luxury-hover border border-white/10">
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 luxury-text text-gray-900">
+                Let's Design Your <span className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent">Dream Bridal Look</span>
+              </h2>
+              <p className="text-xl text-gray-700 mb-8">
+                Ready to experience luxury bridal beauty services? Contact us today to schedule your consultation and design session.
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">

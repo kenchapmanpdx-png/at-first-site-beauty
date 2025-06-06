@@ -77,28 +77,30 @@ export default function Gallery() {
     <section ref={sectionRef} id="gallery" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-blush-400">Portfolio</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Discover the artistry and elegance that defines our work. Each image tells a story of beauty, confidence, and unforgettable moments.
-          </p>
+          <div className="premium-gradient rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
+              Our <span className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent">Portfolio</span>
+            </h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+              Discover the artistry and elegance that defines our work. Each image tells a story of beauty, confidence, and unforgettable moments.
+            </p>
 
-          {/* Gallery Filter */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 md:mb-12">
-            {filterButtons.map((button) => (
-              <Button
-                key={button.id}
-                onClick={() => setFilter(button.id)}
-                className={`px-4 sm:px-6 py-2 rounded-full transition-colors duration-200 text-sm sm:text-base touch-manipulation ${
-                  filter === button.id
-                    ? "bg-blush-300 text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {button.label}
-              </Button>
-            ))}
+            {/* Gallery Filter */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+              {filterButtons.map((button) => (
+                <Button
+                  key={button.id}
+                  onClick={() => setFilter(button.id)}
+                  className={`px-4 sm:px-6 py-2 rounded-full transition-all duration-300 text-sm sm:text-base touch-manipulation luxury-hover ${
+                    filter === button.id
+                      ? "premium-button text-white"
+                      : "bg-white/80 text-gray-700 hover:bg-white hover:text-gray-900 shadow-md"
+                  }`}
+                >
+                  {button.label}
+                </Button>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -107,7 +109,7 @@ export default function Gallery() {
           {filteredImages.map((image, index) => (
             <figure
               key={index}
-              className="scroll-animation gallery-item break-inside-avoid"
+              className="scroll-animation gallery-item break-inside-avoid luxury-hover sparkle"
               itemScope
               itemType="https://schema.org/ImageObject"
             >
@@ -115,7 +117,7 @@ export default function Gallery() {
                 src={image.src}
                 alt={image.alt}
                 title={image.title}
-                className="w-full rounded-xl md:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-white/20 filter grayscale hover:grayscale-0 transition-all duration-700"
                 loading="lazy"
                 itemProp="contentUrl"
                 width="400"

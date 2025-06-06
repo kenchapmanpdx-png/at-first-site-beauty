@@ -83,23 +83,27 @@ export default function About() {
           </article>
 
           {/* Cedar Lapp-Ngauamo */}
-          <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
-            <img
-              src={cedarPhoto}
-              alt="Cedar Lapp-Ngauamo - Professional makeup artist and founder of Cedars Academy of Makeup Artistry, owner of exclusive makeup college in Pacific Northwest"
-              className="w-44 md:w-56 h-56 md:h-64 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
-              loading="lazy"
-              itemProp="image"
-              width="224"
-              height="256"
-            />
-            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
+          <article className="scroll-animation text-center premium-gradient rounded-3xl p-8 luxury-hover sparkle" itemScope itemType="https://schema.org/Person">
+            <div className="relative inline-block">
+              <img
+                src={cedarPhoto}
+                alt="Cedar Lapp-Ngauamo - Professional makeup artist and founder of Cedars Academy of Makeup Artistry, owner of exclusive makeup college in Pacific Northwest"
+                className="w-44 md:w-56 h-56 md:h-64 object-cover object-top rounded-2xl mx-auto mb-6 shadow-2xl filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105 floating-element"
+                loading="lazy"
+                itemProp="image"
+                width="224"
+                height="256"
+                style={{animationDelay: '1s'}}
+              />
+              <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blush-400 to-blush-600 rounded-full opacity-80"></div>
+            </div>
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2 luxury-text" itemProp="name">
               Cedar Lapp-Ngauamo
             </h3>
-            <p className="text-blush-400 mb-4 font-medium" itemProp="jobTitle">
+            <p className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent mb-4 font-medium" itemProp="jobTitle">
               Founder of Cedars Academy of Makeup Artistry
             </p>
-            <p className="text-gray-600 leading-relaxed" itemProp="description">
+            <p className="text-gray-700 leading-relaxed" itemProp="description">
               Creator of the only private beauty academy in the Pacific Northwest focused 100% on makeup artistry. Cedar personally trains and certifies all makeup artists on our team, ensuring consistent quality control and expertise.
             </p>
             <meta itemProp="worksFor" content="At First Sight Beauty On Location" />
@@ -110,16 +114,16 @@ export default function About() {
 
         {/* Team Excellence Section */}
         <div className="scroll-animation mt-20 text-center max-w-4xl mx-auto">
-          <h3 className="font-playfair text-3xl font-semibold text-gray-900 mb-6">
+          <h3 className="font-playfair text-3xl font-semibold text-gray-900 mb-6 luxury-text">
             Our Elite Team of Artists
           </h3>
-          <p className="text-lg text-gray-600 leading-relaxed mb-8">
+          <p className="text-lg text-gray-700 leading-relaxed mb-8">
             Our makeup is applied by artists that Cedar has personally trained and certified through her program. 
             Our hair styling is performed by elite artists that Hollie has carefully selected and trained in hair design. 
             Together, we maintain strict quality control to ensure that every client receives the absolute perfection they deserve.
           </p>
-          <div className="bg-blush-50 rounded-2xl p-8">
-            <h4 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
+          <div className="premium-gradient rounded-3xl p-8 md:p-10 luxury-hover sparkle">
+            <h4 className="font-playfair text-xl font-semibold bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent mb-4">
               Trust in Our Brand Promise
             </h4>
             <p className="text-gray-700 leading-relaxed">

@@ -78,19 +78,21 @@ export default function Services() {
     <section ref={sectionRef} id="services" className="py-20 bg-white" itemScope itemType="https://schema.org/Service">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-blush-400">Services</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            From intimate ceremonies to grand celebrations, we offer comprehensive beauty services to make your special day absolutely perfect.
-          </p>
+          <div className="premium-gradient rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
+              Our <span className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent">Services</span>
+            </h2>
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              From intimate ceremonies to grand celebrations, we offer comprehensive beauty services to make your special day absolutely perfect.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <article
               key={index}
-              className={`scroll-animation stagger-${index + 1} relative group overflow-hidden rounded-2xl md:rounded-3xl h-64 sm:h-80 md:h-96 cursor-pointer transform hover:scale-105 transition-all duration-700 touch-manipulation`}
+              className={`scroll-animation stagger-${index + 1} relative group overflow-hidden rounded-2xl md:rounded-3xl h-64 sm:h-80 md:h-96 cursor-pointer luxury-hover sparkle shadow-2xl border border-white/20 touch-manipulation`}
               itemScope
               itemType="https://schema.org/Service"
             >
