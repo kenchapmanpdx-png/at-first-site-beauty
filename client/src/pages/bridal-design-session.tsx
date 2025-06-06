@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Sparkles, Camera, Clock, Heart, MapPin, Star } from "lucide-react";
+import { ArrowLeft, Sparkles, Camera, Clock, Heart, MapPin, Star, CheckCircle } from "lucide-react";
 import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -295,6 +295,78 @@ export default function BridalDesignSession() {
           </div>
         </section>
 
+        {/* Pricing Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="scroll-animation text-center mb-16">
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Investment <span className="text-blush-400">& Pricing</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Our comprehensive bridal design session includes everything you need to create your perfect wedding day look.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="scroll-animation bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
+                <div className="text-center mb-8">
+                  <h3 className="font-playfair text-3xl font-bold text-gray-900 mb-4">
+                    Bride Hair and Makeup Design Session
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Complete design session with trial, consultation, and personalized touch-up kit
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8 mb-8">
+                  <div className="text-center p-6 bg-blush-50 rounded-2xl">
+                    <div className="text-3xl font-bold text-blush-400 mb-2">$650</div>
+                    <div className="text-gray-600 font-medium mb-2">January - April</div>
+                    <div className="text-sm text-gray-500">Off-season pricing</div>
+                  </div>
+                  <div className="text-center p-6 bg-gray-100 rounded-2xl">
+                    <div className="text-3xl font-bold text-gray-900 mb-2">$750</div>
+                    <div className="text-gray-600 font-medium mb-2">May - December</div>
+                    <div className="text-sm text-gray-500">Peak season pricing</div>
+                  </div>
+                </div>
+
+                <div className="border-t border-gray-200 pt-8">
+                  <h4 className="font-playfair text-xl font-semibold text-gray-900 mb-4 text-center">
+                    What's Included
+                  </h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Complete hair and makeup trial</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Personalized consultation</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Professional photography session</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Custom touch-up kit</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Wear testing and adjustments</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Private bridal suite experience</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section id="booking" className="py-20 bg-gray-900 text-white">
           <div className="container mx-auto px-4 text-center">
@@ -306,7 +378,10 @@ export default function BridalDesignSession() {
                 Book your luxury Bridal Hair & Makeup Design Session at our private bridal suite in downtown Vancouver, Washington.
               </p>
               
-              <Button className="bg-blush-300 hover:bg-blush-400 text-white px-12 py-4 rounded-full text-lg font-medium mb-6">
+              <Button 
+                onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+                className="bg-blush-300 hover:bg-blush-400 text-white px-12 py-4 rounded-full text-lg font-medium mb-6 transition-all duration-300 transform hover:scale-105"
+              >
                 Schedule Your Design Session
               </Button>
               

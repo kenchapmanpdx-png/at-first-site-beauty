@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Star, CheckCircle, Clock, Shield } from "lucide-react";
+import { ArrowLeft, Star, CheckCircle, Clock, Shield, DollarSign } from "lucide-react";
 import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -250,6 +250,76 @@ export default function TeethWhitening() {
           </div>
         </section>
 
+        {/* Pricing Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="scroll-animation text-center mb-16">
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Teeth Whitening <span className="text-blush-400">Investment</span>
+              </h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Get a brilliantly white smile in just one session with our professional-grade, FDA-registered treatment.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="scroll-animation bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
+                <div className="text-center mb-8">
+                  <div className="w-20 h-20 bg-blush-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <DollarSign size={32} className="text-blush-400" />
+                  </div>
+                  <h3 className="font-playfair text-3xl font-bold text-gray-900 mb-4">
+                    Professional Teeth Whitening
+                  </h3>
+                  <div className="text-4xl font-bold text-blush-400 mb-2">$200</div>
+                  <p className="text-gray-600 mb-6">
+                    Plus take-home kit for lasting results
+                  </p>
+                </div>
+
+                <div className="border-t border-gray-200 pt-8">
+                  <h4 className="font-playfair text-xl font-semibold text-gray-900 mb-6 text-center">
+                    Complete Package Includes
+                  </h4>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Professional FDA-registered treatment</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Custom take-home maintenance kit</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Safe, effective, and immediate results</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Perfect for wedding day confidence</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Professional consultation included</span>
+                    </div>
+                    <div className="flex items-start">
+                      <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
+                      <span className="text-gray-700">Gentle on teeth and gums</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-blush-50 rounded-2xl p-6 mt-8">
+                  <h5 className="font-semibold text-gray-900 mb-2">Perfect Timing for Your Wedding</h5>
+                  <p className="text-gray-700 text-sm">
+                    Schedule your teeth whitening 1-2 weeks before your wedding for optimal results. The take-home kit ensures your smile stays brilliant through your honeymoon and beyond.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section id="booking" className="py-20 bg-blush-50">
           <div className="container mx-auto px-4 text-center">
@@ -261,7 +331,10 @@ export default function TeethWhitening() {
                 Book your professional teeth whitening session today and see immediate results with our FDA-registered system.
               </p>
               
-              <Button className="bg-blush-300 hover:bg-blush-400 text-white px-12 py-4 rounded-full text-lg font-medium">
+              <Button 
+                onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+                className="bg-blush-300 hover:bg-blush-400 text-white px-12 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
+              >
                 Schedule Your Appointment
               </Button>
               

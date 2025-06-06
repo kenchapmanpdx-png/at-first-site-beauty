@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Droplets, Heart, Sparkles, Shield, Users, CheckCircle } from "lucide-react";
+import { ArrowLeft, Droplets, Heart, Sparkles, Shield, Users, CheckCircle, DollarSign } from "lucide-react";
 import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
