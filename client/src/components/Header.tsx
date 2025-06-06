@@ -21,14 +21,14 @@ export default function Header() {
         <div className="flex items-center justify-center pt-4 md:pt-8 pb-2 md:pb-4">
           <div className="container mx-auto px-4 flex justify-center">
             <div className="text-center">
-              <h1 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-                <span className="block">At First</span>
-                <span className="block text-blush-400 -mt-1 md:-mt-2">Site</span>
-                <span className="block text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-gray-700 mt-1 md:mt-2 tracking-wider">
-                  BEAUTY ON LOCATION
+              <h1 className="leading-tight">
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-script font-medium text-gray-600">
+                  At First Site
+                </span>
+                <span className="block text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-light tracking-[0.4em] mt-0 md:mt-1 text-gray-700 uppercase">
+                  Beauty On Location
                 </span>
               </h1>
-              <div className="hidden sm:block w-24 md:w-32 lg:w-40 h-px bg-gradient-to-r from-transparent via-blush-300 to-transparent mx-auto mt-2 md:mt-3"></div>
             </div>
           </div>
         </div>
