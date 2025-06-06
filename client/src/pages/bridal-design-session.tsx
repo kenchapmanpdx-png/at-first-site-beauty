@@ -139,7 +139,7 @@ export default function BridalDesignSession() {
         </section>
 
         {/* Your Look Locked In */}
-        <section className="py-20 bg-blush-50">
+        <section className="py-12 bg-blush-50">
           <div className="container mx-auto px-4">
             <div className="scroll-animation text-center max-w-4xl mx-auto">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -168,7 +168,7 @@ export default function BridalDesignSession() {
 
 
         {/* Process Steps */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
             <div className="scroll-animation text-center mb-16">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -203,7 +203,7 @@ export default function BridalDesignSession() {
 
 
         {/* Studio Gallery */}
-        <section className="py-20 bg-white">
+        <section className="py-12 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
               <div className="scroll-animation">
