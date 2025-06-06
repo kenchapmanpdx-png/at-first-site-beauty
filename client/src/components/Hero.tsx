@@ -52,27 +52,25 @@ export default function Hero() {
       <div className={`relative z-10 text-center text-white px-4 py-8 max-w-4xl mx-auto transform transition-all duration-1000 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
-        <div className="premium-gradient rounded-3xl p-8 md:p-12 sparkle">
-          <h1 className={`font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight luxury-text text-gray-900 ${
-            isLoaded ? 'stagger-1' : ''
-          }`}>
-            Luxury Bridal Hair & Makeup,{" "}
-            <span className="text-blush-500 bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent">On Location</span>
-          </h1>
-          <p className={`text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 font-light leading-relaxed text-gray-700 ${
-            isLoaded ? 'stagger-2' : ''
-          }`}>
-            Serving the Pacific Northwest with elegance, expertise, and ease
-          </p>
-          <Button
-            onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-            className={`premium-button text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation ${
-              isLoaded ? 'stagger-3' : ''
-            }`}
-          >
-            Book Your Design Session
-          </Button>
-        </div>
+        <h1 className={`font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 leading-tight luxury-text ${
+          isLoaded ? 'stagger-1' : ''
+        }`} style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+          Luxury Bridal Hair & Makeup,{" "}
+          <span className="text-blush-300">On Location</span>
+        </h1>
+        <p className={`text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 font-light leading-relaxed opacity-90 ${
+          isLoaded ? 'stagger-2' : ''
+        }`} style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>
+          Serving the Pacific Northwest with elegance, expertise, and ease
+        </p>
+        <Button
+          onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+          className={`premium-button text-white px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-full text-sm sm:text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation ${
+            isLoaded ? 'stagger-3' : ''
+          }`}
+        >
+          Book Your Design Session
+        </Button>
       </div>
 
       <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
