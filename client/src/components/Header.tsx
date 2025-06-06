@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,15 +17,19 @@ export default function Header() {
     <>
       {/* Mobile-First Responsive Header */}
       <header className="relative bg-white">
-        {/* Logo Section - Responsive sizing */}
+        {/* Logo Section - Text-based responsive logo */}
         <div className="flex items-center justify-center pt-4 md:pt-8 pb-2 md:pb-4">
           <div className="container mx-auto px-4 flex justify-center">
-            <img
-              src={logo}
-              alt="At First Site Beauty On Location"
-              className="h-auto object-contain max-w-[320px] sm:max-w-[450px] md:max-w-[600px] lg:max-w-[800px] xl:max-w-[1000px]"
-              style={{ maxHeight: '140px' }}
-            />
+            <div className="text-center">
+              <h1 className="font-playfair text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+                <span className="block">At First</span>
+                <span className="block text-blush-400 -mt-1 md:-mt-2">Site</span>
+                <span className="block text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-gray-700 mt-1 md:mt-2 tracking-wider">
+                  BEAUTY ON LOCATION
+                </span>
+              </h1>
+              <div className="hidden sm:block w-24 md:w-32 lg:w-40 h-px bg-gradient-to-r from-transparent via-blush-300 to-transparent mx-auto mt-2 md:mt-3"></div>
+            </div>
           </div>
         </div>
         
