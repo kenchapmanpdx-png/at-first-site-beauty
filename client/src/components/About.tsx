@@ -121,8 +121,8 @@ export default function About() {
             Our hair styling is performed by elite artists that Hollie has carefully selected and trained in hair design. 
             Together, we maintain strict quality control to ensure that every client receives the absolute perfection they deserve.
           </p>
-          <div className="premium-gradient rounded-3xl p-8 md:p-10 luxury-hover sparkle">
-            <h4 className="font-playfair text-xl font-semibold bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent mb-4">
+          <div className="premium-gradient rounded-2xl p-6 luxury-hover sparkle">
+            <h4 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
               Trust in Our Brand Promise
             </h4>
             <p className="text-gray-700 leading-relaxed">
