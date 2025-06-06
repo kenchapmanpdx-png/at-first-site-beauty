@@ -74,71 +74,73 @@ export default function Booking() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Contact Form */}
             <div className="scroll-animation order-2 md:order-1">
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <Input
-                    placeholder="First Name"
-                    value={formData.firstName}
-                    onChange={(e) => handleInputChange("firstName", e.target.value)}
-                    className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blush-300 h-12 touch-manipulation"
-                    required
-                  />
-                  <Input
-                    placeholder="Last Name"
-                    value={formData.lastName}
-                    onChange={(e) => handleInputChange("lastName", e.target.value)}
-                    className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blush-300 h-12 touch-manipulation"
-                    required
-                  />
+              <div className="premium-gradient rounded-3xl p-6 md:p-8 shadow-2xl border border-white/10 sparkle">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <Input
+                      placeholder="First Name"
+                      value={formData.firstName}
+                      onChange={(e) => handleInputChange("firstName", e.target.value)}
+                      className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
+                      required
+                    />
+                    <Input
+                      placeholder="Last Name"
+                      value={formData.lastName}
+                      onChange={(e) => handleInputChange("lastName", e.target.value)}
+                      className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
+                      required
+                    />
                 </div>
-                <Input
-                  type="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange("email", e.target.value)}
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blush-300 h-12 touch-manipulation"
-                  required
-                />
-                <Input
-                  type="tel"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={(e) => handleInputChange("phone", e.target.value)}
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blush-300 h-12 touch-manipulation"
-                />
-                <Input
-                  type="date"
-                  placeholder="Wedding Date"
-                  value={formData.weddingDate}
-                  onChange={(e) => handleInputChange("weddingDate", e.target.value)}
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blush-300 h-12 touch-manipulation"
-                />
-                <Select onValueChange={(value) => handleInputChange("serviceType", value)}>
-                  <SelectTrigger className="bg-gray-800 border-gray-700 text-white focus:border-blush-300 h-12 touch-manipulation">
-                    <SelectValue placeholder="Select Service Type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="bridal">Bridal Hair & Makeup</SelectItem>
-                    <SelectItem value="party">Bridal Party Services</SelectItem>
-                    <SelectItem value="teeth">Teeth Whitening</SelectItem>
-                    <SelectItem value="tanning">Spray Tanning</SelectItem>
-                    <SelectItem value="multiple">Multiple Services</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Textarea
-                  placeholder="Tell us about your vision..."
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => handleInputChange("message", e.target.value)}
-                  className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-blush-300 resize-none touch-manipulation"
-                />
-                <Button
-                  type="submit"
-                  className="w-full bg-blush-300 hover:bg-blush-400 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-medium transition-all duration-300 transform hover:scale-105 touch-manipulation h-12 md:h-auto"
-                >
-                  Send Message
-                </Button>
-              </form>
+                  <Input
+                    type="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
+                    required
+                  />
+                  <Input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
+                    className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
+                  />
+                  <Input
+                    type="date"
+                    placeholder="Wedding Date"
+                    value={formData.weddingDate}
+                    onChange={(e) => handleInputChange("weddingDate", e.target.value)}
+                    className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
+                  />
+                  <Select onValueChange={(value) => handleInputChange("serviceType", value)}>
+                    <SelectTrigger className="bg-white/90 border-gray-300 text-gray-900 focus:border-blush-400 h-12 touch-manipulation luxury-hover">
+                      <SelectValue placeholder="Select Service Type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="bridal">Bridal Hair & Makeup</SelectItem>
+                      <SelectItem value="party">Bridal Party Services</SelectItem>
+                      <SelectItem value="teeth">Teeth Whitening</SelectItem>
+                      <SelectItem value="tanning">Spray Tanning</SelectItem>
+                      <SelectItem value="multiple">Multiple Services</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Textarea
+                    placeholder="Tell us about your vision..."
+                    rows={4}
+                    value={formData.message}
+                    onChange={(e) => handleInputChange("message", e.target.value)}
+                    className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 resize-none touch-manipulation luxury-hover"
+                  />
+                  <Button
+                    type="submit"
+                    className="w-full premium-button text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation h-12 md:h-auto"
+                  >
+                    Send Message
+                  </Button>
+                </form>
+              </div>
             </div>
 
             {/* Contact Information */}
