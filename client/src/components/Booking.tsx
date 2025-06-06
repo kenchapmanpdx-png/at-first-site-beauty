@@ -150,7 +150,7 @@ export default function Booking() {
                     <Mail size={20} className="text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-300">hello@atfirstsitebeauty.com</p>
+                    <p className="text-gray-300">bookings@atfirstsitebeauty.com</p>
                   </div>
                 </div>
 
@@ -159,7 +159,7 @@ export default function Booking() {
                     <Phone size={20} className="text-white" />
                   </div>
                   <div>
-                    <p className="text-gray-300">(555) 123-4567</p>
+                    <p className="text-gray-300">(360) 215-5444</p>
                   </div>
                 </div>
 
