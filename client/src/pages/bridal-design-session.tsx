@@ -98,7 +98,7 @@ export default function BridalDesignSession() {
       
       <main ref={sectionRef} className="pt-8">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-8 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
             <Button
               onClick={() => setLocation("/")}
@@ -115,7 +115,7 @@ export default function BridalDesignSession() {
                 <span className="text-blush-400 font-medium text-lg">The Bridal Hair & Makeup Design Session</span>
               </div>
               
-              <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-9">
                 Where Your Dream Look Begins. Your Look, <span className="text-blush-400">Locked In.</span>
               </h1>
               
