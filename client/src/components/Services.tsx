@@ -48,10 +48,11 @@ export default function Services() {
     {
       image: makeupImage,
       title: "Bridal Party Hair & Makeup",
-      description: "Coordinated looks for your entire bridal party. We ensure everyone looks stunning while maintaining the bride as the focal point.",
+      description: "Coordinated looks for your entire bridal party. We ensure everyone looks stunning while maintaining the bride as the focal point. A cohesive look is essential for creating harmonious, photo-ready results.",
       alt: "Professional bridal party hair and makeup coordination by certified artists - Pacific Northwest wedding party beauty services",
       keywords: "bridal party makeup, bridesmaids hair, wedding party styling, group beauty services",
-      category: "Bridal Party Services"
+      category: "Bridal Party Services",
+      link: "/bridal-party"
     },
     {
       image: teethWhiteningImage,
