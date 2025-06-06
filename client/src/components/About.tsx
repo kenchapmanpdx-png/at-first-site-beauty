@@ -97,7 +97,7 @@ export default function About() {
               Founder of Cedars Academy of Makeup Artistry
             </p>
             <p className="text-gray-600 leading-relaxed" itemProp="description">
-              Owner of the only private care college in the Pacific Northwest focused solely on makeup artistry. Cedar personally trains and certifies all makeup artists on our team, ensuring consistent quality control and expertise.
+              Creator of the only private beauty academy in the Pacific Northwest focused 100% on makeup artistry. Cedar personally trains and certifies all makeup artists on our team, ensuring consistent quality control and expertise.
             </p>
             <meta itemProp="worksFor" content="At First Sight Beauty On Location" />
             <meta itemProp="knowsAbout" content="Makeup Artistry, Bridal Makeup, Makeup Education, Artist Training" />
