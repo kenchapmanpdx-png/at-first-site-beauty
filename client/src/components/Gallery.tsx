@@ -50,22 +50,29 @@ export default function Gallery() {
     {
       src: bridalHair,
       alt: "Elegant bridal hair styling with intricate details - Pacific Northwest wedding hair artist specializing in luxury updos",
-      category: "bridal",
-      title: "Bridal Hair Artistry",
-      description: "Sophisticated bridal hair styling with attention to detail",
+      category: "party",
+      title: "Bridal Party Hair Styling",
+      description: "Professional hair styling for bridal party members",
     },
     {
-      src: bridalImage1,
+      src: holliePhoto,
       alt: "Bride and bridal party outdoor portrait showcasing coordinated beauty looks by At First Sight Beauty On Location team",
       category: "party",
       title: "Bridal Party Coordination",
       description: "Coordinated bridal party looks maintaining bride as focal point",
     },
+    {
+      src: cedarPhoto,
+      alt: "Professional makeup artist applying bridal party makeup with attention to detail and coordination",
+      category: "party",
+      title: "Bridal Party Makeup",
+      description: "Expert makeup application for bridal party members",
+    },
   ];
 
   const filterButtons = [
     { id: "all", label: "All" },
-    { id: "bridal", label: "Bridal" },
+    { id: "bridal", label: "Brides" },
     { id: "party", label: "Bridal Party" },
   ];
 
@@ -79,7 +86,7 @@ export default function Gallery() {
         <div className="scroll-animation text-center mb-16">
           <div className="premium-gradient rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
-              Our <span className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent">Portfolio</span>
+              Our <span className="text-blush-400">Portfolio</span>
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
               Discover the artistry and elegance that defines our work. Each image tells a story of beauty, confidence, and unforgettable moments.

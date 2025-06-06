@@ -80,7 +80,7 @@ export default function Services() {
         <div className="scroll-animation text-center mb-16">
           <div className="premium-gradient rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
-              Our <span className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent">Services</span>
+              Our <span className="text-blush-400">Services</span>
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               From intimate ceremonies to grand celebrations, we offer comprehensive beauty services to make your special day absolutely perfect.
