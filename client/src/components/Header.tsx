@@ -34,7 +34,7 @@ export default function Header() {
         </div>
         
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex justify-center pb-4">
+        <div className="md:hidden flex justify-center pb-6 relative z-10">
           <Button
             variant="ghost"
             size="sm"
@@ -47,7 +47,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden md:flex justify-center pb-4">
+        <nav className="hidden md:flex justify-center pb-6 relative z-10">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-3">
             <button
               onClick={() => scrollToSection("home")}
