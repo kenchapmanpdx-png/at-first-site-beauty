@@ -120,7 +120,7 @@ export default function BridalDesignSession() {
               </h1>
               
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Your bridal glam starts well before the big day. Our Design Session isn't just a "trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
+                Your bridal glam starts well before the big day. Set in our private bridal suite, our Design Session isn't just a "Trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
               </p>
               
               <div className="flex items-center justify-center text-gray-600 mb-8">
