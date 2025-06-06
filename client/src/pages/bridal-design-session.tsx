@@ -350,7 +350,7 @@ export default function BridalDesignSession() {
                     </div>
                     <div className="flex items-start">
                       <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
-                      <span className="text-gray-700">Professional photography session</span>
+                      <span className="text-gray-700">Wear testing and adjustments</span>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle size={20} className="text-blush-400 mr-3 mt-1 flex-shrink-0" />
