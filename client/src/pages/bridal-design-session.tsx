@@ -146,14 +146,10 @@ export default function BridalDesignSession() {
                 Your Look. <span className="text-blush-400">Locked In.</span>
               </h2>
               
-              <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored. You'll also receive a personalized touch-up kit, complete with your lip color, blotting papers, and our professional-grade bridal setting spray — so your look stays radiant from "I do" to your last dance.
-              </p>
-              
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="flex items-center justify-center mb-4">
                   <Star className="w-6 h-6 text-blush-400 mr-2" />
-                  <span className="font-semibold text-gray-900">Personalized Touch-Up Kit Included</span>
+                  <span className="font-semibold text-gray-900">Personalized Touch-Up Kit Included so your look stays radiant from "I do" to your last dance.</span>
                 </div>
                 <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
                   <div>Custom lip color</div>
