@@ -25,7 +25,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8 md:pt-0" itemScope itemType="https://schema.org/Organization">
+    <section id="home" className="relative min-h-screen flex items-end justify-center overflow-hidden pt-8 md:pt-0" itemScope itemType="https://schema.org/Organization">
       {/* Background Image with Enhanced Parallax */}
       <div
         className="absolute inset-0 bg-cover bg-center parallax-bg filter grayscale scale-105 transition-all duration-700"
@@ -50,7 +50,7 @@ export default function Hero() {
       <div className="absolute bottom-32 right-32 w-3 h-3 bg-white/20 rounded-full floating-element hidden md:block" style={{animationDelay: '4s'}}></div>
       <div className="absolute top-1/3 left-1/4 w-1.5 h-1.5 bg-white/25 rounded-full floating-element hidden lg:block" style={{animationDelay: '1s'}}></div>
 
-      <div className={`relative z-10 text-center text-white px-4 py-8 max-w-4xl mx-auto transform transition-all duration-1000 ${
+      <div className={`relative z-10 text-center text-white px-4 pb-16 md:pb-20 lg:pb-24 max-w-4xl mx-auto transform transition-all duration-1000 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
         <h1 className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 luxury-text ${
