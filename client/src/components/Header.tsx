@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocation } from "wouter";
+import logoImage from "@assets/1At First Site Logo (1000 x 350 px)_1749329275440.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,7 +34,7 @@ export default function Header() {
           <div className="container mx-auto px-4 flex justify-center">
             <div className="text-center">
               <img
-                src="/attached_assets/1At First Site Logo (1000 x 350 px)_1749329275440.png"
+                src={logoImage}
                 alt="At First Site Beauty On Location - Professional bridal hair and makeup services in Pacific Northwest"
                 className="w-auto h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 mx-auto drop-shadow-lg"
                 loading="eager"
