@@ -28,12 +28,9 @@ export default function Header() {
   return (
     <>
       {/* Mobile-First Responsive Header */}
-      <header className="relative pb-8 md:pb-12">
-        {/* Header background with gradient fade */}
-        <div className="absolute inset-0 bg-white"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-b from-white to-transparent"></div>
+      <header className="relative bg-white">
         {/* Logo Section - Image-based logo */}
-        <div className="relative z-10 flex items-center justify-center pt-2 md:pt-4 pb-1 md:pb-2">
+        <div className="flex items-center justify-center pt-2 md:pt-4 pb-1 md:pb-2">
           <div className="container mx-auto px-4 flex justify-center">
             <div className="text-center">
               <img
