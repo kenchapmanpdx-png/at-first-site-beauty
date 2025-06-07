@@ -83,7 +83,7 @@ export default function Services() {
               Our <span className="text-blush-400">Services</span>
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              From intimate ceremonies to grand celebrations, we offer comprehensive beauty services to make your special day absolutely perfect.
+              Whether it's a wedding, prom, quinceañera, or just a special night out, we offer complete beauty services designed to elevate any occasion.
             </p>
           </div>
         </div>

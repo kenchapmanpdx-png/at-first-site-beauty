@@ -117,18 +117,14 @@ export default function About() {
             Our Elite Team of Artists
           </h3>
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
-            Our makeup is applied by artists that Cedar has personally trained and certified through her program. 
-            Our hair styling is performed by elite artists that Hollie has carefully selected and trained in hair design. 
-            Together, we maintain strict quality control to ensure that every client receives the absolute perfection they deserve.
+            Our makeup artists are personally trained and certified by Cedar. Hair styling is handled by top professionals selected and mentored by Hollie. Together, they uphold strict standards to ensure every client receives flawless results.
           </p>
           <div className="premium-gradient rounded-2xl p-6 luxury-hover sparkle">
             <h4 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
               Trust in Our Brand Promise
             </h4>
             <p className="text-gray-700 leading-relaxed">
-              When you book with At First Site Beauty, you're not just hiring artists — you're investing in a system of excellence. 
-              Our makeup will wear beautifully throughout your entire day, and our styling will photograph flawlessly. 
-              This is the trust and quality control that sets us apart in the Pacific Northwest.
+              You're not just hiring amazing artists. You're investing in a system of excellence. Our makeup will wear beautifully throughout your entire day, and our styling will photograph flawlessly. This is the trust and quality control that sets us apart in the Pacific Northwest.
             </p>
           </div>
         </div>
