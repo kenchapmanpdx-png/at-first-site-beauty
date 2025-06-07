@@ -117,11 +117,11 @@ export default function About() {
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
             Our makeup artists are personally trained and certified by Cedar. Hair styling is handled by top professionals selected and mentored by Hollie. Together, they uphold strict standards to ensure every client receives flawless results.
           </p>
-          <div className="premium-gradient rounded-2xl p-6 luxury-hover sparkle">
-            <h4 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
+          <div className="bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 rounded-2xl p-6 luxury-hover sparkle">
+            <h4 className="font-playfair text-xl font-semibold text-blush-400 mb-4">
               Trust in Our Brand Promise
             </h4>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-gray-100 leading-relaxed">
               You're not just hiring amazing artists. You're investing in a system of excellence. Our makeup will wear beautifully throughout your entire day, and our styling will photograph flawlessly. This is the trust and quality control that sets us apart in the Pacific Northwest.
             </p>
           </div>
