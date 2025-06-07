@@ -318,7 +318,7 @@
       transparent 70%,
       transparent 100%
     );
-    animation: diagonalShimmer 4s ease-in-out infinite;
+    animation: diagonalShimmer 6.4s ease-in-out infinite;
     border-radius: inherit;
     transform: rotate(45deg);
   }
