@@ -78,9 +78,9 @@ export default function Services() {
     <section ref={sectionRef} id="services" className="py-20 bg-white silk-texture" itemScope itemType="https://schema.org/Service">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <div className="marble-texture rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture shimmer-effect" style={{backgroundColor: '#e0c8d1'}}>
+          <div className="marble-texture rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture shimmer-effect" style={{backgroundColor: '#E4C4D0'}}>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
-              Our <span className="text-blush-400">Services</span>
+              Our <span className="text-white">Services</span>
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Whether it's a wedding, prom, quinceañera, or just a special night out, we offer complete beauty services designed to elevate any occasion.
