@@ -85,6 +85,12 @@ export default function Gallery() {
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
           <div className="rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture shimmer-effect" style={{backgroundColor: '#f1e8eb'}}>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
               Our <span className="text-white">Portfolio</span>
             </h2>
