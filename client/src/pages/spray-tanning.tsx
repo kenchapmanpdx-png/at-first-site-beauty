@@ -131,7 +131,7 @@ export default function SprayTanning() {
               
               <Button
                 onClick={() => scrollToSection("booking")}
-                className="bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium"
+                className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
               >
                 Book Your Spray Tan
               </Button>
@@ -372,7 +372,7 @@ export default function SprayTanning() {
               
               <Button 
                 onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-                className="bg-blush-300 hover:bg-blush-400 text-white px-12 py-4 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105"
+                className="premium-button text-white px-12 py-4 rounded-full text-lg font-medium luxury-hover"
               >
                 Schedule Your Spray Tan
               </Button>

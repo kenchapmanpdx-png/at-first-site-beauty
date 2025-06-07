@@ -137,7 +137,7 @@ export default function BridalDesignSession() {
               
               <Button
                 onClick={() => scrollToSection("booking")}
-                className="bg-blush-300 hover:bg-blush-400 text-white px-10 py-4 rounded-full text-lg font-medium mb-8 mt-8"
+                className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium mb-8 mt-8 luxury-hover"
               >
                 Book Your Design Session
               </Button>
@@ -319,7 +319,7 @@ export default function BridalDesignSession() {
               
               <Button 
                 onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-                className="bg-blush-300 hover:bg-blush-400 text-white px-12 py-4 rounded-full text-lg font-medium mb-6 transition-all duration-300 transform hover:scale-105"
+                className="premium-button text-white px-12 py-4 rounded-full text-lg font-medium mb-6 luxury-hover"
               >
                 Schedule Your Design Session
               </Button>
