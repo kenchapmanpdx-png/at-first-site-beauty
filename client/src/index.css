@@ -187,10 +187,10 @@
 
   /* Sophisticated button effects */
   .premium-button {
-    background: linear-gradient(135deg, hsl(343, 35%, 85%) 0%, hsl(343, 45%, 70%) 100%);
+    background: linear-gradient(135deg, #43495E 0%, #3A4052 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 
-      0 4px 15px 0 hsla(343, 35%, 75%, 0.3),
+      0 4px 15px 0 rgba(67, 73, 94, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
@@ -198,7 +198,7 @@
   .premium-button:hover {
     transform: translateY(-2px);
     box-shadow: 
-      0 8px 25px 0 hsla(343, 35%, 75%, 0.4),
+      0 8px 25px 0 rgba(67, 73, 94, 0.4),
       inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
