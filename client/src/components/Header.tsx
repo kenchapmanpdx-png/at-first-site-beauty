@@ -28,18 +28,18 @@ export default function Header() {
     <>
       {/* Mobile-First Responsive Header */}
       <header className="relative bg-white">
-        {/* Logo Section - Text-based responsive logo */}
+        {/* Logo Section - Image-based logo */}
         <div className="flex items-center justify-center pt-4 md:pt-8 pb-2 md:pb-4">
           <div className="container mx-auto px-4 flex justify-center">
             <div className="text-center">
-              <h1 className="leading-tight">
-                <span className="block text-8xl sm:text-9xl md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-thin text-gray-700 drop-shadow-lg" style={{ fontFamily: "'Darleston', 'Great Vibes', cursive", textShadow: '2px 2px 4px rgba(0,0,0,0.1)', fontWeight: '100' }}>
-                  At First Site
-                </span>
-                <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium tracking-[0.4em] mt-0 md:mt-2 text-blush-400 uppercase drop-shadow-sm" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}>
-                  Beauty On Location
-                </span>
-              </h1>
+              <img
+                src="/attached_assets/1At First Site Logo (1000 x 350 px)_1749329275440.png"
+                alt="At First Site Beauty On Location - Professional bridal hair and makeup services in Pacific Northwest"
+                className="w-auto h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 mx-auto drop-shadow-lg"
+                loading="eager"
+                width="1000"
+                height="350"
+              />
             </div>
           </div>
         </div>
