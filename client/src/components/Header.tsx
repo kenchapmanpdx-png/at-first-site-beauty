@@ -30,7 +30,7 @@ export default function Header() {
       {/* Mobile-First Responsive Header */}
       <header className="relative bg-white">
         {/* Logo Section - Image-based logo */}
-        <div className="flex items-center justify-center pt-4 md:pt-8 pb-2 md:pb-4">
+        <div className="flex items-center justify-center pt-2 md:pt-4 pb-1 md:pb-2">
           <div className="container mx-auto px-4 flex justify-center">
             <div className="text-center">
               <img
