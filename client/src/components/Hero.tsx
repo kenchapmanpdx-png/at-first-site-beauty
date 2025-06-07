@@ -24,7 +24,7 @@ export default function Hero() {
         className="absolute inset-0 bg-cover parallax-bg filter grayscale"
         style={{
           backgroundImage: `url(${heroImage})`,
-          backgroundPosition: 'center 45%',
+          backgroundPosition: 'center 25%',
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
         role="img"
