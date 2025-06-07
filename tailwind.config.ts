@@ -8,7 +8,7 @@ export default {
       fontFamily: {
         cursive: ["Great Vibes", "Dancing Script", "cursive"],
         dancing: ["Dancing Script", "cursive"],
-        regency: ["RegencyScript", "Great Vibes", "cursive"],
+        darleston: ["Darleston", "Great Vibes", "cursive"],
       },
       borderRadius: {
         lg: "var(--radius)",
