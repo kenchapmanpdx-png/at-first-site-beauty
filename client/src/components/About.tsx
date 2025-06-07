@@ -58,11 +58,11 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg" itemScope itemType="https://schema.org/AboutPage">
+    <section ref={sectionRef} id="about" className="py-28 bg-gray-50 watercolor-bg" itemScope itemType="https://schema.org/AboutPage">
       <div className="container mx-auto px-4">
         <div 
           ref={headerRef}
-          className={`scroll-slow max-w-3xl mx-auto text-center mb-20 transition-all duration-500 ${
+          className={`scroll-slow max-w-3xl mx-auto text-center mb-24 transition-all duration-500 ${
             isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-gray-900'
           }`}
         >

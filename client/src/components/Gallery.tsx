@@ -84,7 +84,7 @@ export default function Gallery() {
     <section ref={sectionRef} id="gallery" className="py-20 bg-gray-50 paper-texture">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <div className="marble-texture rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture shimmer-effect" style={{backgroundColor: '#E4C4D0'}}>
+          <div className="rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture shimmer-effect" style={{backgroundColor: '#E4C4D0'}}>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
               Our <span className="text-white">Portfolio</span>
             </h2>
