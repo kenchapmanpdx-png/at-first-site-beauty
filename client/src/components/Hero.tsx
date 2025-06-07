@@ -40,7 +40,7 @@ export default function Hero() {
       >
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-        <div className="absolute top-0 left-0 right-0 h-20 md:h-24 bg-gradient-to-b from-white via-white/60 to-transparent"></div>
+
         <div className="absolute bottom-0 left-0 right-0 h-32 md:h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
       </div>
 
