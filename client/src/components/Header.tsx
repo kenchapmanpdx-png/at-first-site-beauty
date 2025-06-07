@@ -36,7 +36,7 @@ export default function Header() {
               <img
                 src={logoImage}
                 alt="At First Site Beauty On Location - Professional bridal hair and makeup services in Pacific Northwest"
-                className="w-auto h-36 sm:h-44 md:h-52 lg:h-60 xl:h-72 mx-auto drop-shadow-lg"
+                className="w-auto h-48 sm:h-56 md:h-68 lg:h-80 xl:h-96 mx-auto drop-shadow-lg"
                 loading="eager"
                 width="1000"
                 height="350"
