@@ -84,11 +84,11 @@ export default function Gallery() {
     <section ref={sectionRef} id="gallery" className="py-20 bg-gray-50 paper-texture">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <div className="marble-texture rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture" style={{background: 'linear-gradient(to bottom right, #43495E, #3A4052, #43495E)'}}>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6 luxury-text">
+          <div className="marble-texture rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture" style={{backgroundColor: '#e3cfd6'}}>
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
               Our <span className="text-blush-400">Portfolio</span>
             </h2>
-            <p className="text-lg text-gray-100 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
               Discover the artistry and elegance that defines our work. Each image tells a story of beauty, confidence, and unforgettable moments.
             </p>
 
