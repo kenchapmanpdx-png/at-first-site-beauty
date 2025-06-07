@@ -42,7 +42,7 @@ export default function Header() {
                 height="350"
               />
               <div className="mt-2 sm:mt-3 md:mt-4">
-                <p className="bg-gradient-to-r from-blush-400 to-blush-600 bg-clip-text text-transparent font-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-[0.2em] drop-shadow-md font-sans" 
+                <p className="text-pink-500 font-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-[0.2em] drop-shadow-md font-sans bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent" 
                    style={{ width: '70%', margin: '0 auto' }}>
                   BEAUTY ON LOCATION
                 </p>
