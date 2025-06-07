@@ -76,7 +76,7 @@ export default function About() {
           <p className={`text-lg leading-relaxed transition-all duration-500 ${
             isHeaderOverPhoto ? 'text-gray-100' : 'text-gray-600'
           }`}>
-            Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
+            With over 30 years of combined experience in the beauty industry, we created a platform built on trust. When you book with us, your hair and makeup will be done to absolute perfection.
           </p>
         </div>
 
