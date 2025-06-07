@@ -91,6 +91,12 @@ export default function Gallery() {
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
               Our <span className="text-white">Portfolio</span>
             </h2>

@@ -85,6 +85,12 @@ export default function Services() {
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
               Our <span className="text-white">Services</span>
             </h2>

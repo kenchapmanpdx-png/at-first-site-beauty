@@ -305,11 +305,11 @@
     content: '✦';
     position: absolute;
     font-size: 18px;
-    color: #ffffff;
+    color: rgba(255, 255, 255, 0.75);
     text-shadow: 
-      0 0 8px rgba(255, 255, 255, 1),
-      0 0 16px rgba(255, 255, 255, 0.8),
-      0 0 24px rgba(255, 255, 255, 0.6);
+      0 0 8px rgba(255, 255, 255, 0.75),
+      0 0 16px rgba(255, 255, 255, 0.6),
+      0 0 24px rgba(255, 255, 255, 0.45);
     opacity: 0;
     z-index: 10;
     pointer-events: none;
@@ -353,6 +353,42 @@
     top: 80%;
     right: 60%;
     animation-delay: 1.5s;
+  }
+
+  .shimmer-effect .sparkle:nth-child(7) {
+    top: 35%;
+    left: 25%;
+    animation-delay: 1.8s;
+  }
+
+  .shimmer-effect .sparkle:nth-child(8) {
+    top: 55%;
+    right: 40%;
+    animation-delay: 2.1s;
+  }
+
+  .shimmer-effect .sparkle:nth-child(9) {
+    top: 15%;
+    left: 60%;
+    animation-delay: 2.4s;
+  }
+
+  .shimmer-effect .sparkle:nth-child(10) {
+    top: 75%;
+    left: 55%;
+    animation-delay: 2.7s;
+  }
+
+  .shimmer-effect .sparkle:nth-child(11) {
+    top: 45%;
+    right: 15%;
+    animation-delay: 3.0s;
+  }
+
+  .shimmer-effect .sparkle:nth-child(12) {
+    top: 30%;
+    left: 40%;
+    animation-delay: 3.3s;
   }
 
   @keyframes sparkleHover {
