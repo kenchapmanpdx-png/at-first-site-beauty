@@ -33,7 +33,7 @@ export default function Header() {
           <div className="container mx-auto px-4 flex justify-center">
             <div className="text-center">
               <h1 className="leading-tight">
-                <span className="block text-8xl sm:text-9xl md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-darleston font-extralight text-gray-700 drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
+                <span className="block text-8xl sm:text-9xl md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-milton font-extralight text-gray-700 drop-shadow-lg" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.1)' }}>
                   At First Site
                 </span>
                 <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light tracking-[0.4em] mt-0 md:mt-2 text-blush-400 uppercase drop-shadow-sm" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.1)' }}>
