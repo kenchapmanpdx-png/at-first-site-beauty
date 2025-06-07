@@ -53,7 +53,7 @@ export default function Booking() {
   };
 
   return (
-    <section ref={sectionRef} id="booking" className="py-20 text-white relative overflow-hidden" style={{background: 'linear-gradient(to bottom right, #2A2E3B, #232734, #2A2E3B)'}}>
+    <section ref={sectionRef} id="booking" className="py-20 text-white relative overflow-hidden" style={{background: 'linear-gradient(to bottom right, #43495E, #3A4052, #43495E)'}}>
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 w-40 h-40 bg-blush-500/10 rounded-full blur-3xl floating-element"></div>
       <div className="absolute bottom-10 right-10 w-60 h-60 bg-blush-400/5 rounded-full blur-3xl floating-element" style={{animationDelay: '2s'}}></div>
