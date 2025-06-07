@@ -117,7 +117,7 @@ export default function About() {
           <p className="text-lg text-gray-700 leading-relaxed mb-8">
             Our makeup artists are personally trained and certified by Cedar. Hair styling is handled by top professionals selected and mentored by Hollie. Together, they uphold strict standards to ensure every client receives flawless results.
           </p>
-          <div className="bg-gradient-to-br from-slate-800 via-blue-950 to-gray-900 rounded-2xl p-6 luxury-hover sparkle">
+          <div className="rounded-2xl p-6 luxury-hover sparkle" style={{background: 'linear-gradient(to bottom right, #21273b, #1a1f30, #21273b)'}}>
             <h4 className="font-playfair text-xl font-semibold text-blush-400 mb-4">
               Trust in Our Brand Promise
             </h4>

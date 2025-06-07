@@ -84,7 +84,7 @@ export default function Gallery() {
     <section ref={sectionRef} id="gallery" className="py-20 bg-gray-50 paper-texture">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <div className="bg-gradient-to-br from-slate-800 via-blue-950 to-gray-900 marble-texture rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture">
+          <div className="marble-texture rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture" style={{background: 'linear-gradient(to bottom right, #21273b, #1a1f30, #21273b)'}}>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-6 luxury-text">
               Our <span className="text-blush-400">Portfolio</span>
             </h2>
