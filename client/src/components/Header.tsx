@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocation } from "wouter";
-import logoImage from "@assets/1At First Site Logo (1000 x 350 px)_1749329275440.png";
+import logoImage from "@assets/1At First Site Logo (1000 x 350 px)bb_1749329806337.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,6 +41,12 @@ export default function Header() {
                 width="1000"
                 height="350"
               />
+              <div className="mt-2 sm:mt-3 md:mt-4">
+                <p className="text-pink-500 font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-widest drop-shadow-md" 
+                   style={{ width: '70%', margin: '0 auto' }}>
+                  BEAUTY ON LOCATION
+                </p>
+              </div>
             </div>
           </div>
         </div>
