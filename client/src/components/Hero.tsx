@@ -53,6 +53,11 @@ export default function Hero() {
       <div className={`relative z-10 text-center text-white px-4 py-8 max-w-4xl mx-auto transform transition-all duration-1000 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
+        <h1 className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 luxury-text ${
+          isLoaded ? 'stagger-1' : ''
+        }`} style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
+          Luxury Bridal Hair & Makeup <span className="text-blush-400">On Location</span>
+        </h1>
         <p className={`text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 font-light leading-relaxed opacity-90 ${
           isLoaded ? 'stagger-2' : ''
         }`} style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7)' }}>
