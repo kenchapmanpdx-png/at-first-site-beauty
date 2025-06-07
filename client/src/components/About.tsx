@@ -38,9 +38,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg noise-overlay relative -mt-32 md:-mt-8" itemScope itemType="https://schema.org/AboutPage">
-      {/* Mobile overlay to cover more of hero image */}
-      <div className="absolute top-0 left-0 right-0 h-20 md:h-0 bg-gradient-to-b from-gray-50 via-gray-50/95 to-gray-50/80 -mt-4 md:mt-0"></div>
+    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg noise-overlay relative -mt-16 md:-mt-8" itemScope itemType="https://schema.org/AboutPage">
       <div className="container mx-auto px-4">
         <div className="scroll-slow max-w-3xl mx-auto text-center mb-20">
           <div className="premium-gradient marble-texture rounded-3xl p-8 md:p-10 shadow-2xl luxury-hover sparkle luxury-texture">

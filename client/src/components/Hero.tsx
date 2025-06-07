@@ -25,7 +25,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden" itemScope itemType="https://schema.org/Organization">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-8 md:pt-0" itemScope itemType="https://schema.org/Organization">
       {/* Background Image with Enhanced Parallax */}
       <div
         className="absolute inset-0 bg-cover bg-center parallax-bg filter grayscale scale-105 transition-all duration-700"

@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap');
 
+@font-face {
+  font-family: 'RegencyScript';
+  src: url('/attached_assets/RegencyScriptFLF_1749327957795.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
