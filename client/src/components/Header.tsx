@@ -36,13 +36,13 @@ export default function Header() {
               <img
                 src={logoImage}
                 alt="At First Site Beauty On Location - Professional bridal hair and makeup services in Pacific Northwest"
-                className="w-auto h-48 sm:h-56 md:h-68 lg:h-80 xl:h-96 mx-auto drop-shadow-lg"
+                className="w-auto h-36 sm:h-42 md:h-51 lg:h-60 xl:h-72 mx-auto drop-shadow-lg"
                 loading="eager"
                 width="1000"
                 height="350"
               />
               <div className="mt-2 sm:mt-3 md:mt-4">
-                <p className="text-pink-500 font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-widest drop-shadow-md" 
+                <p className="bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent font-light text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-[0.2em] drop-shadow-md font-sans" 
                    style={{ width: '70%', margin: '0 auto' }}>
                   BEAUTY ON LOCATION
                 </p>
