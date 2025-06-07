@@ -42,7 +42,7 @@ export default function Header() {
                 height="350"
               />
               <div className="mt-2 sm:mt-3 md:mt-4">
-                <p className="text-blush-400 font-light text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-[0.2em] drop-shadow-md font-sans" 
+                <p className="text-blush-400 font-light text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-[0.2em] drop-shadow-md font-sans whitespace-nowrap" 
                    style={{ width: '70%', margin: '0 auto' }}>
                   BEAUTY ON LOCATION
                 </p>
