@@ -187,7 +187,7 @@
 
   /* Sophisticated button effects */
   .premium-button {
-    background: linear-gradient(135deg, hsl(343, 35%, 85%) 0%, #dab2b9 100%);
+    background: linear-gradient(135deg, #e6d8db 0%, #dab2b9 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 
       0 4px 15px 0 hsla(343, 35%, 80%, 0.3),
