@@ -8,8 +8,18 @@ export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     // Trigger loading animation
     setTimeout(() => setIsLoaded(true), 300);
