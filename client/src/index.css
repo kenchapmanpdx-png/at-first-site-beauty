@@ -472,6 +472,20 @@
     touch-action: manipulation;
   }
 
+  /* Performance optimizations */
+  .parallax-bg {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  .luxury-hover {
+    will-change: transform, box-shadow;
+  }
+
+  .scroll-animation {
+    will-change: transform, opacity;
+  }
+
   /* Smooth scrolling for all devices */
   html {
     scroll-behavior: smooth;
@@ -481,6 +495,40 @@
   img {
     height: auto;
     max-width: 100%;
+    content-visibility: auto;
+  }
+
+  /* Optimize animations for performance */
+  @media (prefers-reduced-motion: no-preference) {
+    .sparkle {
+      animation-fill-mode: both;
+    }
+  }
+
+  /* Critical CSS optimizations */
+  .hero-section {
+    contain: layout style paint;
+  }
+
+  .gallery-grid {
+    contain: layout;
+  }
+
+  /* Intersection observer optimizations */
+  .scroll-animation {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+  }
+
+  .scroll-animation.animate {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Reduce paint operations */
+  .luxury-hover:hover {
+    transform: translateZ(0) scale(1.02);
   }
 
   /* Mobile-friendly hover states */

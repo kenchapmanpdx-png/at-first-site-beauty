@@ -26,6 +26,7 @@ export default function Hero() {
           backgroundImage: `url(${heroImage})`,
           backgroundPosition: 'center 25%',
           transform: `translateY(${scrollY * 0.5}px)`,
+          willChange: 'transform',
         }}
         role="img"
         aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"

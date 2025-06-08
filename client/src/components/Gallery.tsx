@@ -137,7 +137,8 @@ export default function Gallery() {
                 alt={image.alt}
                 title={image.title}
                 className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-white/20 filter grayscale hover:grayscale-0 transition-all duration-700"
-                loading="lazy"
+                loading={index < 4 ? "eager" : "lazy"}
+                decoding="async"
                 itemProp="contentUrl"
                 width="400"
                 height="auto"

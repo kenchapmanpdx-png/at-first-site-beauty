@@ -49,6 +49,15 @@
     <meta name="business:contact_data:region" content="Washington, Oregon" />
     <meta name="business:contact_data:country_name" content="United States" />
     
+    <!-- Performance Preloads -->
+    <link rel="preload" href="/src/assets/IMG_0970_1749066905982.png" as="image" type="image/png" fetchpriority="high">
+    <link rel="preload" href="/src/main.tsx" as="script">
+    <link rel="preload" href="/src/index.css" as="style">
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
     <!-- Preconnect and Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
