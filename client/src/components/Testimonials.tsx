@@ -77,7 +77,7 @@ export default function Testimonials() {
                 itemScope
                 itemType="https://schema.org/Review"
               >
-                <div className="text-3xl mb-4" style={{color: '#C2185B'}}>
+                <div className="text-3xl mb-4" style={{color: '#ad3b68'}}>
                   <Quote size={32} />
                 </div>
                 <p className="text-gray-600 mb-6 leading-relaxed" itemProp="reviewBody">
