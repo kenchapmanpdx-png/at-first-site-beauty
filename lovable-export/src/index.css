@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-lato;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-light to-primary-dark text-white font-semibold py-3.5 px-8 rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg hover:shadow-xl inline-flex items-center gap-2;
+  }
+  
+  .section-title {
+    @apply font-playfair text-4xl font-semibold text-center mb-4 text-gray-800;
+  }
+  
+  .section-subtitle {
+    @apply text-center text-gray-600 mb-12 text-lg;
+  }
+  
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+  
+  .scroll-animation {
+    @apply opacity-0 translate-y-12 transition-all duration-700 ease-out;
+  }
+  
+  .scroll-animation.animate {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .sparkle-card {
+    @apply relative overflow-hidden;
+  }
+  
+  .sparkle-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300 pointer-events-none z-10;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8) 2px, transparent 2px),
+      radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+      radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.7) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+      radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+      radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.4) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
+      radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.5) 2px, transparent 2px),
+      radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+      radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.4) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+      radial-gradient(circle at 75% 70%, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+    background-size: 100px 100px;
+  }
+  
+  .sparkle-card:hover::before {
+    @apply opacity-75;
+    animation: sparkle 3.6s ease-in-out;
+  }
+  
+  .petal {
+    @apply absolute opacity-70 pointer-events-none;
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 245, 248, 0.6) 40%, rgba(255, 255, 255, 0.3) 100%);
+    border-radius: 50% 80% 50% 80%;
+    animation: float-petals 15s infinite linear;
+  }
+  
+  .petal:nth-child(1) { width: 12px; height: 8px; left: 10%; animation-delay: 0s; animation-duration: 20s; }
+  .petal:nth-child(2) { width: 8px; height: 6px; left: 20%; animation-delay: -3s; animation-duration: 18s; }
+  .petal:nth-child(3) { width: 10px; height: 7px; left: 30%; animation-delay: -6s; animation-duration: 22s; }
+  .petal:nth-child(4) { width: 14px; height: 9px; left: 40%; animation-delay: -9s; animation-duration: 16s; }
+  .petal:nth-child(5) { width: 9px; height: 6px; left: 50%; animation-delay: -12s; animation-duration: 19s; }
+  .petal:nth-child(6) { width: 11px; height: 8px; left: 60%; animation-delay: -15s; animation-duration: 21s; }
+  .petal:nth-child(7) { width: 13px; height: 9px; left: 70%; animation-delay: -18s; animation-duration: 17s; }
+  .petal:nth-child(8) { width: 7px; height: 5px; left: 80%; animation-delay: -21s; animation-duration: 23s; }
+  .petal:nth-child(9) { width: 10px; height: 7px; left: 90%; animation-delay: -24s; animation-duration: 20s; }
+  .petal:nth-child(10) { width: 12px; height: 8px; left: 15%; animation-delay: -27s; animation-duration: 18s; }
+}
+
+@layer utilities {
+  .parallax-bg {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+  
+  .luxury-hover {
+    will-change: transform, box-shadow;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .petal:nth-child(n+6) {
+    @apply hidden;
+  }
+  
+  .petal {
+    animation-duration: 25s !important;
+  }
+  
+  .section-title {
+    @apply text-3xl;
+  }
+  
+  .btn-primary {
+    @apply py-4 px-10 text-base min-h-[44px];
+  }
+}
+
+@media (max-width: 480px) {
+  .petal:nth-child(n+4) {
+    @apply hidden;
+  }
+  
+  .section-title {
+    @apply text-2xl;
+  }
+  
+  .container {
+    @apply px-3;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .luxury-hover:hover,
+  .sparkle-card:hover::before {
+    transform: none !important;
+    opacity: 0 !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .petal {
+    @apply hidden;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
