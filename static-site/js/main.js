@@ -1,17 +1,34 @@
 // Initialize Lucide icons when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Lucide icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
+    // Initialize Lucide icons with delay for better performance
+    setTimeout(() => {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }, 100);
+    
+    // Initialize critical functionality first
+    initNavigation();
+    initSmoothScroll();
+    
+    // Initialize performance-sensitive features with delay
+    setTimeout(() => {
+        initScrollAnimations();
+        initGalleryFilter();
+        initContactForm();
+    }, 200);
+    
+    // Initialize parallax only on desktop
+    if (window.innerWidth > 768) {
+        setTimeout(() => {
+            initParallax();
+        }, 300);
     }
     
-    // Initialize all functionality
-    initNavigation();
-    initScrollAnimations();
-    initParallax();
-    initGalleryFilter();
-    initContactForm();
-    initSmoothScroll();
+    // Initialize mobile-specific optimizations
+    if ('ontouchstart' in window) {
+        initMobileOptimizations();
+    }
 });
 
 // Navigation functionality
@@ -393,3 +410,70 @@ function initAccessibility() {
 
 // Initialize accessibility features
 document.addEventListener('DOMContentLoaded', initAccessibility);
+
+// Mobile-specific optimizations
+function initMobileOptimizations() {
+    // Disable hover effects on touch devices
+    document.body.classList.add('touch-device');
+    
+    // Optimize scroll performance on mobile
+    let ticking = false;
+    function optimizedScroll() {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                // Reduced frequency scroll handling for mobile
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    // Use passive listeners for better scroll performance
+    window.addEventListener('scroll', optimizedScroll, { passive: true });
+    window.addEventListener('touchstart', function() {}, { passive: true });
+    window.addEventListener('touchmove', function() {}, { passive: true });
+    
+    // Preload next section images when scrolling
+    let sectionsPreloaded = false;
+    window.addEventListener('scroll', function() {
+        if (!sectionsPreloaded && window.scrollY > 200) {
+            preloadSectionImages();
+            sectionsPreloaded = true;
+        }
+    }, { passive: true, once: true });
+}
+
+// Preload images for better mobile experience
+function preloadSectionImages() {
+    const imagesToPreload = [
+        'assets/images/bridal-design.jpg',
+        'assets/images/bridal-party.jpg',
+        'assets/images/teeth-whitening.jpg',
+        'assets/images/spray-tanning.jpg'
+    ];
+    
+    imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+}
+
+// Optimize rose petals for mobile performance
+function optimizeRosePetalsForMobile() {
+    if (window.innerWidth <= 768) {
+        const petals = document.querySelectorAll('.petal');
+        // Keep only first 5 petals on mobile
+        petals.forEach((petal, index) => {
+            if (index >= 5) {
+                petal.style.display = 'none';
+            } else {
+                // Reduce animation complexity
+                petal.style.animationDuration = '25s';
+            }
+        });
+    }
+}
+
+// Call optimization on load and resize
+window.addEventListener('load', optimizeRosePetalsForMobile);
+window.addEventListener('resize', throttle(optimizeRosePetalsForMobile, 250));

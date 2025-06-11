@@ -20,21 +20,27 @@
     <meta property="og:description" content="Serving the Pacific Northwest with elegance, expertise, and ease. Professional bridal beauty services on-location by award-winning artists with 30+ years combined experience." />
     <meta property="og:image" content="https://atfirstsightbeauty.com/og-image.jpg" />
     
-    <!-- Performance Preloads -->
+    <!-- Critical Performance Preloads -->
     <link rel="preload" href="assets/images/hero-image.png" as="image" type="image/png" fetchpriority="high">
+    <link rel="preload" href="assets/images/logo.png" as="image" type="image/png">
     <link rel="preload" href="css/styles.css" as="style">
     
     <!-- DNS Prefetch for external resources -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//calendly.com">
     
-    <!-- Preconnect and Font Loading -->
+    <!-- Preconnect for faster external loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- Optimized Font Loading with font-display swap -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=New+Icon+Script&display=swap" rel="stylesheet">
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <!-- Lucide Icons with defer for better performance -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
@@ -69,6 +75,21 @@
             <div class="hero-gradient-top"></div>
             <div class="hero-gradient-bottom"></div>
         </div>
+        
+        <!-- Floating Rose Petals -->
+        <div class="rose-petals">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+        </div>
+        
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">At First Sight Beauty On Location</h1>
