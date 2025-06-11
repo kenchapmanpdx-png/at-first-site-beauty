@@ -157,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
     animation: petal-fall 6s infinite linear;
     opacity: 0.9;
     box-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
-    border: 2px solid lime !important;
+    border: 1px solid rgba(255, 192, 203, 0.6);
 }
 
 .petal:nth-of-type(1) {
@@ -804,7 +804,7 @@ img {
 /* Mobile Performance Optimizations */
 @media (max-width: 768px) {
     /* Reduce rose petals on mobile for performance */
-    .petal:nth-child(n+6) {
+    .petal:nth-of-type(n+6) {
         display: none;
     }
     
@@ -1007,7 +1007,7 @@ img {
     }
     
     /* Further reduce rose petals on very small screens */
-    .petal:nth-child(n+4) {
+    .petal:nth-of-type(n+4) {
         display: none;
     }
 }
