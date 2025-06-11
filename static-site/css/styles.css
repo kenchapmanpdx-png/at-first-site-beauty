@@ -147,14 +147,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .petal {
     position: absolute;
-    background: radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 182, 193, 0.8) 30%, rgba(255, 240, 245, 0.7) 60%, rgba(255, 255, 255, 0.6) 100%);
+    background: linear-gradient(45deg, rgba(255, 182, 193, 0.9), rgba(255, 240, 245, 0.95), rgba(255, 255, 255, 0.9));
     border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
-    animation: float-and-rotate 15s infinite linear;
+    animation: float-and-rotate 8s infinite linear;
     opacity: 1;
-    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4), 0 2px 8px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 20px rgba(255, 182, 193, 0.8), 0 4px 15px rgba(255, 105, 180, 0.6);
     top: -30px;
-    border: 1px solid rgba(255, 192, 203, 0.3);
-    filter: drop-shadow(0 2px 4px rgba(255, 182, 193, 0.3));
+    border: 2px solid rgba(255, 182, 193, 0.7);
+    filter: drop-shadow(0 4px 8px rgba(255, 20, 147, 0.4));
+    z-index: 5;
 }
 
 .petal:nth-child(1) {
@@ -239,17 +240,17 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes float-and-rotate {
     0% {
-        transform: translateY(-30px) rotate(0deg);
+        transform: translateY(-50px) rotate(0deg);
         opacity: 0;
     }
-    5% {
-        opacity: 0.9;
+    10% {
+        opacity: 1;
     }
-    95% {
-        opacity: 0.9;
+    90% {
+        opacity: 1;
     }
     100% {
-        transform: translateY(calc(100vh + 50px)) rotate(360deg);
+        transform: translateY(calc(100vh + 100px)) rotate(360deg);
         opacity: 0;
     }
 }
@@ -275,6 +276,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .hero-gradient-top {
@@ -284,6 +286,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     height: 8rem;
     background: linear-gradient(to bottom, white, transparent);
+    z-index: 2;
 }
 
 .hero-gradient-bottom {
@@ -293,11 +296,12 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     height: 8rem;
     background: linear-gradient(to top, #f7fafc, transparent);
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 10;
+    z-index: 6;
     text-align: center;
     color: white;
     max-width: 800px;
