@@ -151,14 +151,13 @@ h1, h2, h3, h4, h5, h6 {
     top: -20px;
     width: 20px;
     height: 15px;
-    background: red !important;
+    background: radial-gradient(circle, #FF69B4 0%, #FF1493 50%, #C71585 100%);
     border-radius: 50% 85% 50% 85%;
     -webkit-animation: petal-fall 8s infinite linear;
     animation: petal-fall 8s infinite linear;
-    opacity: 1 !important;
-    z-index: 9999 !important;
-    border: 2px solid yellow !important;
-    box-shadow: none !important;
+    opacity: 0.95;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+    border: 1px solid rgba(255, 192, 203, 0.8);
 }
 
 /* Individual petal positioning */
