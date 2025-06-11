@@ -1,0 +1,69 @@
+Here are the quick changes you need to get your petals back:
+
+Take them out of the global stacking context
+Change your petals container from position: fixed; z-index:999; to absolute inside your hero (so it isn’t accidentally clipped or buried by another stacking context):
+
+css
+Copy
+.rose-petals {
+  position: absolute;    /* was fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;            /* sits above your overlay/gradients (1–2) but below .hero-content (6) */
+  overflow: hidden;
+}
+And in your HTML, move the <div class="rose-petals">…</div> so it comes after .hero-overlay / .hero-gradient-* but before .hero-content:
+
+html
+Copy
+<section id="home" class="hero-section">
+  <div class="hero-background">…</div>
+  <div class="hero-overlay"></div>
+  <div class="hero-gradient-top"></div>
+  <div class="hero-gradient-bottom"></div>
+
+  <!-- now your petals will float above the dark overlay & gradients… -->
+  <div class="rose-petals">…</div>
+
+  <div class="hero-content">…</div>
+  <div class="scroll-indicator">…</div>
+</section>
+Ensure the animation actually runs
+Some browsers still need the -webkit- prefix. In your CSS:
+
+css
+Copy
+.petal {
+  /* …your existing styles… */
+  -webkit-animation: petal-fall 6s infinite linear;
+          animation: petal-fall 6s infinite linear;
+}
+
+@-webkit-keyframes petal-fall {
+  0%   { -webkit-transform: translateY(0) rotate(0deg); opacity:1; }
+  100% { -webkit-transform: translateY(calc(100vh + 20px)) rotate(180deg); opacity:.7; }
+}
+@keyframes petal-fall {
+  0%   { transform: translateY(0) rotate(0deg); opacity:1; }
+  100% { transform: translateY(calc(100vh + 20px)) rotate(180deg); opacity:.7; }
+}
+Kill the “hide on reduced-motion” rule (if you really want them always visible)
+Either remove or override this block:
+
+css
+Copy
+/* delete or comment out: */
+@media (prefers-reduced-motion: reduce) {
+  .petal { display: none !important; }
+}
+Fix your missing throttle helper
+Right now your resize listener blows up on an undefined throttle. Either pull in a small throttle implementation or—if you don’t need it—just do:
+
+js
+Copy
+window.addEventListener('load',  optimizeRosePetalsForMobile);
+window.addEventListener('resize', optimizeRosePetalsForMobile);
+With those four tweaks you’ll see your little rose petals floating right where you intended.

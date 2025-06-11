@@ -476,4 +476,4 @@ function optimizeRosePetalsForMobile() {
 
 // Call optimization on load and resize
 window.addEventListener('load', optimizeRosePetalsForMobile);
-window.addEventListener('resize', throttle(optimizeRosePetalsForMobile, 250));
+window.addEventListener('resize', optimizeRosePetalsForMobile);
