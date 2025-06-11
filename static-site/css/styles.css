@@ -801,15 +801,30 @@ img {
     opacity: 1;
 }
 
+/* Rose Petal Fixes */
+@media (max-width: 768px), (max-width: 480px) {
+    .petal:nth-of-type(n+1) { display: block !important; }
+}
+
+.rose-petals { z-index: 10 !important; }
+.rose-petals { overflow: visible !important; }
+.petal {
+    width: 25px !important;
+    height: 18px !important;
+    opacity: 1 !important;
+    animation-duration: 12s !important;
+    top: 0 !important;
+    background: radial-gradient(circle, #FF69B4 0%, #FF1493 50%, #C71585 100%) !important;
+}
+
+.hero-background, .hero-overlay {
+    opacity: 0.3 !important;
+}
+
 /* Mobile Performance Optimizations */
 @media (max-width: 768px) {
-    /* Reduce rose petals on mobile for performance */
-    .petal:nth-of-type(n+6) {
-        display: none;
-    }
-    
     .petal {
-        animation-duration: 25s;
+        animation-duration: 12s;
     }
     
     /* Optimize hero for mobile */
@@ -1006,10 +1021,7 @@ img {
         padding: 0 0.75rem;
     }
     
-    /* Further reduce rose petals on very small screens */
-    .petal:nth-of-type(n+4) {
-        display: none;
-    }
+
 }
 
 /* High DPI displays optimization */
