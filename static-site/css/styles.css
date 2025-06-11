@@ -149,79 +149,81 @@ h1, h2, h3, h4, h5, h6 {
 .petal {
     position: absolute;
     top: -20px;
+    width: 16px;
+    height: 11px;
     background: radial-gradient(circle, #FFB6C1 0%, #FFC0CB 50%, #FFFFFF 100%);
     border-radius: 50% 85% 50% 85%;
     -webkit-animation: petal-fall 6s infinite linear;
     animation: petal-fall 6s infinite linear;
     opacity: 0.9;
     box-shadow: 0 0 15px rgba(255, 182, 193, 0.8);
-    border: 1px solid rgba(255, 192, 203, 0.6);
+    border: 2px solid lime !important;
 }
 
-.petal:nth-child(1) {
+.petal:nth-of-type(1) {
     width: 18px;
     height: 12px;
     left: 10%;
     animation-delay: 0s;
 }
 
-.petal:nth-child(2) {
+.petal:nth-of-type(2) {
     width: 15px;
     height: 10px;
     left: 25%;
     animation-delay: -1s;
 }
 
-.petal:nth-child(3) {
+.petal:nth-of-type(3) {
     width: 16px;
     height: 11px;
     left: 40%;
     animation-delay: -2s;
 }
 
-.petal:nth-child(4) {
+.petal:nth-of-type(4) {
     width: 20px;
     height: 14px;
     left: 55%;
     animation-delay: -3s;
 }
 
-.petal:nth-child(5) {
+.petal:nth-of-type(5) {
     width: 14px;
     height: 9px;
     left: 70%;
     animation-delay: -4s;
 }
 
-.petal:nth-child(6) {
+.petal:nth-of-type(6) {
     width: 17px;
     height: 12px;
     left: 85%;
     animation-delay: -5s;
 }
 
-.petal:nth-child(7) {
+.petal:nth-of-type(7) {
     width: 19px;
     height: 13px;
     left: 15%;
     animation-delay: -1.5s;
 }
 
-.petal:nth-child(8) {
+.petal:nth-of-type(8) {
     width: 13px;
     height: 8px;
     left: 35%;
     animation-delay: -2.5s;
 }
 
-.petal:nth-child(9) {
+.petal:nth-of-type(9) {
     width: 16px;
     height: 11px;
     left: 60%;
     animation-delay: -3.5s;
 }
 
-.petal:nth-child(10) {
+.petal:nth-of-type(10) {
     width: 18px;
     height: 12px;
     left: 80%;
