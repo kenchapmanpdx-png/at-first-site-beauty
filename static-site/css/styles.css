@@ -134,55 +134,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-/* Floating Rose Petals */
-.rose-petals {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-    overflow: visible !important;
-}
 
-.petal {
-    position: absolute;
-    top: -50px;
-    width: 30px;
-    height: 30px;
-    background: red;
-    border: 3px solid yellow;
-    border-radius: 50%;
-    animation: simple-fall 4s infinite linear;
-    opacity: 1;
-    z-index: 999;
-}
-
-/* Individual petal positioning */
-.petal:nth-of-type(1) { left: 10%; animation-delay: 0s; }
-.petal:nth-of-type(2) { left: 25%; animation-delay: -1s; }
-.petal:nth-of-type(3) { left: 40%; animation-delay: -2s; }
-.petal:nth-of-type(4) { left: 55%; animation-delay: -3s; }
-.petal:nth-of-type(5) { left: 70%; animation-delay: -4s; }
-.petal:nth-of-type(6) { left: 85%; animation-delay: -5s; }
-.petal:nth-of-type(7) { left: 15%; animation-delay: -1.5s; }
-.petal:nth-of-type(8) { left: 35%; animation-delay: -2.5s; }
-.petal:nth-of-type(9) { left: 60%; animation-delay: -3.5s; }
-.petal:nth-of-type(10) { left: 80%; animation-delay: -4.5s; }
-
-
-
-@keyframes simple-fall {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
 
 .hero-background {
     position: absolute;
