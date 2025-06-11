@@ -462,14 +462,11 @@ function preloadSectionImages() {
 function optimizeRosePetalsForMobile() {
     if (window.innerWidth <= 768) {
         const petals = document.querySelectorAll('.petal');
-        // Keep only first 5 petals on mobile
-        petals.forEach((petal, index) => {
-            if (index >= 5) {
-                petal.style.display = 'none';
-            } else {
-                // Reduce animation complexity
-                petal.style.animationDuration = '25s';
-            }
+        // Keep all petals visible but adjust animation speed
+        petals.forEach((petal) => {
+            petal.style.display = 'block';
+            petal.style.animationDuration = '12s';
+            petal.style.opacity = '1';
         });
     }
 }
