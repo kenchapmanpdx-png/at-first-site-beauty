@@ -89,10 +89,28 @@
   .parallax-bg {
     will-change: transform;
     transform: translateZ(0);
+    animation: windSway 8s ease-in-out infinite;
+    transform-origin: center bottom;
   }
   
   .luxury-hover {
     will-change: transform, box-shadow;
+  }
+}
+
+/* Wind Sway Animation for Background */
+@keyframes windSway {
+  0%, 100% {
+    transform: translateX(0) scale(1) translateZ(0);
+  }
+  25% {
+    transform: translateX(-2px) scale(1.001) translateZ(0);
+  }
+  50% {
+    transform: translateX(3px) scale(1.002) translateZ(0);
+  }
+  75% {
+    transform: translateX(-1px) scale(1.0015) translateZ(0);
   }
 }
 
@@ -112,6 +130,11 @@
   
   .btn-primary {
     @apply py-4 px-10 text-base min-h-[44px];
+  }
+  
+  /* Slower wind animation on mobile for performance */
+  .parallax-bg {
+    animation: windSway 12s ease-in-out infinite;
   }
 }
 
@@ -142,6 +165,10 @@
 @media (prefers-reduced-motion: reduce) {
   .petal {
     @apply hidden;
+  }
+  
+  .parallax-bg {
+    animation: none !important;
   }
   
   * {
