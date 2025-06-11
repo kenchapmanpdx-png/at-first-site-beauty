@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
+  const [useGif, setUseGif] = useState(false)
 
   useEffect(() => {
     let ticking = false
@@ -21,6 +22,14 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    // Check if GIF exists
+    const img = new Image()
+    img.onload = () => setUseGif(true)
+    img.onerror = () => setUseGif(false)
+    img.src = '/assets/hero-animation.gif'
+  }, [])
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -32,9 +41,13 @@ export default function Hero() {
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax */}
       <div
-        className="absolute inset-0 bg-cover bg-center filter grayscale parallax-bg"
+        className={`absolute inset-0 bg-cover bg-center bg-no-repeat parallax-bg ${
+          useGif ? 'filter grayscale-[0.8]' : 'filter grayscale'
+        }`}
         style={{
-          backgroundImage: 'url(/assets/hero-image.png)',
+          backgroundImage: useGif 
+            ? 'url(/assets/hero-animation.gif)' 
+            : 'url(/assets/hero-image.png)',
           backgroundPosition: 'center 25%',
           transform: `translateY(${scrollY * 0.5}px)`,
         }}
