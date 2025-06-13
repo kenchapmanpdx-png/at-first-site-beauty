@@ -7,31 +7,35 @@ export default function Services() {
   const services = [
     {
       title: 'The Bridal Hair & Makeup Design Session',
-      subtitle: 'Where Your Dream Look Begins',
-      description: 'At At First Sight Beauty On Location, your bridal journey starts with our exclusive Design Session - a personalized consultation where we bring your vision to life.',
+      subtitle: 'Your Look, Locked In.',
+      description: 'This isn\'t just a "trial." It\'s your full beauty blueprint—crafted with intention and tested to perfection. From vision to final touch-up kit, we ensure you walk down the aisle feeling flawless, confident, and completely you.',
       image: '/assets/bridal-design.jpg',
-      bookingUrl: 'https://calendly.com/atfirstsightbeauty/bridal-design'
+      bookingUrl: 'https://calendly.com/atfirstsightbeauty/bridal-design',
+      buttonText: 'Schedule Your Design Session'
     },
     {
       title: 'Bridal Party Hair & Makeup',
       subtitle: 'Coordinated Beauty for Your Entire Party',
       description: 'Ensure your entire bridal party looks stunning with our coordinated hair and makeup services.',
       image: '/assets/bridal-party.jpg',
-      bookingUrl: 'https://calendly.com/atfirstsightbeauty/bridal-party'
+      bookingUrl: 'https://calendly.com/atfirstsightbeauty/bridal-party',
+      buttonText: 'Book Bridal Party Service'
     },
     {
       title: 'Professional Teeth Whitening',
       subtitle: 'Brighten Your Smile for the Big Day',
       description: 'Complete your bridal look with our professional teeth whitening service for a radiant smile.',
       image: '/assets/teeth-whitening.jpg',
-      bookingUrl: 'https://calendly.com/atfirstsightbeauty/teeth-whitening'
+      bookingUrl: 'https://calendly.com/atfirstsightbeauty/teeth-whitening',
+      buttonText: 'Book Teeth Whitening'
     },
     {
       title: 'Professional Spray Tanning',
       subtitle: 'The Perfect Glow for Your Special Day',
       description: 'Achieve a natural, sun-kissed glow with our professional spray tanning services.',
       image: '/assets/spray-tanning.jpg',
-      bookingUrl: 'https://calendly.com/atfirstsightbeauty/spray-tanning'
+      bookingUrl: 'https://calendly.com/atfirstsightbeauty/spray-tanning',
+      buttonText: 'Book Spray Tanning'
     }
   ]
 
@@ -70,7 +74,7 @@ export default function Services() {
                   onClick={() => window.open(service.bookingUrl, '_blank')}
                   className="btn-primary w-full justify-center"
                 >
-                  Book Your Design Session
+                  {service.buttonText || 'Book Your Design Session'}
                   <ArrowRight size={20} />
                 </button>
               </div>
