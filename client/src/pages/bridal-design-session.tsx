@@ -183,6 +183,12 @@ export default function BridalDesignSession() {
                 </div>
               </div>
               
+              <div className="text-center mb-6">
+                <p className="text-xl text-gray-600 italic leading-relaxed">
+                  "Imagine walking down the aisle knowing everything—from your hair to your glow—is already perfected and proven."
+                </p>
+              </div>
+              
               <Button
                 onClick={() => scrollToSection("booking")}
                 className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium mb-8 mt-8 luxury-hover"
