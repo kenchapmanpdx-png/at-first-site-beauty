@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 
+// Updated: Bridal Design Session Focus - v2.0
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null)
 
@@ -29,9 +30,10 @@ export default function Services() {
   return (
     <section ref={sectionRef} id="services" className="py-28 bg-gradient-to-br from-gradient-from to-gradient-to">
       <div className="container">
-        {/* Headline Section */}
+        {/* NEW LAYOUT: Headline Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+          <div className="bg-red-500 text-white p-4 mb-4 rounded">NEW LAYOUT LOADED</div>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4 text-gray-900">
             Where Your Dream Look Begins.<br />
             <span className="text-primary-accent italic">Your Look, Locked In.</span>
           </h1>
