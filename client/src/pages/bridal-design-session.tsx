@@ -48,22 +48,22 @@ export default function BridalDesignSession() {
 
   const proTips = [
     {
-      icon: <Camera className="w-6 h-6" />,
+      icon: <Camera className="w-9 h-9" />,
       title: "More is more (in photos)",
       description: "The camera tends to wash out color, so don't be surprised if we recommend a little extra bronzer, blush, or lip definition than you're used to. Trust us — it translates beautifully on camera."
     },
     {
-      icon: <Sparkles className="w-6 h-6" />,
+      icon: <Sparkles className="w-9 h-9" />,
       title: "Lashes are a must",
       description: "Whether soft and romantic or bold and full, false lashes make your eyes pop and elevate the elegance of your final look."
     },
     {
-      icon: <Heart className="w-6 h-6" />,
+      icon: <Heart className="w-9 h-9" />,
       title: "Wear white to your session",
       description: "This helps us see your makeup the way it will contrast against your gown."
     },
     {
-      icon: <Clock className="w-6 h-6" />,
+      icon: <Clock className="w-9 h-9" />,
       title: "Trust the wear test",
       description: "Those photos you send us after your session? They're gold. They let us see if anything needs adjusting — like under-eye creasing, shine, or volume drop — before the big day."
     }
@@ -179,7 +179,7 @@ export default function BridalDesignSession() {
                 </div>
               </div>
               
-              <div className="text-center mb-6">
+              <div className="text-center mb-6 mt-9">
                 <p className="text-xl text-gray-600 italic leading-relaxed">
                   "Imagine walking down the aisle knowing everything—from your hair to your glow—is already perfected and proven."
                 </p>
@@ -193,7 +193,7 @@ export default function BridalDesignSession() {
               </Button>
               
               {/* Design Session Process - Moved here */}
-              <div className="scroll-animation text-center">
+              <div className="scroll-animation text-center mt-12">
                 <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-8">
                   Your Design Session Process
                 </h2>
@@ -239,7 +239,7 @@ export default function BridalDesignSession() {
                 {proTips.map((tip, index) => (
                   <div key={index} className="scroll-animation bg-gray-50 rounded-3xl p-8">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-blush-100 rounded-full flex items-center justify-center text-blush-400 flex-shrink-0">
+                      <div className="w-18 h-18 bg-blush-100 rounded-full flex items-center justify-center flex-shrink-0" style={{color: '#ad3b68'}}>
                         {tip.icon}
                       </div>
                       <div>
