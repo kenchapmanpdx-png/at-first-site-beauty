@@ -119,18 +119,14 @@ export default function BridalDesignSession() {
                 Where Your Dream Look Begins. Your Look, <span className="text-blush-400">Locked In.</span>
               </h1>
               
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Your bridal glam starts well before the big day. Set in our private bridal suite, our Design Session isn't just a "Trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
-              </p>
-              
               <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100 text-center">
                 <div className="text-xl text-gray-600 leading-relaxed">
                   <p className="mb-4">
-                    Here, our professionally trained artists collaborate with you in a relaxed, attentive setting to co-create your bridal look. You'll sit with one of our expert stylists to walk through every detail of your vision—from the texture, tone, and shape of your hairstyle to the glow, finish, and feature-enhancing artistry of your makeup.
+                    Your bridal glam starts well before the big day—inside our private bridal suite, where your Design Session begins. This isn't just a "trial." It's a luxury experience designed to ensure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
                   </p>
                   
                   <p className="mb-4">
-                    Your comfort is everything. This is your moment to explore styles, give feedback, and make changes—nothing's off limits. Our goal? That you leave glowing with confidence, knowing your wedding day look is completely dialed in.
+                    In a relaxed, attentive setting, you'll sit with one of our expert artists to walk through every detail of your vision—from the texture, tone, and structure of your hairstyle to the glow, finish, and feature-enhancing artistry of your makeup. Your comfort is everything. This is your time to explore styles, give feedback, and make adjustments—nothing is off limits. Our goal? That you leave glowing with confidence, knowing your wedding day look is completely dialed in.
                   </p>
                   
                   <p className="mb-4 font-semibold text-gray-900">
@@ -138,7 +134,7 @@ export default function BridalDesignSession() {
                   </p>
                   
                   <p className="mb-0">
-                    Once your look is finalized, we ask you to wear it for at least six hours. Every two hours, you'll take a quick photo—in natural light and with flash—to show us how it holds up throughout the day. This feedback lets us fine-tune each detail so that when we arrive on your wedding day, we're not guessing—we're executing a proven, perfected look with calm precision.
+                    Once your look is finalized, we ask you to wear it for at least six hours. Every two hours, you'll take a quick photo—in natural light and with flash—to show us how it holds up. This feedback allows us to fine-tune each detail so when your big day arrives, we're not guessing—we're executing a proven, perfected look with calm precision.
                   </p>
                 </div>
               </div>
