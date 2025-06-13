@@ -143,6 +143,34 @@ export default function BridalDesignSession() {
                 </div>
               </div>
 
+              {/* Studio Gallery - Moved above Touch-Up Kit */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
+                <div className="scroll-animation">
+                  <img
+                    src={studioImage1}
+                    alt="Luxury bridal design session in private suite"
+                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="scroll-animation">
+                  <img
+                    src={makeupProcess}
+                    alt="Professional makeup application during design session"
+                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="scroll-animation">
+                  <img
+                    src={studioImage2}
+                    alt="Bridal hair styling consultation"
+                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
               <div className="bg-white rounded-2xl p-4 shadow-lg mb-4">
                 <div className="flex items-center justify-center mb-2">
                   <Star className="w-5 h-5 text-blush-400 mr-2" />
@@ -194,35 +222,9 @@ export default function BridalDesignSession() {
           </div>
         </section>
 
-        {/* Studio Gallery */}
+        {/* Pro Tips Section */}
         <section className="py-3 bg-white">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
-              <div className="scroll-animation">
-                <img
-                  src={studioImage1}
-                  alt="Luxury bridal design session in private suite"
-                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  loading="lazy"
-                />
-              </div>
-              <div className="scroll-animation">
-                <img
-                  src={makeupProcess}
-                  alt="Professional makeup application during design session"
-                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  loading="lazy"
-                />
-              </div>
-              <div className="scroll-animation">
-                <img
-                  src={studioImage2}
-                  alt="Bridal hair styling consultation"
-                  className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  loading="lazy"
-                />
-              </div>
-            </div>
 
             <div className="scroll-animation text-center mb-16">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
