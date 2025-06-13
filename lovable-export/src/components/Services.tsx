@@ -8,7 +8,7 @@ export default function Services() {
     {
       title: 'The Bridal Hair & Makeup Design Session',
       subtitle: 'Where Your Dream Look Begins',
-      description: 'At At First Sight Beauty On Location, your bridal journey starts with our exclusive Design Session - a personalized consultation where we bring your vision to life.',
+      description: 'Our professionally trained artists collaborate with you in a relaxed, attentive setting to co-create your bridal look. We walk through every detail of your vision and include 6-hour wear testing with photo documentation to ensure your wedding day look is perfected.',
       image: '/assets/bridal-design.jpg',
       bookingUrl: 'https://calendly.com/atfirstsightbeauty/bridal-design'
     },

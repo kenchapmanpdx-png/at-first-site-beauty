@@ -123,6 +123,26 @@ export default function BridalDesignSession() {
                 Your bridal glam starts well before the big day. Set in our private bridal suite, our Design Session isn't just a "Trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
               </p>
               
+              <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100">
+                <div className="prose prose-lg text-gray-700 leading-relaxed">
+                  <p className="mb-4">
+                    Here, our professionally trained artists collaborate with you in a relaxed, attentive setting to co-create your bridal look. You'll sit with one of our expert stylists to walk through every detail of your vision—from the texture, tone, and shape of your hairstyle to the glow, finish, and feature-enhancing artistry of your makeup.
+                  </p>
+                  
+                  <p className="mb-4">
+                    Your comfort is everything. This is your moment to explore styles, give feedback, and make changes—nothing's off limits. Our goal? That you leave glowing with confidence, knowing your wedding day look is completely dialed in.
+                  </p>
+                  
+                  <p className="mb-4 font-semibold text-gray-900">
+                    But it doesn't end there.
+                  </p>
+                  
+                  <p className="mb-0">
+                    Once your look is finalized, we ask you to wear it for at least six hours. Every two hours, you'll take a quick photo—in natural light and with flash—to show us how it holds up throughout the day. This feedback lets us fine-tune each detail so that when we arrive on your wedding day, we're not guessing—we're executing a proven, perfected look with calm precision.
+                  </p>
+                </div>
+              </div>
+
               <div className="bg-white rounded-2xl p-4 shadow-lg mb-4">
                 <div className="flex items-center justify-center mb-2">
                   <Star className="w-5 h-5 text-blush-400 mr-2" />
