@@ -600,6 +600,27 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.3rem;
 }
 
+.process-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+}
+
+.process-detail p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.process-detail p:last-child {
+    margin-bottom: 0;
+}
+
 /* Tips Section */
 .tips-section {
     padding: 4rem 0;
