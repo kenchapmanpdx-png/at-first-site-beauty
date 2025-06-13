@@ -123,8 +123,8 @@ export default function BridalDesignSession() {
                 Your bridal glam starts well before the big day. Set in our private bridal suite, our Design Session isn't just a "Trial" — it's a luxury experience to make sure your look is picture-perfect, timeless, and uniquely you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested and tailored.
               </p>
               
-              <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100">
-                <div className="prose prose-lg text-gray-700 leading-relaxed">
+              <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100 text-center">
+                <div className="text-xl text-gray-600 leading-relaxed">
                   <p className="mb-4">
                     Here, our professionally trained artists collaborate with you in a relaxed, attentive setting to co-create your bridal look. You'll sit with one of our expert stylists to walk through every detail of your vision—from the texture, tone, and shape of your hairstyle to the glow, finish, and feature-enhancing artistry of your makeup.
                   </p>
