@@ -125,20 +125,22 @@ export default function BridalParty() {
             </Button>
           </div>
 
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
             <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               Bridal Party <span className="text-blush-400">Hair & Makeup</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
               Creating a cohesive, stunning bridal party look that complements your vision while celebrating each individual's unique beauty.
             </p>
             
-            <Button
-              onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-              className="bg-blush-300 hover:bg-blush-400 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Book Bridal Party Services
-            </Button>
+            <div data-aos="fade-in" data-aos-delay="400">
+              <Button
+                onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+                className="bg-blush-300 hover:bg-blush-400 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Book Bridal Party Services
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -237,7 +239,7 @@ export default function BridalParty() {
       {/* Pro Tips Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="scroll-animation text-center mb-16">
+          <div className="text-center mb-16" data-aos="fade-up">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Professional <span className="text-blush-400">Styling Tips</span>
             </h2>
@@ -248,7 +250,7 @@ export default function BridalParty() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {proTips.map((tip, index) => (
-              <div key={index} className="scroll-animation bg-gray-50 rounded-2xl p-8">
+              <div key={index} className="bg-gray-50 rounded-2xl p-8" data-aos="zoom-in" data-aos-delay={index * 150}>
                 <div className="flex items-start">
                   <div className="w-12 h-12 bg-blush-300 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
                     <tip.icon size={24} className="text-white" />
@@ -277,7 +279,7 @@ export default function BridalParty() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="scroll-animation text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 What's <span className="text-blush-400">Included</span>
               </h2>
@@ -286,7 +288,7 @@ export default function BridalParty() {
               </p>
             </div>
 
-            <div className="scroll-animation bg-white rounded-3xl p-8 shadow-lg">
+            <div className="bg-white rounded-3xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="200">
               <div className="grid md:grid-cols-2 gap-6">
                 {serviceIncludes.map((item, index) => (
                   <div key={index} className="flex items-start">
