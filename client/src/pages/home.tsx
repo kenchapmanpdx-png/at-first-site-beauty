@@ -16,7 +16,7 @@ export default function Home() {
       <Services />
       {/* Booking CTA between Services and Gallery */}
       <section className="py-8 bg-white">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <button
             onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
             className="premium-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
@@ -29,7 +29,7 @@ export default function Home() {
       <Testimonials />
       {/* Booking CTA before main Booking section */}
       <section className="py-8 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <button
             onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
             className="premium-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
