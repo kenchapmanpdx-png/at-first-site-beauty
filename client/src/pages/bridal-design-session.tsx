@@ -190,7 +190,7 @@ export default function BridalDesignSession() {
                   onClick={() => scrollToSection("booking")}
                   className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium mb-8 mt-8 luxury-hover"
                 >
-                  Book Your Design Session
+                  Reserve Your Design Session
                 </Button>
               </div>
               

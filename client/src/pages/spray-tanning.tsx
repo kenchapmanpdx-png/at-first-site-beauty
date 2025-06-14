@@ -134,7 +134,7 @@ export default function SprayTanning() {
                   onClick={() => scrollToSection("booking")}
                   className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
                 >
-                  Book Your Spray Tan
+                  Reserve Your Spray Tan
                 </Button>
               </div>
             </div>

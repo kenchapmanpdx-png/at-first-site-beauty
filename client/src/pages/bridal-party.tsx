@@ -138,7 +138,7 @@ export default function BridalParty() {
                 onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
                 className="bg-blush-300 hover:bg-blush-400 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
-                Book Bridal Party Services
+                Reserve Bridal Party Services
               </Button>
             </div>
           </div>
@@ -424,7 +424,7 @@ export default function BridalParty() {
               onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
               className="bg-white text-blush-400 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              Book Your Bridal Party Session
+              Reserve Your Bridal Party Session
             </Button>
           </div>
         </div>
