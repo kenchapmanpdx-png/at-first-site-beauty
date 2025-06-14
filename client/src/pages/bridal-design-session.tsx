@@ -239,7 +239,12 @@ export default function BridalDesignSession() {
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
                 {proTips.map((tip, index) => (
-                  <div key={index} className="scroll-animation bg-gray-50 rounded-3xl p-8">
+                  <div
+                    key={index}
+                    className="bg-gray-50 rounded-3xl p-8"
+                    data-aos="zoom-in"
+                    data-aos-delay={index * 150}
+                  >
                     <div className="flex items-start space-x-4">
                       <div className="w-18 h-18 bg-blush-100 rounded-full flex items-center justify-center flex-shrink-0" style={{color: '#ad3b68'}}>
                         {tip.icon}
