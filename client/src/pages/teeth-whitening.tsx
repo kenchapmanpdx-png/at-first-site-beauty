@@ -121,7 +121,7 @@ export default function TeethWhitening() {
         {/* Benefits Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Why Choose Professional Whitening?
               </h2>
@@ -129,7 +129,7 @@ export default function TeethWhitening() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {benefits.map((benefit, index) => (
-                <div key={index} className="text-center">
+                <div key={index} className="text-center" data-aos="zoom-in" data-aos-delay={index * 100}>
                   <div className="w-16 h-16 bg-blush-100 rounded-full flex items-center justify-center text-blush-400 mx-auto mb-4">
                     {benefit.icon}
                   </div>
@@ -148,7 +148,7 @@ export default function TeethWhitening() {
         {/* Before & After Gallery */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Real Results from <span className="text-blush-400">Real Clients</span>
               </h2>
@@ -159,7 +159,7 @@ export default function TeethWhitening() {
 
             <div className="max-w-5xl mx-auto">
               {beforeAfterImages.map((images, index) => (
-                <div key={index} className="mb-16 last:mb-0">
+                <div key={index} className="mb-16 last:mb-0" data-aos="fade-up" data-aos-delay={index * 200}>
                   <div className="bg-white rounded-3xl p-8 shadow-lg">
                     <div className="grid md:grid-cols-2 gap-8 items-center">
                       {/* Before Image */}
@@ -204,7 +204,7 @@ export default function TeethWhitening() {
         {/* Process Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Our Whitening Process
               </h2>
@@ -212,7 +212,7 @@ export default function TeethWhitening() {
             
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="text-center">
+                <div className="text-center" data-aos="zoom-in" data-aos-delay="100">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     1
                   </div>
@@ -224,7 +224,7 @@ export default function TeethWhitening() {
                   </p>
                 </div>
                 
-                <div className="text-center">
+                <div className="text-center" data-aos="zoom-in" data-aos-delay="200">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     2
                   </div>
@@ -236,7 +236,7 @@ export default function TeethWhitening() {
                   </p>
                 </div>
                 
-                <div className="text-center">
+                <div className="text-center" data-aos="zoom-in" data-aos-delay="300">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     3
                   </div>
@@ -255,7 +255,7 @@ export default function TeethWhitening() {
         {/* Pricing Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Teeth Whitening <span className="text-blush-400">Investment</span>
               </h2>
@@ -265,7 +265,7 @@ export default function TeethWhitening() {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
                 <div className="text-center mb-8">
                   <div className="w-20 h-20 bg-blush-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <DollarSign size={32} className="text-blush-400" />

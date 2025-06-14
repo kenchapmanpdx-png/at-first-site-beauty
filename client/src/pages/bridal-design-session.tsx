@@ -345,7 +345,7 @@ export default function BridalDesignSession() {
                 Ready to Design Your Perfect Bridal Look?
               </h2>
               <p className="text-lg text-gray-300 mb-8">
-                Book your luxury Bridal Hair & Makeup Design Session at our private bridal suite in downtown Vancouver, Washington.
+                Reserve your luxury Bridal Hair & Makeup Design Session at our private bridal suite in downtown Vancouver, Washington.
               </p>
               
               <div data-aos="fade-in" data-aos-delay="200">
