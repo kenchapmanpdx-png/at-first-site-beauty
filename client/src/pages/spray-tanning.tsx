@@ -118,23 +118,25 @@ export default function SprayTanning() {
               Back to Home
             </Button>
             
-            <div className="text-center max-w-4xl mx-auto">
+            <div className="text-center max-w-4xl mx-auto" data-aos="fade-up">
               <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Professional <span className="text-blush-400">Spray Tanning</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
                 At First Site's spray tan is expertly formulated to deliver a flawless, bronzed glow without the risk of orange undertones. Our unique blend is enriched with hydrating ingredients like hyaluronic acid, jojoba oil—closely resembling the skin's natural oils—and squalane, known for its lightweight moisture and non-comedogenic properties.
               </p>
-              <p className="text-lg text-gray-600 mb-12">
+              <p className="text-lg text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="300">
                 This carefully crafted formula nourishes the skin while providing a natural, radiant tan that enhances your glow without clogging pores or causing breakouts. With At First Site, orange is never an option—just healthy, luminous skin.
               </p>
               
-              <Button
-                onClick={() => scrollToSection("booking")}
-                className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
-              >
-                Book Your Spray Tan
-              </Button>
+              <div data-aos="fade-in" data-aos-delay="400">
+                <Button
+                  onClick={() => scrollToSection("booking")}
+                  className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
+                >
+                  Book Your Spray Tan
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -142,7 +144,7 @@ export default function SprayTanning() {
         {/* Benefits Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Why Choose At First Site Spray Tanning?
               </h2>
@@ -150,7 +152,7 @@ export default function SprayTanning() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {benefits.map((benefit, index) => (
-                <div key={index} className="text-center">
+                <div key={index} className="text-center" data-aos="zoom-in" data-aos-delay={index * 100}>
                   <div className="w-16 h-16 bg-blush-100 rounded-full flex items-center justify-center text-blush-400 mx-auto mb-4">
                     {benefit.icon}
                   </div>

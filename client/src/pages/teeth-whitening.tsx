@@ -95,23 +95,25 @@ export default function TeethWhitening() {
               Back to Home
             </Button>
             
-            <div className="text-center max-w-4xl mx-auto">
+            <div className="text-center max-w-4xl mx-auto" data-aos="fade-up">
               <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Professional <span className="text-blush-400">Teeth Whitening</span>
               </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
                 Our teeth whitening system stands apart from store-bought brands by offering a professional-grade solution that delivers immediate and noticeable results. We use a higher percentage of Hydrogen Peroxide, safely activated with a specialized light to enhance effectiveness while remaining gentle on your teeth.
               </p>
-              <p className="text-lg text-gray-600 mb-12">
+              <p className="text-lg text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="300">
                 Unlike over-the-counter options, our treatment is tailored to your individual needs, and includes a custom take-home kit designed to help you maintain your brighter, whiter smile long after your visit. Best of all, our system is FDA-registered, ensuring safety, quality, and peace of mind.
               </p>
               
-              <Button
-                onClick={() => scrollToSection("booking")}
-                className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
-              >
-                Book Your Whitening Session
-              </Button>
+              <div data-aos="fade-in" data-aos-delay="400">
+                <Button
+                  onClick={() => scrollToSection("booking")}
+                  className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
+                >
+                  Book Your Whitening Session
+                </Button>
+              </div>
             </div>
           </div>
         </section>
