@@ -109,7 +109,7 @@ export default function BridalDesignSession() {
               Back to Home
             </Button>
             
-            <div className="scroll-animation text-center max-w-4xl mx-auto">
+            <div className="text-center max-w-4xl mx-auto" data-aos="fade-up">
               <div className="flex items-center justify-center mb-4">
                 <Sparkles className="w-8 h-8 text-blush-400 mr-2" />
                 <span className="text-blush-400 font-medium text-lg">The Bridal Hair & Makeup Design Session</span>
@@ -119,7 +119,7 @@ export default function BridalDesignSession() {
                 Where Your Dream Look Begins. Your Look, <span className="text-blush-400">Locked In.</span>
               </h1>
               
-              <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100 text-center">
+              <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100 text-center" data-aos="fade-up" data-aos-delay="200">
                 <div className="text-xl text-gray-600 leading-relaxed">
                   <p className="mb-4">
                     Your bridal glam journey begins well before the big day—inside our private bridal suite, where we go far beyond a simple "trial." Your Design Session is a fully immersive, luxury experience crafted to make sure your look is picture-perfect, timeless, and unmistakably you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested, tailored, and perfected.
@@ -141,7 +141,7 @@ export default function BridalDesignSession() {
 
               {/* Studio Gallery - Moved above Touch-Up Kit */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
-                <div className="scroll-animation">
+                <div data-aos="zoom-in" data-aos-delay="100">
                   <img
                     src={studioImage1}
                     alt="Luxury bridal design session in private suite"
@@ -149,7 +149,7 @@ export default function BridalDesignSession() {
                     loading="lazy"
                   />
                 </div>
-                <div className="scroll-animation">
+                <div data-aos="zoom-in" data-aos-delay="200">
                   <img
                     src={makeupProcess}
                     alt="Professional makeup application during design session"
@@ -157,7 +157,7 @@ export default function BridalDesignSession() {
                     loading="lazy"
                   />
                 </div>
-                <div className="scroll-animation">
+                <div data-aos="zoom-in" data-aos-delay="300">
                   <img
                     src={studioImage2}
                     alt="Bridal hair styling consultation"
@@ -167,7 +167,7 @@ export default function BridalDesignSession() {
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-4 shadow-lg mb-4">
+              <div className="bg-white rounded-2xl p-4 shadow-lg mb-4" data-aos="fade-in" data-aos-delay="100">
                 <div className="flex items-center justify-center mb-2">
                   <Star className="w-5 h-5 text-blush-400 mr-2" />
                   <span className="font-semibold text-gray-900 text-sm">Personalized Touch-Up Kit Included so your look stays radiant from "I do" to your last dance.</span>
@@ -179,21 +179,23 @@ export default function BridalDesignSession() {
                 </div>
               </div>
               
-              <div className="text-center mb-6 mt-9">
+              <div className="text-center mb-6 mt-9" data-aos="fade-up" data-aos-delay="200">
                 <p className="text-xl text-gray-600 italic leading-relaxed">
                   "Imagine walking down the aisle knowing everything—from your hair to your glow—is already perfected and proven."
                 </p>
               </div>
               
-              <Button
-                onClick={() => scrollToSection("booking")}
-                className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium mb-8 mt-8 luxury-hover"
-              >
-                Book Your Design Session
-              </Button>
+              <div data-aos="fade-in" data-aos-delay="300">
+                <Button
+                  onClick={() => scrollToSection("booking")}
+                  className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium mb-8 mt-8 luxury-hover"
+                >
+                  Book Your Design Session
+                </Button>
+              </div>
               
               {/* Design Session Process - Moved here */}
-              <div className="scroll-animation text-center mt-12">
+              <div className="text-center mt-12" data-aos="fade-up">
                 <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-8">
                   Your Design Session Process
                 </h2>
@@ -201,7 +203,7 @@ export default function BridalDesignSession() {
                 <div className="max-w-4xl mx-auto">
                   <div className="grid md:grid-cols-2 gap-8">
                     {processSteps.map((step, index) => (
-                      <div key={index} className="scroll-animation">
+                      <div key={index} data-aos="fade-up" data-aos-delay={index * 150}>
                         <div className="flex items-start space-x-4">
                           <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">
                             {step.number}
@@ -228,7 +230,7 @@ export default function BridalDesignSession() {
         <section className="py-3 bg-white">
           <div className="container mx-auto px-4">
 
-            <div className="scroll-animation text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Pro Tips for <span className="text-blush-400">Timeless Bridal Glam</span>
               </h2>
@@ -261,7 +263,7 @@ export default function BridalDesignSession() {
         {/* Pricing Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-16">
+            <div className="text-center mb-16" data-aos="fade-up">
               <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Investment <span className="text-blush-400">& Pricing</span>
               </h2>
@@ -271,7 +273,7 @@ export default function BridalDesignSession() {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="scroll-animation bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
                 <div className="text-center mb-8">
                   <h3 className="font-playfair text-3xl font-bold text-gray-900 mb-4">
                     Bride Hair and Makeup Design Session
@@ -333,7 +335,7 @@ export default function BridalDesignSession() {
         {/* CTA Section */}
         <section id="booking" className="py-20 bg-gray-900 text-white">
           <div className="container mx-auto px-4 text-center">
-            <div className="scroll-animation max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto" data-aos="fade-up">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">
                 Ready to Design Your Perfect Bridal Look?
               </h2>
@@ -341,12 +343,14 @@ export default function BridalDesignSession() {
                 Book your luxury Bridal Hair & Makeup Design Session at our private bridal suite in downtown Vancouver, Washington.
               </p>
               
-              <Button 
-                onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-                className="premium-button text-white px-12 py-4 rounded-full text-lg font-medium mb-6 luxury-hover"
-              >
-                Schedule Your Design Session
-              </Button>
+              <div data-aos="fade-in" data-aos-delay="200">
+                <Button 
+                  onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+                  className="premium-button text-white px-12 py-4 rounded-full text-lg font-medium mb-6 luxury-hover"
+                >
+                  Schedule Your Design Session
+                </Button>
+              </div>
               
               <div className="flex items-center justify-center text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 mr-2" />
