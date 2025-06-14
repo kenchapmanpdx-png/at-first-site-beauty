@@ -118,7 +118,7 @@ export default function SprayTanning() {
               Back to Home
             </Button>
             
-            <div className="scroll-animation text-center max-w-4xl mx-auto">
+            <div className="text-center max-w-4xl mx-auto">
               <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Professional <span className="text-blush-400">Spray Tanning</span>
               </h1>
@@ -142,7 +142,7 @@ export default function SprayTanning() {
         {/* Benefits Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-16">
+            <div className="text-center mb-16">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Why Choose At First Site Spray Tanning?
               </h2>
@@ -150,7 +150,7 @@ export default function SprayTanning() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {benefits.map((benefit, index) => (
-                <div key={index} className="scroll-animation text-center">
+                <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-blush-100 rounded-full flex items-center justify-center text-blush-400 mx-auto mb-4">
                     {benefit.icon}
                   </div>
@@ -169,7 +169,7 @@ export default function SprayTanning() {
         {/* Why Choose Our Team */}
         <section className="py-20 bg-gradient-to-r from-blush-400 to-blush-500 text-white">
           <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-16">
+            <div className="text-center mb-16">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-6">
                 Why Brides Must Spray Tan With <span className="text-white">Our Team</span>
               </h2>
@@ -180,7 +180,7 @@ export default function SprayTanning() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {whyChooseUs.map((reason, index) => (
-                <div key={index} className="scroll-animation text-center">
+                <div key={index} className="text-center">
                   <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
                     <div className="text-white">
                       {reason.icon}
@@ -196,7 +196,7 @@ export default function SprayTanning() {
               ))}
             </div>
 
-            <div className="scroll-animation text-center mt-16">
+            <div className="text-center mt-16">
               <div className="bg-white bg-opacity-10 rounded-2xl p-8 max-w-4xl mx-auto">
                 <h3 className="font-playfair text-2xl font-semibold mb-4">
                   Professional Consistency Guarantee
@@ -212,7 +212,7 @@ export default function SprayTanning() {
         {/* Ingredients Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-16">
+            <div className="text-center mb-16">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Premium Ingredients for Healthy Skin
               </h2>
@@ -224,7 +224,7 @@ export default function SprayTanning() {
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-8">
                 {ingredients.map((ingredient, index) => (
-                  <div key={index} className="scroll-animation bg-blush-50 rounded-3xl p-8 text-center">
+                  <div key={index} className="bg-blush-50 rounded-3xl p-8 text-center">
                     <h3 className="font-playfair text-xl font-semibold text-gray-900 mb-3">
                       {ingredient.name}
                     </h3>
@@ -241,7 +241,7 @@ export default function SprayTanning() {
         {/* Process Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-16">
+            <div className="text-center mb-16">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Our Spray Tan Process
               </h2>
@@ -249,7 +249,7 @@ export default function SprayTanning() {
             
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="scroll-animation text-center">
+                <div className="text-center">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     1
                   </div>
@@ -261,7 +261,7 @@ export default function SprayTanning() {
                   </p>
                 </div>
                 
-                <div className="scroll-animation text-center">
+                <div className="text-center">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     2
                   </div>
@@ -273,7 +273,7 @@ export default function SprayTanning() {
                   </p>
                 </div>
                 
-                <div className="scroll-animation text-center">
+                <div className="text-center">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     3
                   </div>
@@ -292,7 +292,7 @@ export default function SprayTanning() {
         {/* Pricing Section */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="scroll-animation text-center mb-16">
+            <div className="text-center mb-16">
               <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Spray Tanning <span className="text-blush-400">Package</span>
               </h2>
@@ -302,7 +302,7 @@ export default function SprayTanning() {
             </div>
 
             <div className="max-w-4xl mx-auto">
-              <div className="scroll-animation bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
+              <div className="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100">
                 <div className="text-center mb-8">
                   <div className="w-20 h-20 bg-blush-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <DollarSign size={32} className="text-blush-400" />
@@ -362,7 +362,7 @@ export default function SprayTanning() {
         {/* CTA Section */}
         <section id="booking" className="py-20 bg-blush-50">
           <div className="container mx-auto px-4 text-center">
-            <div className="scroll-animation max-w-3xl mx-auto">
+            <div className="max-w-3xl mx-auto">
               <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                 Ready for Your Perfect Glow?
               </h2>

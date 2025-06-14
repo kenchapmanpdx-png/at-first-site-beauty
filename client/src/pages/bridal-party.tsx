@@ -148,7 +148,7 @@ export default function BridalParty() {
       {/* Why Cohesive Look Matters */}
       <section ref={sectionRef} className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="scroll-animation text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Why a <span className="text-blush-400">Cohesive Look</span> Matters
             </h2>
@@ -159,7 +159,7 @@ export default function BridalParty() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {cohesiveImportance.map((item, index) => (
-              <div key={index} className="scroll-animation text-center">
+              <div key={index} className="text-center">
                 <div className="w-20 h-20 bg-blush-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <item.icon size={32} className="text-blush-400" />
                 </div>
@@ -178,7 +178,7 @@ export default function BridalParty() {
       {/* Service Gallery */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="scroll-animation text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Professional <span className="text-blush-400">Bridal Party</span> Styling
             </h2>
@@ -188,7 +188,7 @@ export default function BridalParty() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="scroll-animation">
+            <div data-aos="fade-up">
               <img
                 src={bridalPartyImage1}
                 alt="Professional bridal party makeup application with coordinated styling"
@@ -203,7 +203,7 @@ export default function BridalParty() {
               </p>
             </div>
 
-            <div className="scroll-animation">
+            <div data-aos="fade-up">
               <img
                 src={bridalPartyImage2}
                 alt="Bridal party hair styling with cohesive elegant looks"
@@ -218,7 +218,7 @@ export default function BridalParty() {
               </p>
             </div>
 
-            <div className="scroll-animation">
+            <div data-aos="fade-up">
               <img
                 src={bridalPartyImage3}
                 alt="Finished bridal party look showcasing professional styling results"
@@ -305,7 +305,7 @@ export default function BridalParty() {
       {/* Pricing Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="scroll-animation text-center mb-16">
+          <div className="text-center mb-16">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Bridal Party <span className="text-blush-400">Pricing</span>
             </h2>
@@ -316,7 +316,7 @@ export default function BridalParty() {
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
             {/* Bridal Party Services */}
-            <div className="scroll-animation bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
               <div className="text-center mb-8">
                 <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-4">
                   Bridal Party Hair & Makeup
@@ -358,7 +358,7 @@ export default function BridalParty() {
             </div>
 
             {/* Mother of Bride & Groom Services */}
-            <div className="scroll-animation bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+            <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
               <div className="text-center mb-8">
                 <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-4">
                   Mother of Bride & Groom
@@ -400,7 +400,7 @@ export default function BridalParty() {
             </div>
           </div>
 
-          <div className="scroll-animation text-center mt-12">
+          <div className="text-center mt-12">
             <div className="bg-blush-50 rounded-2xl p-6 max-w-4xl mx-auto">
               <p className="text-gray-700 leading-relaxed">
                 <strong>Group Package Benefits:</strong> When booking multiple bridal party members, our artists create flawless, camera-ready looks for your bride's party while ensuring each member feels beautiful while complementing your overall vision. The result? A breathtakingly cohesive aesthetic that shines through in every photo and creates timeless memories you'll treasure forever.
@@ -413,7 +413,7 @@ export default function BridalParty() {
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-blush-400 to-blush-500 text-white">
         <div className="container mx-auto px-4 text-center">
-          <div className="scroll-animation max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6">
               Ready to Create Your Perfect Bridal Party Look?
             </h2>
