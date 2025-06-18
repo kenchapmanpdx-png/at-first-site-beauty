@@ -28,9 +28,9 @@ export default function Header() {
   return (
     <>
       {/* Mobile-First Responsive Header */}
-      <header className="relative bg-white">
+      <header className="relative bg-white" style={{ border: '1px solid red' }}>
         {/* Logo Section - Image-based logo */}
-        <div className="flex items-center justify-center py-2 md:py-3">
+        <div className="flex items-center justify-center py-1 md:py-2">
           <div className="w-full max-w-6xl px-4">
             <img
               src={logoImage}
@@ -40,15 +40,16 @@ export default function Header() {
                 maxWidth: '500px',
                 width: '100%',
                 height: 'auto',
-                marginTop: '-10px',
-                marginBottom: '-10px'
+                maxHeight: '100px',
+                paddingTop: '0',
+                paddingBottom: '0',
               }}
             />
           </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex justify-center pb-3 relative z-10">
+        <div className="md:hidden flex justify-center pb-1 relative z-10">
           <Button
             variant="ghost"
             size="sm"
@@ -61,7 +62,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden md:flex justify-center pb-2 relative z-10">
+        <nav className="hidden md:flex justify-center pb-1 relative z-10">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-3">
             <button
               onClick={() => scrollToSection("home")}
