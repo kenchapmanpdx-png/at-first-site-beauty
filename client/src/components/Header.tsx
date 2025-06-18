@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLocation } from "wouter";
-import logoImage from "@assets/1At First Site Logo (1000 x 350 px)bb_1749329806337.png";
+import logoImage from "@assets/new-logo.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,12 +34,9 @@ export default function Header() {
           <div className="container mx-auto px-4 flex justify-center">
             <div className="text-center">
               <img
-                src="/api/placeholder/300/100"
+                src={logoImage}
                 alt="At First Site Beauty On Location - Premier Bridal Hair and Makeup Services Pacific Northwest"
-                className="w-auto h-12 md:h-16"
-                style={{
-                  content: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDUwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwhLS0gQXQgRmlyc3QgU2l0ZSAtLT4KPHN0eWxlPgoudGV4dCB7CiAgZm9udC1mYW1pbHk6ICdDdXJzaXZlJywgc2VyaWY7CiAgZmlsbDogIzMzMzsKfQouc2NyaXB0IHsKICBmb250LWZhbWlseTogJ0N1cnNpc2UnLCAnQnJ1c2ggU2NyaXB0IE1UJywgc2VyaWY7CiAgZm9udC1zaXplOiA0OHB4OwogIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgZm9udC1zdHlsZTogaXRhbGljOwp9Ci5zdWJ0aXRsZSB7CiAgZm9udC1mYW1pbHk6ICdBcmlhbCcsIHNhbnMtc2VyaWY7CiAgZm9udC1zaXplOiAxNHB4OwogIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgbGV0dGVyLXNwYWNpbmc6IDJweDsKfQo8L3N0eWxlPgo8dGV4dCB4PSIyNSIgeT0iNzAiIGNsYXNzPSJzY3JpcHQiPkF0IEZpcnN0IFNpdGU8L3RleHQ+Cjx0ZXh0IHg9IjcwIiB5PSIxMjAiIGNsYXNzPSJzdWJ0aXRsZSI+QkVBVVRZIE9OIExPQ0FUSU9OPC90ZXh0Pgo8L3N2Zz4=")'
-                }}
+                className="w-auto h-16 md:h-20 max-w-sm"
               />
             </div>
           </div>
