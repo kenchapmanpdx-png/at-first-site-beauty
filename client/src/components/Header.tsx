@@ -30,13 +30,13 @@ export default function Header() {
       {/* Mobile-First Responsive Header */}
       <header className="relative bg-white">
         {/* Logo Section - Image-based logo */}
-        <div className="flex items-center justify-center py-3 md:py-4">
+        <div className="flex items-center justify-center py-2 md:py-4">
           <div className="w-full max-w-6xl px-4">
             <img
               src={logoImage}
               alt="At First Site Beauty On Location - Premier Bridal Hair and Makeup Services Pacific Northwest"
               className="w-full h-auto max-w-none"
-              style={{ height: 'auto', width: '85%', margin: '0 auto', display: 'block' }}
+              style={{ maxHeight: '100px', width: 'auto', margin: '0 auto', display: 'block' }}
             />
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="hidden md:flex justify-center pb-3 relative z-10">
+        <nav className="hidden md:flex justify-center pb-2 relative z-10">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-3">
             <button
               onClick={() => scrollToSection("home")}
