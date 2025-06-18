@@ -1,0 +1,131 @@
+A simple component, along with instructions to copy/paste directly into your project:
+
+✅ 1. Create: BookingWidget.tsx
+tsx
+Copy
+Edit
+// src/components/BookingWidget.tsx
+import { useEffect } from 'react';
+
+export default function BookingWidget() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div className="booking-widget max-w-full">
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/booking/ge2HN52PHjWliZSbo6T9"
+        style={{
+          width: '100%',
+          border: 'none',
+          overflow: 'hidden',
+          minHeight: '600px',
+        }}
+        scrolling="no"
+        title="Bridal Appointment Booking"
+        id="ge2HN52PHjWliZSbo6T9_1750196042723"
+      />
+    </div>
+  );
+}
+✅ 2. Use it in a Page (e.g. App.tsx or Contact.tsx)
+tsx
+Copy
+Edit
+import BookingWidget from './components/BookingWidget';
+
+function App() {
+  return (
+    <main className="mx-auto p-6">
+      {/* Other content */}
+      <section id="booking" className="max-w-3xl mx-auto my-12">
+        <h2 className="text-2xl font-bold mb-4">Book Your Bridal Appointment</h2>
+        <BookingWidget />
+      </section>
+    </main>
+  );
+}
+✅ 3. Adjust Responsiveness
+The minHeight: '600px' ensures your calendar displays fully—adjust this up or down to fit your widget content.
+
+For mobile, you could use:
+
+tsx
+Copy
+Edit
+minHeight: window.innerWidth < 640 ? '800px' : '600px'
+inside the component, or adjust your CSS.
+
+🚀 What This Does
+It injects the required embed script once the component mounts.
+
+It displays the iframe with full width and a fixed minimum height, preventing awkward scrollbars.
+
+It remains responsive across screen sizes.
+
+🔧 Want dynamic height adjustment?
+For automatic resizing based on the widget content (if supported by the embed), use this library:
+
+npm install @iframe-resizer/react
+
+Then:
+
+tsx
+Copy
+Edit
+import IframeResizer from '@iframe-resizer/react';
+
+export default function BookingWidget() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => document.body.removeChild(script);
+  }, []);
+
+  return (
+    <IframeResizer
+      src="https://api.leadconnectorhq.com/widget/booking/ge2HN52PHjWliZSbo6T9"
+      style={{ width: '100%', border: 'none' }}
+      log
+      frameBorder={0}
+      scrolling="no"
+    />
+  );
+}
+This automatically resizes the iframe using postMessage when same-origin or supported cross-origin config is available 
+stackoverflow.com
++3
+sociablekit.com
++3
+youtube.com
++3
+help.calendly.com
+smashingmagazine.com
+github.com
++4
+npmjs.com
++4
+stackoverflow.com
++4
+github.com
+.
+
+✅ Final Step
+Copy the BookingWidget code above into your Replit project.
+
+Import and render it in your page.
+
+Adjust minHeight as needed.
+
+Launch your Replit preview—you should see the full booking calendar ready to go.
+
+Let me know if you'd like me to help with the dynamic resize setup or custom styling!
