@@ -30,13 +30,19 @@ export default function Header() {
       {/* Mobile-First Responsive Header */}
       <header className="relative bg-white">
         {/* Logo Section - Image-based logo */}
-        <div className="flex items-center justify-center py-2 md:py-4">
+        <div className="flex items-center justify-center py-2 md:py-3">
           <div className="w-full max-w-6xl px-4">
             <img
               src={logoImage}
-              alt="At First Site Beauty On Location - Premier Bridal Hair and Makeup Services Pacific Northwest"
-              className="w-full h-auto max-w-none"
-              style={{ maxHeight: '100px', width: 'auto', margin: '0 auto', display: 'block' }}
+              alt="At First Site Beauty On Location"
+              className="mx-auto block"
+              style={{
+                maxWidth: '500px',
+                width: '100%',
+                height: 'auto',
+                marginTop: '-10px',
+                marginBottom: '-10px'
+              }}
             />
           </div>
         </div>
