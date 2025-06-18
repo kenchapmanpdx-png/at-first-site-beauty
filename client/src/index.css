@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&display=swap&preload=swap');
 
 @font-face {
   font-family: 'Darleston';
@@ -435,12 +435,39 @@
     z-index: -1;
   }
 
-  /* Luxury paper texture */
+  /* Luxury paper texture - optimized for mobile */
   .paper-texture {
     background-image: 
       radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
     background-size: 20px 20px;
     background-position: 0 0, 10px 10px;
+  }
+
+  @media (max-width: 768px) {
+    .paper-texture {
+      background-size: 15px 15px;
+    }
+  }
+
+  /* Mobile-first performance optimizations */
+  @media (max-width: 768px) {
+    .luxury-hover {
+      transform: none;
+      transition: box-shadow 0.2s ease;
+    }
+    
+    .luxury-hover:hover {
+      transform: none;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .premium-button {
+      transition: all 0.2s ease;
+    }
+    
+    .premium-button:hover {
+      transform: translateY(-1px);
+    }
   }
 
   /* Sophisticated noise overlay */
@@ -673,10 +700,12 @@
 
   /* Old sparkle-card animation removed */
 
-  /* Sparkle effect for CTA buttons */
+  /* Sparkle effect for CTA buttons - mobile optimized */
   .sparkle-button {
     position: relative;
     overflow: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   .sparkle-button .sparkle {
@@ -691,6 +720,16 @@
     opacity: 0;
     z-index: 10;
     pointer-events: none;
+    will-change: opacity, transform;
+  }
+
+  @media (max-width: 768px) {
+    .sparkle-button .sparkle {
+      font-size: 14px;
+      text-shadow: 
+        0 0 6px rgba(255, 255, 255, 0.8),
+        0 0 12px rgba(255, 255, 255, 0.6);
+    }
   }
 
   .sparkle-button:hover .sparkle {

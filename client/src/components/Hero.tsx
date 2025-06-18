@@ -9,8 +9,10 @@ export default function Hero() {
 
   useEffect(() => {
     let ticking = false;
+    const isMobile = window.innerWidth <= 768;
+    
     const handleScroll = () => {
-      if (!ticking) {
+      if (!ticking && !isMobile) { // Disable parallax on mobile for performance
         requestAnimationFrame(() => {
           setScrollY(window.scrollY);
           ticking = false;
@@ -19,10 +21,12 @@ export default function Hero() {
       }
     };
     
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    if (!isMobile) {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    }
     
     // Trigger loading animation
-    setTimeout(() => setIsLoaded(true), 300);
+    setTimeout(() => setIsLoaded(true), 100);
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -35,8 +39,8 @@ export default function Hero() {
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundPosition: 'center 25%',
-          transform: `translateY(${scrollY * 0.5}px)`,
-          willChange: 'transform',
+          transform: window.innerWidth > 768 ? `translateY(${scrollY * 0.5}px)` : 'none',
+          willChange: window.innerWidth > 768 ? 'transform' : 'auto',
         }}
         role="img"
         aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"

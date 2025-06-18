@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import LazyImage from "./LazyImage";
 import bridalImage1 from "@assets/IMG_0970_1749066905982.png";
 import makeupApplication from "@assets/IMG_0944.png";
 import bridalHair from "@assets/IMG_0943.png";
@@ -132,16 +133,11 @@ export default function Gallery() {
               itemScope
               itemType="https://schema.org/ImageObject"
             >
-              <img
+              <LazyImage
                 src={image.src}
                 alt={image.alt}
-                title={image.title}
                 className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-white/20 filter grayscale hover:grayscale-0 transition-all duration-700"
                 loading={index < 4 ? "eager" : "lazy"}
-                decoding="async"
-                itemProp="contentUrl"
-                width="400"
-                height="auto"
                 style={{ aspectRatio: 'auto' }}
               />
               <meta itemProp="name" content={image.title} />
