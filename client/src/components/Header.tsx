@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logoImage from "@assets/1At First Site Logo (1000 x 350 px)bb_1749329806337_1750282076832.png";
+import beautyOnLocationText from "@assets/beauty-on-location-text.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ export default function Header() {
     <>
       <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm">
         {/* Logo */}
-        <div className="flex items-center justify-center py-0.5 md:py-1">
+        <div className="flex flex-col items-center justify-center py-1.5 md:py-3">
           <div className="w-full max-w-6xl px-4">
             <img
               src={logoImage}
@@ -21,6 +22,20 @@ export default function Header() {
                 height: "auto",
                 maxWidth: "80%",
                 maxHeight: "100px",
+              }}
+            />
+          </div>
+          {/* Beauty On Location Text */}
+          <div className="w-full max-w-4xl px-4 mt-2">
+            <img
+              src={beautyOnLocationText}
+              alt="Beauty On Location"
+              className="mx-auto block"
+              style={{
+                width: "auto",
+                height: "auto",
+                maxWidth: "60%",
+                maxHeight: "40px",
               }}
             />
           </div>
@@ -69,7 +84,7 @@ export default function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind the floating header */}
-      <section className="pt-28 md:pt-36"></section>
+      <section className="pt-36 md:pt-44"></section>
     </>
   );
 }
