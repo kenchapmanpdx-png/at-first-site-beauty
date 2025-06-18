@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
 import bridalImage from "@assets/IMG_0971_1749066905983.png";
@@ -104,7 +105,7 @@ export default function Services() {
           {services.map((service, index) => (
             <article
               key={index}
-              className={`scroll-animation stagger-${index + 1} relative group overflow-hidden rounded-2xl md:rounded-3xl h-64 sm:h-80 md:h-96 cursor-pointer luxury-hover sparkle shadow-2xl border border-white/20 touch-manipulation`}
+              className={`scroll-animation stagger-${index + 1} relative group overflow-hidden rounded-2xl md:rounded-3xl h-64 sm:h-80 md:h-96 cursor-pointer luxury-hover sparkle shadow-2xl border border-white/20 touch-target`}
               itemScope
               itemType="https://schema.org/Service"
               onClick={() => service.link && setLocation(service.link)}
