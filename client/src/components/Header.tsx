@@ -41,9 +41,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Gradient separator between header and hero */}
-        <div className="absolute bottom-0 left-0 right-0 h-4 bg-gradient-to-b from-white/80 to-transparent"></div>
-
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex justify-center pb-2 relative z-10">
           <Button
