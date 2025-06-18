@@ -10,7 +10,7 @@ export default function Header() {
     <>
       <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm">
         {/* Logo */}
-        <div className="flex items-center justify-center py-0.5 md:py-1"></div>
+        <div className="flex items-center justify-center py-0.5 md:py-1">
           <div className="w-full max-w-6xl px-4">
             <img
               src={logoImage}
