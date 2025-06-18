@@ -34,23 +34,17 @@ export default function Header() {
           <div className="container mx-auto px-4 flex justify-center">
             <div className="text-center">
               <img
-                src={logoImage}
-                alt="At First Site Beauty On Location - Professional bridal hair and makeup services in Pacific Northwest"
-                className="w-auto h-22 sm:h-26 md:h-31 lg:h-36 xl:h-44 mx-auto drop-shadow-lg"
-                loading="eager"
-                width="1000"
-                height="350"
+                src="/api/placeholder/300/100"
+                alt="At First Site Beauty On Location - Premier Bridal Hair and Makeup Services Pacific Northwest"
+                className="w-auto h-12 md:h-16"
+                style={{
+                  content: 'url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjE1MCIgdmlld0JveD0iMCAwIDUwMCAxNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwhLS0gQXQgRmlyc3QgU2l0ZSAtLT4KPHN0eWxlPgoudGV4dCB7CiAgZm9udC1mYW1pbHk6ICdDdXJzaXZlJywgc2VyaWY7CiAgZmlsbDogIzMzMzsKfQouc2NyaXB0IHsKICBmb250LWZhbWlseTogJ0N1cnNpc2UnLCAnQnJ1c2ggU2NyaXB0IE1UJywgc2VyaWY7CiAgZm9udC1zaXplOiA0OHB4OwogIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgZm9udC1zdHlsZTogaXRhbGljOwp9Ci5zdWJ0aXRsZSB7CiAgZm9udC1mYW1pbHk6ICdBcmlhbCcsIHNhbnMtc2VyaWY7CiAgZm9udC1zaXplOiAxNHB4OwogIGZvbnQtd2VpZ2h0OiBub3JtYWw7CiAgbGV0dGVyLXNwYWNpbmc6IDJweDsKfQo8L3N0eWxlPgo8dGV4dCB4PSIyNSIgeT0iNzAiIGNsYXNzPSJzY3JpcHQiPkF0IEZpcnN0IFNpdGU8L3RleHQ+Cjx0ZXh0IHg9IjcwIiB5PSIxMjAiIGNsYXNzPSJzdWJ0aXRsZSI+QkVBVVRZIE9OIExPQ0FUSU9OPC90ZXh0Pgo8L3N2Zz4=")'
+                }}
               />
-              <div className="mt-2 sm:mt-3 md:mt-4">
-                <p className="text-blush-400 font-light text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl tracking-[0.2em] drop-shadow-md font-sans whitespace-nowrap" 
-                   style={{ width: '70%', margin: '0 auto' }}>
-                  BEAUTY ON LOCATION
-                </p>
-              </div>
             </div>
           </div>
         </div>
-        
+
         {/* Mobile Menu Button */}
         <div className="md:hidden flex justify-center pb-6 relative z-10">
           <Button
@@ -88,7 +82,7 @@ export default function Header() {
                 Services
                 <ChevronDown className="w-4 h-4 ml-1" />
               </button>
-              
+
               {/* Services Dropdown Menu */}
               {isServicesDropdownOpen && (
                 <div 
@@ -170,7 +164,7 @@ export default function Header() {
                     Services
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
                   </button>
-                  
+
                   {/* Mobile Services Submenu */}
                   {isMobileServicesOpen && (
                     <div className="ml-4 mt-2 space-y-2 border-l-2 border-blush-200 pl-4">
@@ -223,7 +217,7 @@ export default function Header() {
             </nav>
           </div>
         )}
-        
+
         {/* Soft white transition to hero photo */}
         <div className="absolute bottom-0 left-0 right-0 h-8 md:h-12 bg-gradient-to-b from-white/80 to-transparent"></div>
       </header>

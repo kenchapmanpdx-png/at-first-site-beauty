@@ -95,7 +95,7 @@ export default function Services() {
               Our <span className="text-white">Services</span>
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-              Whether it's a wedding, prom, quinceañera, or just a special night out, we offer complete beauty services designed to elevate any occasion.
+              Whether it's a wedding, prom, quinceañera, or just a special night out, we offer comprehensive beauty services to make your special day absolutely perfect.
             </p>
           </div>
         </div>
@@ -107,6 +107,7 @@ export default function Services() {
               className={`scroll-animation stagger-${index + 1} relative group overflow-hidden rounded-2xl md:rounded-3xl h-64 sm:h-80 md:h-96 cursor-pointer luxury-hover sparkle shadow-2xl border border-white/20 touch-manipulation`}
               itemScope
               itemType="https://schema.org/Service"
+              onClick={() => service.link && setLocation(service.link)}
             >
               {/* Background Image */}
               <div 
@@ -127,17 +128,9 @@ export default function Services() {
                   <h3 className="font-playfair text-lg sm:text-xl md:text-2xl font-semibold mb-2 md:mb-3" itemProp="name">
                     {service.title}
                   </h3>
-                  <p className="text-gray-100 opacity-90 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 leading-relaxed mb-3 md:mb-4 text-sm md:text-base line-clamp-3 md:line-clamp-none" itemProp="description">
+                  <p className="text-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed mb-3 md:mb-4 text-sm md:text-base" itemProp="description">
                     {service.description}
                   </p>
-                  <Button
-                    variant="ghost"
-                    className="text-white border-white border hover:bg-white hover:text-gray-900 active:bg-white active:text-gray-900 transition-all duration-300 opacity-100 md:opacity-0 md:group-hover:opacity-100 touch-manipulation text-sm md:text-base"
-                    aria-label={`Learn more about ${service.title}`}
-                    onClick={() => service.link && setLocation(service.link)}
-                  >
-                    Learn More <ArrowRight size={14} className="ml-2" />
-                  </Button>
                 </div>
                 {/* Structured Data */}
                 <meta itemProp="serviceType" content={service.category} />
