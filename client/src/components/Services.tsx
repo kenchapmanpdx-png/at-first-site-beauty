@@ -120,7 +120,7 @@ export default function Services() {
                 <div className="image-overlay absolute inset-0"></div>
                 <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition-all duration-700"></div>
               </div>
-              
+
               {/* Content Overlay */}
               <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6 md:p-8 text-white">
                 <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">

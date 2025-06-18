@@ -124,7 +124,7 @@ export default function About() {
               Founder of Cedars Academy of Makeup Artistry
             </p>
             <p className="text-gray-600 leading-relaxed" itemProp="description">
-              Creator of the only private beauty academy in the Pacific Northwest focused 100% on makeup artistry. Cedar personally trains and certifies all makeup artists on our team, ensuring consistent quality control and expertise.
+              Owner of the only private career college in the Pacific Northwest focused exclusively on makeup artistry, Cedar personally trains and certifies all makeup artists on our team—ensuring consistent quality, control, and expertise.
             </p>
             <meta itemProp="worksFor" content="At First Sight Beauty On Location" />
             <meta itemProp="knowsAbout" content="Makeup Artistry, Bridal Makeup, Makeup Education, Artist Training" />
@@ -138,7 +138,7 @@ export default function About() {
             Our Elite Team of Artists
           </h3>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
-            Our makeup artists are personally trained and certified by Cedar. Hair styling is handled by top professionals selected and mentored by Hollie. Together, they uphold strict standards to ensure every client receives flawless results.
+            Our makeup is applied by artists that Cedar has personally trained and certified through her program. Hair styling is handled by top professionals selected and mentored by Hollie. Together, they uphold strict standards to ensure every client receives flawless results.
           </p>
           <div className="bg-blush-50 rounded-2xl p-8">
             <h4 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
