@@ -96,7 +96,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex justify-center pb-2 relative z-10">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-2 text-sm font-medium text-gray-800">
-            <a href="/" className="hover:text-blush-400">Home</a>
+            <button onClick={() => window.location.href = '/'} className="hover:text-blush-400 cursor-pointer">Home</button>
             <button onClick={(e) => { 
               e.preventDefault(); 
               navigateToSection('about');

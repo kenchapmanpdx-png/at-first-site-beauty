@@ -204,10 +204,7 @@
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
-.luxury-hover:hover::before {
-  opacity: 0.6;
-  animation: sparkle 3.6s ease-in-out;
-}
+/* Old luxury-hover sparkle animation removed */
 
   /* Premium text shadows */
   .luxury-text {
@@ -233,34 +230,7 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.3);
   }
 
-  /* Dynamic sparkle animation */
-  .sparkle {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .sparkle::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-      45deg, 
-      transparent 30%, 
-      rgba(255, 255, 255, 0.3) 50%, 
-      transparent 70%
-    );
-    transform: translateX(-100%) translateY(-100%) rotate(45deg);
-    animation: sparkle 3s infinite;
-  }
-
-  @keyframes sparkle {
-    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-    50% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-    100% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-  }
+  /* Old sparkle animation removed - replaced with sparkle-button implementation */
 
   /* Parallax effect for backgrounds */
   .parallax {
@@ -701,10 +671,7 @@
     border-color: hsl(var(--blush-300));
   }
 
-  .sparkle-card:hover::before {
-    opacity: 0.75;
-    animation: sparkle 3.6s ease-in-out;
-  }
+  /* Old sparkle-card animation removed */
 
   /* Sparkle effect for CTA buttons */
   .sparkle-button {
