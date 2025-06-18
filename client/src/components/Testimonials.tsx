@@ -57,7 +57,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white watercolor-bg" itemScope itemType="https://schema.org/ReviewSection">
+    <section id="testimonials" ref={sectionRef} className="py-20 bg-white watercolor-bg" itemScope itemType="https://schema.org/ReviewSection">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
