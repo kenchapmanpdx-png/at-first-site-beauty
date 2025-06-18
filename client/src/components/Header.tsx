@@ -32,11 +32,11 @@ export default function Header() {
         {/* Logo Section - Image-based logo */}
         <div className="flex items-center justify-center pt-2 md:pt-4 pb-1 md:pb-2">
           <div className="container mx-auto px-4 flex justify-center">
-            <div className="text-center">
+            <div className="text-center w-full max-w-4xl">
               <img
                 src={logoImage}
                 alt="At First Site Beauty On Location - Premier Bridal Hair and Makeup Services Pacific Northwest"
-                className="w-auto h-16 md:h-20 max-w-sm"
+                className="w-full h-auto max-h-24 md:max-h-32 object-contain"
               />
             </div>
           </div>
