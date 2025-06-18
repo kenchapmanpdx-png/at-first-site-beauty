@@ -109,8 +109,13 @@ export default function TeethWhitening() {
               <div data-aos="fade-in" data-aos-delay="400">
                 <Button
                   onClick={() => scrollToSection("booking")}
-                  className="premium-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
+                  className="premium-button sparkle-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
                 >
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
                   Reserve Your Whitening Session
                 </Button>
               </div>
@@ -335,8 +340,13 @@ export default function TeethWhitening() {
               
               <Button 
                 onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-                className="premium-button text-white px-12 py-4 rounded-full text-lg font-medium luxury-hover"
+                className="premium-button sparkle-button text-white px-12 py-4 rounded-full text-lg font-medium luxury-hover"
               >
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
                 Schedule Your Appointment
               </Button>
               

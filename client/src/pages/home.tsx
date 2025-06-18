@@ -19,8 +19,13 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <button
             onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-            className="premium-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
+            className="premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
           >
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
             Book Your Design Session
           </button>
         </div>
@@ -32,8 +37,13 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <button
             onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-            className="premium-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
+            className="premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
           >
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
             Book Your Design Session
           </button>
         </div>
