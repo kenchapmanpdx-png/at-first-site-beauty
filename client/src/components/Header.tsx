@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logoImage from "@assets/1At First Site Logo (1000 x 350 px)bb_1749329806337_1750282076832.png";
-import beautyOnLocationText from "@assets/beauty-on-location-text.png";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,17 +26,9 @@ export default function Header() {
           </div>
           {/* Beauty On Location Text */}
           <div className="w-full max-w-4xl px-4 mt-2">
-            <img
-              src={beautyOnLocationText}
-              alt="Beauty On Location"
-              className="mx-auto block"
-              style={{
-                width: "auto",
-                height: "auto",
-                maxWidth: "60%",
-                maxHeight: "40px",
-              }}
-            />
+            <h2 className="text-center text-lg md:text-xl font-light text-gray-700 tracking-wide">
+              Beauty On Location
+            </h2>
           </div>
         </div>
 
