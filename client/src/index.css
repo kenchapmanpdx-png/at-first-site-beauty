@@ -732,6 +732,39 @@
     }
   }
 
+  /* Critical performance optimizations */
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Touch optimization for mobile */
+  @media (max-width: 768px) {
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    .touch-target {
+      padding: 12px;
+    }
+  }
+
   .sparkle-button:hover .sparkle {
     animation: sparkleHover 3s ease-out forwards;
   }
