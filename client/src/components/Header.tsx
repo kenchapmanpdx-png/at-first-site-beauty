@@ -11,7 +11,7 @@ export default function Header() {
     <>
       <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm">
         {/* Logo */}
-        <div className="flex flex-col items-center justify-center py-1.5 md:py-3">
+        <div className="flex flex-col items-center justify-center pt-6 pb-1.5 md:pt-12 md:pb-3">
           <div className="w-full max-w-6xl px-4">
             <img
               src={logoImage}
@@ -84,7 +84,7 @@ export default function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind the floating header */}
-      <section className="pt-36 md:pt-44"></section>
+      <section className="pt-48 md:pt-56"></section>
     </>
   );
 }
