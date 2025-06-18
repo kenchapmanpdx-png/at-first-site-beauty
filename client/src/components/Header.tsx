@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logoImage from "@assets/1At First Site Logo (1000 x 350 px)bb_1749329806337_1750282076832.png";
@@ -6,6 +6,45 @@ import beautyOnLocationText from "@assets/1At First Site Logob (1000 x 350 px)_1
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    // Handle hash navigation when page loads
+    const handleHashNavigation = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const sectionId = hash.substring(1);
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    };
+
+    // Check for hash on component mount
+    handleHashNavigation();
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashNavigation);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashNavigation);
+    };
+  }, []);
+
+  const navigateToSection = (sectionId: string) => {
+    if (window.location.pathname === '/') {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with hash
+      window.location.href = `/#${sectionId}`;
+    }
+  };
 
   return (
     <>
@@ -58,46 +97,26 @@ export default function Header() {
         <nav className="hidden md:flex justify-center pb-2 relative z-10">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-2 text-sm font-medium text-gray-800">
             <a href="/" className="hover:text-blush-400">Home</a>
-            <a href="/#about" onClick={(e) => { 
+            <button onClick={(e) => { 
               e.preventDefault(); 
-              if (window.location.pathname === '/') {
-                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#about';
-              }
-            }} className="hover:text-blush-400">About</a>
-            <a href="/#services" onClick={(e) => { 
+              navigateToSection('about');
+            }} className="hover:text-blush-400 cursor-pointer">About</button>
+            <button onClick={(e) => { 
               e.preventDefault(); 
-              if (window.location.pathname === '/') {
-                document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#services';
-              }
-            }} className="hover:text-blush-400">Services</a>
-            <a href="/#gallery" onClick={(e) => { 
+              navigateToSection('services');
+            }} className="hover:text-blush-400 cursor-pointer">Services</button>
+            <button onClick={(e) => { 
               e.preventDefault(); 
-              if (window.location.pathname === '/') {
-                document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#gallery';
-              }
-            }} className="hover:text-blush-400">Gallery</a>
-            <a href="/#testimonials" onClick={(e) => { 
+              navigateToSection('gallery');
+            }} className="hover:text-blush-400 cursor-pointer">Gallery</button>
+            <button onClick={(e) => { 
               e.preventDefault(); 
-              if (window.location.pathname === '/') {
-                document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#testimonials';
-              }
-            }} className="hover:text-blush-400">Testimonials</a>
-            <a href="/#booking" onClick={(e) => { 
+              navigateToSection('testimonials');
+            }} className="hover:text-blush-400 cursor-pointer">Testimonials</button>
+            <button onClick={(e) => { 
               e.preventDefault(); 
-              if (window.location.pathname === '/') {
-                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
-              } else {
-                window.location.href = '/#booking';
-              }
-            }} className="hover:text-blush-400">Booking</a>
+              navigateToSection('booking');
+            }} className="hover:text-blush-400 cursor-pointer">Booking</button>
           </div>
         </nav>
 
@@ -107,51 +126,31 @@ export default function Header() {
             <nav className="py-4">
               <div className="flex flex-col space-y-2 px-4">
                 <a href="/" className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50" onClick={() => setIsMenuOpen(false)}>Home</a>
-                <a href="/#about" onClick={(e) => { 
+                <button onClick={(e) => { 
                   e.preventDefault(); 
                   setIsMenuOpen(false);
-                  if (window.location.pathname === '/') {
-                    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#about';
-                  }
-                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">About</a>
-                <a href="/#services" onClick={(e) => { 
+                  navigateToSection('about');
+                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">About</button>
+                <button onClick={(e) => { 
                   e.preventDefault(); 
                   setIsMenuOpen(false);
-                  if (window.location.pathname === '/') {
-                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#services';
-                  }
-                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Services</a>
-                <a href="/#gallery" onClick={(e) => { 
+                  navigateToSection('services');
+                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Services</button>
+                <button onClick={(e) => { 
                   e.preventDefault(); 
                   setIsMenuOpen(false);
-                  if (window.location.pathname === '/') {
-                    document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#gallery';
-                  }
-                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Gallery</a>
-                <a href="/#testimonials" onClick={(e) => { 
+                  navigateToSection('gallery');
+                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Gallery</button>
+                <button onClick={(e) => { 
                   e.preventDefault(); 
                   setIsMenuOpen(false);
-                  if (window.location.pathname === '/') {
-                    document.getElementById('testimonials')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#testimonials';
-                  }
-                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Testimonials</a>
-                <a href="/#booking" onClick={(e) => { 
+                  navigateToSection('testimonials');
+                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Testimonials</button>
+                <button onClick={(e) => { 
                   e.preventDefault(); 
                   setIsMenuOpen(false);
-                  if (window.location.pathname === '/') {
-                    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.href = '/#booking';
-                  }
-                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Booking</a>
+                  navigateToSection('booking');
+                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Booking</button>
               </div>
             </nav>
           </div>
