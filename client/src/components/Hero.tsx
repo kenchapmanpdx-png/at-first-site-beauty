@@ -62,10 +62,15 @@ export default function Hero() {
         </p>
         <Button
           onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-          className={`premium-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
+          className={`premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
             isLoaded ? 'stagger-3' : ''
           }`}
         >
+          <div className="sparkle">✦</div>
+          <div className="sparkle">✦</div>
+          <div className="sparkle">✦</div>
+          <div className="sparkle">✦</div>
+          <div className="sparkle">✦</div>
           Book Your Design Session
         </Button>
       </div>

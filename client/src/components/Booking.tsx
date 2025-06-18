@@ -135,8 +135,13 @@ export default function Booking() {
                   />
                   <Button
                     type="submit"
-                    className="w-full premium-button text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation h-12 md:h-auto"
+                    className="w-full premium-button sparkle-button text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation h-12 md:h-auto"
                   >
+                    <div className="sparkle">✦</div>
+                    <div className="sparkle">✦</div>
+                    <div className="sparkle">✦</div>
+                    <div className="sparkle">✦</div>
+                    <div className="sparkle">✦</div>
                     Send Message
                   </Button>
                 </form>

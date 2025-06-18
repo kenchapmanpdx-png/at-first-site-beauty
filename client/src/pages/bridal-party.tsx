@@ -136,8 +136,13 @@ export default function BridalParty() {
             <div data-aos="fade-in" data-aos-delay="400">
               <Button
                 onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-                className="bg-blush-300 hover:bg-blush-400 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="premium-button sparkle-button text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
                 Reserve Bridal Party Services
               </Button>
             </div>
@@ -422,8 +427,13 @@ export default function BridalParty() {
             </p>
             <Button
               onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-              className="bg-white text-blush-400 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="premium-button sparkle-button text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
+              <div className="sparkle">✦</div>
+              <div className="sparkle">✦</div>
+              <div className="sparkle">✦</div>
+              <div className="sparkle">✦</div>
+              <div className="sparkle">✦</div>
               Reserve Your Bridal Party Session
             </Button>
           </div>
