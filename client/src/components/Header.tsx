@@ -58,11 +58,11 @@ export default function Header() {
         <nav className="hidden md:flex justify-center pb-2 relative z-10">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-2 text-sm font-medium text-gray-800">
             <a href="/" className="hover:text-blush-400">Home</a>
-            <a href="/#about" className="hover:text-blush-400">About</a>
-            <a href="/#services" className="hover:text-blush-400">Services</a>
-            <a href="/#gallery" className="hover:text-blush-400">Gallery</a>
-            <a href="/#testimonials" className="hover:text-blush-400">Testimonials</a>
-            <a href="/#booking" className="hover:text-blush-400">Booking</a>
+            <a href="/" onClick={(e) => { e.preventDefault(); window.location.href = '/#about'; }} className="hover:text-blush-400">About</a>
+            <a href="/" onClick={(e) => { e.preventDefault(); window.location.href = '/#services'; }} className="hover:text-blush-400">Services</a>
+            <a href="/" onClick={(e) => { e.preventDefault(); window.location.href = '/#gallery'; }} className="hover:text-blush-400">Gallery</a>
+            <a href="/" onClick={(e) => { e.preventDefault(); window.location.href = '/#testimonials'; }} className="hover:text-blush-400">Testimonials</a>
+            <a href="/" onClick={(e) => { e.preventDefault(); window.location.href = '/#booking'; }} className="hover:text-blush-400">Booking</a>
           </div>
         </nav>
 
@@ -72,11 +72,11 @@ export default function Header() {
             <nav className="py-4">
               <div className="flex flex-col space-y-2 px-4">
                 <a href="/" className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50" onClick={() => setIsMenuOpen(false)}>Home</a>
-                <a href="/#about" className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50" onClick={() => setIsMenuOpen(false)}>About</a>
-                <a href="/#services" className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50" onClick={() => setIsMenuOpen(false)}>Services</a>
-                <a href="/#gallery" className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50" onClick={() => setIsMenuOpen(false)}>Gallery</a>
-                <a href="/#testimonials" className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50" onClick={() => setIsMenuOpen(false)}>Testimonials</a>
-                <a href="/#booking" className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50" onClick={() => setIsMenuOpen(false)}>Booking</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.location.href = '/#about'; }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">About</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.location.href = '/#services'; }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Services</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.location.href = '/#gallery'; }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Gallery</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.location.href = '/#testimonials'; }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Testimonials</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.location.href = '/#booking'; }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Booking</a>
               </div>
             </nav>
           </div>
