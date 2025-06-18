@@ -12,6 +12,18 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Mobile-first design with interactive user experience
 
 ## Recent Changes (June 2025)
+✓ **Header Design Updates** (June 18, 2025)
+- Fixed missing "Beauty On Location" image import error
+- Added proper "Beauty On Location" image below main logo
+- Increased header top padding by 300% for better visual hierarchy
+- Adjusted content spacer to accommodate larger header design
+
+✓ **CTA Button Styling Fixes** (June 18, 2025)
+- Restored original blush gradient colors using CSS variables
+- Removed duplicate .premium-button CSS definitions
+- Simplified sparkle effect to subtle fade-in/fade-out animation
+- Reduced animation complexity for cleaner, less busy appearance
+
 ✓ **AOS Scroll-Triggered Animations Implementation** (June 14, 2025)
 - Added AOS library initialization with elegant settings (800ms duration, ease-in-out, once: true)
 - Implemented scroll-triggered entrance animations across all pages:
