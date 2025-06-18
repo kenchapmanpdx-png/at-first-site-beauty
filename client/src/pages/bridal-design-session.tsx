@@ -351,8 +351,13 @@ export default function BridalDesignSession() {
               <div data-aos="fade-in" data-aos-delay="200">
                 <Button 
                   onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-                  className="premium-button text-white px-12 py-4 rounded-full text-lg font-medium mb-6 luxury-hover"
+                  className="premium-button sparkle-button text-white px-12 py-4 rounded-full text-lg font-medium mb-6 luxury-hover"
                 >
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
                   Schedule Your Design Session
                 </Button>
               </div>
