@@ -1,19 +1,40 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useLocation } from "wouter";
 import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
 
 export default function Header() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      // Calculate proper offset considering the large header
-      const headerHeight = 420; // Account for the full header height
-      const elementPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: Math.max(0, elementPosition),
-        behavior: "smooth"
-      });
+  const [location, setLocation] = useLocation();
+
+  const navigateToSection = (sectionId: string) => {
+    // If we're already on the home page, scroll to the section
+    if (location === '/') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Calculate proper offset considering the large header
+        const headerHeight = 420; // Account for the full header height
+        const elementPosition = element.offsetTop - headerHeight;
+        window.scrollTo({
+          top: Math.max(0, elementPosition),
+          behavior: "smooth"
+        });
+      }
+    } else {
+      // If we're on a different page, navigate to home and then scroll to section
+      setLocation('/');
+      // Use setTimeout to ensure the page has loaded before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const headerHeight = 420;
+          const elementPosition = element.offsetTop - headerHeight;
+          window.scrollTo({
+            top: Math.max(0, elementPosition),
+            behavior: "smooth"
+          });
+        }
+      }, 100);
     }
   };
 
@@ -39,37 +60,37 @@ export default function Header() {
         <nav className="flex justify-center pb-3 overflow-x-auto">
           <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
             <button
-              onClick={() => scrollToSection("home")}
+              onClick={() => navigateToSection("home")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Home
             </button>
             <button
-              onClick={() => scrollToSection("about")}
+              onClick={() => navigateToSection("about")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               About
             </button>
             <button
-              onClick={() => scrollToSection("services")}
+              onClick={() => navigateToSection("services")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Services
             </button>
             <button
-              onClick={() => scrollToSection("gallery")}
+              onClick={() => navigateToSection("gallery")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Gallery
             </button>
             <button
-              onClick={() => scrollToSection("testimonials")}
+              onClick={() => navigateToSection("testimonials")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Testimonials
             </button>
             <button
-              onClick={() => window.location.href = '/book'}
+              onClick={() => setLocation('/book')}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Booking
