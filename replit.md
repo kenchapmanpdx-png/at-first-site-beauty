@@ -27,9 +27,9 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Expanded bridal photo section to 120% viewport height for dramatic visual impact
 - Increased header height to 192px with tripled padding around logo and menu elements
 - Created new HeroWithDreamTeam component combining hero section with "Meet Your Dream Team" overlay
-- "Meet Your Dream Team" header now visible at bottom-[80px] with semi-transparent background and enhanced text shadows
-- Extended gradients to h-96 with multiple stops for smoother blending without hard lines
-- Added gradient background to bio section (from-gray-50/80 to-gray-50) for seamless transition
+- "Meet Your Dream Team" header highly visible at bottom-[120px] with prominent dark background (bg-black/40)
+- Fixed gradient matching: both top and bottom gradients now use identical gray-50 color progression
+- Enhanced text visibility with stronger shadows, larger fonts, and white border for definition
 - Scroll detection triggers text color changes when header overlaps photo area (50% threshold)
 - Integrated parallax effects, loading animations, and proper scroll detection in unified component
 - Implemented responsive text colors for About section: dark text on mobile, dynamic white text on desktop when scrolling over photos
