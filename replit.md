@@ -20,6 +20,9 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Added "MENU" label below hamburger icon in mobile view for better UX
 - Implemented responsive text colors for About section: dark text on mobile, dynamic white text on desktop when scrolling over photos
 - Added responsive spacing to move "Meet Your Dream Team" section up on mobile to reduce bridal image bottom visibility
+- Adjusted mobile menu button positioning by adding top padding for better placement
+- Reduced "Trust in Our Brand Promise" section padding by 50% for tighter layout
+- Darkened Services and Portfolio gradient backgrounds by 10% for better visual contrast
 - Fixed menu alignment by converting booking link to button element for consistency
 - Updated all CTA booking buttons across all pages to direct to internal /book page
 - Application now runs successfully without import errors

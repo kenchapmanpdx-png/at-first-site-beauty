@@ -79,7 +79,7 @@ export default function Services() {
     <section ref={sectionRef} id="services" className="py-20 bg-white silk-texture" itemScope itemType="https://schema.org/Service">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <div className="rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture shimmer-effect" style={{background: 'linear-gradient(135deg, #fbf8f9 0%, #f0dfe5 100%)'}}>
+          <div className="rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture shimmer-effect" style={{background: 'linear-gradient(135deg, #f5f1f2 0%, #e6d0d6 100%)'}}>
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>

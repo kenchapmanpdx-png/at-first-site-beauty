@@ -52,7 +52,7 @@ export default function Header() {
         {/* Logo placeholder removed */}
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex justify-center pb-2 relative z-10">
+        <div className="md:hidden flex justify-center pt-4 pb-2 relative z-10">
           <Button
             variant="ghost"
             size="sm"

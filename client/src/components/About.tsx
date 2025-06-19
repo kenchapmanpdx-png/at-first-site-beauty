@@ -140,7 +140,7 @@ export default function About() {
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             Our makeup is applied by artists that Cedar has personally trained and certified through her program. Hair styling is handled by top professionals selected and mentored by Hollie. Together, they uphold strict standards to ensure every client receives flawless results.
           </p>
-          <div className="bg-blush-50 rounded-2xl p-8">
+          <div className="bg-blush-50 rounded-2xl p-4">
             <h4 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
               Trust in Our Brand Promise
             </h4>
