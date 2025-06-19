@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import combinedLogoImage from "@assets/at-first-site-combined-logo.png";
+import combinedLogoImage from "@assets/At First Site Logo.png";
 import LazyImage from "./LazyImage";
 
 export default function Header() {
