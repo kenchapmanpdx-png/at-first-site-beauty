@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
+import menuRoseIcon from "@assets/ChatGPT Image Jun 18, 2025, 11_45_34 PM_1750315689698.png";
 
 
 
@@ -60,7 +61,7 @@ export default function Header() {
             className="text-gray-700 hover:text-blush-400 p-2 flex flex-col items-center"
             aria-label="Toggle navigation menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={24} /> : <img src={menuRoseIcon} alt="Menu" className="w-6 h-6" />}
             <span className="text-xs mt-1 font-medium">MENU</span>
           </Button>
         </div>
