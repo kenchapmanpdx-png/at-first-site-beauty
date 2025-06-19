@@ -51,12 +51,12 @@ export default function Header() {
     <>
       <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm">
         {/* Logo */}
-        <div className="flex flex-col items-center justify-center pt-6 pb-1.5 md:pt-12 md:pb-3">
+        <div className="flex flex-col items-center justify-center pt-4 pb-1 md:pt-6 md:pb-2">
           <div className="w-full max-w-6xl px-4">
             <LazyImage
               src={logoImage}
               alt="At First Site Beauty On Location"
-              className="mx-auto block max-w-[80vw] max-h-[100px] w-auto h-auto"
+              className="mx-auto block max-w-[80vw] max-h-[90px] w-auto h-auto"
               loading="eager"
             />
           </div>
@@ -65,7 +65,7 @@ export default function Header() {
             <LazyImage
               src={beautyOnLocationText}
               alt="Beauty On Location"
-              className="mx-auto block max-w-[60%] max-h-[40px] w-auto h-auto"
+              className="mx-auto block max-w-[60%] max-h-[30px] w-auto h-auto"
               loading="eager"
             />
           </div>
@@ -142,7 +142,7 @@ export default function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind the floating header */}
-      <section className="pt-48 md:pt-56"></section>
+      <div className="h-[170px] md:h-[190px]"></div>
     </>
   );
 }
