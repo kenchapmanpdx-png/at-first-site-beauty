@@ -49,7 +49,7 @@ export default function Header() {
               src={logo}
               alt="At First Site Beauty On Location"
               className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
-              style={{ maxHeight: '200px' }}
+              style={{ maxHeight: '220px' }}
               loading="eager"
               decoding="async"
             />
