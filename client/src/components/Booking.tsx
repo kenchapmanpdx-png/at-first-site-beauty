@@ -6,6 +6,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { FaInstagram, FaPinterest } from "react-icons/fa";
 
+// BookingWidget component to embed the Go High Level booking widget
+function BookingWidget() {
+  return (
+    <iframe
+      src="https://widgets.gohighlevel.com/api/v1/widget/64f07a7c5e1294a9862f589e" // Replace with your actual widget URL
+      width="100%"
+      height="500px" // Adjust the height as needed
+      style={{ border: "none" }}
+    ></iframe>
+  );
+}
+
 export default function Booking() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -57,7 +69,7 @@ export default function Booking() {
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 w-40 h-40 bg-blush-500/10 rounded-full blur-3xl floating-element"></div>
       <div className="absolute bottom-10 right-10 w-60 h-60 bg-blush-400/5 rounded-full blur-3xl floating-element" style={{animationDelay: '2s'}}></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="scroll-animation mb-12">
@@ -72,79 +84,13 @@ export default function Booking() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
-            {/* Contact Form */}
+            {/* Booking Widget */}
             <div className="scroll-animation order-2 md:order-1">
               <div className="premium-gradient rounded-3xl p-6 md:p-8 shadow-2xl border border-white/10 sparkle">
-                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <Input
-                      placeholder="First Name"
-                      value={formData.firstName}
-                      onChange={(e) => handleInputChange("firstName", e.target.value)}
-                      className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
-                      required
-                    />
-                    <Input
-                      placeholder="Last Name"
-                      value={formData.lastName}
-                      onChange={(e) => handleInputChange("lastName", e.target.value)}
-                      className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
-                      required
-                    />
-                </div>
-                  <Input
-                    type="email"
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
-                    required
-                  />
-                  <Input
-                    type="tel"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
-                  />
-                  <Input
-                    type="date"
-                    placeholder="Wedding Date"
-                    value={formData.weddingDate}
-                    onChange={(e) => handleInputChange("weddingDate", e.target.value)}
-                    className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 h-12 touch-manipulation luxury-hover"
-                  />
-                  <Select onValueChange={(value) => handleInputChange("serviceType", value)}>
-                    <SelectTrigger className="bg-white/90 border-gray-300 text-gray-900 focus:border-blush-400 h-12 touch-manipulation luxury-hover">
-                      <SelectValue placeholder="Select Service Type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="bridal">Bridal Hair & Makeup</SelectItem>
-                      <SelectItem value="party">Bridal Party Services</SelectItem>
-                      <SelectItem value="teeth">Teeth Whitening</SelectItem>
-                      <SelectItem value="tanning">Spray Tanning</SelectItem>
-                      <SelectItem value="multiple">Multiple Services</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Textarea
-                    placeholder="Tell us about your vision..."
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
-                    className="bg-white/90 border-gray-300 text-gray-900 placeholder-gray-500 focus:border-blush-400 resize-none touch-manipulation luxury-hover"
-                  />
-                  <Button
-                    type="submit"
-                    className="w-full premium-button sparkle-button text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation h-12 md:h-auto"
-                  >
-                    <div className="sparkle">✦</div>
-                    <div className="sparkle">✦</div>
-                    <div className="sparkle">✦</div>
-                    <div className="sparkle">✦</div>
-                    <div className="sparkle">✦</div>
-                    Send Message
-                  </Button>
-                </form>
+                <h3 className="font-playfair text-2xl font-semibold mb-4 text-gray-900">
+                  Book Your Appointment
+                </h3>
+                <BookingWidget />
               </div>
             </div>
 
