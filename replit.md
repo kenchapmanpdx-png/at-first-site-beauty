@@ -14,6 +14,14 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Touch-optimized navigation with accessibility features
 
 ## Recent Changes (June 2025)
+✓ **Complete Header, Hero, and About Component Restructure** (June 19, 2025)
+- Replaced Header component with 400px height design featuring centered logo and horizontal navigation menu
+- Updated Hero component with parallax background effects and loading animations
+- Implemented standalone About component as "Dream Team" section with team photos and scroll effects
+- Added "Book Now" button to header navigation directing to calendar page
+- Separated combined HeroWithDreamTeam component into individual Header, Hero, and About components
+- Updated home page structure to use separate components for better maintainability
+
 ✓ **Header and CTA Button Fixes** (June 19, 2025)
 - Added "At First Site Beauty On Location" logo to header top center (80px height, 90% opacity) with bottom padding for breathing room and repositioned navigation to avoid overlap
 - Reduced header spacer to 60px/70px for more compact header

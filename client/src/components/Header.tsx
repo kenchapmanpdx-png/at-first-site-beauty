@@ -37,7 +37,7 @@ export default function Header() {
         
         {/* Navigation Menu Bar */}
         <nav className="flex justify-center pb-3 overflow-x-auto">
-          <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max">
+          <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
             <button
               onClick={() => scrollToSection("home")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
@@ -73,6 +73,13 @@ export default function Header() {
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Booking
+            </button>
+            {/* Book Now Button */}
+            <button
+              onClick={() => window.open('https://atfirstsite.glossgenius.com/services', '_blank')}
+              className="bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full text-sm md:text-base font-medium transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-md min-w-max touch-manipulation"
+            >
+              Book Now
             </button>
           </div>
         </nav>
