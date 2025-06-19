@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from "react";
 import holliePhoto from "@assets/HollieD_1749336182646.png";
 import cedarPhoto from "@assets/IMG_8201.jpeg";
@@ -5,55 +6,41 @@ import cedarPhoto from "@assets/IMG_8201.jpeg";
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const [scrollY, setScrollY] = useState(0);
   const [isHeaderOverPhoto, setIsHeaderOverPhoto] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if header is over photo area
       if (headerRef.current && sectionRef.current) {
         const headerRect = headerRef.current.getBoundingClientRect();
         const sectionRect = sectionRef.current.getBoundingClientRect();
-        
-        // Check if header is in the lower portion of the section (over photos)
         const isOverPhotos = headerRect.top < sectionRect.top + (sectionRect.height * 0.5);
         setIsHeaderOverPhoto(isOverPhotos);
       }
     };
-    
-    window.addEventListener('scroll', handleScroll);
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const slowAnimations = entry.target.querySelectorAll('.scroll-slow');
-            const normalAnimations = entry.target.querySelectorAll('.scroll-animation');
-            
-            // Animate slow elements first (heading)
-            slowAnimations.forEach((animation) => {
-              animation.classList.add('animate');
-            });
-            
-            // Then animate normal elements with stagger
-            normalAnimations.forEach((animation, index) => {
-              setTimeout(() => {
-                animation.classList.add('animate');
-              }, 600 + (index * 400));
-            });
+            const slowEls = entry.target.querySelectorAll('.scroll-slow');
+            const fastEls = entry.target.querySelectorAll('.scroll-animation');
+
+            slowEls.forEach((el) => el.classList.add('animate'));
+            fastEls.forEach((el, i) =>
+              setTimeout(() => el.classList.add('animate'), 500 + i * 300)
+            );
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px 0px 0px' }
+      { threshold: 0.1 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    window.addEventListener('scroll', handleScroll);
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
     };
   }, []);
 
@@ -68,14 +55,14 @@ export default function About() {
         >
           <h2 className={`font-playfair text-4xl md:text-5xl font-bold mb-6 transition-all duration-500 ${
             isHeaderOverPhoto ? 'text-white' : 'text-gray-900'
-          }`} data-aos="fade-up">
+          }`}>
             Meet Your <span className={`transition-all duration-500 ${
               isHeaderOverPhoto ? 'text-blush-200' : 'text-blush-400'
             }`}>Dream Team</span>
           </h2>
           <p className={`text-lg leading-relaxed transition-all duration-500 ${
             isHeaderOverPhoto ? 'text-gray-100' : 'text-gray-600'
-          }`} data-aos="fade-up" data-aos-delay="200">
+          }`}>
             With over 30 years of combined experience in the beauty industry, we created a platform built on trust. When you book with us, your hair and makeup will be done to absolute perfection.
           </p>
         </div>
