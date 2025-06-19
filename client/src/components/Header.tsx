@@ -6,6 +6,7 @@ import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
 
 export default function Header() {
   const [location, setLocation] = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigateToSection = (sectionId: string) => {
     // If we're already on the home page, scroll to the section
@@ -56,8 +57,8 @@ export default function Header() {
           </div>
         </div>
         
-        {/* Navigation Menu Bar */}
-        <nav className="flex justify-center pb-3 overflow-x-auto">
+        {/* Desktop Navigation Menu Bar */}
+        <nav className="hidden md:flex justify-center pb-3 overflow-x-auto">
           <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
             <button
               onClick={() => navigateToSection("home")}
@@ -97,6 +98,80 @@ export default function Header() {
             </button>
           </div>
         </nav>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex justify-center pb-3">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-blush-400 transition-colors duration-200"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className="font-medium">MENU</span>
+          </button>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t shadow-lg">
+            <nav className="flex flex-col py-4">
+              <button
+                onClick={() => {
+                  navigateToSection("home");
+                  setIsMenuOpen(false);
+                }}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => {
+                  navigateToSection("about");
+                  setIsMenuOpen(false);
+                }}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                About
+              </button>
+              <button
+                onClick={() => {
+                  navigateToSection("services");
+                  setIsMenuOpen(false);
+                }}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => {
+                  navigateToSection("gallery");
+                  setIsMenuOpen(false);
+                }}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Gallery
+              </button>
+              <button
+                onClick={() => {
+                  navigateToSection("testimonials");
+                  setIsMenuOpen(false);
+                }}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Testimonials
+              </button>
+              <button
+                onClick={() => {
+                  setLocation('/book');
+                  setIsMenuOpen(false);
+                }}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Booking
+              </button>
+            </nav>
+          </div>
+        )}</nav>
         
         {/* Soft white transition to hero photo */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
