@@ -15,7 +15,7 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 
 ## Recent Changes (June 2025)
 ✓ **Header and CTA Button Fixes** (June 19, 2025)
-- Removed logo image from header to resolve display issues
+- Added "At First Site Beauty On Location" logo to header top center (64px height, 90% opacity) with repositioned navigation to avoid overlap
 - Reduced header spacer to 60px/70px for more compact header
 - Replaced hamburger menu icon with custom rose image (36px size, 80% opacity) while keeping "MENU" label for elegant brand-appropriate mobile navigation
 - Expanded header top and bottom padding by 5% for better spacing and visual hierarchy

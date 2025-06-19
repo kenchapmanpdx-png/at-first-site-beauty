@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { X, ChevronDown } from "lucide-react";
 import menuRoseIcon from "@assets/ChatGPT Image Jun 18, 2025, 11_45_34 PM_1750315689698.png";
+import headerLogo from "@assets/1At First Site Logo (1000 x 350 px)_1750316961489.png";
 
 
 
@@ -50,10 +51,17 @@ export default function Header() {
   return (
     <>
       <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm h-32">
-        {/* Logo placeholder removed */}
+        {/* Header Logo */}
+        <div className="flex justify-center pt-2">
+          <img 
+            src={headerLogo} 
+            alt="At First Site Beauty On Location" 
+            className="h-20 w-auto opacity-90"
+          />
+        </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex justify-center absolute top-1/2 left-0 right-0 z-10 transform -translate-y-1/2">
+        <div className="md:hidden flex justify-center absolute bottom-3 left-0 right-0 z-10">
           <Button
             variant="ghost"
             size="sm"
@@ -67,7 +75,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex justify-center absolute top-1/2 left-0 right-0 z-10 transform -translate-y-1/2">
+        <nav className="hidden md:flex justify-center absolute bottom-3 left-0 right-0 z-10">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-2 text-sm font-medium text-gray-800">
             <button onClick={() => window.location.href = '/'} className="hover:text-blush-400 cursor-pointer">Home</button>
             <button onClick={(e) => { 
