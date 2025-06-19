@@ -53,7 +53,7 @@ export default function Header() {
         {/* Logo placeholder removed */}
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex justify-center pt-4 pb-2 relative z-10">
+        <div className="md:hidden flex justify-center pt-2 pb-5 relative z-10">
           <Button
             variant="ghost"
             size="sm"
@@ -61,13 +61,13 @@ export default function Header() {
             className="text-gray-700 hover:text-blush-400 p-2 flex flex-col items-center"
             aria-label="Toggle navigation menu"
           >
-            {isMenuOpen ? <X size={24} /> : <img src={menuRoseIcon} alt="Menu" className="w-6 h-6" />}
-            <span className="text-xs mt-1 font-medium">MENU</span>
+            {isMenuOpen ? <X size={24} /> : <img src={menuRoseIcon} alt="Menu" className="w-9 h-9 opacity-80" />}
+            <span className="text-xs mt-0.5 font-medium">MENU</span>
           </Button>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex justify-center pb-2 relative z-10">
+        <nav className="hidden md:flex justify-center pb-2.5 relative z-10">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-2 text-sm font-medium text-gray-800">
             <button onClick={() => window.location.href = '/'} className="hover:text-blush-400 cursor-pointer">Home</button>
             <button onClick={(e) => { 
