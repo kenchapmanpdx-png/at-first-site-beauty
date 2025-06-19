@@ -104,11 +104,7 @@ export default function Header() {
               e.preventDefault(); 
               navigateToSection('testimonials');
             }} className="hover:text-blush-400 cursor-pointer">Testimonials</button>
-            <button onClick={(e) => { 
-              e.preventDefault(); 
-              navigateToSection('booking');
-            }} className="hover:text-blush-400 cursor-pointer">Booking</button>
-            <a href="/book" className="hover:text-blush-400 cursor-pointer font-semibold text-blush-600">Book Now</a>
+            <a href="/book" className="hover:text-blush-400 cursor-pointer font-semibold text-blush-600">Booking</a>
           </div>
         </nav>
 
@@ -138,12 +134,7 @@ export default function Header() {
                   setIsMenuOpen(false);
                   navigateToSection('testimonials');
                 }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Testimonials</button>
-                <button onClick={(e) => { 
-                  e.preventDefault(); 
-                  setIsMenuOpen(false);
-                  navigateToSection('booking');
-                }} className="text-gray-700 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50">Booking</button>
-                <a href="/book" className="text-blush-600 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50 font-semibold" onClick={() => setIsMenuOpen(false)}>Book Now</a>
+                <a href="/book" className="text-blush-600 hover:text-blush-400 px-4 py-3 text-left rounded-lg hover:bg-gray-50 font-semibold" onClick={() => setIsMenuOpen(false)}>Booking</a>
               </div>
             </nav>
           </div>
