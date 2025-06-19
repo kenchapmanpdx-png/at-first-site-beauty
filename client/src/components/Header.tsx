@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logoImage from "@assets/1At First Site Logo (1000 x 350 px)bb_1749329806337_1750282076832.png";
-import beautyOnLocationText from "@assets/1At First Site Logob (1000 x 350 px)_1750282542411.png";
+import combinedLogoImage from "@assets/at-first-site-combined-logo.png";
 import LazyImage from "./LazyImage";
 
 export default function Header() {
@@ -54,18 +53,9 @@ export default function Header() {
         <div className="flex flex-col items-center justify-center pt-4 pb-1 md:pt-6 md:pb-2">
           <div className="w-full max-w-6xl px-4">
             <LazyImage
-              src={logoImage}
+              src={combinedLogoImage}
               alt="At First Site Beauty On Location"
-              className="mx-auto block max-w-[80vw] max-h-[90px] w-auto h-auto"
-              loading="eager"
-            />
-          </div>
-          {/* Beauty On Location Text */}
-          <div className="w-full max-w-4xl px-4 mt-2">
-            <LazyImage
-              src={beautyOnLocationText}
-              alt="Beauty On Location"
-              className="mx-auto block max-w-[60%] max-h-[30px] w-auto h-auto"
+              className="mx-auto block max-w-[80vw] max-h-[120px] w-auto h-auto"
               loading="eager"
             />
           </div>
