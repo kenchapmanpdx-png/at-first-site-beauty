@@ -27,7 +27,7 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Expanded bridal photo section to 120% viewport height for dramatic visual impact
 - Increased header height to 192px with tripled padding around logo and menu elements
 - Created new HeroWithDreamTeam component combining hero section with "Meet Your Dream Team" overlay
-- "Meet Your Dream Team" header positioned at bottom-[200px] md:bottom-[160px] with enhanced visibility
+- "Meet Your Dream Team" section moved outside hero container with relative positioning and -mt-48 negative margin
 - Stronger contrast with bg-black/60, backdrop-blur-sm, shadow-xl, and border-white/10
 - Luxurious spacing with px-10 py-14 padding for better text breathing room
 - Fixed bottom gradient direction: from-transparent to-gray-50 for seamless section transition
