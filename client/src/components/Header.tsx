@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
@@ -7,7 +7,7 @@ export default function Header() {
   const [location, setLocation] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const navigateToSection = (sectionId: string) => {
+  const navigateToSection = useCallback((sectionId: string) => {
     // If we're already on the home page, scroll to the section
     if (location === '/') {
       const element = document.getElementById(sectionId);
@@ -36,7 +36,7 @@ export default function Header() {
         }
       }, 100);
     }
-  };
+  }, [location, setLocation]);
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function Header() {
             />
           </div>
         </div>
-        
+
         {/* Desktop Navigation Menu Bar */}
         <nav className="hidden md:flex justify-center pb-3 overflow-x-auto">
           <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
@@ -171,7 +171,7 @@ export default function Header() {
             </nav>
           </div>
         )}
-        
+
         {/* Soft white transition to hero photo */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
       </header>

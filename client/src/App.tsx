@@ -35,6 +35,14 @@ function App() {
     // Initialize performance optimizations
     optimizeTouch();
 
+    // Performance monitoring
+    if ('performance' in window) {
+      window.addEventListener('load', () => {
+        const loadTime = performance.now();
+        console.log(`Page loaded in ${Math.round(loadTime)}ms`);
+      });
+    }
+
     // Preload critical images for faster loading
     const criticalImages = [
       "/attached_assets/1At First Site Logo (1000 x 350 px)bb_1749329806337_1750282076832.png",
@@ -42,8 +50,9 @@ function App() {
       "/attached_assets/IMG_0970_1749066905982.png"
     ];
 
+    // Reduce preloader time for faster perceived loading
     preloadCriticalImages(criticalImages).finally(() => {
-      setTimeout(() => setIsLoading(false), 1000);
+      setTimeout(() => setIsLoading(false), 500);
     });
   }, []);
 

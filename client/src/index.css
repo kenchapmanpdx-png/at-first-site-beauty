@@ -875,6 +875,32 @@
     100% { background-position: -200% 0; }
   }
 
+  /* Additional mobile optimizations */
+  @media (max-width: 768px) {
+    /* Reduce animation complexity on mobile */
+    .animate-float {
+      animation-duration: 8s;
+    }
+    
+    /* Optimize touch interactions */
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Prevent layout shifts */
+    img {
+      height: auto;
+      width: 100%;
+    }
+    
+    /* Optimize font rendering */
+    body {
+      text-rendering: optimizeSpeed;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
   .sparkle-button:hover .sparkle {
     animation: sparkleHover 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
