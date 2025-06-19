@@ -32,20 +32,15 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative h-[70vh] flex items-center justify-center -mt-32 pt-32 -mb-16 pb-16 overflow-hidden" itemScope itemType="https://schema.org/Organization">
+    <section id="home" className="relative h-[120vh] flex items-center justify-center -mt-32 pt-32 -mb-16 pb-16 overflow-hidden" itemScope itemType="https://schema.org/Organization">
       {/* Background Image with Parallax */}
       <div
-        className="absolute bg-cover parallax-bg filter grayscale"
+        className="absolute inset-0 bg-cover parallax-bg filter grayscale"
         style={{
           backgroundImage: `url(${heroImage})`,
-          backgroundPosition: 'center 35%',
-          backgroundSize: '115%',
+          backgroundPosition: 'center 30%',
           transform: window.innerWidth > 768 ? `translateY(${scrollY * 0.5}px)` : 'none',
           willChange: window.innerWidth > 768 ? 'transform' : 'auto',
-          top: '-7.5%',
-          bottom: '-7.5%',
-          left: '-7.5%',
-          right: '-7.5%',
         }}
         role="img"
         aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"

@@ -52,7 +52,7 @@ export default function Header() {
     <>
       <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm h-32">
         {/* Header Logo */}
-        <div className="flex justify-center pt-2">
+        <div className="flex justify-center pt-6 pb-12">
           <img 
             src={headerLogo} 
             alt="At First Site Beauty On Location" 
