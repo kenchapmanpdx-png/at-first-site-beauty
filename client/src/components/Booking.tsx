@@ -79,6 +79,9 @@ export default function Booking() {
                 <h3 className="font-playfair text-2xl font-semibold mb-4 text-gray-900">
                   Book Your Appointment
                 </h3>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  To ensure your trial is tailored to your unique vision, we require a brief phone consultation before scheduling. This helps us match you with the right artist and craft an experience that's seamless, personalized, and stress-free from the very beginning.
+                </p>
                 <BookingWidget />
               </div>
             </div>

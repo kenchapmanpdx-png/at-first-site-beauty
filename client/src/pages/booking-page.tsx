@@ -27,7 +27,7 @@ export default function BookingPage() {
                 Book Your Bridal Appointment
               </h1>
               <p className="text-lg text-gray-600">
-                Schedule your luxury bridal beauty consultation and design session
+                To ensure your trial is tailored to your unique vision, we require a brief phone consultation before scheduling. This helps us match you with the right artist and craft an experience that's seamless, personalized, and stress-free from the very beginning.
               </p>
             </div>
             
