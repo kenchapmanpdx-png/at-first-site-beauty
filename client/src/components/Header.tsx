@@ -53,7 +53,7 @@ export default function Header() {
         {/* Logo placeholder removed */}
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden flex justify-center absolute bottom-4 left-0 right-0 z-10">
+        <div className="md:hidden flex justify-center absolute top-1/2 left-0 right-0 z-10 transform -translate-y-1/2">
           <Button
             variant="ghost"
             size="sm"
@@ -67,7 +67,7 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex justify-center absolute bottom-4 left-0 right-0 z-10">
+        <nav className="hidden md:flex justify-center absolute top-1/2 left-0 right-0 z-10 transform -translate-y-1/2">
           <div className="flex space-x-6 lg:space-x-8 px-4 py-2 text-sm font-medium text-gray-800">
             <button onClick={() => window.location.href = '/'} className="hover:text-blush-400 cursor-pointer">Home</button>
             <button onClick={(e) => { 
