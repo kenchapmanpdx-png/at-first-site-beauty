@@ -57,10 +57,11 @@ export default function Header() {
             variant="ghost"
             size="sm"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-gray-700 hover:text-blush-400 p-2"
+            className="text-gray-700 hover:text-blush-400 p-2 flex flex-col items-center"
             aria-label="Toggle navigation menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className="text-xs mt-1 font-medium">MENU</span>
           </Button>
         </div>
 
