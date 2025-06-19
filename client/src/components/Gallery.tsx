@@ -129,7 +129,7 @@ export default function Gallery() {
           {filteredImages.map((image, index) => (
             <figure
               key={index}
-              className="scroll-animation gallery-item break-inside-avoid luxury-hover sparkle"
+              className="scroll-animation gallery-item break-inside-avoid luxury-hover"
               itemScope
               itemType="https://schema.org/ImageObject"
             >
