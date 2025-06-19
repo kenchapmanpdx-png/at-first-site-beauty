@@ -170,6 +170,9 @@
   .luxury-hover {
   position: relative;
   overflow: hidden;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  transform-origin: center;
+  will-change: transform, box-shadow;
 }
 
 .luxury-hover::before {
@@ -194,14 +197,22 @@
     radial-gradient(circle at 75% 70%, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
   background-size: 80px 80px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   pointer-events: none;
   z-index: 1;
 }
 
 .luxury-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.12),
+    0 12px 32px rgba(0, 0, 0, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.luxury-hover:hover::before {
+  opacity: 0.6;
 }
 
 /* Old luxury-hover sparkle animation removed */

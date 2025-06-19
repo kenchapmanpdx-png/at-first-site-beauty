@@ -112,7 +112,7 @@ export default function Services() {
             >
               {/* Background Image */}
               <div 
-                className="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out group-hover:scale-110"
                 style={{
                   backgroundImage: `url(${service.image})`,
                 }}
@@ -120,16 +120,16 @@ export default function Services() {
                 aria-label={service.alt}
               >
                 <div className="image-overlay absolute inset-0"></div>
-                <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-30 transition-all duration-700"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-20 transition-all duration-1000 ease-out"></div>
               </div>
 
               {/* Content Overlay */}
               <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6 md:p-8 text-white">
-                <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="font-playfair text-lg sm:text-xl md:text-2xl font-semibold mb-2 md:mb-3" itemProp="name">
+                <div className="transform translate-y-3 group-hover:translate-y-0 transition-all duration-1000 ease-out">
+                  <h3 className="font-playfair text-lg sm:text-xl md:text-2xl font-semibold mb-2 md:mb-3 transform translate-y-2 group-hover:translate-y-0 transition-all duration-800 delay-200" itemProp="name">
                     {service.title}
                   </h3>
-                  <p className="text-gray-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500 leading-relaxed mb-3 md:mb-4 text-sm md:text-base" itemProp="description">
+                  <p className="text-gray-100 opacity-0 group-hover:opacity-100 transition-all duration-1000 delay-300 ease-out leading-relaxed mb-3 md:mb-4 text-sm md:text-base transform translate-y-4 group-hover:translate-y-0" itemProp="description">
                     {service.description}
                   </p>
                 </div>
