@@ -106,10 +106,10 @@ export default function HeroWithDreamTeam() {
       {/* DREAM TEAM HEADER OVERLAY - Positioned between hero and bio sections */}
       <div
         ref={headerRef}
-        className={`scroll-slow animate relative -mt-32 mb-16 z-50 text-center max-w-4xl mx-auto px-10 py-14 transition-all duration-500 ${
+        className={`scroll-slow animate relative mt-8 mb-16 z-50 text-center max-w-4xl mx-auto px-10 py-14 transition-all duration-500 ${
           isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-white drop-shadow-lg'
         } shadow-xl rounded-2xl border border-pink-200`}
-        style={{background: 'linear-gradient(135deg, rgba(245,241,242,0.5) 0%, rgba(230,208,214,0.5) 100%)'}}
+        style={{background: 'linear-gradient(135deg, rgba(245,241,242,0.2) 0%, rgba(230,208,214,0.2) 100%)'}}
       >
         <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-gray-900" data-aos="fade-up">
           Meet Your <span className="text-white">Dream Team</span>
