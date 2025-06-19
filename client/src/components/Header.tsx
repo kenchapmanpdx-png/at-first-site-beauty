@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
@@ -171,7 +170,7 @@ export default function Header() {
               </button>
             </nav>
           </div>
-        )}</nav>
+        )}
         
         {/* Soft white transition to hero photo */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
