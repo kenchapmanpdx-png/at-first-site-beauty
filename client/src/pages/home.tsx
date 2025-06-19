@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
+import HeroWithDreamTeam from "@/components/HeroWithDreamTeam";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
@@ -11,8 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      <Hero />
-      <About />
+      <HeroWithDreamTeam />
       <Services />
       {/* Booking CTA between Services and Gallery */}
       <section className="py-8 bg-white">

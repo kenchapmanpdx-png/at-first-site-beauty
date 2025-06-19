@@ -1,0 +1,193 @@
+✅ Step 1: Create HeroWithDreamTeam.tsx
+In your Replit project, go to src/components/ and create a new file called:
+
+Copy
+Edit
+HeroWithDreamTeam.tsx
+Paste this code in it:
+
+tsx
+Copy
+Edit
+import { useEffect, useRef, useState } from "react";
+import holliePhoto from "@assets/HollieD_1749336182646.png";
+import cedarPhoto from "@assets/IMG_8201.jpeg";
+
+export default function HeroWithDreamTeam() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [isHeaderOverPhoto, setIsHeaderOverPhoto] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (headerRef.current && sectionRef.current) {
+        const headerRect = headerRef.current.getBoundingClientRect();
+        const sectionRect = sectionRef.current.getBoundingClientRect();
+        const isOverPhotos = headerRect.top < sectionRect.top + sectionRect.height * 0.5;
+        setIsHeaderOverPhoto(isOverPhotos);
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const slowEls = entry.target.querySelectorAll('.scroll-slow');
+            const fastEls = entry.target.querySelectorAll('.scroll-animation');
+            slowEls.forEach((el) => el.classList.add('animate'));
+            fastEls.forEach((el, i) =>
+              setTimeout(() => el.classList.add('animate'), 500 + i * 300)
+            );
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    window.addEventListener('scroll', handleScroll);
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <>
+      {/* HERO IMAGE SECTION */}
+      <section className="relative h-[90vh] overflow-hidden">
+        <img
+          src="/your-hero-image.jpg" // Replace with correct hero image if not in CSS
+          alt="Bridal couple"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/30 z-10" />
+        <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-6">
+          <h1 className="text-white text-4xl md:text-5xl font-bold mb-4">
+            Luxury Bridal Hair & <br className="hidden md:block" /> Makeup, <span className="text-blush-200">On Location</span>
+          </h1>
+          <p className="text-white text-lg mb-6 max-w-xl">
+            Serving the Pacific Northwest with elegance, expertise, and ease.
+          </p>
+          <a href="/book" className="px-6 py-3 bg-white text-blush-600 font-medium rounded-full shadow hover:bg-blush-100 transition">
+            Book Your Design Session
+          </a>
+        </div>
+
+        {/* DREAM TEAM HEADER OVERLAY */}
+        <div
+          ref={headerRef}
+          className={`scroll-slow absolute bottom-[-50px] left-1/2 transform -translate-x-1/2 z-30 text-center transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-gray-900'
+          }`}
+        >
+          <h2 className={`font-playfair text-4xl md:text-5xl font-bold mb-3 transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-white' : 'text-gray-900'
+          }`}>
+            Meet Your <span className={`transition-all duration-500 ${
+              isHeaderOverPhoto ? 'text-blush-200' : 'text-blush-400'
+            }`}>Dream Team</span>
+          </h2>
+          <p className={`text-lg leading-relaxed transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-gray-100' : 'text-gray-600'
+          }`}>
+            With over 30 years of combined experience in the beauty industry, we created a platform built on trust.
+          </p>
+        </div>
+
+        {/* Fade transition */}
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-white z-20" />
+      </section>
+
+      {/* BIO SECTION */}
+      <section ref={sectionRef} className="pt-28 pb-20 bg-white" id="about">
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl">
+          {/* Hollie */}
+          <article className="scroll-animation text-center">
+            <img
+              src={holliePhoto}
+              alt="Hollie DeMarais"
+              className="w-64 md:w-80 h-80 md:h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              loading="lazy"
+              width="320"
+              height="384"
+            />
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
+              Hollie DeMarais
+            </h3>
+            <p className="text-blush-400 mb-4 font-medium">
+              Owner of Vata Salon, Aveda Educator
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Award-winning salon owner with over 18 years of experience. Hollie ensures perfection through elite artist selection and training.
+            </p>
+          </article>
+
+          {/* Cedar */}
+          <article className="scroll-animation text-center">
+            <img
+              src={cedarPhoto}
+              alt="Cedar Lapp-Ngauamo"
+              className="w-64 md:w-80 h-80 md:h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              loading="lazy"
+              width="320"
+              height="384"
+            />
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2">
+              Cedar Lapp-Ngauamo
+            </h3>
+            <p className="text-blush-400 mb-4 font-medium">
+              Founder of Cedars Academy of Makeup Artistry
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Owner of the only private career college focused on makeup artistry. Cedar trains and certifies every artist for consistent excellence.
+            </p>
+          </article>
+        </div>
+      </section>
+    </>
+  );
+}
+✅ Step 2: Add to App.tsx or Home Page
+Wherever your homepage routes are (typically App.tsx), replace the current <Hero /> and <About /> components with:
+
+tsx
+Copy
+Edit
+import HeroWithDreamTeam from "./components/HeroWithDreamTeam";
+
+function App() {
+  return (
+    <>
+      <HeroWithDreamTeam />
+      {/* Other sections like Services, Portfolio, etc. */}
+    </>
+  );
+}
+✅ Step 3: Confirm You Have These Styles in index.css
+css
+Copy
+Edit
+.scroll-slow,
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+.scroll-slow.animate,
+.scroll-animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+✅ Step 4: Replace /your-hero-image.jpg
+Update the <img src="/your-hero-image.jpg" /> with your actual bridal couple hero image path.
+
+Example if it's imported:
+
+tsx
+Copy
+Edit
+import heroImage from "@assets/yourHeroImage.jpeg";
+...
+<img src={heroImage} ... />
