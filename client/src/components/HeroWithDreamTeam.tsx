@@ -106,18 +106,20 @@ export default function HeroWithDreamTeam() {
       {/* DREAM TEAM HEADER OVERLAY - Positioned between hero and bio sections */}
       <div
         ref={headerRef}
-        className="scroll-slow animate relative -mt-48 mb-16 z-50 text-center max-w-4xl mx-auto px-10 py-14 bg-black/80 backdrop-blur-sm shadow-2xl rounded-2xl border border-white/20"
+        className={`scroll-slow animate relative -mt-48 mb-16 z-50 text-center max-w-4xl mx-auto px-10 py-14 transition-all duration-500 ${
+          isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-white drop-shadow-lg'
+        }`}
       >
-        <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-white" style={{textShadow: '3px 3px 6px rgba(0,0,0,1)'}}>
+        <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-white" style={{textShadow: '3px 3px 6px rgba(0,0,0,1)'}} data-aos="fade-up">
           Meet Your <span className="text-blush-200">Dream Team</span>
         </h2>
-        <p className="text-xl leading-relaxed text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.9)'}}>
+        <p className="text-xl leading-relaxed text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.9)'}} data-aos="fade-up" data-aos-delay="200">
           Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
         </p>
       </div>
 
       {/* BIO SECTION */}
-      <section ref={sectionRef} className="pt-20 pb-20 bg-gradient-to-b from-gray-50/80 to-gray-50 watercolor-bg" id="about">
+      <section ref={sectionRef} className="pt-8 pb-20 bg-gradient-to-b from-gray-50/80 to-gray-50 watercolor-bg" id="about">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl">
           {/* Hollie DeMarais */}
           <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
