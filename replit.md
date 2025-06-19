@@ -14,10 +14,13 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Touch-optimized navigation with accessibility features
 
 ## Recent Changes (June 2025)
-✓ **Logo Size Adjustment** (June 19, 2025)
-- Reduced header logo size by 20% (from 350px to 280px max-width, 120px to 96px max-height)
+✓ **Logo and CTA Button Fixes** (June 19, 2025)
+- Fixed logo positioning and display by replacing LazyImage with regular img tag
+- Set optimal logo dimensions (300px mobile, 400px desktop) for proper visibility
+- Reduced header padding and adjusted spacer for better logo positioning
 - Fixed missing logo import error by updating path to existing "At First Site Logo.png"
 - Fixed menu alignment by converting booking link to button element for consistency
+- Updated all CTA booking buttons across all pages to direct to internal /book page
 - Application now runs successfully without import errors
 
 ✓ **Mobile Performance Optimization** (June 18, 2025)

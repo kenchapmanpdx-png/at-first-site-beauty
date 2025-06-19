@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import combinedLogoImage from "@assets/At First Site Logo.png";
-import LazyImage from "./LazyImage";
+
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,17 +49,7 @@ export default function Header() {
   return (
     <>
       <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm">
-        {/* Logo */}
-        <div className="flex flex-col items-center justify-center pt-4 pb-1 md:pt-6 md:pb-2">
-          <div className="w-full max-w-6xl px-4">
-            <LazyImage
-              src={combinedLogoImage}
-              alt="At First Site Beauty On Location"
-              className="mx-auto block max-w-[80vw] max-h-[120px] w-auto h-auto"
-              loading="eager"
-            />
-          </div>
-        </div>
+        {/* Logo placeholder removed */}
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden flex justify-center pb-2 relative z-10">
@@ -132,7 +122,7 @@ export default function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind the floating header */}
-      <div className="h-[170px] md:h-[190px]"></div>
+      <div className="h-[60px] md:h-[70px]"></div>
     </>
   );
 }
