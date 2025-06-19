@@ -58,11 +58,11 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-14 bg-gray-50 watercolor-bg" itemScope itemType="https://schema.org/AboutPage">
+    <section ref={sectionRef} id="about" className="py-14 -mt-32 pt-32" itemScope itemType="https://schema.org/AboutPage">
       <div className="container mx-auto px-4">
         <div 
           ref={headerRef}
-          className={`scroll-slow max-w-3xl mx-auto text-center mb-12 md:mb-24 transition-all duration-500 ${
+          className={`scroll-slow max-w-3xl mx-auto text-center mb-12 md:mb-24 transition-all duration-500 bg-gradient-to-b from-white/30 via-white/20 to-transparent backdrop-blur-sm rounded-lg p-8 ${
             isHeaderOverPhoto ? 'md:text-white md:drop-shadow-lg' : 'md:text-gray-900'
           }`}
         >
@@ -80,7 +80,8 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
+        <div className="bg-gray-50 watercolor-bg -mx-4 px-4 py-12 rounded-lg">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
           {/* Hollie DeMarais */}
           <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
             <img
@@ -147,6 +148,7 @@ export default function About() {
             <p className="text-gray-700 leading-relaxed">
               You're not just hiring amazing artists. You're investing in a system of excellence. Our makeup will wear beautifully throughout your entire day, and our styling will photograph flawlessly. This is the trust and quality control that sets us apart in the Pacific Northwest.
             </p>
+          </div>
           </div>
         </div>
       </div>

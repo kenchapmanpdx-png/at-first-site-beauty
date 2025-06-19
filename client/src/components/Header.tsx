@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm h-32">
+      <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm h-48">
         {/* Header Logo */}
         <div className="flex justify-center pt-6 pb-12">
           <img 
@@ -132,7 +132,7 @@ export default function Header() {
       </header>
 
       {/* Spacer to prevent content from hiding behind the floating header */}
-      <div className="h-[128px]"></div>
+      <div className="h-[192px]"></div>
     </>
   );
 }
