@@ -153,7 +153,3 @@ export default function Header() {
     </>
   );
 }
-```
-
-```
-</replit_final_file>
