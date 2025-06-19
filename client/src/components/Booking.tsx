@@ -5,18 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { FaInstagram, FaPinterest } from "react-icons/fa";
-
-// BookingWidget component to embed the Go High Level booking widget
-function BookingWidget() {
-  return (
-    <iframe
-      src="https://widgets.gohighlevel.com/api/v1/widget/64f07a7c5e1294a9862f589e" // Replace with your actual widget URL
-      width="100%"
-      height="500px" // Adjust the height as needed
-      style={{ border: "none" }}
-    ></iframe>
-  );
-}
+import BookingWidget from "./BookingWidget";
 
 export default function Booking() {
   const [formData, setFormData] = useState({
