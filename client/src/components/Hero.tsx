@@ -8,46 +8,44 @@ export default function Hero() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    let ticking = false;
-    const isMobile = window.innerWidth <= 768;
-
-    const handleScroll = () => {
-      if (!ticking && !isMobile) { // Disable parallax on mobile for performance
-        requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    if (!isMobile) {
-      window.addEventListener('scroll', handleScroll, { passive: true });
-    }
-
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    
     // Trigger loading animation
-    setTimeout(() => setIsLoaded(true), 100);
-
+    setTimeout(() => setIsLoaded(true), 300);
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section id="home" className="relative h-[120vh] flex items-center justify-center -mt-32 pt-32 -mb-16 pb-16 overflow-hidden" itemScope itemType="https://schema.org/Organization">
+    <section id="home" className="relative h-screen flex items-center justify-center" itemScope itemType="https://schema.org/Organization">
       {/* Background Image with Parallax */}
       <div
         className="absolute inset-0 bg-cover parallax-bg filter grayscale"
         style={{
           backgroundImage: `url(${heroImage})`,
-          backgroundPosition: 'center 30%',
-          transform: window.innerWidth > 768 ? `translateY(${scrollY * 0.5}px)` : 'none',
-          willChange: window.innerWidth > 768 ? 'transform' : 'auto',
+          backgroundPosition: 'center 35%',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
         }}
         role="img"
         aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"
       >
         <div className="hero-overlay absolute inset-0"></div>
-        <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-white via-white/80 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-gray-50 via-gray-50/80 to-transparent"></div>
+        
+        {/* Top gradient - creates soft white fade from header to image */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent"></div>
+        
+        {/* Bottom gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
       </div>
 
       <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transform transition-all duration-1000 ${
@@ -65,32 +63,14 @@ export default function Hero() {
           Serving the Pacific Northwest with elegance, expertise, and ease
         </p>
         <Button
-          onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-          className={`premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
+          onClick={() => window.open('https://atfirstsite.glossgenius.com/services', '_blank')}
+          className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
             isLoaded ? 'stagger-3' : ''
           }`}
         >
-          <div className="sparkle">✦</div>
-          <div className="sparkle">✦</div>
-          <div className="sparkle">✦</div>
-          <div className="sparkle">✦</div>
-          <div className="sparkle">✦</div>
           Book Your Design Session
         </Button>
       </div>
-
-      {/* DREAM TEAM OVERLAY INSIDE HERO */}
-      <div className="scroll-slow absolute bottom-[-120px] left-1/2 transform -translate-x-1/2 text-center z-30 transition-all duration-500 text-white drop-shadow-lg max-w-3xl px-4">
-        <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 transition-all duration-500 text-white">
-          Meet Your <span className="transition-all duration-500 text-blush-200">Dream Team</span>
-        </h2>
-        <p className="text-lg leading-relaxed transition-all duration-500 text-gray-100">
-          With over 30 years of combined experience in the beauty industry, we created a platform built on trust. When you book with us, your hair and makeup will be done to absolute perfection.
-        </p>
-      </div>
-
-      {/* Gradient fade between hero and grid */}
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent to-white z-20"></div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <ChevronDown size={32} className="opacity-70" />
