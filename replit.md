@@ -19,6 +19,9 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Reduced header spacer to 60px/70px for more compact header
 - Replaced hamburger menu icon with custom rose image (36px size, 80% opacity) while keeping "MENU" label for elegant brand-appropriate mobile navigation
 - Expanded header top and bottom padding by 5% for better spacing and visual hierarchy
+- Repositioned mobile menu button to bottom of header area for better placement
+- Extended top gradient on bridal photo from 128px to 192px for smoother visual transition
+- Increased header height by 30% for better visual prominence and hierarchy
 - Implemented responsive text colors for About section: dark text on mobile, dynamic white text on desktop when scrolling over photos
 - Added responsive spacing to move "Meet Your Dream Team" section up on mobile to reduce bridal image bottom visibility
 - Adjusted mobile menu button positioning by adding top padding for better placement
