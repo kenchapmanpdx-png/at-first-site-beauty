@@ -10,7 +10,7 @@ export default function Hero() {
   useEffect(() => {
     let ticking = false;
     const isMobile = window.innerWidth <= 768;
-    
+
     const handleScroll = () => {
       if (!ticking && !isMobile) { // Disable parallax on mobile for performance
         requestAnimationFrame(() => {
@@ -20,14 +20,14 @@ export default function Hero() {
         ticking = true;
       }
     };
-    
+
     if (!isMobile) {
       window.addEventListener('scroll', handleScroll, { passive: true });
     }
-    
+
     // Trigger loading animation
     setTimeout(() => setIsLoaded(true), 100);
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -78,6 +78,19 @@ export default function Hero() {
           Book Your Design Session
         </Button>
       </div>
+
+      {/* DREAM TEAM OVERLAY INSIDE HERO */}
+      <div className="scroll-slow absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 text-center z-30 transition-all duration-500 text-white drop-shadow-lg max-w-3xl px-4">
+        <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 transition-all duration-500 text-white">
+          Meet Your <span className="transition-all duration-500 text-blush-200">Dream Team</span>
+        </h2>
+        <p className="text-lg leading-relaxed transition-all duration-500 text-gray-100">
+          With over 30 years of combined experience in the beauty industry, we created a platform built on trust. When you book with us, your hair and makeup will be done to absolute perfection.
+        </p>
+      </div>
+
+      {/* Gradient fade between hero and grid */}
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent to-white z-20"></div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <ChevronDown size={32} className="opacity-70" />

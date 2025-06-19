@@ -45,27 +45,8 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="pt-20" itemScope itemType="https://schema.org/AboutPage">
+    <section ref={sectionRef} id="about" className="pt-[220px] bg-white" itemScope itemType="https://schema.org/AboutPage">
       <div className="container mx-auto px-4">
-        <div 
-          ref={headerRef}
-          className={`scroll-slow max-w-3xl mx-auto text-center mb-20 transition-all duration-500 ${
-            isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-gray-900'
-          }`}
-        >
-          <h2 className={`font-playfair text-4xl md:text-5xl font-bold mb-6 transition-all duration-500 ${
-            isHeaderOverPhoto ? 'text-white' : 'text-gray-900'
-          }`}>
-            Meet Your <span className={`transition-all duration-500 ${
-              isHeaderOverPhoto ? 'text-blush-200' : 'text-blush-400'
-            }`}>Dream Team</span>
-          </h2>
-          <p className={`text-lg leading-relaxed transition-all duration-500 ${
-            isHeaderOverPhoto ? 'text-gray-100' : 'text-gray-600'
-          }`}>
-            With over 30 years of combined experience in the beauty industry, we created a platform built on trust. When you book with us, your hair and makeup will be done to absolute perfection.
-          </p>
-        </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
           {/* Hollie DeMarais */}
