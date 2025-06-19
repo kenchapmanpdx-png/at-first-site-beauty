@@ -94,7 +94,7 @@ export default function Header() {
               e.preventDefault(); 
               navigateToSection('testimonials');
             }} className="hover:text-blush-400 cursor-pointer">Testimonials</button>
-            <a href="/book" className="hover:text-blush-400 cursor-pointer font-semibold text-blush-600">Booking</a>
+            <button onClick={() => window.location.href = '/book'} className="hover:text-blush-400 cursor-pointer font-semibold text-blush-600">Booking</button>
           </div>
         </nav>
 
