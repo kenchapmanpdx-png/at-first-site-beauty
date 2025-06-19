@@ -62,7 +62,7 @@ export default function About() {
       <div className="container mx-auto px-4">
         <div 
           ref={headerRef}
-          className={`scroll-slow max-w-3xl mx-auto text-center mb-24 transition-all duration-500 ${
+          className={`scroll-slow max-w-3xl mx-auto text-center mb-12 md:mb-24 transition-all duration-500 ${
             isHeaderOverPhoto ? 'md:text-white md:drop-shadow-lg' : 'md:text-gray-900'
           }`}
         >
