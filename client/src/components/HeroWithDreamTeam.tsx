@@ -78,7 +78,7 @@ export default function HeroWithDreamTeam() {
         >
           <div className="hero-overlay absolute inset-0"></div>
           <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-gray-50 via-gray-50/60 via-gray-50/30 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-gray-50 via-gray-50/60 via-gray-50/30 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-b from-transparent to-gray-50 z-20"></div>
         </div>
 
         {/* Hero Content */}
@@ -103,9 +103,9 @@ export default function HeroWithDreamTeam() {
         {/* DREAM TEAM HEADER OVERLAY */}
         <div
           ref={headerRef}
-          className={`scroll-slow absolute bottom-[120px] left-1/2 transform -translate-x-1/2 z-50 text-center max-w-4xl px-8 py-10 transition-all duration-500 ${
+          className={`scroll-slow absolute bottom-[200px] md:bottom-[160px] left-1/2 transform -translate-x-1/2 z-50 text-center max-w-4xl px-10 py-14 transition-all duration-500 ${
             isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-white drop-shadow-lg'
-          } bg-black/40 backdrop-blur-md rounded-2xl border border-white/20`}
+          } bg-black/60 backdrop-blur-sm shadow-xl rounded-2xl border border-white/10`}
         >
           <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-white" style={{textShadow: '3px 3px 6px rgba(0,0,0,1)'}} data-aos="fade-up">
             Meet Your <span className="text-blush-200">Dream Team</span>
