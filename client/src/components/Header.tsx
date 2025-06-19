@@ -25,10 +25,10 @@ export default function Header() {
 
     // Check for hash on component mount
     handleHashNavigation();
-    
+
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashNavigation);
-    
+
     return () => {
       window.removeEventListener('hashchange', handleHashNavigation);
     };
@@ -153,3 +153,7 @@ export default function Header() {
     </>
   );
 }
+```
+
+```
+</replit_final_file>

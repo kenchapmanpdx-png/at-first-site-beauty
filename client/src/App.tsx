@@ -6,12 +6,13 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect, useState } from "react";
 import { optimizeTouch, preloadCriticalImages } from "./utils/performance";
 import Preloader from "@/components/Preloader";
-import Home from "@/pages/home";
-import NotFound from "@/pages/not-found";
-import TeethWhitening from "@/pages/teeth-whitening";
-import SprayTanning from "@/pages/spray-tanning";
-import BridalDesignSession from "@/pages/bridal-design-session";
-import BridalParty from "@/pages/bridal-party";
+import Home from "./pages/home";
+import BridalDesignSession from "./pages/bridal-design-session";
+import BridalParty from "./pages/bridal-party";
+import SprayTanning from "./pages/spray-tanning";
+import TeethWhitening from "./pages/teeth-whitening";
+import BookingPage from "./pages/booking-page";
+import NotFound from "./pages/not-found";
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/spray-tanning" component={SprayTanning} />
       <Route path="/bridal-design-session" component={BridalDesignSession} />
       <Route path="/bridal-party" component={BridalParty} />
+      <Route path="/book" component={BookingPage} />
       <Route component={NotFound} />
     </Switch>
   );
@@ -32,14 +34,14 @@ function App() {
   useEffect(() => {
     // Initialize performance optimizations
     optimizeTouch();
-    
+
     // Preload critical images for faster loading
     const criticalImages = [
       "/attached_assets/1At First Site Logo (1000 x 350 px)bb_1749329806337_1750282076832.png",
       "/attached_assets/1At First Site Logob (1000 x 350 px)_1750282542411.png",
       "/attached_assets/IMG_0970_1749066905982.png"
     ];
-    
+
     preloadCriticalImages(criticalImages).finally(() => {
       setTimeout(() => setIsLoading(false), 1000);
     });
