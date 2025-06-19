@@ -108,12 +108,13 @@ export default function HeroWithDreamTeam() {
         ref={headerRef}
         className={`scroll-slow animate relative -mt-48 mb-16 z-50 text-center max-w-4xl mx-auto px-10 py-14 transition-all duration-500 ${
           isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-white drop-shadow-lg'
-        } bg-gradient-to-r from-pink-400 to-rose-500 shadow-xl rounded-2xl border border-pink-200`}
+        } shadow-xl rounded-2xl border border-pink-200`}
+        style={{background: 'linear-gradient(135deg, #f5f1f2 0%, #e6d0d6 100%)'}}
       >
-        <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-white" style={{textShadow: '3px 3px 6px rgba(0,0,0,1)'}} data-aos="fade-up">
-          Meet Your <span className="text-blush-200">Dream Team</span>
+        <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-gray-900" data-aos="fade-up">
+          Meet Your <span className="text-white">Dream Team</span>
         </h2>
-        <p className="text-xl leading-relaxed text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.9)'}} data-aos="fade-up" data-aos-delay="200">
+        <p className="text-xl leading-relaxed text-gray-700" data-aos="fade-up" data-aos-delay="200">
           Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
         </p>
       </div>
