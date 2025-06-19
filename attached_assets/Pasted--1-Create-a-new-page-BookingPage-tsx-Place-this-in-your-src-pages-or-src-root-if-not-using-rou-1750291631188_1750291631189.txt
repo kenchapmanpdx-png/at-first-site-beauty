@@ -1,0 +1,93 @@
+
+📁 1. Create a new page: BookingPage.tsx
+Place this in your src/pages (or src root if not using routing):
+
+tsx
+Copy
+Edit
+// src/pages/BookingPage.tsx
+import { useEffect } from 'react';
+
+export default function BookingPage() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => document.body.removeChild(script);
+  }, []);
+
+  return (
+    <main className="max-w-3xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center">Book Your Bridal Appointment</h1>
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/booking/ge2HN52PHjWliZSbo6T9"
+        style={{
+          width: '100%',
+          border: 'none',
+          overflow: 'hidden',
+          minHeight: '700px',
+        }}
+        scrolling="no"
+        title="Bridal Appointment Booking"
+        id="ge2HN52PHjWliZSbo6T9_1750196042723"
+      />
+    </main>
+  );
+}
+🔗 2. Update Routing
+If using React Router, add the route in your App.tsx:
+
+tsx
+Copy
+Edit
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BookingPage from './pages/BookingPage';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Other routes */}
+        <Route path="/book" element={<BookingPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+If not using routing, simply render <BookingPage /> in your App.tsx.
+
+🔘 3. Update All CTA Buttons
+Search for all your “Book” buttons and update them to:
+
+tsx
+Copy
+Edit
+<Button as="a" href="/book">
+  Book Your Bridal Appointment
+</Button>
+Or using <a> directly:
+
+html
+Copy
+Edit
+<a href="/book" class="...btn classes...">Book Your Bridal Appointment</a>
+If you were toggling the widget directly before, now just link to /book.
+
+✅ 4. Ensure Navigation Works
+Add a link in your header nav (optional):
+
+tsx
+Copy
+Edit
+<a href="/book" className="hover:text-blush-400">Book Now</a>
+Preview your Replit app—clicking any CTA should take you to the new booking page with only the calendar visible.
+
+🛠 Troubleshooting
+Situation	Fix/Check
+Page not found error	Confirm route path /book matches component path
+CTA not navigating	Ensure no preventDefault() on buttons
+Iframe not loading	Check script URL and console for errors
+Scrollbar on iframe	Adjust minHeight until all widget content is visible
+
