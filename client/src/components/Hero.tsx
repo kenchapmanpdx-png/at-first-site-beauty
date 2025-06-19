@@ -80,7 +80,7 @@ export default function Hero() {
       </div>
 
       {/* DREAM TEAM OVERLAY INSIDE HERO */}
-      <div className="scroll-slow absolute bottom-[-60px] left-1/2 transform -translate-x-1/2 text-center z-30 transition-all duration-500 text-white drop-shadow-lg max-w-3xl px-4">
+      <div className="scroll-slow absolute bottom-[-120px] left-1/2 transform -translate-x-1/2 text-center z-30 transition-all duration-500 text-white drop-shadow-lg max-w-3xl px-4">
         <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 transition-all duration-500 text-white">
           Meet Your <span className="transition-all duration-500 text-blush-200">Dream Team</span>
         </h2>
