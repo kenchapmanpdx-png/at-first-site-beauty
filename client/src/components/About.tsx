@@ -38,7 +38,7 @@ export default function About() {
             normalAnimations.forEach((animation, index) => {
               setTimeout(() => {
                 animation.classList.add('animate');
-              }, 600 + (index * 400));
+              }, 200 + (index * 300));
             });
           }
         });
