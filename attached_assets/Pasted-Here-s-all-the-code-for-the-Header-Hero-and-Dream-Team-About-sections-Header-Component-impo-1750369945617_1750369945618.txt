@@ -1,0 +1,316 @@
+Here's all the code for the Header, Hero, and Dream Team (About) sections:
+
+Header Component
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
+export default function Header() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Calculate proper offset considering the large header
+      const headerHeight = 420; // Account for the full header height
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: Math.max(0, elementPosition),
+        behavior: "smooth"
+      });
+    }
+  };
+  return (
+    <>
+      {/* Main Logo Header */}
+      <header className="relative bg-white" style={{ height: '400px' }}>
+        {/* Logo Section */}
+        <div className="flex items-center justify-center pt-4 md:pt-8 pb-1">
+          <div className="container mx-auto px-4 flex justify-center">
+            <img
+              src={logo}
+              alt="At First Site Beauty On Location"
+              className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+              style={{ maxHeight: '200px' }}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+        
+        {/* Navigation Menu Bar */}
+        <nav className="flex justify-center pb-3 overflow-x-auto">
+          <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection("gallery")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+            >
+              Gallery
+            </button>
+            <button
+              onClick={() => scrollToSection("testimonials")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+            >
+              Testimonials
+            </button>
+            <button
+              onClick={() => scrollToSection("booking")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+            >
+              Booking
+            </button>
+          </div>
+        </nav>
+        
+        {/* Soft white transition to hero photo */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
+      </header>
+    </>
+  );
+}
+Hero Component
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+import heroImage from "@assets/IMG_0970_1749066905982.png";
+export default function Hero() {
+  const [scrollY, setScrollY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    // Trigger loading animation
+    setTimeout(() => setIsLoaded(true), 300);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  return (
+    <section id="home" className="relative h-screen flex items-center justify-center" itemScope itemType="https://schema.org/Organization">
+      {/* Background Image with Parallax */}
+      <div
+        className="absolute inset-0 bg-cover parallax-bg filter grayscale"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundPosition: 'center 35%',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
+        }}
+        role="img"
+        aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"
+      >
+        <div className="hero-overlay absolute inset-0"></div>
+        
+        {/* Top gradient - creates soft white fade from header to image */}
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent"></div>
+        
+        {/* Bottom gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
+      </div>
+      <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transform transition-all duration-1000 ${
+        isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+      }`}>
+        <h1 className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight fade-slide-up ${
+          isLoaded ? 'stagger-1' : ''
+        }`}>
+          Luxury Bridal Hair & Makeup,{" "}
+          <span className="text-blush-300">On Location</span>
+        </h1>
+        <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-light opacity-90 fade-slide-up ${
+          isLoaded ? 'stagger-2' : ''
+        }`}>
+          Serving the Pacific Northwest with elegance, expertise, and ease
+        </p>
+        <Button
+          onClick={() => window.open('https://atfirstsite.glossgenius.com/services', '_blank')}
+          className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
+            isLoaded ? 'stagger-3' : ''
+          }`}
+        >
+          Book Your Design Session
+        </Button>
+      </div>
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+        <ChevronDown size={32} className="opacity-70" />
+      </div>
+    </section>
+  );
+}
+Dream Team (About) Component
+import { useEffect, useRef, useState } from "react";
+import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
+import cedarPhoto from "@assets/IMG_8201.jpeg";
+export default function About() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [scrollY, setScrollY] = useState(0);
+  const [isHeaderOverPhoto, setIsHeaderOverPhoto] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if header is over photo area
+      if (headerRef.current && sectionRef.current) {
+        const headerRect = headerRef.current.getBoundingClientRect();
+        const sectionRect = sectionRef.current.getBoundingClientRect();
+        
+        // Check if header is in the lower portion of the section (over photos)
+        const isOverPhotos = headerRect.top < sectionRect.top + (sectionRect.height * 0.5);
+        setIsHeaderOverPhoto(isOverPhotos);
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const slowAnimations = entry.target.querySelectorAll('.scroll-slow');
+            const normalAnimations = entry.target.querySelectorAll('.scroll-animation');
+            
+            // Animate slow elements first (heading)
+            slowAnimations.forEach((animation) => {
+              animation.classList.add('animate');
+            });
+            
+            // Then animate normal elements with stagger
+            normalAnimations.forEach((animation, index) => {
+              setTimeout(() => {
+                animation.classList.add('animate');
+              }, 600 + (index * 400));
+            });
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px 0px 0px' }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  return (
+    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg" itemScope itemType="https://schema.org/AboutPage">
+      <div className="container mx-auto px-4">
+        <div 
+          ref={headerRef}
+          className={`scroll-slow max-w-3xl mx-auto text-center mb-20 transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-gray-900'
+          }`}
+        >
+          <h2 className={`font-playfair text-4xl md:text-5xl font-bold mb-6 transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-white' : 'text-gray-900'
+          }`} data-aos="fade-up">
+            Meet Your <span className={`transition-all duration-500 ${
+              isHeaderOverPhoto ? 'text-blush-200' : 'text-blush-400'
+            }`}>Dream Team</span>
+          </h2>
+          <p className={`text-lg leading-relaxed transition-all duration-500 ${
+            isHeaderOverPhoto ? 'text-gray-100' : 'text-gray-600'
+          }`} data-aos="fade-up" data-aos-delay="200">
+            Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
+          {/* Hollie DeMarais */}
+          <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
+            <img
+              src={holliePhoto}
+              alt="Hollie DeMarais - Professional bridal hair stylist and owner of Vata Salon with 18+ years experience in Pacific Northwest wedding beauty"
+              className="w-64 md:w-80 h-80 md:h-96 object-cover rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              loading="lazy"
+              itemProp="image"
+              width="320"
+              height="384"
+            />
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
+              Hollie DeMarais
+            </h3>
+            <p className="text-blush-400 mb-4 font-medium" itemProp="jobTitle">
+              Owner of Vata Salon, Aveda Educator
+            </p>
+            <p className="text-gray-600 leading-relaxed" itemProp="description">
+              Award-winning salon owner with over 18 years of experience. Hollie provides quality control and has selected elite artists for hair design training, ensuring every client receives perfection through our carefully curated team.
+            </p>
+            <meta itemProp="worksFor" content="At First Sight Beauty On Location" />
+            <meta itemProp="knowsAbout" content="Bridal Hair Styling, Hair Design Training, Salon Management" />
+            <meta itemProp="yearsExperience" content="18" />
+          </article>
+          {/* Cedar Lapp-Ngauamo */}
+          <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
+            <img
+              src={cedarPhoto}
+              alt="Cedar Lapp-Ngauamo - Professional makeup artist and founder of Cedars Academy of Makeup Artistry, owner of exclusive makeup college in Pacific Northwest"
+              className="w-64 md:w-80 h-80 md:h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              loading="lazy"
+              itemProp="image"
+              width="320"
+              height="384"
+            />
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
+              Cedar Lapp-Ngauamo
+            </h3>
+            <p className="text-blush-400 mb-4 font-medium" itemProp="jobTitle">
+              Founder of Cedars Academy of Makeup Artistry
+            </p>
+            <p className="text-gray-600 leading-relaxed" itemProp="description">
+              Owner of the only private care college in the Pacific Northwest focused solely on makeup artistry. Cedar personally trains and certifies all makeup artists on our team, ensuring consistent quality control and expertise.
+            </p>
+            <meta itemProp="worksFor" content="At First Sight Beauty On Location" />
+            <meta itemProp="knowsAbout" content="Makeup Artistry, Bridal Makeup, Makeup Education, Artist Training" />
+            <meta itemProp="founder" content="Cedars Academy of Makeup Artistry" />
+          </article>
+        </div>
+        {/* Team Excellence Section */}
+        <div className="scroll-animation mt-20 text-center max-w-4xl mx-auto">
+          <h3 className="font-playfair text-3xl font-semibold text-gray-900 mb-6">
+            Our Elite Team of Artists
+          </h3>
+          <p className="text-lg text-gray-600 leading-relaxed mb-8">
+            Our makeup is applied by artists that Cedar has personally trained and certified through her program. 
+            Our hair styling is performed by elite artists that Hollie has carefully selected and trained in hair design. 
+            Together, we maintain strict quality control to ensure that every client receives the absolute perfection they deserve.
+          </p>
+          <div className="bg-blush-50 rounded-2xl p-8">
+            <h4 className="font-playfair text-xl font-semibold text-blush-600 mb-4">
+              Trust in Our Brand Promise
+            </h4>
+            <p className="text-gray-700 leading-relaxed">
+              When you book with At First Site Beauty, you're not just hiring artists — you're investing in a system of excellence. 
+              Our makeup will wear beautifully throughout your entire day, and our styling will photograph flawlessly. 
+              This is the trust and quality control that sets us apart in the Pacific Northwest.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+This code includes:
+
+Header: 400px height with logo and navigation, smooth scrolling functionality
+Hero: Full-screen section with parallax background, gradients for smooth transitions, and loading animations
+Dream Team (About): Section with scroll-triggered text color changes when header overlaps photos, staggered animations, and responsive grid layout
+The key interaction is the Dream Team header that changes from dark to white text with drop-shadow when it scrolls over the bridal photos, creating the overlay effect you requested.
