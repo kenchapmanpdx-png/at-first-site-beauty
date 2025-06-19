@@ -49,7 +49,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm">
+      <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
         {/* Logo */}
         <div className="flex flex-col items-center justify-center pt-6 pb-1.5 md:pt-12 md:pb-3">
           <div className="w-full max-w-6xl px-4">
@@ -150,8 +150,8 @@ export default function Header() {
         )}
       </header>
 
-      {/* Spacer to prevent content from hiding behind the floating header */}
-      <section className="pt-48 md:pt-56"></section>
+      {/* Spacer to prevent content from hiding behind the fixed header */}
+      <section className="pt-52 md:pt-60"></section>
     </>
   );
 }
