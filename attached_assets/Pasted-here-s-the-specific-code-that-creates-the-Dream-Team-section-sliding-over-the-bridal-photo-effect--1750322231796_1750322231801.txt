@@ -1,0 +1,64 @@
+here's the specific code that creates the Dream Team section sliding over the bridal photo effect:
+
+Main Section Structure and Spacing:
+<section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg">
+  <div className="container mx-auto px-4">
+Dream Team Header with Photo Overlay Detection:
+<div 
+  ref={headerRef}
+  className={`scroll-slow max-w-3xl mx-auto text-center mb-20 transition-all duration-500 ${
+    isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-gray-900'
+  }`}
+>
+  <h2 className={`font-playfair text-4xl md:text-5xl font-bold mb-6 transition-all duration-500 ${
+    isHeaderOverPhoto ? 'text-white' : 'text-gray-900'
+  }`}>
+    Meet Your <span className={`transition-all duration-500 ${
+      isHeaderOverPhoto ? 'text-blush-200' : 'text-blush-400'
+    }`}>Dream Team</span>
+  </h2>
+  <p className={`text-lg leading-relaxed transition-all duration-500 ${
+    isHeaderOverPhoto ? 'text-gray-100' : 'text-gray-600'
+  }`}>
+    [Your content here...]
+  </p>
+</div>
+Photo Grid Layout:
+<div className="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
+  {/* Photo articles go here */}
+</div>
+The Key Effect Logic - State and Refs:
+const sectionRef = useRef<HTMLElement>(null);
+const headerRef = useRef<HTMLDivElement>(null);
+const [isHeaderOverPhoto, setIsHeaderOverPhoto] = useState(false);
+Scroll Detection Effect:
+useEffect(() => {
+  const handleScroll = () => {
+    // Check if header is over photo area
+    if (headerRef.current && sectionRef.current) {
+      const headerRect = headerRef.current.getBoundingClientRect();
+      const sectionRect = sectionRef.current.getBoundingClientRect();
+      
+      // Check if header is in the lower portion of the section (over photos)
+      const isOverPhotos = headerRect.top < sectionRect.top + (sectionRect.height * 0.5);
+      setIsHeaderOverPhoto(isOverPhotos);
+    }
+  };
+  
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+Key CSS Classes for the Effect:
+mb-20 - Creates the spacing between header and photos
+transition-all duration-500 - Smooth color transitions
+text-white drop-shadow-lg - White text with shadow when over photos
+max-w-3xl mx-auto - Header width constraint
+max-w-6xl mx-auto - Photo grid width constraint
+gap-12 lg:gap-20 - Responsive spacing between photos
+The magic happens with:
+
+Two refs: headerRef tracks the title, sectionRef tracks the whole section
+Scroll detection: Calculates when header overlaps the lower 50% of section (where photos are)
+State toggle: isHeaderOverPhoto switches text colors dynamically
+CSS transitions: Smooth color changes as the header slides over photos
+The spacing (py-20, mb-20, gap-12 lg:gap-20) creates the layout where the header can scroll over the photo area while changing colors.

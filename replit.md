@@ -26,10 +26,10 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Made bridal photo extend behind header and footer elements for immersive visual effect
 - Expanded bridal photo section to 120% viewport height for dramatic visual impact
 - Increased header height to 192px with tripled padding around logo and menu elements
-- Fixed About section spacing with proper py-20 padding and mb-20 header spacing
-- Implemented working scroll detection for "Meet Your Dream Team" text color changes
-- Text transitions from gray to white when scrolling over team photos (50% section threshold)
-- Restored proper photo grid layout with gap-12 lg:gap-20 spacing and max-w-6xl container
+- Restored "Meet Your Dream Team" section to properly overlay bridal photo with -mt-32 positioning
+- Enhanced bridal photo gradients: increased top gradient to h-64 and bottom to h-48 with stronger opacity
+- Implemented working scroll detection for text color changes when overlapping bridal photo
+- Added proper background styling to team photos section while maintaining photo overlay effect
 - Implemented responsive text colors for About section: dark text on mobile, dynamic white text on desktop when scrolling over photos
 - Added responsive spacing to move "Meet Your Dream Team" section up on mobile to reduce bridal image bottom visibility
 - Adjusted mobile menu button positioning by adding top padding for better placement
