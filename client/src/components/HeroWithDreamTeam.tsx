@@ -77,8 +77,8 @@ export default function HeroWithDreamTeam() {
           aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location"
         >
           <div className="hero-overlay absolute inset-0"></div>
-          <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-white via-white/80 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-gray-50 via-gray-50/80 to-transparent"></div>
+          <div className="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-white via-white/60 via-white/30 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-gray-50 via-gray-50/60 via-gray-50/30 to-transparent"></div>
         </div>
 
         {/* Hero Content */}
@@ -103,21 +103,21 @@ export default function HeroWithDreamTeam() {
         {/* DREAM TEAM HEADER OVERLAY */}
         <div
           ref={headerRef}
-          className={`scroll-slow absolute bottom-[40px] left-1/2 transform -translate-x-1/2 z-40 text-center max-w-3xl px-4 transition-all duration-500 ${
+          className={`scroll-slow absolute bottom-[80px] left-1/2 transform -translate-x-1/2 z-40 text-center max-w-4xl px-6 py-8 transition-all duration-500 ${
             isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-white drop-shadow-lg'
-          }`}
+          } bg-black/20 backdrop-blur-sm rounded-lg`}
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-lg" data-aos="fade-up">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}} data-aos="fade-up">
             Meet Your <span className="text-blush-200">Dream Team</span>
           </h2>
-          <p className="text-lg leading-relaxed text-white drop-shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <p className="text-lg leading-relaxed text-white" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.7)'}} data-aos="fade-up" data-aos-delay="200">
             Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
           </p>
         </div>
       </section>
 
       {/* BIO SECTION */}
-      <section ref={sectionRef} className="pt-32 pb-20 bg-gray-50 watercolor-bg" id="about">
+      <section ref={sectionRef} className="pt-20 pb-20 bg-gradient-to-b from-gray-50/80 to-gray-50 watercolor-bg" id="about">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 lg:gap-20 max-w-6xl">
           {/* Hollie DeMarais */}
           <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
