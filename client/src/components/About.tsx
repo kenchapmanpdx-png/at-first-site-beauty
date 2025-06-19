@@ -45,7 +45,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="about" className="py-20 bg-gray-50 watercolor-bg" itemScope itemType="https://schema.org/AboutPage">
+    <section ref={sectionRef} id="about" className="pt-20" itemScope itemType="https://schema.org/AboutPage">
       <div className="container mx-auto px-4">
         <div 
           ref={headerRef}
@@ -120,7 +120,8 @@ export default function About() {
         </div>
 
         {/* Team Excellence Section */}
-        <div className="scroll-animation mt-20 text-center max-w-4xl mx-auto">
+        <div className="bg-gray-50 watercolor-bg py-20">
+        <div className="scroll-animation text-center max-w-4xl mx-auto">
           <h3 className="font-playfair text-3xl font-semibold text-gray-900 mb-6">
             Our Elite Team of Artists
           </h3>
@@ -135,6 +136,7 @@ export default function About() {
               You're not just hiring amazing artists. You're investing in a system of excellence. Our makeup will wear beautifully throughout your entire day, and our styling will photograph flawlessly. This is the trust and quality control that sets us apart in the Pacific Northwest.
             </p>
           </div>
+        </div>
         </div>
       </div>
     </section>
