@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import holliePhoto from "@assets/HollieD_1749336182646.png";
-import cedarPhoto from "@assets/IMG_8201.jpeg";
+import cedarPhoto from "@assets/IMG_8201_1750372751216.jpeg";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
