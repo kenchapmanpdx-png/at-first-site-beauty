@@ -187,7 +187,7 @@ export default function BridalDesignSession() {
               
               <div data-aos="fade-in" data-aos-delay="300">
                 <Button
-                  onClick={() => scrollToSection("booking")}
+                  onClick={() => window.location.href = '/book'}
                   className="premium-button sparkle-button text-white px-10 py-4 rounded-full text-lg font-medium mb-8 mt-8 luxury-hover"
                 >
                   <div className="sparkle">✦</div>
@@ -355,7 +355,7 @@ export default function BridalDesignSession() {
               
               <div data-aos="fade-in" data-aos-delay="200">
                 <Button 
-                  onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+                  onClick={() => window.location.href = '/book'}
                   className="premium-button sparkle-button text-white px-12 py-4 rounded-full text-lg font-medium mb-6 luxury-hover"
                 >
                   <div className="sparkle">✦</div>

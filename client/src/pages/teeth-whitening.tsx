@@ -108,7 +108,7 @@ export default function TeethWhitening() {
               
               <div data-aos="fade-in" data-aos-delay="400">
                 <Button
-                  onClick={() => scrollToSection("booking")}
+                  onClick={() => window.location.href = '/book'}
                   className="premium-button sparkle-button text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover"
                 >
                   <div className="sparkle">✦</div>

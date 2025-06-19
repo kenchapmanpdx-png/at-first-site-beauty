@@ -18,7 +18,7 @@ export default function Home() {
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <button
-            onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+            onClick={() => window.location.href = '/book'}
             className="premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
           >
             <div className="sparkle">✦</div>
@@ -36,7 +36,7 @@ export default function Home() {
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <button
-            onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+            onClick={() => window.location.href = '/book'}
             className="premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
           >
             <div className="sparkle">✦</div>
