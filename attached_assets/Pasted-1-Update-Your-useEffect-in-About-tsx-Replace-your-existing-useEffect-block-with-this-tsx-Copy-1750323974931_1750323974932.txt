@@ -1,0 +1,87 @@
+1. Update Your useEffect() in About.tsx
+Replace your existing useEffect() block with this:
+
+tsx
+Copy
+Edit
+useEffect(() => {
+  const handleScroll = () => {
+    if (headerRef.current && sectionRef.current) {
+      const headerRect = headerRef.current.getBoundingClientRect();
+      const sectionRect = sectionRef.current.getBoundingClientRect();
+      const isOverPhotos = headerRect.top < sectionRect.top + (sectionRect.height * 0.5);
+      setIsHeaderOverPhoto(isOverPhotos);
+    }
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const slowEls = entry.target.querySelectorAll('.scroll-slow');
+          const fastEls = entry.target.querySelectorAll('.scroll-animation');
+
+          slowEls.forEach((el) => el.classList.add('animate'));
+          fastEls.forEach((el, i) =>
+            setTimeout(() => el.classList.add('animate'), 500 + i * 300)
+          );
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  window.addEventListener('scroll', handleScroll);
+  if (sectionRef.current) observer.observe(sectionRef.current);
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+    observer.disconnect();
+  };
+}, []);
+🧩 2. Make Sure These Class Names Are on the Right Elements
+In your JSX:
+
+Your header container should have:
+
+tsx
+Copy
+Edit
+className="scroll-slow ..."
+Each team member <article> should have:
+
+tsx
+Copy
+Edit
+className="scroll-animation ..."
+You already have this part set correctly — no changes needed here if you’ve followed your last paste.
+
+🎨 3. Add This CSS to index.css (or wherever your global styles live)
+Open index.css (or App.css, depending on your setup) and paste this at the bottom:
+
+css
+Copy
+Edit
+.scroll-slow,
+.scroll-animation {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-slow.animate,
+.scroll-animation.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+This gives you the fade-and-rise animation when scrolling into view.
+
+✅ Done!
+🔄 How It Works Now:
+Your Meet Your Dream Team header fades and slides in smoothly.
+
+Each profile card animates in one-by-one.
+
+Scroll detection still darkens/lightens text over the bridal photo section.
+
+All this works without extra libraries, fully inside your current Replit project.
