@@ -29,7 +29,7 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Created new HeroWithDreamTeam component combining hero section with "Meet Your Dream Team" overlay
 - "Meet Your Dream Team" section moved outside hero container with relative positioning and -mt-48 negative margin
 - Fixed visibility issue by adding 'animate' class directly to scroll-slow element and observing headerRef with Intersection Observer
-- Removed gray background block from Dream Team section for cleaner appearance
+- Added pink gradient background to Dream Team section using blush-300/80 to blush-400/80 for brand consistency
 - Reduced bio section top padding from pt-20 to pt-8 to bring photos closer to Dream Team text
 - Luxurious spacing with px-10 py-14 padding for better text breathing room
 - Fixed bottom gradient direction: from-transparent to-gray-50 for seamless section transition

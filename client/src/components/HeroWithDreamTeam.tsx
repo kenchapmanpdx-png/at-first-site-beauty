@@ -108,7 +108,7 @@ export default function HeroWithDreamTeam() {
         ref={headerRef}
         className={`scroll-slow animate relative -mt-48 mb-16 z-50 text-center max-w-4xl mx-auto px-10 py-14 transition-all duration-500 ${
           isHeaderOverPhoto ? 'text-white drop-shadow-lg' : 'text-white drop-shadow-lg'
-        }`}
+        } bg-gradient-to-r from-blush-300/80 to-blush-400/80 backdrop-blur-sm shadow-xl rounded-2xl border border-white/20`}
       >
         <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-white" style={{textShadow: '3px 3px 6px rgba(0,0,0,1)'}} data-aos="fade-up">
           Meet Your <span className="text-blush-200">Dream Team</span>
