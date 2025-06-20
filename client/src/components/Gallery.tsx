@@ -136,7 +136,7 @@ export default function Gallery() {
               <LazyImage
                 src={image.src}
                 alt={image.alt}
-                className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-white/20 filter grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-white/20"
                 loading={index < 4 ? "eager" : "lazy"}
                 style={{ aspectRatio: 'auto' }}
               />
