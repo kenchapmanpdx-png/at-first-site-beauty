@@ -21,6 +21,7 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Changed "Meet Your Dream Team" section text to white with black shadows for better visibility
 - Fixed "Trust in Our Brand Promise" font to use Playfair (consistent with other headings)
 - Updated all CTA booking buttons to point to internal /book page (Hero, service pages, bridal party)
+- Enhanced booking page: changed heading to light pink (text-blush-400) and added scroll-triggered animations
 
 ✓ **Dream Team Section Restoration** (June 19, 2025)
 - Restored original Cedar Lapp-Ngauamo and Hollie team members
