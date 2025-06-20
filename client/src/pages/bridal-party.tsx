@@ -426,7 +426,7 @@ export default function BridalParty() {
               Let our expert team design a cohesive, stunning look that makes your entire bridal party feel confident and beautiful.
             </p>
             <Button
-              onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+              onClick={() => window.location.href = '/book'}
               className="premium-button sparkle-button text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <div className="sparkle">✦</div>

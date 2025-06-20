@@ -378,7 +378,7 @@ export default function SprayTanning() {
               </p>
               
               <Button 
-                onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
+                onClick={() => window.location.href = '/book'}
                 className="premium-button sparkle-button text-white px-12 py-4 rounded-full text-lg font-medium luxury-hover"
               >
                 <div className="sparkle">✦</div>

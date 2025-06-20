@@ -99,7 +99,7 @@ export default function About() {
 
         {/* Trust Section */}
         <div className="text-center py-12" data-aos="fade-up" data-aos-delay="200">
-          <h3 className="text-3xl font-bold text-gray-900 mb-6">
+          <h3 className="font-playfair text-3xl font-bold text-gray-900 mb-6">
             Trust in Our Brand Promise
           </h3>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
