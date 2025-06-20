@@ -44,10 +44,10 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-gray-900" style={{textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}} data-aos="fade-up">
+          <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-white" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8)'}} data-aos="fade-up">
             Meet Your <span className="text-blush-500">Dream Team</span>
           </h2>
-          <p className="text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}} data-aos="fade-up" data-aos-delay="200">
+          <p className="text-xl leading-relaxed text-white max-w-3xl mx-auto" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.8)'}} data-aos="fade-up" data-aos-delay="200">
             Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
           </p>
         </div>

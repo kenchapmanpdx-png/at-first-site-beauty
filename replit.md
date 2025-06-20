@@ -18,6 +18,7 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Increased logo size by 10% (maxHeight: 220px → 242px)
 - Removed grayscale hover effects from gallery photos
 - Gallery images now display in natural colors without filter effects
+- Changed "Meet Your Dream Team" section text to white with black shadows for better visibility
 
 ✓ **Dream Team Section Restoration** (June 19, 2025)
 - Restored original Cedar Lapp-Ngauamo and Hollie team members
