@@ -45,28 +45,14 @@ export default function Header() {
         {/* Logo Section */}
         <div className="flex items-center justify-center pt-4 md:pt-8 pb-1">
           <div className="container mx-auto px-4 flex justify-center">
-            <div className="sparkle-button relative inline-block">
-              <img
-                src={logo}
-                alt="At First Site Beauty On Location"
-                className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl transition-all duration-300 hover:brightness-110"
-                style={{ maxHeight: '242px' }}
-                loading="eager"
-                decoding="async"
-              />
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-            </div>
+            <img
+              src={logo}
+              alt="At First Site Beauty On Location"
+              className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+              style={{ maxHeight: '242px' }}
+              loading="eager"
+              decoding="async"
+            />
           </div>
         </div>
 

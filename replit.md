@@ -23,7 +23,6 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Updated all CTA booking buttons to point to internal /book page (Hero, service pages, bridal party)
 - Enhanced booking page: changed heading to light pink (text-blush-400) and added scroll-triggered animations
 - Fixed CTA button hover cropping by adding margins and wrapper containers for scale effects
-- Added sparkle hover animation to logo matching CTA button effects with brightness enhancement
 
 ✓ **Dream Team Section Restoration** (June 19, 2025)
 - Restored original Cedar Lapp-Ngauamo and Hollie team members
