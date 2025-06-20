@@ -62,14 +62,16 @@ export default function Hero() {
         }`}>
           Serving the Pacific Northwest with elegance, expertise, and ease
         </p>
-        <Button
-          onClick={() => window.location.href = '/book'}
-          className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
-            isLoaded ? 'stagger-3' : ''
-          }`}
-        >
-          Book Your Design Session
-        </Button>
+        <div className="inline-block p-2">
+          <Button
+            onClick={() => window.location.href = '/book'}
+            className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
+              isLoaded ? 'stagger-3' : ''
+            }`}
+          >
+            Book Your Design Session
+          </Button>
+        </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">

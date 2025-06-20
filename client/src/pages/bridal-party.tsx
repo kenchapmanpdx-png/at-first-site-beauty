@@ -425,17 +425,19 @@ export default function BridalParty() {
             <p className="text-xl mb-8 opacity-90">
               Let our expert team design a cohesive, stunning look that makes your entire bridal party feel confident and beautiful.
             </p>
-            <Button
-              onClick={() => window.location.href = '/book'}
-              className="premium-button sparkle-button text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              Reserve Your Bridal Party Session
-            </Button>
+            <div className="inline-block p-2">
+              <Button
+                onClick={() => window.location.href = '/book'}
+                className="premium-button sparkle-button text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                Reserve Your Bridal Party Session
+              </Button>
+            </div>
           </div>
         </div>
       </section>

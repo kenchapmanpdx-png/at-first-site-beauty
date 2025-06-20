@@ -763,6 +763,11 @@
       0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
+  /* Prevent button cropping by adding margin */
+  .sparkle-button {
+    margin: 8px;
+  }
+
   .sparkle-button:active {
     transform: translateY(-1px) scale(0.98);
     transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
