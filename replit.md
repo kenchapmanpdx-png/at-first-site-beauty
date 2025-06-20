@@ -14,6 +14,12 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Touch-optimized navigation with accessibility features
 
 ## Recent Changes (June 2025)
+✓ **Updated Hollie's Bio Photo and Removed Portfolio Sparkle Effects** (June 19, 2025)
+- Replaced Hollie's bio photo with new professional headshot in About component
+- Removed all sparkle effects from Portfolio section in Gallery component for cleaner presentation
+- Updated image import path to use HollieD_1749336182646_1750384188813.png
+- Maintained elegant styling while simplifying visual effects
+
 ✓ **Complete Header, Hero, and About Component Restructure** (June 19, 2025)
 - Replaced Header component with 400px height design featuring centered logo and horizontal navigation menu
 - Updated Hero component with parallax background effects and loading animations

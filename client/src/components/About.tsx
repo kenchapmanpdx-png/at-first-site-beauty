@@ -3,7 +3,7 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import LazyImage from "./LazyImage";
 
 // Import team photos
-import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
+import holliePhoto from "@assets/HollieD_1749336182646_1750384188813.png";
 import teamPhoto1 from "@assets/IMG_0970_1749066905982.png";
 import teamPhoto2 from "@assets/IMG_0971_1749066905983.png";
 import teamPhoto3 from "@assets/IMG_0973_1749066905983.png";
