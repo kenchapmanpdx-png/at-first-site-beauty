@@ -3,10 +3,8 @@ import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import LazyImage from "./LazyImage";
 
 // Import team photos
-import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
-import teamPhoto1 from "@assets/IMG_0970_1749066905982.png";
-import teamPhoto2 from "@assets/IMG_0971_1749066905983.png";
-import teamPhoto3 from "@assets/IMG_0973_1749066905983.png";
+import holliePhoto from "@assets/HollieD_1749336182646.png";
+import cedarPhoto from "@assets/IMG_8201.jpeg";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -46,83 +44,57 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-            Meet Your Dream Team
+          <h2 className="font-playfair text-5xl md:text-6xl font-bold mb-8 text-gray-900" style={{textShadow: '2px 2px 4px rgba(255,255,255,0.8)'}} data-aos="fade-up">
+            Meet Your <span className="text-blush-500">Dream Team</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our elite team of artists brings years of expertise and passion to make your special day unforgettable.
+          <p className="text-xl leading-relaxed text-gray-800 max-w-3xl mx-auto" style={{textShadow: '1px 1px 2px rgba(255,255,255,0.8)'}} data-aos="fade-up" data-aos-delay="200">
+            Combined, we have well over 30 years in the beauty industry. Cedar owns the only private care college in the Pacific Northwest that focuses solely on makeup artistry, while Hollie has operated a thriving salon for over 18 years. Together, we envisioned a booking company that creates trust in our brand — when you contact us, your hair and makeup will be done to absolute perfection.
           </p>
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {/* Lead Artist - Hollie */}
-          <div className="text-center group">
-            <div className="relative mb-6 overflow-hidden rounded-2xl shadow-lg">
-              <LazyImage
-                src={holliePhoto}
-                alt="Hollie - Lead Bridal Artist"
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Hollie</h3>
-            <p className="text-lg text-[#ad3b68] font-semibold mb-3">Lead Bridal Artist</p>
-            <p className="text-gray-600 leading-relaxed">
-              Master of bridal artistry with 8+ years creating stunning looks for the most important day of your life.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
+          {/* Hollie */}
+          <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
+            <img
+              src={holliePhoto}
+              alt="Hollie - Professional bridal hairstylist and salon owner with 18+ years experience"
+              className="w-64 md:w-80 h-80 md:h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              loading="lazy"
+              width="320"
+              height="384"
+            />
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
+              Hollie
+            </h3>
+            <p className="text-blush-400 mb-4 font-medium" itemProp="jobTitle">
+              Professional Bridal Hairstylist & Salon Owner
             </p>
-          </div>
+            <p className="text-gray-600 leading-relaxed mb-6" itemProp="description">
+              With over 18 years of salon ownership and countless bridal transformations, Hollie brings unmatched expertise in creating stunning hairstyles that perfectly complement your unique beauty and wedding vision.
+            </p>
+          </article>
 
-          {/* Team Member 2 */}
-          <div className="text-center group">
-            <div className="relative mb-6 overflow-hidden rounded-2xl shadow-lg">
-              <LazyImage
-                src={teamPhoto1}
-                alt="Sarah - Hair Specialist"
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Sarah</h3>
-            <p className="text-lg text-[#ad3b68] font-semibold mb-3">Hair Specialist</p>
-            <p className="text-gray-600 leading-relaxed">
-              Expert in creating elegant updos and romantic styles that perfectly complement your bridal vision.
+          {/* Cedar Lapp-Ngauamo */}
+          <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
+            <img
+              src={cedarPhoto}
+              alt="Cedar Lapp-Ngauamo - Founder of Cedars Academy of Makeup Artistry, professional bridal makeup artist with 12+ years experience"
+              className="w-64 md:w-80 h-80 md:h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              loading="lazy"
+              width="320"
+              height="384"
+            />
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
+              Cedar Lapp-Ngauamo
+            </h3>
+            <p className="text-blush-400 mb-4 font-medium" itemProp="jobTitle">
+              Founder of Cedars Academy of Makeup Artistry
             </p>
-          </div>
-
-          {/* Team Member 3 */}
-          <div className="text-center group">
-            <div className="relative mb-6 overflow-hidden rounded-2xl shadow-lg">
-              <LazyImage
-                src={teamPhoto2}
-                alt="Emma - Makeup Artist"
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Emma</h3>
-            <p className="text-lg text-[#ad3b68] font-semibold mb-3">Makeup Artist</p>
-            <p className="text-gray-600 leading-relaxed">
-              Specializes in natural glam and airbrush techniques for flawless, long-lasting bridal makeup.
+            <p className="text-gray-600 leading-relaxed mb-6" itemProp="description">
+              Owner of the only private career college focused exclusively on makeup artistry. Cedar personally trains and certifies every makeup artist in our network, ensuring consistent excellence and adherence to the highest industry standards for bridal beauty.
             </p>
-          </div>
-
-          {/* Team Member 4 */}
-          <div className="text-center group">
-            <div className="relative mb-6 overflow-hidden rounded-2xl shadow-lg">
-              <LazyImage
-                src={teamPhoto3}
-                alt="Jessica - Stylist"
-                className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">Jessica</h3>
-            <p className="text-lg text-[#ad3b68] font-semibold mb-3">Stylist</p>
-            <p className="text-gray-600 leading-relaxed">
-              Creative visionary who ensures every detail of your bridal look is perfectly coordinated and stunning.
-            </p>
-          </div>
+          </article>
         </div>
 
         {/* Trust Section */}

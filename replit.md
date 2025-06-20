@@ -14,6 +14,13 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Touch-optimized navigation with accessibility features
 
 ## Recent Changes (June 2025)
+✓ **Dream Team Section Restoration** (June 19, 2025)
+- Restored original Cedar Lapp-Ngauamo and Hollie team members
+- Fixed Playfair font styling and text shadows
+- Corrected team member descriptions and roles
+- Removed fake employees and restored authentic team information
+- Maintained two-column layout with proper grayscale hover effects
+
 ✓ **Complete Header, Hero, and About Component Restructure** (June 19, 2025)
 - Replaced Header component with 400px height design featuring centered logo and horizontal navigation menu
 - Updated Hero component with parallax background effects and loading animations
