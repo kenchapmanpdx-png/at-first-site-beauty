@@ -52,7 +52,6 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
         <Toaster />
         <Router />
       </TooltipProvider>
