@@ -3,9 +3,8 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { optimizeTouch, preloadCriticalImages } from "./utils/performance";
-import Preloader from "@/components/Preloader";
 import Home from "./pages/home";
 import BridalDesignSession from "./pages/bridal-design-session";
 import BridalParty from "./pages/bridal-party";
@@ -29,8 +28,6 @@ function Router() {
 }
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     // Initialize performance optimizations
     optimizeTouch();
@@ -45,15 +42,11 @@ function App() {
 
     // Preload critical images for faster loading
     const criticalImages = [
-      "/attached_assets/1At First Site Logo (1000 x 350 px)bb_1749329806337_1750282076832.png",
-      "/attached_assets/1At First Site Logob (1000 x 350 px)_1750282542411.png",
+      "/attached_assets/1At First Site Logo (1000 x 350 px).png",
       "/attached_assets/IMG_0970_1749066905982.png"
     ];
 
-    // Reduce preloader time for faster perceived loading
-    preloadCriticalImages(criticalImages).finally(() => {
-      setTimeout(() => setIsLoading(false), 500);
-    });
+    preloadCriticalImages(criticalImages);
   }, []);
 
   return (
