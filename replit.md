@@ -20,8 +20,9 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Fixed corrupted About.tsx component that was preventing app startup
 - Removed obsolete BookingWidget import causing build errors
 - Cleaned up all Preloader references and unused imports
-- Restored Hollie's proper team photo after accidental replacement with teeth whitening images
-- Fixed Gallery component to display appropriate professional photos only
+- Restored Hollie's proper professional headshot photo after accidental replacement with teeth whitening images
+- Updated Gallery component to display appropriate professional photos with correct team member images
+- Separated Hollie and Cedar photos to show individual professional headshots
 - Application now runs cleanly without any import or build errors
 - Significantly reduced bundle size and improved performance
 
