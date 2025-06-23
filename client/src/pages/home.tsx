@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
-import Testimonials from "@/components/Testimonials";
+
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
 
@@ -31,7 +31,6 @@ export default function Home() {
         </div>
       </section>
       <Gallery />
-      <Testimonials />
       {/* Booking CTA before main Booking section */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
