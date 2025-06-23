@@ -14,6 +14,15 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Touch-optimized navigation with accessibility features
 
 ## Recent Changes (June 2025)
+✓ **Major Codebase Cleanup** (June 23, 2025)
+- Removed 33 unused UI components (accordion, calendar, chart, form, etc.) from 47 total components
+- Deleted 12 unused asset files from attached_assets folder, keeping only essential images
+- Fixed corrupted About.tsx component that was preventing app startup
+- Removed obsolete BookingWidget import causing build errors
+- Cleaned up all Preloader references and unused imports
+- Application now runs cleanly without any import or build errors
+- Significantly reduced bundle size and improved performance
+
 ✓ **UI Improvements** (June 19, 2025)
 - Increased logo size by 10% (maxHeight: 220px → 242px)
 - Removed grayscale hover effects from gallery photos

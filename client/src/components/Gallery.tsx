@@ -4,7 +4,7 @@ import LazyImage from "./LazyImage";
 import bridalImage1 from "@assets/IMG_0970_1749066905982.png";
 import makeupApplication from "@assets/IMG_0944.png";
 import bridalHair from "@assets/IMG_0943.png";
-import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
+import holliePhoto from "@assets/IMG_6202.jpeg";
 import cedarPhoto from "@assets/IMG_8201.jpeg";
 
 export default function Gallery() {

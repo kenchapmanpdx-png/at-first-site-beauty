@@ -81,7 +81,11 @@ export default function Booking() {
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   To ensure your trial is tailored to your unique vision, we require a brief phone consultation before scheduling. This helps us match you with the right artist and craft an experience that's seamless, personalized, and stress-free from the very beginning.
                 </p>
-                <BookingWidget />
+                <div className="text-center">
+                  <Button className="bg-gradient-to-r from-blush-300 to-blush-400 hover:from-blush-400 hover:to-blush-500 text-white px-8 py-3 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Schedule Your Consultation
+                  </Button>
+                </div>
               </div>
             </div>
 
