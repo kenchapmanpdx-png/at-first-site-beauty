@@ -26,36 +26,6 @@ export default function Testimonials() {
     return () => observer.disconnect();
   }, []);
 
-  const testimonials = [
-    {
-      quote: "Holli and Cedar were absolutely incredible! They made me feel so beautiful and confident on my wedding day. The makeup lasted through happy tears and dancing all night long.",
-      name: "Sarah M.",
-      location: "Bride, Seattle",
-      initial: "S",
-      rating: 5,
-      service: "Bridal Hair & Makeup",
-      datePublished: "2024-08-15"
-    },
-    {
-      quote: "The entire experience was seamless and stress-free. They came to our venue and transformed not just me, but my entire bridal party. We all looked stunning and felt amazing!",
-      name: "Emily R.",
-      location: "Bride, Portland", 
-      initial: "E",
-      rating: 5,
-      service: "Bridal Party Styling",
-      datePublished: "2024-09-22"
-    },
-    {
-      quote: "Professional, talented, and so much fun to work with! They understood exactly what I wanted and executed it perfectly. I can't recommend them enough!",
-      name: "Jessica L.",
-      location: "Bride, Tacoma",
-      initial: "J",
-      rating: 5,
-      service: "Bridal Hair & Makeup",
-      datePublished: "2024-10-10"
-    },
-  ];
-
   return (
     <section id="testimonials" ref={sectionRef} className="py-20 bg-white watercolor-bg" itemScope itemType="https://schema.org/ReviewSection">
       <div className="container mx-auto px-4">
@@ -68,47 +38,32 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <article
-                key={index}
-                className="scroll-animation bg-white rounded-3xl p-8 shadow-lg border border-gray-100"
-                itemScope
-                itemType="https://schema.org/Review"
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="scroll-animation bg-gradient-to-br from-blush-50 to-white rounded-3xl p-12 shadow-lg border border-blush-100">
+            <div className="text-6xl mb-6" style={{color: '#ad3b68'}}>
+              <Quote size={64} />
+            </div>
+            <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-4">
+              Your Story Could Be Here
+            </h3>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              We're building our collection of authentic testimonials from real brides. 
+              After your special day with At First Site Beauty, we'd love to hear about your experience.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:bookings@atfirstsitebeauty.com?subject=My At First Site Beauty Experience"
+                className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-blush-300 to-blush-400 hover:from-blush-400 hover:to-blush-500 text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
-                <div className="text-3xl mb-4" style={{color: '#ad3b68'}}>
-                  <Quote size={32} />
-                </div>
-                <p className="text-gray-600 mb-6 leading-relaxed" itemProp="reviewBody">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-blush-100 rounded-full flex items-center justify-center text-blush-400 font-semibold mr-4">
-                    {testimonial.initial}
-                  </div>
-                  <div itemScope itemType="https://schema.org/Person">
-                    <h4 className="font-semibold text-gray-900" itemProp="name">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-sm text-gray-500" itemProp="address">
-                      {testimonial.location}
-                    </p>
-                  </div>
-                </div>
-                {/* Structured Data for Review */}
-                <div itemProp="reviewRating" itemScope itemType="https://schema.org/Rating" className="hidden">
-                  <meta itemProp="ratingValue" content={testimonial.rating.toString()} />
-                  <meta itemProp="bestRating" content="5" />
-                  <meta itemProp="worstRating" content="1" />
-                </div>
-                <meta itemProp="datePublished" content={testimonial.datePublished} />
-                <div itemProp="itemReviewed" itemScope itemType="https://schema.org/Service" className="hidden">
-                  <meta itemProp="name" content={testimonial.service} />
-                  <meta itemProp="provider" content="At First Sight Beauty On Location" />
-                </div>
-              </article>
-            ))}
+                Share Your Experience
+              </a>
+              <a
+                href="/book"
+                className="inline-flex items-center justify-center px-8 py-3 border-2 border-blush-300 text-blush-400 hover:bg-blush-300 hover:text-white rounded-full transition-all duration-300"
+              >
+                Book Your Session
+              </a>
+            </div>
           </div>
         </div>
       </div>
