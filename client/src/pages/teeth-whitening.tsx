@@ -1,9 +1,14 @@
+The code has been modified to include the PageHead component with SEO-related meta tags for the teeth whitening page.
+```
+
+```replit_final_file
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Star, CheckCircle, Clock, Shield, DollarSign } from "lucide-react";
 import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHead from "@/components/PageHead";
 
 // Import before/after images
 import beforeImage1 from "@assets/IMG_0959.jpeg";
@@ -80,8 +85,13 @@ export default function TeethWhitening() {
 
   return (
     <div className="min-h-screen bg-white">
+      <PageHead 
+        title="Professional Teeth Whitening | At First Site Beauty"
+        description="Professional teeth whitening services for brides in the Pacific Northwest. Enhance your wedding day smile with safe, effective whitening treatments."
+        path="/teeth-whitening"
+      />
       <Header />
-      
+
       <main ref={sectionRef} className="pt-8">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
@@ -94,7 +104,7 @@ export default function TeethWhitening() {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
-            
+
             <div className="text-center max-w-4xl mx-auto" data-aos="fade-up">
               <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Professional <span className="text-blush-400">Teeth Whitening</span>
@@ -105,7 +115,7 @@ export default function TeethWhitening() {
               <p className="text-lg text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="300">
                 Unlike over-the-counter options, our treatment is tailored to your individual needs, and includes a custom take-home kit designed to help you maintain your brighter, whiter smile long after your visit. Best of all, our system is FDA-registered, ensuring safety, quality, and peace of mind.
               </p>
-              
+
               <div data-aos="fade-in" data-aos-delay="400">
                 <Button
                   onClick={() => window.location.href = '/book'}
@@ -131,7 +141,7 @@ export default function TeethWhitening() {
                 Why Choose Professional Whitening?
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {benefits.map((benefit, index) => (
                 <div key={index} className="text-center" data-aos="zoom-in" data-aos-delay={index * 100}>
@@ -179,7 +189,7 @@ export default function TeethWhitening() {
                           loading="lazy"
                         />
                       </div>
-                      
+
                       {/* After Image */}
                       <div className="text-center">
                         <h3 className="font-playfair text-xl font-semibold text-blush-400 mb-4">
@@ -193,7 +203,7 @@ export default function TeethWhitening() {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="text-center mt-6">
                       <p className="text-gray-600 font-medium">
                         {images.description}
@@ -214,7 +224,7 @@ export default function TeethWhitening() {
                 Our Whitening Process
               </h2>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center" data-aos="zoom-in" data-aos-delay="100">
@@ -228,7 +238,7 @@ export default function TeethWhitening() {
                     We assess your teeth and discuss your whitening goals to create a personalized treatment plan.
                   </p>
                 </div>
-                
+
                 <div className="text-center" data-aos="zoom-in" data-aos-delay="200">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     2
@@ -240,7 +250,7 @@ export default function TeethWhitening() {
                     Application of professional-grade whitening gel activated with specialized light for optimal results.
                   </p>
                 </div>
-                
+
                 <div className="text-center" data-aos="zoom-in" data-aos-delay="300">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     3
@@ -337,7 +347,7 @@ export default function TeethWhitening() {
               <p className="text-lg text-gray-600 mb-8">
                 Book your professional teeth whitening session today and see immediate results with our FDA-registered system.
               </p>
-              
+
               <Button 
                 onClick={() => window.location.href = '/book'}
                 className="premium-button sparkle-button text-white px-12 py-4 rounded-full text-lg font-medium luxury-hover"
@@ -349,7 +359,7 @@ export default function TeethWhitening() {
                 <div className="sparkle">✦</div>
                 Schedule Your Appointment
               </Button>
-              
+
               <p className="text-sm text-gray-500 mt-4">
                 Professional consultation included • Custom take-home kit • FDA-registered treatment
               </p>
@@ -357,7 +367,7 @@ export default function TeethWhitening() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

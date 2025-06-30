@@ -1,9 +1,13 @@
-import { useEffect, useRef } from "react";
+The code incorporates SEO enhancements by adding a PageHead component for dynamic meta tags and updating the BridalDesignSession component with it.
+```
+```replit_final_file
+import { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Sparkles, Camera, Clock, Heart, MapPin, Star, CheckCircle } from "lucide-react";
 import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHead from "@/components/PageHead";
 
 // Import images for the design session
 import studioImage1 from "@assets/IMG_0973_1749066905983.png";
@@ -94,8 +98,13 @@ export default function BridalDesignSession() {
 
   return (
     <div className="min-h-screen bg-white">
+      <PageHead 
+        title="Bridal Design Session | At First Site Beauty"
+        description="Collaborative bridal hair and makeup design sessions with trial runs. Professional styling consultation for your perfect wedding day look in the Pacific Northwest."
+        path="/bridal-design-session"
+      />
       <Header />
-      
+
       <main ref={sectionRef} className="pt-8">
         {/* Hero Section */}
         <section className="py-8 bg-gradient-to-b from-gray-50 to-white">
@@ -108,31 +117,31 @@ export default function BridalDesignSession() {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
-            
+
             <div className="text-center max-w-4xl mx-auto" data-aos="fade-up">
               <div className="flex items-center justify-center mb-4">
                 <Sparkles className="w-8 h-8 text-blush-400 mr-2" />
                 <span className="text-blush-400 font-medium text-lg">The Bridal Hair & Makeup Design Session</span>
               </div>
-              
+
               <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-9">
                 Where Your Dream Look Begins. Your Look, <span className="text-blush-400">Locked In.</span>
               </h1>
-              
+
               <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100 text-center" data-aos="fade-up" data-aos-delay="200">
                 <div className="text-xl text-gray-600 leading-relaxed">
                   <p className="mb-4">
                     Your bridal glam journey begins well before the big day—inside our private bridal suite, where we go far beyond a simple "trial." Your Design Session is a fully immersive, luxury experience crafted to make sure your look is picture-perfect, timeless, and unmistakably you. By the time we arrive at your venue, every brushstroke, bobby pin, and blend has been tested, tailored, and perfected.
                   </p>
-                  
+
                   <p className="mb-4">
                     In a relaxed, attentive setting, you'll sit with one of our expert artists to walk through every detail of your vision—from the texture, tone, and structure of your hairstyle to the glow, finish, and feature-enhancing artistry of your makeup. Your comfort is everything. This is your time to explore styles, give feedback, and make adjustments—nothing is off limits. Our goal? That you leave glowing with confidence, knowing your wedding day look is completely dialed in.
                   </p>
-                  
+
                   <p className="mb-4 font-semibold text-gray-900">
                     But it doesn't end there.
                   </p>
-                  
+
                   <p className="mb-0">
                     Once your look is finalized, we ask you to wear it for at least six hours. Every two hours, you'll take a quick photo—in natural light and with flash—to show us how it holds up. This feedback allows us to fine-tune each detail so when your big day arrives, we're not guessing—we're executing a proven, perfected look with calm precision.
                   </p>
@@ -178,13 +187,13 @@ export default function BridalDesignSession() {
                   <div>Bridal setting spray</div>
                 </div>
               </div>
-              
+
               <div className="text-center mb-6 mt-9" data-aos="fade-up" data-aos-delay="200">
                 <p className="text-xl text-gray-600 italic leading-relaxed">
                   "Imagine walking down the aisle knowing everything—from your hair to your glow—is already perfected and proven."
                 </p>
               </div>
-              
+
               <div data-aos="fade-in" data-aos-delay="300">
                 <Button
                   onClick={() => window.location.href = '/book'}
@@ -198,13 +207,13 @@ export default function BridalDesignSession() {
                   Reserve Your Design Session
                 </Button>
               </div>
-              
+
               {/* Design Session Process - Moved here */}
               <div className="text-center mt-12" data-aos="fade-up">
                 <h2 className="font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-8">
                   Your Design Session Process
                 </h2>
-                
+
                 <div className="max-w-4xl mx-auto">
                   <div className="grid md:grid-cols-2 gap-8">
                     {processSteps.map((step, index) => (
@@ -240,7 +249,7 @@ export default function BridalDesignSession() {
                 Pro Tips for <span className="text-blush-400">Timeless Bridal Glam</span>
               </h2>
             </div>
-            
+
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8">
                 {proTips.map((tip, index) => (
@@ -352,7 +361,7 @@ export default function BridalDesignSession() {
               <p className="text-lg text-gray-300 mb-8">
                 Reserve your luxury Bridal Hair & Makeup Design Session at our private bridal suite in downtown Vancouver, Washington.
               </p>
-              
+
               <div data-aos="fade-in" data-aos-delay="200">
                 <Button 
                   onClick={() => window.location.href = '/book'}
@@ -366,7 +375,7 @@ export default function BridalDesignSession() {
                   Schedule Your Design Session
                 </Button>
               </div>
-              
+
               <div className="flex items-center justify-center text-gray-400 text-sm">
                 <MapPin className="w-4 h-4 mr-2" />
                 <span>Private bridal suite • Vata Salon • Downtown Vancouver, WA</span>
@@ -375,7 +384,7 @@ export default function BridalDesignSession() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

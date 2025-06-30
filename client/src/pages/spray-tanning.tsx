@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Droplets, Heart, Sparkles, Shield, Users, CheckCircle, DollarSign } from "lucide-react";
 import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHead from "@/components/PageHead";
 
 export default function SprayTanning() {
   const [, setLocation] = useLocation();
@@ -103,8 +104,13 @@ export default function SprayTanning() {
 
   return (
     <div className="min-h-screen bg-white">
+      <PageHead 
+        title="Professional Spray Tanning | At First Site Beauty"
+        description="Professional spray tanning services for brides in the Pacific Northwest. Achieve a natural, radiant glow for your wedding day with expert spray tan application."
+        path="/spray-tanning"
+      />
       <Header />
-      
+
       <main ref={sectionRef} className="pt-8">
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
@@ -117,7 +123,7 @@ export default function SprayTanning() {
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Home
             </Button>
-            
+
             <div className="text-center max-w-4xl mx-auto" data-aos="fade-up">
               <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
                 Professional <span className="text-blush-400">Spray Tanning</span>
@@ -128,7 +134,7 @@ export default function SprayTanning() {
               <p className="text-lg text-gray-600 mb-12" data-aos="fade-up" data-aos-delay="300">
                 This carefully crafted formula nourishes the skin while providing a natural, radiant tan that enhances your glow without clogging pores or causing breakouts. With At First Site, orange is never an option—just healthy, luminous skin.
               </p>
-              
+
               <div data-aos="fade-in" data-aos-delay="400">
                 <Button
                   onClick={() => window.location.href = '/book'}
@@ -154,7 +160,7 @@ export default function SprayTanning() {
                 Why Choose At First Site Spray Tanning?
               </h2>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {benefits.map((benefit, index) => (
                 <div key={index} className="text-center" data-aos="zoom-in" data-aos-delay={index * 100}>
@@ -227,7 +233,7 @@ export default function SprayTanning() {
                 Our carefully selected ingredients work together to nourish and protect your skin.
               </p>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-8">
                 {ingredients.map((ingredient, index) => (
@@ -253,7 +259,7 @@ export default function SprayTanning() {
                 Our Spray Tan Process
               </h2>
             </div>
-            
+
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
@@ -267,7 +273,7 @@ export default function SprayTanning() {
                     We prep your skin to ensure even application and long-lasting results.
                   </p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     2
@@ -279,7 +285,7 @@ export default function SprayTanning() {
                     Professional spray tan application using our premium, hydrating formula.
                   </p>
                 </div>
-                
+
                 <div className="text-center">
                   <div className="w-12 h-12 bg-blush-300 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     3
@@ -376,7 +382,7 @@ export default function SprayTanning() {
               <p className="text-lg text-gray-600 mb-8">
                 Book your professional spray tan today and experience the difference of our hydrating, orange-free formula.
               </p>
-              
+
               <Button 
                 onClick={() => window.location.href = '/book'}
                 className="premium-button sparkle-button text-white px-12 py-4 rounded-full text-lg font-medium luxury-hover"
@@ -388,7 +394,7 @@ export default function SprayTanning() {
                 <div className="sparkle">✦</div>
                 Schedule Your Spray Tan
               </Button>
-              
+
               <p className="text-sm text-gray-500 mt-4">
                 Hydrating formula • No orange undertones • Professional application
               </p>
@@ -396,7 +402,7 @@ export default function SprayTanning() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );

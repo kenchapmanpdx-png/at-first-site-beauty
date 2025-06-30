@@ -3,13 +3,19 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
-
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
+import PageHead from "@/components/PageHead";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <PageHead 
+        title="Luxury Bridal Hair & Makeup | Pacific Northwest | At First Site Beauty"
+        description="Professional on-location bridal hair and makeup services in the Pacific Northwest. Expert bridal styling, teeth whitening, and spray tanning by award-winning artists with 30+ years combined experience."
+        path="/"
+        ogImage="/attached_assets/IMG_0970_1749066905982.png"
+      />
       <Header />
       <Hero />
       <About />

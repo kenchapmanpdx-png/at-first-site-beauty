@@ -1,9 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Users, Heart, Clock, Star, CheckCircle, Sparkles, Camera } from "lucide-react";
 import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHead from "@/components/PageHead";
 
 // Import images for the bridal party services
 import bridalPartyImage1 from "@assets/IMG_0973_1749066905983.png";
@@ -109,8 +110,13 @@ export default function BridalParty() {
 
   return (
     <div className="min-h-screen bg-white">
+      <PageHead 
+        title="Bridal Party Hair & Makeup Services | At First Site Beauty"
+        description="Complete bridal party styling services in the Pacific Northwest. Professional hair and makeup for bridesmaids, mothers, and entire wedding parties on location."
+        path="/bridal-party"
+      />
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="container mx-auto px-4">
@@ -132,7 +138,7 @@ export default function BridalParty() {
             <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
               Creating a cohesive, stunning bridal party look that complements your vision while celebrating each individual's unique beauty.
             </p>
-            
+
             <div data-aos="fade-in" data-aos-delay="400">
               <Button
                 onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}

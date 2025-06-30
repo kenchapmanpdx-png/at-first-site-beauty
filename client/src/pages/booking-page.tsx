@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHead from "@/components/PageHead";
 
 export default function BookingPage() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -41,6 +42,11 @@ export default function BookingPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <PageHead 
+        title="Contact | At First Site Beauty"
+        description="Book your luxury bridal consultation with At First Site Beauty. Professional on-location bridal hair and makeup services in the Pacific Northwest."
+        path="/book"
+      />
       <Header />
       <main ref={sectionRef} className="pt-20 pb-12">
         <div className="container mx-auto px-4">
