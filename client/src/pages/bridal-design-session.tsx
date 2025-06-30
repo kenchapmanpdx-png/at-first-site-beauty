@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Sparkles, Clock, Heart, Award } from "lucide-react";
 import { useLocation } from "wouter";
@@ -45,8 +45,8 @@ export default function BridalDesignSession() {
   return (
     <div className="min-h-screen bg-white">
       <PageHead 
-        title="Bridal Design Session | At First Site Beauty"
-        description="Our signature luxury bridal design session - comprehensive hair and makeup trial with wear testing and personalized touch-up kit. Book your dream bridal look today."
+        title="Schedule Your Bridal Consultation | At First Sight Beauty"
+        description="Book a free consultation to start planning your bridal look with our expert hair and makeup team."
         path="/bridal-design-session"
         pageType="service-detail"
       />
@@ -106,11 +106,11 @@ export default function BridalDesignSession() {
                   />
                 </div>
 
-              
+
 
               </div>
 
-             
+
             </div>
           </div>
         </section>

@@ -17,21 +17,37 @@ export default function PageHead({
   pageType = 'home'
 }: PageHeadProps) {
   useEffect(() => {
+    // Set page-specific titles and descriptions based on pageType
+    let pageTitle = title;
+    let pageDescription = description;
+    
+    if (pageType === 'about') {
+      pageTitle = "Meet Your Dream Team – At First Site Beauty";
+      pageDescription = "Get to know our elite team of bridal stylists dedicated to luxury hair and makeup for weddings in the Pacific Northwest.";
+    } else if (pageType === 'services') {
+      pageTitle = "Bridal Hair & Makeup Services | At First Site Beauty";
+      pageDescription = "Explore our bridal beauty services including hair styling, makeup trials, and on-location wedding packages in OR and WA.";
+    } else if (pageType === 'service-detail') {
+      // Use the passed title and description for service detail pages
+      pageTitle = title;
+      pageDescription = description;
+    }
+    
     // Update document title
-    document.title = title;
+    document.title = pageTitle;
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', description);
+      metaDescription.setAttribute('content', pageDescription);
     }
     
     // Update Open Graph tags
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', title);
+    if (ogTitle) ogTitle.setAttribute('content', pageTitle);
     
     const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', description);
+    if (ogDesc) ogDesc.setAttribute('content', pageDescription);
     
     const ogUrl = document.querySelector('meta[property="og:url"]');
     if (ogUrl) ogUrl.setAttribute('content', `https://atfirstsitebeauty.com${path}`);
@@ -41,10 +57,10 @@ export default function PageHead({
     
     // Update Twitter card tags
     const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) twitterTitle.setAttribute('content', title);
+    if (twitterTitle) twitterTitle.setAttribute('content', pageTitle);
     
     const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDesc) twitterDesc.setAttribute('content', description);
+    if (twitterDesc) twitterDesc.setAttribute('content', pageDescription);
     
     const twitterImg = document.querySelector('meta[name="twitter:image"]');
     if (twitterImg) twitterImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);

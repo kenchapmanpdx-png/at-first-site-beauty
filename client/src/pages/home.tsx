@@ -43,11 +43,10 @@ export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
   return (
     <div className="min-h-screen">
       <PageHead 
-        title="Luxury Bridal Hair & Makeup | Pacific Northwest | At First Site Beauty"
-        description="Professional on-location bridal hair and makeup services in the Pacific Northwest. Expert bridal styling, teeth whitening, and spray tanning by award-winning artists with 30+ years combined experience."
+        title="At First Site Beauty | On-Location Bridal Hair & Makeup – PNW"
+        description="Luxury bridal hair and makeup services across Oregon and Washington. Professional on-site glam for your special day."
         path="/"
-        ogImage="/attached_assets/IMG_0970_1749066905982.png"
-        pageType={scrollToAbout ? "about" : scrollToServices ? "services" : "home"}
+        pageType={scrollToAbout ? 'about' : scrollToServices ? 'services' : 'home'}
       />
       <Header />
       <Hero />
