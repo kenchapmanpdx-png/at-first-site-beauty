@@ -8,7 +8,12 @@ interface PageHeadProps {
   ogImage?: string;
 }
 
-export default function PageHead({ title, description, path, ogImage = "/attached_assets/1At First Site Logo (1000 x 350 px).png" }: PageHeadProps) {
+export default function PageHead({ 
+  title, 
+  description, 
+  path, 
+  ogImage = "/attached_assets/IMG_0970_1749066905982.png" 
+}: PageHeadProps) {
   useEffect(() => {
     // Update document title
     document.title = title;
@@ -33,18 +38,14 @@ export default function PageHead({ title, description, path, ogImage = "/attache
     if (ogImg) ogImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);
     
     // Update Twitter card tags
-    const twitterTitle = document.querySelector('meta[property="twitter:title"]');
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
     if (twitterTitle) twitterTitle.setAttribute('content', title);
     
-    const twitterDesc = document.querySelector('meta[property="twitter:description"]');
+    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
     if (twitterDesc) twitterDesc.setAttribute('content', description);
     
-    const twitterImg = document.querySelector('meta[property="twitter:image"]');
+    const twitterImg = document.querySelector('meta[name="twitter:image"]');
     if (twitterImg) twitterImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);
-    
-    // Update canonical URL
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', `https://atfirstsitebeauty.com${path}`);
     
   }, [title, description, path, ogImage]);
 
