@@ -1,6 +1,4 @@
-The code incorporates SEO enhancements by adding a PageHead component for dynamic meta tags and updating the BridalDesignSession component with it.
-```
-```replit_final_file
+
 import { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Sparkles, Camera, Clock, Heart, MapPin, Star, CheckCircle } from "lucide-react";

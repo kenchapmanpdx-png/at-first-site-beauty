@@ -1,7 +1,4 @@
-The code has been modified to include the PageHead component with SEO-related meta tags for the teeth whitening page.
-```
 
-```replit_final_file
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Star, CheckCircle, Clock, Shield, DollarSign } from "lucide-react";
