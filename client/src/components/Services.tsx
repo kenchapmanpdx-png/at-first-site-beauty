@@ -118,8 +118,6 @@ export default function Services() {
                 loading={index < 2 ? "eager" : "lazy"}
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-20 transition-all duration-1000 ease-out"></div>
-                
-              </div>
 
               {/* Content Overlay */}
               <div className="relative z-10 h-full flex flex-col justify-end p-4 sm:p-6 md:p-8 text-white">
