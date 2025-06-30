@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -59,7 +58,7 @@ export default function BookingPage() {
                 To ensure your trial is tailored to your unique vision, we require a brief phone consultation before scheduling. This helps us match you with the right artist and craft an experience that's seamless, personalized, and stress-free from the very beginning.
               </p>
             </div>
-            
+
             <div className="bg-white rounded-2xl shadow-xl p-6 md:p-8 scroll-animation transform transition-all duration-700" data-aos="fade-up" data-aos-delay="400">
               <iframe
                 src="https://api.leadconnectorhq.com/widget/booking/ge2HN52PHjWliZSbo6T9"

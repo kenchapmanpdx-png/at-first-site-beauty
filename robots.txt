@@ -1,8 +1,9 @@
+
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://atfirstsightbeauty.com/sitemap.xml
+Sitemap: https://atfirstsitebeauty.com/sitemap.xml
 
 # Allow all search engines to crawl the site
 User-agent: Googlebot
@@ -24,7 +25,7 @@ Allow: /
 Allow: /services
 Allow: /gallery
 Allow: /about
-Allow: /testimonials
+Allow: /contact
 Allow: /booking
 
 # Crawl delay (optional)

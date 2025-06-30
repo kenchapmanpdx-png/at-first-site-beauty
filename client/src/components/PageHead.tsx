@@ -6,7 +6,7 @@ interface PageHeadProps {
   description: string;
   path: string;
   ogImage?: string;
-  pageType?: 'home' | 'about' | 'services' | 'service-detail';
+  pageType?: 'home' | 'about' | 'services' | 'service-detail' | 'contact';
 }
 
 export default function PageHead({ 
@@ -27,6 +27,9 @@ export default function PageHead({
     } else if (pageType === 'services') {
       pageTitle = "Bridal Hair & Makeup Services | At First Site Beauty";
       pageDescription = "Explore our bridal beauty services including hair styling, makeup trials, and on-location wedding packages in OR and WA.";
+    } else if (pageType === 'contact') {
+      pageTitle = "Schedule Your Bridal Consultation | At First Site Beauty";
+      pageDescription = "Book a free consultation to start planning your bridal look with our expert hair and makeup team.";
     } else if (pageType === 'service-detail') {
       // Use the passed title and description for service detail pages
       pageTitle = title;
@@ -35,6 +38,15 @@ export default function PageHead({
     
     // Update document title
     document.title = pageTitle;
+    
+    // Update or create canonical link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.rel = 'canonical';
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.href = `https://atfirstsitebeauty.com${path}`;
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -84,7 +96,7 @@ export default function PageHead({
           {
             "@type": "ListItem",
             "position": 2,
-            "name": pageType === 'about' ? 'About Us' : pageType === 'services' ? 'Services' : 'Service',
+            "name": pageType === 'about' ? 'About Us' : pageType === 'services' ? 'Services' : pageType === 'contact' ? 'Contact' : 'Service',
             "item": `https://atfirstsitebeauty.com${path}`
           }
         ]
