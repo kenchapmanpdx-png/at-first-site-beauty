@@ -111,16 +111,14 @@ export default function Services() {
               onClick={() => service.link && setLocation(service.link)}
             >
               {/* Background Image */}
-              <div 
-                className="absolute inset-0 bg-cover bg-center filter grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out group-hover:scale-110"
-                style={{
-                  backgroundImage: `url(${service.image})`,
-                }}
-                role="img"
-                aria-label={service.alt}
-              >
-                <div className="image-overlay absolute inset-0"></div>
-                <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-20 transition-all duration-1000 ease-out"></div>
+              <img
+                src={service.image}
+                alt={service.alt}
+                className="absolute inset-0 w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out group-hover:scale-110"
+                loading={index < 2 ? "eager" : "lazy"}
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-20 transition-all duration-1000 ease-out"></div>
+                
               </div>
 
               {/* Content Overlay */}

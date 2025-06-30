@@ -1,13 +1,44 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Gallery from "@/components/Gallery";
-import Booking from "@/components/Booking";
-import Footer from "@/components/Footer";
-import PageHead from "@/components/PageHead";
+import React, { useEffect } from "react";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Services from "../components/Services";
+import Gallery from "../components/Gallery";
+import Footer from "../components/Footer";
+import PageHead from "../components/PageHead";
 
-export default function Home() {
+interface HomeProps {
+  scrollToAbout?: boolean;
+  scrollToServices?: boolean;
+}
+
+export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
+  useEffect(() => {
+    // Handle scrolling to specific sections based on route
+    if (scrollToAbout) {
+      setTimeout(() => {
+        const aboutSection = document.querySelector('#about');
+        aboutSection?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else if (scrollToServices) {
+      setTimeout(() => {
+        const servicesSection = document.querySelector('#services');
+        servicesSection?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+
+    // Temporarily disable all AOS animations while testing
+    if (typeof window !== 'undefined') {
+      // AOS.init({
+      //   duration: 800,
+      //   easing: 'ease-in-out',
+      //   once: true,
+      //   offset: 120,
+      //   delay: 100
+      // });
+    }
+  }, [scrollToAbout, scrollToServices]);
+
   return (
     <div className="min-h-screen">
       <PageHead 
@@ -15,6 +46,7 @@ export default function Home() {
         description="Professional on-location bridal hair and makeup services in the Pacific Northwest. Expert bridal styling, teeth whitening, and spray tanning by award-winning artists with 30+ years combined experience."
         path="/"
         ogImage="/attached_assets/IMG_0970_1749066905982.png"
+        pageType={scrollToAbout ? "about" : scrollToServices ? "services" : "home"}
       />
       <Header />
       <Hero />
