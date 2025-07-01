@@ -45,7 +45,7 @@ export default function BridalDesignSession() {
   return (
     <div className="min-h-screen bg-white">
       <PageHead 
-        title="Bridal Design Session & Trial | At First Sight Beauty"
+        title="Bridal Design Session & Trial | At First Site"
         description="Perfect your wedding day look with our comprehensive bridal design session. Trial hair and makeup services in Oregon and Washington."
         path="/bridal-design-session"
         pageType="service-detail"

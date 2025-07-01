@@ -105,7 +105,7 @@ export default function SprayTanning() {
   return (
     <div className="min-h-screen bg-white">
       <PageHead 
-        title="Professional Spray Tanning | At First Sight Beauty"
+        title="Professional Spray Tanning | At First Site"
         description="Professional spray tanning services for brides in the Pacific Northwest. Achieve a natural, radiant glow for your wedding day with expert spray tan application."
         path="/spray-tanning"
         pageType="service-detail"

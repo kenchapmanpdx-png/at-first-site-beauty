@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center" itemScope itemType="https://schema.org/Organization">
       {/* Hidden SEO H1 tag */}
-      <h1 className="sr-only">A First Site | Luxury Bridal Hair & Makeup in the Pacific Northwest</h1>
+      <h1 className="sr-only">At First Site | Luxury Bridal Hair & Makeup in the Pacific Northwest</h1>
       {/* Background Image with Parallax */}
       <div
         className="absolute inset-0 bg-cover parallax-bg filter grayscale"

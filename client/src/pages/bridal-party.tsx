@@ -111,7 +111,7 @@ export default function BridalParty() {
   return (
     <div className="min-h-screen bg-white">
       <PageHead 
-        title="Bridal Party Hair & Makeup Services | At First Sight Beauty"
+        title="Bridal Party Hair & Makeup Services | At First Site"
         description="Complete bridal party styling services in the Pacific Northwest. Professional hair and makeup for bridesmaids, mothers, and entire wedding parties on location."
         path="/bridal-party"
         pageType="service-detail"

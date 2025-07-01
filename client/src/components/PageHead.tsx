@@ -22,13 +22,13 @@ export default function PageHead({
     let pageDescription = description;
     
     if (pageType === 'about') {
-      pageTitle = "Meet Your Dream Team – At First Site Beauty";
+      pageTitle = "Meet Your Dream Team | At First Site";
       pageDescription = "Get to know our elite team of bridal stylists dedicated to luxury hair and makeup for weddings in the Pacific Northwest.";
     } else if (pageType === 'services') {
-      pageTitle = "Bridal Hair & Makeup Services | At First Site Beauty";
+      pageTitle = "Bridal Hair & Makeup Services | At First Site";
       pageDescription = "Explore our bridal beauty services including hair styling, makeup trials, and on-location wedding packages in OR and WA.";
     } else if (pageType === 'contact') {
-      pageTitle = "Schedule Your Bridal Consultation | At First Site Beauty";
+      pageTitle = "Schedule Your Bridal Consultation | At First Site";
       pageDescription = "Book a free consultation to start planning your bridal look with our expert hair and makeup team.";
     } else if (pageType === 'service-detail') {
       // Use the passed title and description for service detail pages

@@ -83,7 +83,7 @@ export default function TeethWhitening() {
   return (
     <div className="min-h-screen bg-white">
       <PageHead 
-        title="Professional Teeth Whitening | At First Sight Beauty"
+        title="Professional Teeth Whitening | At First Site"
         description="Professional teeth whitening services for brides in the Pacific Northwest. Enhance your wedding day smile with safe, effective whitening treatments."
         path="/teeth-whitening"
         pageType="service-detail"
