@@ -45,8 +45,8 @@ export default function BridalDesignSession() {
   return (
     <div className="min-h-screen bg-white">
       <PageHead 
-        title="Schedule Your Bridal Consultation | At First Sight Beauty"
-        description="Book a free consultation to start planning your bridal look with our expert hair and makeup team."
+        title="Bridal Design Session & Trial | At First Sight Beauty"
+        description="Perfect your wedding day look with our comprehensive bridal design session. Trial hair and makeup services in Oregon and Washington."
         path="/bridal-design-session"
         pageType="service-detail"
       />

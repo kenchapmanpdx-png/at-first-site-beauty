@@ -1,0 +1,64 @@
+Add a single, clear <h1> tag to the homepage. Use:
+
+html
+Copy
+Edit
+<h1>Luxury Bridal Hair & Makeup in the Pacific Northwest</h1>
+🛠 2. Fix Low Word Count
+Tell Replit:
+
+Add 100–150 words of descriptive, keyword-rich text to the homepage. Use this:
+
+html
+Copy
+Edit
+<section>
+  <p>At First Sight Beauty delivers on-location luxury bridal hair and makeup throughout Oregon and Washington. Our expert stylists specialize in timeless, elegant looks that reflect your unique vision. Whether you're planning a vineyard wedding or an urban elopement, we bring beauty directly to your venue with professionalism and artistry.</p>
+</section>
+🛠 3. Fix Image ALT Tags
+Tell Replit:
+
+Add alt attributes to all <img> tags. Use descriptive text like:
+
+html
+Copy
+Edit
+<img src="/images/bridal-hair.jpg" alt="Bridal hair stylist preparing bride" />
+🛠 4. Fix Broken Internal Link
+Tell Replit:
+
+Check for and remove or correct any broken internal links. Use a tool or manually click all nav/footer/internal links to confirm.
+
+🛠 5. Fix Duplicate Title on Inner Pages
+Tell Replit:
+
+Ensure each page (/about, /services, /appointment, etc.) has a unique <title> in the <head>. Examples:
+
+About: <title>About At First Sight Beauty | Bridal Experts</title>
+
+Services: <title>Our Bridal Hair & Makeup Services | PNW Weddings</title>
+
+Appointment: <title>Book Your Bridal Trial | At First Sight Beauty</title>
+
+🛠 6. Fix Missing Meta Descriptions on Inner Pages
+Tell Replit:
+
+Add a unique <meta name="description"> tag to each page. Examples:
+
+About:
+
+html
+Copy
+Edit
+<meta name="description" content="Learn about At First Sight Beauty—serving the Pacific Northwest with professional bridal hair and makeup for weddings and events." />
+Services:
+
+html
+Copy
+Edit
+<meta name="description" content="Explore our full menu of on-location bridal hair and makeup services, tailored for weddings across Oregon and Washington." />
+🛠 7. Fix Sitemap XML Error
+Tell Replit:
+
+Remove any whitespace or characters before the first line (<?xml version="1.0" encoding="UTF-8"?>) in your sitemap.xml file.
+

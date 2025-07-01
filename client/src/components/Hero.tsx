@@ -54,8 +54,7 @@ export default function Hero() {
         <h1 className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight fade-slide-up ${
           isLoaded ? 'stagger-1' : ''
         }`}>
-          Luxury Bridal Hair & Makeup,{" "}
-          <span className="text-blush-300">On Location</span>
+          Luxury Bridal Hair & Makeup in the Pacific Northwest
         </h1>
         <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-light opacity-90 fade-slide-up ${
           isLoaded ? 'stagger-2' : ''
