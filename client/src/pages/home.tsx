@@ -51,15 +51,6 @@ export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
       <Header />
       <Hero />
       
-      {/* SEO Content Section */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            At First Sight Beauty delivers on-location luxury bridal hair and makeup throughout Oregon and Washington. Our expert stylists specialize in timeless, elegant looks that reflect your unique vision. Whether you're planning a vineyard wedding or an urban elopement, we bring beauty directly to your venue with professionalism and artistry.
-          </p>
-        </div>
-      </section>
-      
       <About />
       <Services />
       {/* Booking CTA between Services and Gallery */}

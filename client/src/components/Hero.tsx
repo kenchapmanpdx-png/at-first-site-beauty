@@ -26,6 +26,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative h-screen flex items-center justify-center" itemScope itemType="https://schema.org/Organization">
+      {/* Hidden SEO H1 tag */}
+      <h1 className="sr-only">Luxury Bridal Hair & Makeup in the Pacific Northwest</h1>
       {/* Background Image with Parallax */}
       <div
         className="absolute inset-0 bg-cover parallax-bg filter grayscale"
@@ -51,11 +53,11 @@ export default function Hero() {
       <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transform transition-all duration-1000 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
-        <h1 className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight fade-slide-up ${
+        <div className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight fade-slide-up ${
           isLoaded ? 'stagger-1' : ''
         }`}>
-          Luxury Bridal Hair & Makeup in the Pacific Northwest
-        </h1>
+          Beauty Beyond the Aisle
+        </div>
         <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-light opacity-90 fade-slide-up ${
           isLoaded ? 'stagger-2' : ''
         }`}>
