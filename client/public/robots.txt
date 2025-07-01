@@ -1,4 +1,4 @@
 
 User-agent: *
 Allow: /
-Sitemap: https://atfirstsitebeauty.com/sitemap.xml
+Sitemap: https://onsitebeauty.com/sitemap.xml
