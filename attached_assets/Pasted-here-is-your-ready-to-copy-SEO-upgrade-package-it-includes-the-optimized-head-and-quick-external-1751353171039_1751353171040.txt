@@ -1,0 +1,95 @@
+here is your ready-to-copy SEO upgrade package — it includes the optimized <head> and quick external fixes. This version:
+
+Leaves all visible words on your site untouched
+
+Fixes every on-page SEO issue
+
+Aligns with your brand name: At First Site
+
+✅ FINAL COPY-PASTE <head> SECTION (Drop into your HTML)
+html
+Copy
+Edit
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>At First Site | Luxury Bridal Hair & Makeup On Location – Pacific Northwest</title>
+  <meta name="description" content="Luxury bridal beauty services brought to you, on location across the Pacific Northwest. Book your dream design session today with At First Site." />
+  <meta name="keywords" content="bridal hair, bridal makeup, on-location beauty, wedding hair, wedding makeup, Pacific Northwest, Portland bridal, spray tanning, tooth whitening" />
+  <meta name="author" content="At First Site" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://atfirstsitebeauty.com/" />
+
+  <!-- Open Graph / Facebook Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="At First Site | Luxury Bridal Hair & Makeup On Location" />
+  <meta property="og:description" content="Bridal beauty, delivered on location throughout the Pacific Northwest. Create your dream look with our expert team." />
+  <meta property="og:url" content="https://atfirstsitebeauty.com/" />
+  <meta property="og:image" content="https://atfirstsitebeauty.com/images/og-cover.jpg" /> <!-- Replace with your image -->
+  <meta property="og:site_name" content="At First Site" />
+
+  <!-- Twitter Card Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="At First Site | Luxury Bridal Hair & Makeup On Location" />
+  <meta name="twitter:description" content="Luxury bridal beauty services brought to you, on location across the Pacific Northwest. Book today." />
+  <meta name="twitter:image" content="https://atfirstsitebeauty.com/images/og-cover.jpg" /> <!-- Replace with your image -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "At First Site",
+    "image": "https://atfirstsitebeauty.com/images/logo.png",
+    "url": "https://atfirstsitebeauty.com/",
+    "sameAs": [
+      "https://www.instagram.com/atfirstsitebeauty",
+      "https://www.facebook.com/atfirstsitebeauty"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Pacific Northwest"
+    },
+    "description": "Luxury on-location bridal hair and makeup across the Pacific Northwest.",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Pacific Northwest"
+    }
+  }
+  </script>
+
+  <!-- Sitemap and Robots -->
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+</head>
+✅ OTHER ACTIONS NEEDED (Non-code)
+Add an <h1> tag to homepage:
+
+html
+Copy
+Edit
+<h1>Luxury Bridal Hair & Makeup in the Pacific Northwest</h1>
+(Include it somewhere visible but styled to match)
+
+Add ALT text to all <img> tags:
+Example:
+
+html
+Copy
+Edit
+<img src="yourphoto.jpg" alt="Bridal makeup by At First Site" />
+Create & upload a robots.txt at your root:
+
+makefile
+Copy
+Edit
+User-agent: *
+Allow: /
+Sitemap: https://atfirstsitebeauty.com/sitemap.xml
+Generate and upload a sitemap.xml:
