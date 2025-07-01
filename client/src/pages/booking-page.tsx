@@ -42,9 +42,10 @@ export default function BookingPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <PageHead 
-        title="Contact | At First Site Beauty"
-        description="Book your luxury bridal consultation with At First Site Beauty. Professional on-location bridal hair and makeup services in the Pacific Northwest."
+        title="Book Your Bridal Trial | At First Sight Beauty"
+        description="Book your luxury bridal consultation with At First Sight Beauty. Professional on-location bridal hair and makeup services in the Pacific Northwest."
         path="/book"
+        pageType="contact"
       />
       <Header />
       <main ref={sectionRef} className="pt-20 pb-12">
