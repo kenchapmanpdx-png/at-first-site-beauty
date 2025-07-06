@@ -21,13 +21,15 @@ export default function Header() {
     if (location === '/') {
       const element = document.getElementById(sectionId);
       if (element) {
-        // Calculate proper offset considering the header height
-        const headerHeight = 100; // Reduced offset for better positioning
+        // Calculate proper offset considering the actual header height (280px)
+        const headerHeight = 300; // Adjusted for actual header height
         const elementPosition = element.offsetTop - headerHeight;
         window.scrollTo({
           top: Math.max(0, elementPosition),
           behavior: "smooth"
         });
+      } else {
+        console.warn(`Section with id "${sectionId}" not found`);
       }
     } else {
       // If we're on a different page, navigate to home and then scroll to section
@@ -36,14 +38,16 @@ export default function Header() {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          const headerHeight = 100;
+          const headerHeight = 300;
           const elementPosition = element.offsetTop - headerHeight;
           window.scrollTo({
             top: Math.max(0, elementPosition),
             behavior: "smooth"
           });
+        } else {
+          console.warn(`Section with id "${sectionId}" not found after navigation`);
         }
-      }, 300);
+      }, 500); // Increased timeout for better reliability
     }
   }, [location, setLocation]);
 
@@ -92,12 +96,7 @@ export default function Header() {
             >
               Gallery
             </button>
-            <button
-              onClick={() => navigateToSection("testimonials")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
-            >
-              Testimonials
-            </button>
+
             <button
               onClick={() => setLocation('/book')}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
@@ -159,15 +158,7 @@ export default function Header() {
               >
                 Gallery
               </button>
-              <button
-                onClick={() => {
-                  navigateToSection("testimonials");
-                  setIsMenuOpen(false);
-                }}
-                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
-              >
-                Testimonials
-              </button>
+
               <button
                 onClick={() => {
                   setLocation('/book');
