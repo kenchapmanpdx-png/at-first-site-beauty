@@ -32,7 +32,7 @@ export default function Hero() {
           transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
         }}
         role="img"
-        aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"
+        aria-label="Luxury bridal styling showcase by At First Site Beauty - elegant outdoor bridal photography in Pacific Northwest"
       >
         <div className="hero-overlay absolute inset-0"></div>
 

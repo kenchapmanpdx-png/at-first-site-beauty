@@ -93,7 +93,7 @@ export default function Services() {
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
-              Our <span className="text-white">Services</span>
+              Our Services
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto">
               Whether it's a wedding, prom, quinceañera, or just a special night out, we offer comprehensive beauty services to make your special day absolutely perfect.

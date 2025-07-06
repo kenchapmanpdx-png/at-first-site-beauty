@@ -36,35 +36,35 @@ export default function Gallery() {
   const galleryImages = [
     {
       src: bridalImage1,
-      alt: "Beautiful bridal styling with natural outdoor setting by At First Sight Beauty On Location - Pacific Northwest wedding makeup and hair",
+      alt: "Bridal makeup application by At First Site Beauty - luxury on-location wedding styling in Pacific Northwest",
       category: "bridal",
       title: "Outdoor Bridal Styling",
       description: "Natural bridal beauty with outdoor elegance in the Pacific Northwest",
     },
     {
       src: makeupApplication,
-      alt: "Professional bridal makeup application in progress by certified makeup artist - luxury on-location beauty services",
+      alt: "Professional bridal makeup application by At First Site Beauty certified makeup artist",
       category: "bridal",
       title: "Professional Makeup Application",
       description: "Expert bridal makeup application using premium products",
     },
     {
       src: bridalHair,
-      alt: "Elegant bridal hair styling with intricate details - Pacific Northwest wedding hair artist specializing in luxury updos",
+      alt: "Elegant bridal hair styling by At First Site Beauty - Pacific Northwest wedding hair specialist",
       category: "party",
       title: "Bridal Party Hair Styling",
       description: "Professional hair styling for bridal party members",
     },
     {
       src: holliePhoto,
-      alt: "Bride and bridal party outdoor portrait showcasing coordinated beauty looks by At First Sight Beauty On Location team",
+      alt: "Bridal party coordination by At First Site Beauty - coordinated beauty looks for wedding party",
       category: "party",
       title: "Bridal Party Coordination",
       description: "Coordinated bridal party looks maintaining bride as focal point",
     },
     {
       src: cedarPhoto,
-      alt: "Professional makeup artist applying bridal party makeup with attention to detail and coordination",
+      alt: "Bridal party makeup application by At First Site Beauty professional makeup artist",
       category: "party",
       title: "Bridal Party Makeup",
       description: "Expert makeup application for bridal party members",
@@ -99,7 +99,7 @@ export default function Gallery() {
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
-              Our <span className="text-white">Portfolio</span>
+              Portfolio
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
               Discover the artistry and elegance that defines our work. Each image tells a story of beauty, confidence, and unforgettable moments.
