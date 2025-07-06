@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -20,28 +19,25 @@ export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
     // Handle scrolling to specific sections based on route
     if (scrollToAbout) {
       setTimeout(() => {
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-          const headerHeight = 120;
-          const elementPosition = aboutSection.offsetTop - headerHeight;
-          window.scrollTo({
-            top: Math.max(0, elementPosition),
-            behavior: 'smooth'
-          });
-        }
-      }, 500);
+        const aboutSection = document.querySelector('#about');
+        aboutSection?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     } else if (scrollToServices) {
       setTimeout(() => {
-        const servicesSection = document.getElementById('services');
-        if (servicesSection) {
-          const headerHeight = 120;
-          const elementPosition = servicesSection.offsetTop - headerHeight;
-          window.scrollTo({
-            top: Math.max(0, elementPosition),
-            behavior: 'smooth'
-          });
-        }
-      }, 500);
+        const servicesSection = document.querySelector('#services');
+        servicesSection?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+
+    // Temporarily disable all AOS animations while testing
+    if (typeof window !== 'undefined') {
+      // AOS.init({
+      //   duration: 800,
+      //   easing: 'ease-in-out',
+      //   once: true,
+      //   offset: 120,
+      //   delay: 100
+      // });
     }
   }, [scrollToAbout, scrollToServices]);
 
@@ -60,7 +56,7 @@ export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
       <Services />
       {/* Booking CTA between Services and Gallery */}
       <section className="py-8 bg-white">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <button
             onClick={() => window.location.href = '/book'}
             className="premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
@@ -78,7 +74,7 @@ export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
       <Testimonials />
       {/* Booking CTA before main Booking section */}
       <section className="py-8 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 text-center" data-aos="fade-up">
           <button
             onClick={() => window.location.href = '/book'}
             className="premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"

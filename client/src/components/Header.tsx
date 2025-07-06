@@ -9,8 +9,7 @@ export default function Header() {
 
   const navigateToSection = useCallback((sectionId: string) => {
     console.log(`Navigating to section: ${sectionId}, current location: ${location}`);
-    setIsMenuOpen(false); // Close mobile menu
-
+    
     // Special handling for home section - scroll to top
     if (sectionId === "home") {
       if (location === '/') {
@@ -25,39 +24,56 @@ export default function Header() {
             top: 0,
             behavior: "smooth"
           });
-        }, 300);
+        }, 100);
       }
       return;
     }
 
-    // Navigate to home first if not already there
-    if (location !== '/') {
-      setLocation('/');
-      // Wait for page to load, then scroll to section
+    // If we're already on the home page, scroll to the section
+    if (location === '/') {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
+        console.log(`Found element for ${sectionId}:`, element);
         if (element) {
-          const headerHeight = 120;
+          // Calculate proper offset considering the header height
+          const headerHeight = 120; // Reduced header offset for better positioning
           const elementPosition = element.offsetTop - headerHeight;
+          console.log(`Scrolling to position: ${elementPosition}`);
           window.scrollTo({
             top: Math.max(0, elementPosition),
             behavior: "smooth"
           });
+        } else {
+          console.warn(`Section with id "${sectionId}" not found`);
         }
-      }, 500);
+      }, 50); // Small delay to ensure DOM is ready
     } else {
-      // Already on home page, just scroll to section
-      setTimeout(() => {
+      // If we're on a different page, navigate to home and then scroll to section
+      console.log(`Navigating from ${location} to home, then to ${sectionId}`);
+      setLocation('/');
+      // Use multiple attempts to ensure the page has loaded before scrolling
+      const attemptScroll = (attempts = 0) => {
+        if (attempts > 15) {
+          console.warn(`Failed to find section ${sectionId} after 15 attempts`);
+          return;
+        }
+        
         const element = document.getElementById(sectionId);
         if (element) {
           const headerHeight = 120;
           const elementPosition = element.offsetTop - headerHeight;
+          console.log(`Attempt ${attempts + 1}: Scrolling to ${sectionId} at position ${elementPosition}`);
           window.scrollTo({
             top: Math.max(0, elementPosition),
             behavior: "smooth"
           });
+        } else {
+          console.log(`Attempt ${attempts + 1}: Section ${sectionId} not found, retrying...`);
+          setTimeout(() => attemptScroll(attempts + 1), 200);
         }
-      }, 100);
+      };
+      
+      setTimeout(() => attemptScroll(), 300);
     }
   }, [location, setLocation]);
 
@@ -139,31 +155,46 @@ export default function Header() {
           <div className="md:hidden bg-white/95 backdrop-blur-md border-t shadow-lg">
             <nav className="flex flex-col py-4">
               <button
-                onClick={() => navigateToSection("home")}
+                onClick={() => {
+                  navigateToSection("home");
+                  setIsMenuOpen(false);
+                }}
                 className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
               >
                 Home
               </button>
               <button
-                onClick={() => navigateToSection("about")}
+                onClick={() => {
+                  navigateToSection("about");
+                  setIsMenuOpen(false);
+                }}
                 className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
               >
                 About
               </button>
               <button
-                onClick={() => navigateToSection("services")}
+                onClick={() => {
+                  navigateToSection("services");
+                  setIsMenuOpen(false);
+                }}
                 className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
               >
                 Services
               </button>
               <button
-                onClick={() => navigateToSection("gallery")}
+                onClick={() => {
+                  navigateToSection("gallery");
+                  setIsMenuOpen(false);
+                }}
                 className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
               >
                 Gallery
               </button>
               <button
-                onClick={() => navigateToSection("testimonials")}
+                onClick={() => {
+                  navigateToSection("testimonials");
+                  setIsMenuOpen(false);
+                }}
                 className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
               >
                 Testimonials
