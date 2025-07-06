@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
@@ -17,7 +18,17 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      const headerHeight = 120;
+      const elementPosition = aboutSection.offsetTop - headerHeight;
+      window.scrollTo({
+        top: Math.max(0, elementPosition),
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <section id="home" className="relative h-screen flex items-center justify-center" itemScope itemType="https://schema.org/Organization">
@@ -37,41 +48,53 @@ export default function Hero() {
         aria-label="Luxury bridal styling showcase by At First Sight Beauty On Location - elegant outdoor bridal photography in Pacific Northwest"
       >
         <div className="hero-overlay absolute inset-0"></div>
-
-        {/* Top gradient - creates soft white fade from header to image */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white to-transparent"></div>
-
-        {/* Bottom gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
       </div>
 
-      <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transform transition-all duration-1000 ${
-        isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      }`}>
-        <div className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight fade-slide-up ${
-          isLoaded ? 'stagger-1' : ''
-        }`}>
-          At First Site Beauty
-        </div>
-        <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-light opacity-90 fade-slide-up ${
-          isLoaded ? 'stagger-2' : ''
-        }`}>
-          Serving the Pacific Northwest with elegance, expertise, and ease
+      {/* Content */}
+      <div className={`relative z-10 text-center text-white px-4 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-playfair font-bold mb-4 leading-tight">
+          <span className="block">Luxury Bridal Hair & Makeup</span>
+          <span className="block text-xl md:text-2xl lg:text-3xl font-light mt-2">
+            On-Location in the Pacific Northwest
+          </span>
+        </h2>
+        
+        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+          Creating timeless beauty for your special day with personalized, on-site services throughout Oregon and Washington.
         </p>
-        <div className="inline-block p-2">
-          <Button
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Button 
             onClick={() => window.location.href = '/book'}
-            className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
-              isLoaded ? 'stagger-3' : ''
-            }`}
+            className="premium-button sparkle-button text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation"
           >
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
             Book Your Design Session
+          </Button>
+          
+          <Button 
+            variant="outline"
+            onClick={scrollToAbout}
+            className="border-white text-white hover:bg-white hover:text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-300 bg-transparent backdrop-blur-sm touch-manipulation"
+          >
+            Learn More
           </Button>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
-        <ChevronDown size={32} className="opacity-70" />
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <button
+          onClick={scrollToAbout}
+          className="text-white hover:text-blush-200 transition-colors duration-300 animate-bounce"
+          aria-label="Scroll to about section"
+        >
+          <ChevronDown size={32} />
+        </button>
       </div>
     </section>
   );
