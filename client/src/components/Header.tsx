@@ -8,8 +8,6 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigateToSection = useCallback((sectionId: string) => {
-    console.log(`Navigating to section: ${sectionId}, current location: ${location}`);
-    
     // Special handling for home section - scroll to top
     if (sectionId === "home") {
       if (location === '/') {
@@ -18,62 +16,27 @@ export default function Header() {
           behavior: "smooth"
         });
       } else {
+        sessionStorage.setItem("scrollTarget", sectionId);
         setLocation('/');
-        setTimeout(() => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        }, 100);
       }
       return;
     }
 
     // If we're already on the home page, scroll to the section
     if (location === '/') {
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        console.log(`Found element for ${sectionId}:`, element);
-        if (element) {
-          // Calculate proper offset considering the header height
-          const headerHeight = 120; // Reduced header offset for better positioning
-          const elementPosition = element.offsetTop - headerHeight;
-          console.log(`Scrolling to position: ${elementPosition}`);
-          window.scrollTo({
-            top: Math.max(0, elementPosition),
-            behavior: "smooth"
-          });
-        } else {
-          console.warn(`Section with id "${sectionId}" not found`);
-        }
-      }, 50); // Small delay to ensure DOM is ready
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerHeight = 120;
+        const elementPosition = element.offsetTop - headerHeight;
+        window.scrollTo({
+          top: Math.max(0, elementPosition),
+          behavior: "smooth"
+        });
+      }
     } else {
-      // If we're on a different page, navigate to home and then scroll to section
-      console.log(`Navigating from ${location} to home, then to ${sectionId}`);
+      // Store the target section and navigate to home
+      sessionStorage.setItem("scrollTarget", sectionId);
       setLocation('/');
-      // Use multiple attempts to ensure the page has loaded before scrolling
-      const attemptScroll = (attempts = 0) => {
-        if (attempts > 15) {
-          console.warn(`Failed to find section ${sectionId} after 15 attempts`);
-          return;
-        }
-        
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const headerHeight = 120;
-          const elementPosition = element.offsetTop - headerHeight;
-          console.log(`Attempt ${attempts + 1}: Scrolling to ${sectionId} at position ${elementPosition}`);
-          window.scrollTo({
-            top: Math.max(0, elementPosition),
-            behavior: "smooth"
-          });
-        } else {
-          console.log(`Attempt ${attempts + 1}: Section ${sectionId} not found, retrying...`);
-          setTimeout(() => attemptScroll(attempts + 1), 200);
-        }
-      };
-      
-      setTimeout(() => attemptScroll(), 300);
     }
   }, [location, setLocation]);
 

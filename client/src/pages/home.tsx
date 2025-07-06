@@ -16,7 +16,25 @@ interface HomeProps {
 
 export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
   useEffect(() => {
-    // Handle scrolling to specific sections based on route
+    // Handle sessionStorage scroll target
+    const sectionId = sessionStorage.getItem("scrollTarget");
+    if (sectionId) {
+      setTimeout(() => {
+        if (sectionId === "home") {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            const headerHeight = 120;
+            const elementPosition = el.offsetTop - headerHeight;
+            window.scrollTo({ top: Math.max(0, elementPosition), behavior: "smooth" });
+          }
+        }
+        sessionStorage.removeItem("scrollTarget");
+      }, 100);
+    }
+
+    // Handle scrolling to specific sections based on route props
     if (scrollToAbout) {
       setTimeout(() => {
         const aboutSection = document.querySelector('#about');
