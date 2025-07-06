@@ -14,17 +14,16 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Touch-optimized navigation with accessibility features
 
 ## Recent Changes (June 2025)
-✓ **Final SEO Implementation with Domain Update** (June 30, 2025)
+✓ **Final SEO Implementation with Clean Structure** (June 30, 2025)
 - Updated to simplified, clean HTML head structure with "At First Site Beauty On Location" branding
-- Changed domain references from atfirstsitebeauty.com to onsitebeauty.com throughout
 - Streamlined meta tags with focused messaging: "Trusted artists. Elegant results."
 - Enhanced Open Graph and Twitter Card descriptions for better social sharing
-- Updated robots.txt and sitemap.xml to use new onsitebeauty.com domain
+- Updated robots.txt and sitemap.xml with correct atfirstsitebeauty.com domain
 - Added all service pages to sitemap (bridal-design-session, bridal-party, spray-tanning, teeth-whitening)
 - Removed structured data for cleaner, more focused SEO approach
 - Maintained hidden H1 tag for SEO compliance
 - Clean, production-ready meta tags optimized for search engines and social media
-- Application SEO fully aligned with onsitebeauty.com domain and simplified branding
+- Application SEO fully aligned with atfirstsitebeauty.com domain and simplified branding
 
 ✓ **Major Codebase Cleanup** (June 23, 2025)
 - Removed 33 unused UI components (accordion, calendar, chart, form, etc.) from 47 total components
