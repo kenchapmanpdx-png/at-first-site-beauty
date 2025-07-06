@@ -48,6 +48,7 @@ export default function Hero() {
       <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transform transition-all duration-1000 ${
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
+        <h1 className="sr-only">At First Site Beauty On Location - Luxury Bridal Hair & Makeup</h1>
         <div className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight fade-slide-up ${
           isLoaded ? 'stagger-1' : ''
         }`}>

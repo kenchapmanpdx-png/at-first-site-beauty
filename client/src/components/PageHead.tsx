@@ -48,34 +48,37 @@ export default function PageHead({
     }
     canonicalLink.href = `https://atfirstsitebeauty.com${path}`;
     
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', pageDescription);
+    // Only update meta tags if not on home page to prevent conflicts with static meta tags
+    if (pageType !== 'home') {
+      // Update meta description
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) {
+        metaDescription.setAttribute('content', pageDescription);
+      }
+      
+      // Update Open Graph tags
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+      
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', pageDescription);
+      
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.setAttribute('content', `https://atfirstsitebeauty.com${path}`);
+      
+      const ogImg = document.querySelector('meta[property="og:image"]');
+      if (ogImg) ogImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);
+      
+      // Update Twitter card tags
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle) twitterTitle.setAttribute('content', pageTitle);
+      
+      const twitterDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twitterDesc) twitterDesc.setAttribute('content', pageDescription);
+      
+      const twitterImg = document.querySelector('meta[name="twitter:image"]');
+      if (twitterImg) twitterImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);
     }
-    
-    // Update Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', pageTitle);
-    
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', pageDescription);
-    
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute('content', `https://atfirstsitebeauty.com${path}`);
-    
-    const ogImg = document.querySelector('meta[property="og:image"]');
-    if (ogImg) ogImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);
-    
-    // Update Twitter card tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) twitterTitle.setAttribute('content', pageTitle);
-    
-    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDesc) twitterDesc.setAttribute('content', pageDescription);
-    
-    const twitterImg = document.querySelector('meta[name="twitter:image"]');
-    if (twitterImg) twitterImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);
 
     // Remove existing schemas
     const existingSchemas = document.querySelectorAll('script[type="application/ld+json"].page-schema');
