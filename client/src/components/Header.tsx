@@ -41,15 +41,15 @@ export default function Header() {
   return (
     <>
       {/* Main Logo Header */}
-      <header className="relative bg-white" style={{ height: '400px' }}>
+      <header className="relative bg-white" style={{ height: '280px' }}>
         {/* Logo Section */}
-        <div className="flex items-center justify-center pt-4 md:pt-8 pb-1">
+        <div className="flex items-center justify-center pt-2 md:pt-8 pb-1">
           <div className="container mx-auto px-4 flex justify-center">
             <img
               src={logo}
               alt="At First Site Beauty On Location"
               className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
-              style={{ maxHeight: '242px' }}
+              style={{ maxHeight: '180px' }}
               loading="eager"
               decoding="async"
             />
@@ -99,7 +99,7 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex justify-center pb-3">
+        <div className="md:hidden flex justify-center pb-1">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-blush-400 transition-colors duration-200"

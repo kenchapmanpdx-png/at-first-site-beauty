@@ -496,6 +496,15 @@
 
   /* Mobile-first performance optimizations */
   @media (max-width: 768px) {
+    /* Reduce header height and spacing on mobile */
+    header[style*="height: 280px"] {
+      height: 220px !important;
+    }
+    
+    header img[style*="maxHeight: 180px"] {
+      max-height: 140px !important;
+    }
+
     .luxury-hover {
       transform: none;
       transition: box-shadow 0.2s ease;
