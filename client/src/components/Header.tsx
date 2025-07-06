@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
@@ -7,55 +8,46 @@ export default function Header() {
   const [location, setLocation] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleNavigation = (sectionId: string) => {
-    // Close mobile menu
+  const scrollToElement = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      const headerHeight = 120;
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: Math.max(0, elementPosition),
+        behavior: "smooth"
+      });
+    }
+  };
+
+  const handleNavClick = (target: string) => {
     setIsMenuOpen(false);
 
-    // Handle home navigation
-    if (sectionId === "home") {
-      if (location === '/') {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
+    if (target === "home") {
+      if (location !== '/') {
         setLocation('/');
+        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
       return;
     }
 
-    // Handle booking navigation
-    if (sectionId === "booking") {
+    if (target === "booking") {
       setLocation('/book');
       return;
     }
 
-    // Handle section navigation
-    if (location === '/') {
-      // Already on home page, scroll to section
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const headerHeight = 120;
-          const elementPosition = element.offsetTop - headerHeight;
-          window.scrollTo({
-            top: Math.max(0, elementPosition),
-            behavior: "smooth"
-          });
-        }
-      }, 100);
-    } else {
-      // On different page, store target and navigate to home
-      sessionStorage.setItem("scrollTarget", sectionId);
+    // For section navigation
+    if (location !== '/') {
+      // Navigate to home first, then scroll
       setLocation('/');
+      setTimeout(() => scrollToElement(target), 300);
+    } else {
+      // Already on home, just scroll
+      scrollToElement(target);
     }
   };
-
-  const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "services", label: "Services" },
-    { id: "gallery", label: "Gallery" },
-    { id: "testimonials", label: "Testimonials" },
-    { id: "booking", label: "Booking" }
-  ];
 
   return (
     <header className="relative bg-white" style={{ height: '280px' }}>
@@ -76,15 +68,42 @@ export default function Header() {
       {/* Desktop Navigation */}
       <nav className="hidden md:flex justify-center pb-3 overflow-x-auto">
         <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavigation(item.id)}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
-            >
-              {item.label}
-            </button>
-          ))}
+          <button
+            onClick={() => handleNavClick("home")}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => handleNavClick("about")}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+          >
+            About
+          </button>
+          <button
+            onClick={() => handleNavClick("services")}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+          >
+            Services
+          </button>
+          <button
+            onClick={() => handleNavClick("gallery")}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+          >
+            Gallery
+          </button>
+          <button
+            onClick={() => handleNavClick("testimonials")}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+          >
+            Testimonials
+          </button>
+          <button
+            onClick={() => handleNavClick("booking")}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+          >
+            Booking
+          </button>
         </div>
       </nav>
 
@@ -104,15 +123,42 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t shadow-lg">
           <nav className="flex flex-col py-4">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => handleNavigation(item.id)}
-                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
-              >
-                {item.label}
-              </button>
-            ))}
+            <button
+              onClick={() => handleNavClick("home")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => handleNavClick("about")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+            >
+              About
+            </button>
+            <button
+              onClick={() => handleNavClick("services")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => handleNavClick("gallery")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+            >
+              Gallery
+            </button>
+            <button
+              onClick={() => handleNavClick("testimonials")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+            >
+              Testimonials
+            </button>
+            <button
+              onClick={() => handleNavClick("booking")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+            >
+              Booking
+            </button>
           </nav>
         </div>
       )}
