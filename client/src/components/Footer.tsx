@@ -16,18 +16,21 @@ export default function Footer() {
             <a
               href="#"
               className="text-gray-600 hover:text-blush-400 transition-colors duration-200"
+              rel="noopener noreferrer"
             >
               Privacy Policy
             </a>
             <a
               href="#"
               className="text-gray-600 hover:text-blush-400 transition-colors duration-200"
+              rel="noopener noreferrer"
             >
               Terms of Service
             </a>
             <a
               href="#"
               className="text-gray-600 hover:text-blush-400 transition-colors duration-200"
+              rel="noopener noreferrer"
             >
               Contact
             </a>
@@ -37,12 +40,14 @@ export default function Footer() {
             <a
               href="#"
               className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blush-300 hover:text-white transition-colors duration-200"
+              rel="noopener noreferrer"
             >
               <FaInstagram size={20} />
             </a>
             <a
               href="#"
               className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blush-300 hover:text-white transition-colors duration-200"
+              rel="noopener noreferrer"
             >
               <FaPinterest size={20} />
             </a>
