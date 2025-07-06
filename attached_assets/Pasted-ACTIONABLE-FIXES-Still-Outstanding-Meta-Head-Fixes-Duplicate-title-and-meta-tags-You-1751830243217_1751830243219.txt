@@ -1,0 +1,85 @@
+ACTIONABLE FIXES (Still Outstanding)
+🔴 Meta & Head Fixes
+Duplicate <title> and <meta> tags:
+
+⚠️ You have multiple <title> and/or <meta> tags.
+✅ Fix: Remove duplicate meta entries in your root HTML or layout component (index.html, _app.tsx, or your main layout).
+
+Missing <meta keywords> tag (optional, low priority):
+✅ Add if desired for legacy bots, but modern SEO doesn't rely on it.
+
+🔴 Page Quality
+No Open Graph tags:
+✅ Add these to your <head>:
+
+html
+Copy
+Edit
+<meta property="og:title" content="At First Site Beauty On Location - Luxury Bridal Hair & Makeup" />
+<meta property="og:description" content="Serving the Pacific Northwest with elegant on-location beauty for weddings and special events." />
+<meta property="og:image" content="https://atfirstsitebeauty.com/images/og-image.jpg" />
+<meta property="og:url" content="https://atfirstsitebeauty.com/" />
+<meta property="og:type" content="website" />
+No Twitter Card:
+✅ Add this in <head>:
+
+html
+Copy
+Edit
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="At First Site Beauty On Location" />
+<meta name="twitter:description" content="Luxury Bridal Hair & Makeup in the Pacific Northwest" />
+<meta name="twitter:image" content="https://atfirstsitebeauty.com/images/og-image.jpg" />
+No favicon found
+✅ Add this to <head>:
+
+html
+Copy
+Edit
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+🔴 Content / Structure
+Missing <h1> tag
+✅ You likely styled your logo/title as a heading visually — wrap your visible main heading in <h1>:
+
+html
+Copy
+Edit
+<h1 className="sr-only">At First Site Beauty</h1> 
+(This keeps it accessible without changing your design.)
+
+🔴 Link Problems
+Broken external link to Google Fonts (likely preconnect issue)
+✅ In <head>, ensure:
+
+html
+Copy
+Edit
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+Link with "Click here" or no anchor text
+✅ Make sure all <a> tags have descriptive text like “View our portfolio” instead of “Click here”.
+
+📎 REPLIT INSTRUCTIONS – PASTE THIS:
+“Apply the following SEO fixes to the site:
+
+Remove duplicate <title> and <meta> tags.
+
+Add Open Graph tags and Twitter Card tags to <head>.
+
+Add <link rel="icon" href="/favicon.ico"> to <head>.
+
+Add hidden <h1> tag for SEO accessibility:
+
+html
+Copy
+Edit
+<h1 className="sr-only">At First Site Beauty</h1>
+Fix any <a> tags with empty or vague anchor text like 'Click here'.
+
+Add preconnects for Google Fonts:
+
+html
+Copy
+Edit
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
