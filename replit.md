@@ -13,7 +13,20 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Go High Level and Gloss Genius booking integrations
 - Touch-optimized navigation with accessibility features
 
-## Recent Changes (June 2025)
+## Recent Changes (July 2025)
+✓ **Comprehensive Project Cleanup and Optimization** (July 6, 2025)
+- Removed 7 unused UI components: Card, Dialog, Sheet, Toggle, Skeleton, Separator, Testimonials
+- Fixed not-found page to use standard div elements instead of removed Card components
+- Cleaned up service worker to remove references to deleted logo files
+- Removed unused server components: storage.ts, schema.ts, drizzle.config.ts
+- Simplified server routes to remove database dependencies
+- Removed unused CSS variables: chart colors, sidebar colors, accordion animations
+- Cleaned up Tailwind config by removing unused font families (milton, dancing)
+- Removed non-existent Darleston font-face declaration from CSS
+- Deleted all screenshot files and pasted text files from attached_assets (saved 3MB+)
+- Streamlined project structure for better performance and maintainability
+- Application now runs with minimal dependencies and clean architecture
+
 ✓ **Final SEO Implementation with Clean Structure** (June 30, 2025)
 - Updated to simplified, clean HTML head structure with "At First Site Beauty On Location" branding
 - Streamlined meta tags with focused messaging: "Trusted artists. Elegant results."

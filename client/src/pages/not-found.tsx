@@ -1,6 +1,4 @@
-
 import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AlertCircle, Home, ArrowLeft } from "lucide-react";
 import { useLocation } from "wouter";
@@ -18,8 +16,8 @@ export default function NotFound() {
       />
       
       <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-blush-50 to-gray-100 px-4">
-        <Card className="w-full max-w-lg mx-4 shadow-2xl border-0">
-          <CardContent className="pt-8 pb-8 text-center">
+        <div className="w-full max-w-lg mx-4 bg-white rounded-lg shadow-2xl border-0">
+          <div className="pt-8 pb-8 text-center">
             <div className="flex justify-center mb-6">
               <div className="bg-blush-100 p-4 rounded-full">
                 <AlertCircle className="h-12 w-12 text-blush-500" />
@@ -84,8 +82,8 @@ export default function NotFound() {
                 </Button>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </>
   );

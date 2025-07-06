@@ -4,8 +4,7 @@ const CRITICAL_RESOURCES = [
   '/src/main.tsx',
   '/src/index.css',
   '/src/assets/IMG_0970_1749066905982.png',
-  '/attached_assets/1At First Site Logo (1000 x 350 px)bb_1749329806337_1750282076832.png',
-  '/attached_assets/1At First Site Logob (1000 x 350 px)_1750282542411.png',
+  '/attached_assets/1At First Site Logo (1000 x 350 px).png',
   'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=New+Icon+Script&display=swap'
 ];
 
