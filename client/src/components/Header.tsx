@@ -13,7 +13,7 @@ export default function Header() {
       const element = document.getElementById(sectionId);
       if (element) {
         // Calculate proper offset considering the large header
-        const headerHeight = 420; // Account for the full header height
+        const headerHeight = 280; // Match the actual header height
         const elementPosition = element.offsetTop - headerHeight;
         window.scrollTo({
           top: Math.max(0, elementPosition),
@@ -27,14 +27,14 @@ export default function Header() {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          const headerHeight = 420;
+          const headerHeight = 280;
           const elementPosition = element.offsetTop - headerHeight;
           window.scrollTo({
             top: Math.max(0, elementPosition),
             behavior: "smooth"
           });
         }
-      }, 100);
+      }, 200);
     }
   }, [location, setLocation]);
 
