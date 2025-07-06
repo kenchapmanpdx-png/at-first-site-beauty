@@ -17,7 +17,7 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  
+
 
   return (
     <section id="home" className="relative h-screen flex items-center justify-center" itemScope itemType="https://schema.org/Organization">

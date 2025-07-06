@@ -10,10 +10,20 @@ export default function Header() {
   const navigateToSection = useCallback((sectionId: string) => {
     // Special handling for home section - scroll to top
     if (sectionId === "home") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
+      if (location === '/') {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      } else {
+        setLocation('/');
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }, 100);
+      }
       return;
     }
 
@@ -34,8 +44,10 @@ export default function Header() {
     } else {
       // If we're on a different page, navigate to home and then scroll to section
       setLocation('/');
-      // Use setTimeout to ensure the page has loaded before scrolling
-      setTimeout(() => {
+      // Use multiple attempts to ensure the page has loaded before scrolling
+      const attemptScroll = (attempts = 0) => {
+        if (attempts > 10) return; // Max 10 attempts (2 seconds)
+        
         const element = document.getElementById(sectionId);
         if (element) {
           const headerHeight = 300;
@@ -45,9 +57,11 @@ export default function Header() {
             behavior: "smooth"
           });
         } else {
-          console.warn(`Section with id "${sectionId}" not found after navigation`);
+          setTimeout(() => attemptScroll(attempts + 1), 200);
         }
-      }, 500); // Increased timeout for better reliability
+      };
+      
+      setTimeout(() => attemptScroll(), 100);
     }
   }, [location, setLocation]);
 
@@ -95,6 +109,12 @@ export default function Header() {
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Gallery
+            </button>
+            <button
+              onClick={() => navigateToSection("testimonials")}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
+            >
+              Testimonials
             </button>
 
             <button
@@ -157,6 +177,15 @@ export default function Header() {
                 className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
               >
                 Gallery
+              </button>
+              <button
+                onClick={() => {
+                  navigateToSection("testimonials");
+                  setIsMenuOpen(false);
+                }}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Testimonials
               </button>
 
               <button
