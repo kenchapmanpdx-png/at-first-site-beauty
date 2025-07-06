@@ -1,0 +1,167 @@
+1. Add Canonical Tag
+📍Paste inside your <head> section (index.html or layout component):
+
+html
+Copy
+Edit
+<link rel="canonical" href="https://atfirstsitebeauty.com/" />
+✅ 2. Fix Duplicate H1 Tags
+📍Keep only one <h1> — use a screen-reader only class for accessibility if needed:
+
+html
+Copy
+Edit
+<h1 className="sr-only">At First Site Beauty</h1>
+✅ Confirm that all visible section headers use <h2> or <h3>.
+
+✅ 3. Add/Update Open Graph & Twitter Meta Tags
+📍Paste into your <head>:
+
+html
+Copy
+Edit
+<!-- Open Graph -->
+<meta property="og:title" content="At First Site Beauty On Location" />
+<meta property="og:description" content="Luxury Bridal Hair & Makeup Serving the Pacific Northwest – On Location Elegance" />
+<meta property="og:url" content="https://atfirstsitebeauty.com/" />
+<meta property="og:image" content="https://atfirstsitebeauty.com/your-og-image.jpg" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="At First Site Beauty On Location" />
+<meta name="twitter:description" content="Luxury Bridal Hair & Makeup Serving the Pacific Northwest – On Location Elegance" />
+<meta name="twitter:image" content="https://atfirstsitebeauty.com/your-og-image.jpg" />
+✅ Replace your-og-image.jpg with your actual hero or header image URL.
+
+✅ 4. Add rel="noopener" to External Links
+📍Update any <a> like this:
+
+html
+Copy
+Edit
+<a href="https://external-link.com" target="_blank" rel="noopener noreferrer">Visit Site</a>
+💡 Replit can find all <a target="_blank"> links — just search and update across files.
+
+✅ 5. Install Google Analytics
+📍Paste just before </head>:
+
+html
+Copy
+Edit
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+✅ Replace G-XXXXXXXXXX with your GA4 tracking ID.
+
+✅ 6. Create a Custom 404 Page
+📍Create 404.tsx (or 404.jsx) in /components:
+
+tsx
+Copy
+Edit
+export default function NotFound() {
+  return (
+    <div className="min-h-screen flex items-center justify-center text-center px-6">
+      <div>
+        <h1 className="text-5xl font-bold text-blush-400 mb-4">404</h1>
+        <p className="text-lg text-gray-700 mb-6">Oops! The page you're looking for doesn't exist.</p>
+        <a href="/" className="text-blush-600 hover:underline">Back to Home</a>
+      </div>
+    </div>
+  );
+}
+📍Update your router in App.tsx:
+
+tsx
+Copy
+Edit
+<Route component={NotFound} />
+✅ 7. Move Inline Styles to CSS/Tailwind
+📍Instead of:
+
+jsx
+Copy
+Edit
+<div style={{ backgroundColor: 'pink' }}>Hello</div>
+✅ Use Tailwind or a class:
+
+jsx
+Copy
+Edit
+<div className="bg-pink-200">Hello</div>
+💡 Run a global search for style={{ and convert them.
+
+✅ 8. Convert and Replace Images with WebP or Compressed Versions
+📍Steps:
+
+Use Squoosh or TinyPNG
+
+Convert to .webp or compress .jpeg/.png
+
+Upload the optimized images to Replit
+
+Replace import paths in files:
+
+ts
+Copy
+Edit
+import bridalImage1 from "@assets/IMG_0970_compressed.webp";
+✅ 9. Obfuscate Emails or Use a Contact Form
+📍Instead of:
+
+html
+Copy
+Edit
+<a href="mailto:info@atfirstsitebeauty.com">Email Us</a>
+✅ Use a form or encode email like:
+
+jsx
+Copy
+Edit
+<a href="mailto:&#105;&#110;&#102;&#111;&#64;&#97;&#116;&#102;&#105;&#114;&#115;&#116;&#115;&#105;&#116;&#101;&#98;&#101;&#97;&#117;&#116;&#121;&#46;&#99;&#111;&#109;">Email Us</a>
+✅ 10. 404 Redirect and Clean URL Rules
+If you're using Express server, add in server.js:
+
+js
+Copy
+Edit
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+✅ This makes sure invalid routes fall back to your React app or 404.
+
+✅ 11. Add <meta name="robots">
+📍Paste inside <head>:
+
+html
+Copy
+Edit
+<meta name="robots" content="index, follow" />
+✅ 12. Ensure Favicon Is Set
+📍Inside <head> (you already have this, double-check):
+
+html
+Copy
+Edit
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+✅ 13. Final HTML Head (for Copy-Paste Reference)
+html
+Copy
+Edit
+<head>
+  <title>At First Site Beauty On Location | Bridal Hair & Makeup</title>
+  <meta name="description" content="Luxury bridal hair and makeup services on-location in the Pacific Northwest. Trusted artists. Stunning results.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://atfirstsitebeauty.com/" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <!-- OG + Twitter Meta -->
+  <!-- [Paste Open Graph and Twitter tags from earlier here] -->
+  <!-- Google Analytics Script -->
+</head>
