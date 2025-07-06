@@ -8,12 +8,21 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigateToSection = useCallback((sectionId: string) => {
+    // Special handling for home section - scroll to top
+    if (sectionId === "home") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      return;
+    }
+
     // If we're already on the home page, scroll to the section
     if (location === '/') {
       const element = document.getElementById(sectionId);
       if (element) {
-        // Calculate proper offset considering the large header
-        const headerHeight = 280; // Match the actual header height
+        // Calculate proper offset considering the header height
+        const headerHeight = 100; // Reduced offset for better positioning
         const elementPosition = element.offsetTop - headerHeight;
         window.scrollTo({
           top: Math.max(0, elementPosition),
@@ -27,14 +36,14 @@ export default function Header() {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          const headerHeight = 280;
+          const headerHeight = 100;
           const elementPosition = element.offsetTop - headerHeight;
           window.scrollTo({
             top: Math.max(0, elementPosition),
             behavior: "smooth"
           });
         }
-      }, 200);
+      }, 300);
     }
   }, [location, setLocation]);
 

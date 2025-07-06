@@ -17,12 +17,7 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  
 
   return (
     <section id="home" className="relative h-screen flex items-center justify-center" itemScope itemType="https://schema.org/Organization">
