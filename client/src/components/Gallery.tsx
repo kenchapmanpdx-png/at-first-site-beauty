@@ -85,21 +85,9 @@ export default function Gallery() {
     <section ref={sectionRef} id="gallery" className="py-20 bg-gray-50 paper-texture">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <div className="rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle luxury-hover luxury-texture shimmer-effect" style={{background: 'linear-gradient(135deg, #f5f1f2 0%, #e6d0d6 100%)'}}>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <div className="sparkle">✦</div>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6 luxury-text">
-              Our <span className="text-white">Portfolio</span>
+          <div className="rounded-3xl p-8 md:p-10 max-w-3xl mx-auto bg-white/90 shadow-lg">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Our <span className="text-blush-400">Portfolio</span>
             </h2>
             <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
               Discover the artistry and elegance that defines our work. Each image tells a story of beauty, confidence, and unforgettable moments.
@@ -111,9 +99,9 @@ export default function Gallery() {
                 <Button
                   key={button.id}
                   onClick={() => setFilter(button.id)}
-                  className={`px-4 sm:px-6 py-2 rounded-full transition-all duration-300 text-sm sm:text-base touch-manipulation luxury-hover ${
+                  className={`px-4 sm:px-6 py-2 rounded-full transition-all duration-300 text-sm sm:text-base touch-manipulation ${
                     filter === button.id
-                      ? "premium-button text-white"
+                      ? "bg-blush-400 text-white"
                       : "bg-white/80 text-gray-700 hover:bg-white hover:text-gray-900 shadow-md"
                   }`}
                 >
