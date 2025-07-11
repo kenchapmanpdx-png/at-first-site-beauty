@@ -6,180 +6,257 @@ import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
 export default function Header() {
   const [location, setLocation] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showDebug, setShowDebug] = useState(false);
+
+  // Debug function to check what's on the page
+  const debugPage = () => {
+    const allIds = Array.from(document.querySelectorAll('[id]')).map(el => ({
+      id: el.id,
+      tag: el.tagName.toLowerCase(),
+      text: el.textContent?.substring(0, 50) + '...'
+    }));
+    
+    const sections = ['about', 'services', 'gallery', 'booking'];
+    const foundSections = sections.map(id => ({
+      id,
+      found: !!document.getElementById(id),
+      element: document.getElementById(id)
+    }));
+
+    return { allIds, foundSections, currentPath: location };
+  };
 
   const navigateToSection = useCallback((sectionId: string) => {
-    console.log(`Navigation clicked for section: ${sectionId}, current location: ${location}`);
+    console.log(`🎯 Navigation clicked for: ${sectionId}`);
+    console.log(`📍 Current location: ${location}`);
     
     // Close mobile menu
     setIsMenuOpen(false);
     
     // Special handling for home section - scroll to top
     if (sectionId === "home") {
-      console.log("Scrolling to top");
+      console.log("🏠 Going home - scrolling to top");
       if (location !== '/') {
         setLocation('/');
         setTimeout(() => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }, 100);
       } else {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
       return;
     }
 
     // Special handling for booking page
     if (sectionId === "booking") {
-      console.log("Navigating to booking page");
+      console.log("📅 Navigating to booking page");
       setLocation('/book');
       return;
     }
 
     // For section navigation
     const scrollToElement = () => {
+      console.log(`🔍 Looking for section: ${sectionId}`);
       const element = document.getElementById(sectionId);
-      console.log(`Looking for element with id: ${sectionId}`, element);
       
       if (element) {
-        const headerHeight = 300; // Header height
-        const elementPosition = element.offsetTop - headerHeight;
-        console.log(`Element position: ${element.offsetTop}, Scroll to: ${elementPosition}`);
+        console.log(`✅ Found element!`);
+        const headerHeight = 300;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY - headerHeight;
         
         window.scrollTo({
           top: Math.max(0, elementPosition),
           behavior: "smooth"
         });
       } else {
-        console.error(`Element with id "${sectionId}" not found`);
-        // List all available IDs for debugging
-        const allIds = Array.from(document.querySelectorAll('[id]')).map(el => el.id);
-        console.log("Available element IDs:", allIds);
+        console.error(`❌ Element with id "${sectionId}" not found!`);
+        alert(`Section "${sectionId}" not found! Check the debug panel.`);
+        setShowDebug(true);
       }
     };
 
     // If we're already on the home page, scroll to the section
     if (location === '/') {
-      console.log("Already on home page, scrolling to section");
       scrollToElement();
     } else {
-      // If we're on a different page, navigate to home and then scroll to section
-      console.log("Navigating to home page first");
+      // Navigate to home first, then scroll
+      console.log("📍 Navigating to home page first...");
       setLocation('/');
-      setTimeout(() => {
-        scrollToElement();
-      }, 500);
+      setTimeout(scrollToElement, 500);
     }
   }, [location, setLocation]);
 
+  const debugInfo = showDebug ? debugPage() : null;
+
   return (
-    <header className="relative bg-white" style={{ height: '280px' }}>
-      {/* Logo Section */}
-      <div className="flex items-center justify-center pt-2 md:pt-8 pb-1">
-        <div className="container mx-auto px-4 flex justify-center">
-          <img
-            src={logo}
-            alt="At First Site Beauty On Location"
-            className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
-            style={{ maxHeight: '180px' }}
-            loading="eager"
-            decoding="async"
-          />
+    <>
+      <header className="relative bg-white" style={{ height: '280px' }}>
+        {/* Logo Section */}
+        <div className="flex items-center justify-center pt-2 md:pt-8 pb-1">
+          <div className="container mx-auto px-4 flex justify-center">
+            <img
+              src={logo}
+              alt="At First Site Beauty On Location"
+              className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
+              style={{ maxHeight: '180px' }}
+              loading="eager"
+              decoding="async"
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Desktop Navigation Menu Bar */}
-      <nav className="hidden md:flex justify-center pb-3 overflow-x-auto">
-        <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
-          <button
-            onClick={() => navigateToSection("home")}
-            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => navigateToSection("about")}
-            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
-          >
-            About
-          </button>
-          <button
-            onClick={() => navigateToSection("services")}
-            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
-          >
-            Services
-          </button>
-          <button
-            onClick={() => navigateToSection("gallery")}
-            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
-          >
-            Gallery
-          </button>
-          <button
-            onClick={() => navigateToSection("booking")}
-            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
-          >
-            Booking
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Menu Button */}
-      <div className="md:hidden flex justify-center pb-1">
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-blush-400 transition-colors duration-200"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          <span className="font-medium">MENU</span>
-        </button>
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t shadow-lg">
-          <nav className="flex flex-col py-4">
+        {/* Desktop Navigation Menu Bar */}
+        <nav className="hidden md:flex justify-center pb-3 overflow-x-auto">
+          <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
             <button
               onClick={() => navigateToSection("home")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Home
             </button>
             <button
               onClick={() => navigateToSection("about")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               About
             </button>
             <button
               onClick={() => navigateToSection("services")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Services
             </button>
             <button
               onClick={() => navigateToSection("gallery")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Gallery
             </button>
             <button
               onClick={() => navigateToSection("booking")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Booking
             </button>
-          </nav>
+            <button
+              onClick={() => setShowDebug(!showDebug)}
+              className="ml-8 px-3 py-1 bg-red-500 text-white rounded text-sm"
+            >
+              {showDebug ? 'Hide' : 'Show'} Debug
+            </button>
+          </div>
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex justify-center pb-1">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-blush-400 transition-colors duration-200"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <span className="font-medium">MENU</span>
+          </button>
+        </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t shadow-lg">
+            <nav className="flex flex-col py-4">
+              <button
+                onClick={() => navigateToSection("home")}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => navigateToSection("about")}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                About
+              </button>
+              <button
+                onClick={() => navigateToSection("services")}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Services
+              </button>
+              <button
+                onClick={() => navigateToSection("gallery")}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Gallery
+              </button>
+              <button
+                onClick={() => navigateToSection("booking")}
+                className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
+              >
+                Booking
+              </button>
+              <button
+                onClick={() => setShowDebug(!showDebug)}
+                className="text-red-500 font-medium px-6 py-3 text-left border-t mt-2"
+              >
+                {showDebug ? 'Hide' : 'Show'} Debug Info
+              </button>
+            </nav>
+          </div>
+        )}
+
+        {/* Soft white transition to hero photo */}
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
+      </header>
+
+      {/* Debug Panel */}
+      {showDebug && debugInfo && (
+        <div className="fixed top-80 left-4 right-4 md:left-auto md:right-4 md:w-96 bg-black text-white p-4 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto">
+          <h3 className="text-lg font-bold mb-2">🐛 Debug Panel</h3>
+          
+          <div className="mb-4">
+            <h4 className="font-semibold text-yellow-300">Current Path:</h4>
+            <p className="font-mono">{debugInfo.currentPath}</p>
+          </div>
+
+          <div className="mb-4">
+            <h4 className="font-semibold text-yellow-300">Navigation Sections Status:</h4>
+            {debugInfo.foundSections.map(section => (
+              <div key={section.id} className="flex items-center gap-2">
+                <span className={section.found ? 'text-green-400' : 'text-red-400'}>
+                  {section.found ? '✅' : '❌'}
+                </span>
+                <span className="font-mono">#{section.id}</span>
+                <span className="text-gray-400">
+                  {section.found ? 'Found' : 'NOT FOUND!'}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mb-4">
+            <h4 className="font-semibold text-yellow-300">All IDs on page ({debugInfo.allIds.length}):</h4>
+            <div className="max-h-48 overflow-y-auto bg-gray-900 p-2 rounded">
+              {debugInfo.allIds.length === 0 ? (
+                <p className="text-red-400">No elements with IDs found!</p>
+              ) : (
+                debugInfo.allIds.map((item, i) => (
+                  <div key={i} className="text-xs font-mono mb-1">
+                    <span className="text-blue-400">&lt;{item.tag}&gt;</span>{' '}
+                    <span className="text-green-400">id="{item.id}"</span>{' '}
+                    <span className="text-gray-500">{item.text}</span>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
+
+          <button
+            onClick={() => setShowDebug(false)}
+            className="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+          >
+            Close Debug
+          </button>
         </div>
       )}
-
-      {/* Soft white transition to hero photo */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
-    </header>
+    </>
   );
 }
