@@ -61,9 +61,4 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// Temporarily test with minimal app
-function TestApp() {
-  return <div>Test App Working</div>;
-}
-
-createRoot(document.getElementById("root")!).render(<TestApp />);
+createRoot(document.getElementById("root")!).render(<App />);
