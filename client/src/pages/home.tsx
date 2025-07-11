@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from "../components/About";
-import Services from "../components/Services";
-import Gallery from "../components/Gallery";
+import LazyServices from "../components/LazyServices";
+import LazyGallery from "../components/LazyGallery";
 import Booking from "../components/Booking";
 import Footer from "../components/Footer";
 import PageHead from "../components/PageHead";
@@ -51,9 +51,9 @@ export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
       />
       <Header />
       <Hero />
-      
+
       <About />
-      <Services />
+      <LazyServices />
       {/* Booking CTA between Services and Gallery */}
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
@@ -70,7 +70,7 @@ export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
           </button>
         </div>
       </section>
-      <Gallery />
+      <LazyGallery />
       <Testimonials />
       {/* Booking CTA before main Booking section */}
       <section className="py-8 bg-gray-50">

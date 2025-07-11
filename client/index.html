@@ -1,75 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!-- Meta Core -->
-    <title>Luxury Bridal Hair & Makeup | At First Site Beauty</title>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="At First Site Beauty offers luxury bridal hair and makeup services across the Pacific Northwest. On-location beauty for your dream day." />
-    <meta name="keywords" content="bridal hair, bridal makeup, Pacific Northwest, on-location beauty, wedding stylist, hair artist, makeup artist" />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://atfirstsitebeauty.com/" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Open Graph (Social Media Preview) -->
-    <meta property="og:title" content="At First Site Beauty On Location" />
-    <meta property="og:description" content="Luxury Bridal Hair & Makeup Serving the Pacific Northwest – On Location Elegance" />
-    <meta property="og:image" content="https://atfirstsitebeauty.com/attached_assets/IMG_0970_1749066905982.png" />
-    <meta property="og:url" content="https://atfirstsitebeauty.com/" />
-    <meta property="og:type" content="website" />
+    <!-- Critical CSS inline -->
+    <style>
+      body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      .loading { min-height: 100vh; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #6b7280; }
+    </style>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="At First Site Beauty On Location" />
-    <meta name="twitter:description" content="Luxury Bridal Hair & Makeup Serving the Pacific Northwest – On Location Elegance" />
-    <meta name="twitter:image" content="https://atfirstsitebeauty.com/attached_assets/IMG_0970_1749066905982.png" />
-
-    <!-- Sitemap -->
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" as="style">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-    <!-- Load non-critical CSS asynchronously -->
+    <!-- Load fonts asynchronously -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap"></noscript>
 
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "At First Site Beauty",
-      "url": "https://atfirstsitebeauty.com",
-      "logo": "https://atfirstsitebeauty.com/logo.png",
-      "description": "Luxury on-location bridal hair & makeup in the Pacific Northwest.",
-      "image": "https://atfirstsitebeauty.com/cover.jpg",
-      "areaServed": {
-        "@type": "Place",
-        "name": "Pacific Northwest"
-      },
-      "serviceType": "Bridal Hair and Makeup"
-    }
+    <!-- Font loading optimization script -->
+    <script>
+      if ('fonts' in document) {
+        document.fonts.load('400 1em Playfair Display');
+        document.fonts.load('400 1em Lato');
+      }
     </script>
+
+    <!-- Defer non-critical scripts -->
+    <script type="module" src="/src/main.tsx" defer></script>
   </head>
-<body>
-<div id="root"></div>
-<script type="module" src="/src/main.tsx"></script>
-<!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-<script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-</body>
+  <body>
+    <div id="root">
+      <div class="loading">Loading At First Site Beauty...</div>
+    </div>
+  </body>
 </html>
