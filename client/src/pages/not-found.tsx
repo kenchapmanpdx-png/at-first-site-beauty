@@ -14,7 +14,7 @@ export default function NotFound() {
         description="The page you're looking for cannot be found. Return to At First Site Beauty's home page to explore our luxury bridal hair and makeup services."
         path="/404"
       />
-      
+
       <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-blush-50 to-gray-100 px-4">
         <div className="w-full max-w-lg mx-4 bg-white rounded-lg shadow-2xl border-0">
           <div className="pt-8 pb-8 text-center">
@@ -40,7 +40,7 @@ export default function NotFound() {
                 <Home className="mr-2 h-5 w-5" />
                 Return to Home
               </Button>
-              
+
               <Button 
                 variant="outline"
                 onClick={() => window.history.back()}

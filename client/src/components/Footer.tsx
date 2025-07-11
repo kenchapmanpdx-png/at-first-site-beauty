@@ -40,6 +40,7 @@ export default function Footer() {
             <a
               href="#"
               className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blush-300 hover:text-white transition-colors duration-200"
+              target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram size={20} />
@@ -47,6 +48,7 @@ export default function Footer() {
             <a
               href="#"
               className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blush-300 hover:text-white transition-colors duration-200"
+              target="_blank"
               rel="noopener noreferrer"
             >
               <FaPinterest size={20} />
