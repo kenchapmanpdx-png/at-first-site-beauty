@@ -10,6 +10,35 @@ if (import.meta.env.PROD) {
   console.warn = () => {};
 }
 
+// Handle HMR connection errors in development
+if (import.meta.env.DEV && import.meta.hot) {
+  import.meta.hot.on('vite:error', (payload) => {
+    console.warn('Vite HMR error, attempting reconnection...', payload);
+  });
+  
+  // Add connection retry logic
+  let retryCount = 0;
+  const maxRetries = 5;
+  
+  const handleConnectionError = () => {
+    if (retryCount < maxRetries) {
+      retryCount++;
+      console.log(`HMR connection failed, retrying... (${retryCount}/${maxRetries})`);
+      setTimeout(() => {
+        if (import.meta.hot) {
+          import.meta.hot.send('vite:ping');
+        }
+      }, 1000 * retryCount);
+    }
+  };
+  
+  window.addEventListener('error', (event) => {
+    if (event.message.includes('network error') || event.message.includes('WebSocket')) {
+      handleConnectionError();
+    }
+  });
+}
+
 // Initialize AOS
 AOS.init({
   duration: 800,
