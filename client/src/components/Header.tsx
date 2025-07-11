@@ -9,21 +9,31 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToElement = (elementId: string) => {
+    console.log(`Scrolling to element: ${elementId}`);
     const element = document.getElementById(elementId);
+    console.log(`Element found:`, element);
+    
     if (element) {
-      const headerHeight = 120;
+      const headerHeight = 300; // Updated to match actual header height
       const elementPosition = element.offsetTop - headerHeight;
+      console.log(`Element position: ${element.offsetTop}, Header height: ${headerHeight}, Scroll to: ${elementPosition}`);
+      
       window.scrollTo({
         top: Math.max(0, elementPosition),
         behavior: "smooth"
       });
+    } else {
+      console.error(`Element with id "${elementId}" not found`);
+      console.log("Available elements with IDs:", Array.from(document.querySelectorAll('[id]')).map(el => el.id));
     }
   };
 
   const handleNavClick = (target: string) => {
+    console.log(`Navigation clicked for: ${target}, current location: ${location}`);
     setIsMenuOpen(false);
 
     if (target === "home") {
+      console.log("Navigating to home");
       if (location !== '/') {
         setLocation('/');
         setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
@@ -34,6 +44,7 @@ export default function Header() {
     }
 
     if (target === "booking") {
+      console.log("Navigating to booking page");
       setLocation('/book');
       return;
     }
@@ -41,10 +52,12 @@ export default function Header() {
     // For section navigation
     if (location !== '/') {
       // Navigate to home first, then scroll
+      console.log("Not on home page, navigating to home first");
       setLocation('/');
-      setTimeout(() => scrollToElement(target), 300);
+      setTimeout(() => scrollToElement(target), 500); // Increased timeout
     } else {
       // Already on home, just scroll
+      console.log("Already on home page, scrolling to section");
       scrollToElement(target);
     }
   };
