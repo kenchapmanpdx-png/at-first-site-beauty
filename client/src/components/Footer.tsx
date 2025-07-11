@@ -1,4 +1,4 @@
-import { FaInstagram, FaPinterest } from "react-icons/fa";
+import { SocialLinks } from "./SocialLinks";
 
 export default function Footer() {
   return (
@@ -36,24 +36,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="flex justify-center space-x-4 mb-6">
-            <a
-              href="#"
-              className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blush-300 hover:text-white transition-colors duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaInstagram size={20} />
-            </a>
-            <a
-              href="#"
-              className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-blush-300 hover:text-white transition-colors duration-200"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaPinterest size={20} />
-            </a>
-          </div>
+          <SocialLinks />
 
           <p className="text-gray-500 text-sm">
             © 2024 At First Site Beauty. All rights reserved.

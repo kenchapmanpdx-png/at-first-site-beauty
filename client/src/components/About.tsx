@@ -60,13 +60,13 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
           {/* Hollie */}
           <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
-            <img
+            <LazyImage
               src={holliePhoto}
               alt="Hollie DeMarais - Professional bridal hairstylist and salon owner with over 18 years of experience specializing in wedding hair styling and bridal beauty services in the Pacific Northwest"
               className="w-64 md:w-80 h-80 md:h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
               loading="lazy"
-              width="320"
-              height="384"
+              width={320}
+              height={384}
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
               Hollie
@@ -81,13 +81,13 @@ export default function About() {
 
           {/* Cedar Lapp-Ngauamo */}
           <article className="scroll-animation text-center" itemScope itemType="https://schema.org/Person">
-            <img
+            <LazyImage
               src={cedarPhoto}
               alt="Cedar Lapp-Ngauamo - Founder and owner of Cedars Academy of Makeup Artistry, the only private career college in the Pacific Northwest focused exclusively on professional makeup artistry education and bridal beauty training"
               className="w-64 md:w-80 h-80 md:h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
               loading="lazy"
-              width="320"
-              height="384"
+              width={320}
+              height={384}
             />
             <h3 className="font-playfair text-2xl font-semibold text-gray-900 mb-2" itemProp="name">
               Cedar Lapp-Ngauamo

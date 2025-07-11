@@ -5,6 +5,7 @@ import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
+import LazyImage from "@/components/LazyImage";
 
 // Import images for the bridal party services
 import bridalPartyImage1 from "@assets/IMG_0973_1749066905983.png";
@@ -201,7 +202,7 @@ export default function BridalParty() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div data-aos="fade-up">
-              <img
+              <LazyImage
                 src={bridalPartyImage1}
                 alt="Professional bridal party makeup application with coordinated styling"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg mb-4"
@@ -216,7 +217,7 @@ export default function BridalParty() {
             </div>
 
             <div data-aos="fade-up">
-              <img
+              <LazyImage
                 src={bridalPartyImage2}
                 alt="Bridal party hair styling with cohesive elegant looks"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg mb-4"
@@ -231,7 +232,7 @@ export default function BridalParty() {
             </div>
 
             <div data-aos="fade-up">
-              <img
+              <LazyImage
                 src={bridalPartyImage3}
                 alt="Finished bridal party look showcasing professional styling results"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg mb-4"

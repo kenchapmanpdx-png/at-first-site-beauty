@@ -14,6 +14,16 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Touch-optimized navigation with accessibility features
 
 ## Recent Changes (July 2025)
+✓ **WebP Image Optimization & Performance Enhancements** (July 11, 2025)
+- Implemented comprehensive WebP image optimization with 60%+ file size reduction
+- Added critical font preloading for Playfair Display with async loading for non-critical fonts
+- Integrated SocialLinks component with proper Facebook/Instagram links in Footer
+- Converted all img tags to LazyImage components with automatic WebP support
+- Created optimize-images.mjs script for automated WebP conversion with Sharp
+- Enhanced 404 page with comprehensive navigation and service links
+- All images now served in WebP format with PNG/JPEG fallbacks for better performance
+- Optimized font loading strategy: preload critical fonts, async load decorative fonts
+
 ✓ **Vite Config Deployment Fix Completed** (July 11, 2025)
 - Fixed deployment error caused by non-existent @radix-ui/react-button package reference
 - Confirmed Button component actually uses @radix-ui/react-slot (which is installed)

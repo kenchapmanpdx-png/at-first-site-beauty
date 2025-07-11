@@ -6,6 +6,7 @@ import { useLocation } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
+import LazyImage from "@/components/LazyImage";
 
 // Import before/after images
 import beforeImage1 from "@assets/IMG_0959.jpeg";
@@ -180,7 +181,7 @@ export default function TeethWhitening() {
                         <h3 className="font-playfair text-xl font-semibold text-gray-700 mb-4">
                           Before
                         </h3>
-                        <img
+                        <LazyImage
                           src={images.before}
                           alt="Before teeth whitening treatment"
                           className="w-full h-64 object-cover rounded-2xl shadow-md"
@@ -193,7 +194,7 @@ export default function TeethWhitening() {
                         <h3 className="font-playfair text-xl font-semibold text-blush-400 mb-4">
                           After
                         </h3>
-                        <img
+                        <LazyImage
                           src={images.after}
                           alt="After professional teeth whitening treatment"
                           className="w-full h-64 object-cover rounded-2xl shadow-md"
