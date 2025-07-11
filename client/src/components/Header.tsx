@@ -1,5 +1,4 @@
-
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
@@ -8,59 +7,74 @@ export default function Header() {
   const [location, setLocation] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const scrollToElement = (elementId: string) => {
-    console.log(`Scrolling to element: ${elementId}`);
-    const element = document.getElementById(elementId);
-    console.log(`Element found:`, element);
+  const navigateToSection = useCallback((sectionId: string) => {
+    console.log(`Navigation clicked for section: ${sectionId}, current location: ${location}`);
     
-    if (element) {
-      const headerHeight = 300; // Updated to match actual header height
-      const elementPosition = element.offsetTop - headerHeight;
-      console.log(`Element position: ${element.offsetTop}, Header height: ${headerHeight}, Scroll to: ${elementPosition}`);
-      
-      window.scrollTo({
-        top: Math.max(0, elementPosition),
-        behavior: "smooth"
-      });
-    } else {
-      console.error(`Element with id "${elementId}" not found`);
-      console.log("Available elements with IDs:", Array.from(document.querySelectorAll('[id]')).map(el => el.id));
-    }
-  };
-
-  const handleNavClick = (target: string) => {
-    console.log(`Navigation clicked for: ${target}, current location: ${location}`);
+    // Close mobile menu
     setIsMenuOpen(false);
-
-    if (target === "home") {
-      console.log("Navigating to home");
+    
+    // Special handling for home section - scroll to top
+    if (sectionId === "home") {
+      console.log("Scrolling to top");
       if (location !== '/') {
         setLocation('/');
-        setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 100);
+        setTimeout(() => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        }, 100);
       } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       }
       return;
     }
 
-    if (target === "booking") {
+    // Special handling for booking page
+    if (sectionId === "booking") {
       console.log("Navigating to booking page");
       setLocation('/book');
       return;
     }
 
     // For section navigation
-    if (location !== '/') {
-      // Navigate to home first, then scroll
-      console.log("Not on home page, navigating to home first");
-      setLocation('/');
-      setTimeout(() => scrollToElement(target), 500); // Increased timeout
-    } else {
-      // Already on home, just scroll
+    const scrollToElement = () => {
+      const element = document.getElementById(sectionId);
+      console.log(`Looking for element with id: ${sectionId}`, element);
+      
+      if (element) {
+        const headerHeight = 300; // Header height
+        const elementPosition = element.offsetTop - headerHeight;
+        console.log(`Element position: ${element.offsetTop}, Scroll to: ${elementPosition}`);
+        
+        window.scrollTo({
+          top: Math.max(0, elementPosition),
+          behavior: "smooth"
+        });
+      } else {
+        console.error(`Element with id "${sectionId}" not found`);
+        // List all available IDs for debugging
+        const allIds = Array.from(document.querySelectorAll('[id]')).map(el => el.id);
+        console.log("Available element IDs:", allIds);
+      }
+    };
+
+    // If we're already on the home page, scroll to the section
+    if (location === '/') {
       console.log("Already on home page, scrolling to section");
-      scrollToElement(target);
+      scrollToElement();
+    } else {
+      // If we're on a different page, navigate to home and then scroll to section
+      console.log("Navigating to home page first");
+      setLocation('/');
+      setTimeout(() => {
+        scrollToElement();
+      }, 500);
     }
-  };
+  }, [location, setLocation]);
 
   return (
     <header className="relative bg-white" style={{ height: '280px' }}>
@@ -78,41 +92,35 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation Menu Bar */}
       <nav className="hidden md:flex justify-center pb-3 overflow-x-auto">
         <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
           <button
-            onClick={() => handleNavClick("home")}
+            onClick={() => navigateToSection("home")}
             className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
           >
             Home
           </button>
           <button
-            onClick={() => handleNavClick("about")}
+            onClick={() => navigateToSection("about")}
             className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
           >
             About
           </button>
           <button
-            onClick={() => handleNavClick("services")}
+            onClick={() => navigateToSection("services")}
             className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
           >
             Services
           </button>
           <button
-            onClick={() => handleNavClick("gallery")}
+            onClick={() => navigateToSection("gallery")}
             className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
           >
             Gallery
           </button>
           <button
-            onClick={() => handleNavClick("testimonials")}
-            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
-          >
-            Testimonials
-          </button>
-          <button
-            onClick={() => handleNavClick("booking")}
+            onClick={() => navigateToSection("booking")}
             className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
           >
             Booking
@@ -137,37 +145,31 @@ export default function Header() {
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t shadow-lg">
           <nav className="flex flex-col py-4">
             <button
-              onClick={() => handleNavClick("home")}
+              onClick={() => navigateToSection("home")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
             >
               Home
             </button>
             <button
-              onClick={() => handleNavClick("about")}
+              onClick={() => navigateToSection("about")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
             >
               About
             </button>
             <button
-              onClick={() => handleNavClick("services")}
+              onClick={() => navigateToSection("services")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
             >
               Services
             </button>
             <button
-              onClick={() => handleNavClick("gallery")}
+              onClick={() => navigateToSection("gallery")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
             >
               Gallery
             </button>
             <button
-              onClick={() => handleNavClick("testimonials")}
-              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
-            >
-              Testimonials
-            </button>
-            <button
-              onClick={() => handleNavClick("booking")}
+              onClick={() => navigateToSection("booking")}
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left"
             >
               Booking
