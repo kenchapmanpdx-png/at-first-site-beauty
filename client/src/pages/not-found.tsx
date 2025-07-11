@@ -52,34 +52,79 @@ export default function NotFound() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-gray-200">
-              <p className="text-sm text-gray-500 mb-3">
+              <p className="text-sm text-gray-500 mb-4">
                 Looking for our services?
               </p>
-              <div className="flex flex-wrap justify-center gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 <Button 
                   variant="ghost" 
                   size="sm"
                   onClick={() => setLocation('/bridal-design-session')}
-                  className="text-blush-600 hover:bg-blush-50 text-sm"
+                  className="text-blush-600 hover:bg-blush-50 text-sm justify-start"
                 >
-                  Bridal Design Session
+                  💍 Bridal Design Session
                 </Button>
                 <Button 
                   variant="ghost" 
                   size="sm"
                   onClick={() => setLocation('/bridal-party')}
-                  className="text-blush-600 hover:bg-blush-50 text-sm"
+                  className="text-blush-600 hover:bg-blush-50 text-sm justify-start"
                 >
-                  Bridal Party Services
+                  👰 Bridal Party Services
                 </Button>
                 <Button 
                   variant="ghost" 
                   size="sm"
-                  onClick={() => setLocation('/book')}
-                  className="text-blush-600 hover:bg-blush-50 text-sm"
+                  onClick={() => setLocation('/spray-tanning')}
+                  className="text-blush-600 hover:bg-blush-50 text-sm justify-start"
                 >
-                  Book Now
+                  ☀️ Spray Tanning
                 </Button>
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={() => setLocation('/teeth-whitening')}
+                  className="text-blush-600 hover:bg-blush-50 text-sm justify-start"
+                >
+                  ✨ Teeth Whitening
+                </Button>
+              </div>
+              
+              <div className="bg-blush-50 rounded-lg p-4 mb-4">
+                <h3 className="font-medium text-gray-900 mb-2">Need Help?</h3>
+                <p className="text-sm text-gray-600 mb-3">
+                  We're here to help you find exactly what you're looking for.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => setLocation('/book')}
+                    className="border-blush-300 text-blush-600 hover:bg-blush-50"
+                  >
+                    📞 Book Consultation
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    onClick={() => window.location.href = 'mailto:hello@atfirstsitebeauty.com'}
+                    className="border-blush-300 text-blush-600 hover:bg-blush-50"
+                  >
+                    ✉️ Contact Us
+                  </Button>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <p className="text-xs text-gray-400 mb-2">
+                  Popular searches:
+                </p>
+                <div className="flex flex-wrap justify-center gap-2 text-xs">
+                  <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Wedding Hair</span>
+                  <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Bridal Makeup</span>
+                  <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Beauty Services</span>
+                  <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded">Mobile Beauty</span>
+                </div>
               </div>
             </div>
           </div>
