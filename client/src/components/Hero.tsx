@@ -1,19 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import Image from 'next/image'; // Assuming next/image is used for optimization
-
-// Define LazyImage component (or replace with your actual LazyImage component)
-const LazyImage = ({ src, alt, width, height, className, loading }) => (
-  <Image
-    src={src}
-    alt={alt}
-    width={width}
-    height={height}
-    className={className}
-    loading={loading}
-  />
-);
+import LazyImage from "./LazyImage";
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
