@@ -3,9 +3,8 @@ const CRITICAL_RESOURCES = [
   '/',
   '/src/main.tsx',
   '/src/index.css',
-  '/src/assets/IMG_0970_1749066905982.png',
-  '/attached_assets/1At First Site Logo (1000 x 350 px).png',
-  'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&family=Dancing+Script:wght@400;500;600;700&family=New+Icon+Script&display=swap'
+  '/attached_assets/webp/IMG_0970_1749066905982.webp',
+  '/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp'
 ];
 
 // Install event - cache critical resources

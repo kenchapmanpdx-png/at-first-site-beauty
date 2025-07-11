@@ -24,30 +24,76 @@
     <meta name="twitter:description" content="At First Site Beauty delivers luxury bridal hair styling and makeup artistry on-location throughout the Pacific Northwest. Expert artists, elegant results.">
     <meta name="twitter:image" content="https://atfirstsitebeauty.com/attached_assets/webp/IMG_0970_1749066905982.webp">
 
-    <!-- Preconnect to external domains -->
+    <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preload critical WebP images -->
+    <link rel="preload" href="/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp" as="image" type="image/webp">
+    <link rel="preload" href="/attached_assets/webp/IMG_0970_1749066905982.webp" as="image" type="image/webp">
 
-    <!-- Critical CSS inline -->
+    <!-- Critical CSS inline - expanded for better initial rendering -->
     <style>
-      body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-      .loading { min-height: 100vh; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #6b7280; }
+      /* Critical above-the-fold styles */
+      * { box-sizing: border-box; }
+      body { 
+        margin: 0; 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fff;
+      }
+      .loading { 
+        min-height: 100vh; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        font-size: 18px; 
+        color: #6b7280; 
+        font-weight: 300;
+      }
+      /* Hero section critical styles */
+      .hero-section {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      }
+      /* Header critical styles */
+      .header-fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+      }
     </style>
 
-    <!-- Load fonts asynchronously - combined request -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&family=Dancing+Script:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&family=Dancing+Script:wght@400;700&display=swap"></noscript>
-
-    <!-- Font loading optimization script -->
+    <!-- Non-blocking font loading with fallbacks -->
     <script>
-      if ('fonts' in document) {
-        document.fonts.load('400 1em Playfair Display');
-        document.fonts.load('400 1em Lato');
-      }
+      // Load fonts asynchronously without render blocking
+      (function() {
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&family=Dancing+Script:wght@400;700&display=swap';
+        link.media = 'print';
+        link.onload = function() { this.media = 'all'; };
+        document.head.appendChild(link);
+        
+        // Preload critical fonts
+        if ('fonts' in document) {
+          var playfair = new FontFace('Playfair Display', 'url(https://fonts.gstatic.com/s/playfairdisplay/v36/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvXDYbtXK-F2qC0s.woff2)');
+          var lato = new FontFace('Lato', 'url(https://fonts.gstatic.com/s/lato/v24/S6uNw1MaUWXwuqMv7R9IOw.woff2)');
+          
+          playfair.load().then(function(font) { document.fonts.add(font); });
+          lato.load().then(function(font) { document.fonts.add(font); });
+        }
+      })();
     </script>
 
-    <!-- Defer non-critical scripts -->
-    <script type="module" src="/src/main.tsx" defer></script>
+    <!-- Non-blocking main script -->
+    <script type="module" src="/src/main.tsx" async></script>
   </head>
   <body>
     <div id="root">
