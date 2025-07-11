@@ -721,9 +721,9 @@
       0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
-  /* Prevent button cropping by adding margin */
+  /* Remove margin that could interfere with button interactions */
   .sparkle-button {
-    margin: 8px;
+    margin: 0;
   }
 
   .sparkle-button:active {
@@ -741,7 +741,7 @@
       0 0 16px rgba(255, 255, 255, 0.6),
       0 0 24px rgba(255, 255, 255, 0.4);
     opacity: 0;
-    z-index: 10;
+    z-index: 1;
     pointer-events: none;
     will-change: opacity, transform;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
