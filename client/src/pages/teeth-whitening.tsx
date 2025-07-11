@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Star, CheckCircle, Clock, Shield, DollarSign } from "lucide-react";
@@ -84,9 +83,10 @@ export default function TeethWhitening() {
   return (
     <div className="min-h-screen bg-white">
       <PageHead 
-        title="Professional Teeth Whitening | At First Site"
-        description="Professional teeth whitening services for brides in the Pacific Northwest. Enhance your wedding day smile with safe, effective whitening treatments."
+        title="Professional Teeth Whitening for Weddings | At First Site Beauty"
+        description="Professional-grade teeth whitening for brides. Higher percentage Hydrogen Peroxide with specialized light activation. Safe, effective, immediate results for your wedding day smile."
         path="/teeth-whitening"
+        ogImage="/attached_assets/webp/IMG_0970_1749066905982.webp"
         pageType="service-detail"
       />
       <Header />

@@ -103,14 +103,16 @@ export default function SprayTanning() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-pink-50 to-amber-50">
       <PageHead 
-        title="Professional Spray Tanning | At First Site"
-        description="Professional spray tanning services for brides in the Pacific Northwest. Achieve a natural, radiant glow for your wedding day with expert spray tan application."
+        title="Professional Spray Tanning for Brides | At First Site Beauty"
+        description="Premium bridal spray tanning with hyaluronic acid formula. No orange undertones, natural radiant glow. Professional application by trained artists for Pacific Northwest weddings."
         path="/spray-tanning"
+        ogImage="/attached_assets/webp/IMG_0970_1749066905982.webp"
         pageType="service-detail"
       />
-      <Header />
+
+      {/* Hero Section */}
 
       <main ref={sectionRef} className="pt-8">
         {/* Hero Section */}

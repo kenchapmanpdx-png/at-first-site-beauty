@@ -22,14 +22,14 @@ export default function PageHead({
     let pageDescription = description;
     
     if (pageType === 'about') {
-      pageTitle = "Meet Your Dream Team | At First Site";
-      pageDescription = "Get to know our elite team of bridal stylists dedicated to luxury hair and makeup for weddings in the Pacific Northwest.";
+      pageTitle = "Meet Your Dream Team | At First Site Beauty";
+      pageDescription = "Meet our elite bridal beauty team: Hollie DeMarais (18+ years salon owner) and Cedar Lapp-Ngauamo (founder Cedars Academy). Expert hair styling and makeup artistry for Pacific Northwest weddings.";
     } else if (pageType === 'services') {
-      pageTitle = "Bridal Hair & Makeup Services | At First Site";
-      pageDescription = "Explore our bridal beauty services including hair styling, makeup trials, and on-location wedding packages in OR and WA.";
+      pageTitle = "Luxury Bridal Hair & Makeup Services | At First Site Beauty";
+      pageDescription = "Premium bridal beauty services: hair styling, makeup trials, spray tanning, teeth whitening. On-location wedding packages in Oregon and Washington. Professional artists, elegant results.";
     } else if (pageType === 'contact') {
-      pageTitle = "Schedule Your Bridal Consultation | At First Site";
-      pageDescription = "Book a free consultation to start planning your bridal look with our expert hair and makeup team.";
+      pageTitle = "Schedule Your Bridal Consultation | At First Site Beauty";
+      pageDescription = "Book your free bridal beauty consultation with our expert hair and makeup team. Serving Pacific Northwest weddings with luxury on-location services.";
     } else if (pageType === 'service-detail') {
       // Use the passed title and description for service detail pages
       pageTitle = title;
