@@ -1,3 +1,4 @@
+
 import { useState, useRef, useCallback } from 'react';
 
 interface LazyImageProps {
@@ -7,6 +8,8 @@ interface LazyImageProps {
   style?: React.CSSProperties;
   loading?: 'lazy' | 'eager';
   onLoad?: () => void;
+  width?: number;
+  height?: number;
 }
 
 export default function LazyImage({ 
@@ -15,10 +18,13 @@ export default function LazyImage({
   className = '', 
   style, 
   loading = 'lazy',
-  onLoad 
+  onLoad,
+  width,
+  height
 }: LazyImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [webpError, setWebpError] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
   const handleLoad = useCallback(() => {
@@ -29,6 +35,22 @@ export default function LazyImage({
   const handleError = useCallback(() => {
     setHasError(true);
   }, []);
+
+  const handleWebpError = useCallback(() => {
+    setWebpError(true);
+  }, []);
+
+  // Generate WebP path from original image path
+  const getWebpSrc = (originalSrc: string) => {
+    if (originalSrc.includes('/attached_assets/')) {
+      return originalSrc
+        .replace('/attached_assets/', '/attached_assets/webp/')
+        .replace(/\.(png|jpg|jpeg)$/i, '.webp');
+    }
+    return originalSrc.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  };
+
+  const webpSrc = getWebpSrc(src);
 
   if (hasError) {
     return (
@@ -46,18 +68,29 @@ export default function LazyImage({
       {!isLoaded && (
         <div className="absolute inset-0 bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 animate-pulse" />
       )}
-      <img
-        ref={imgRef}
-        src={src}
-        alt={alt}
-        loading={loading}
-        onLoad={handleLoad}
-        onError={handleError}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        decoding="async"
-      />
+      <picture>
+        {!webpError && (
+          <source 
+            srcSet={webpSrc} 
+            type="image/webp"
+            onError={handleWebpError}
+          />
+        )}
+        <img
+          ref={imgRef}
+          src={src}
+          alt={alt}
+          loading={loading}
+          onLoad={handleLoad}
+          onError={handleError}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${
+            isLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
+          decoding="async"
+          width={width}
+          height={height}
+        />
+      </picture>
     </div>
   );
 }
