@@ -55,6 +55,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <Router />
         <Toaster />
         <PerformanceMonitor />
       </TooltipProvider>

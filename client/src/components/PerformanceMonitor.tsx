@@ -3,27 +3,26 @@ import { useEffect } from 'react';
 
 export function PerformanceMonitor() {
   useEffect(() => {
-    // Report Core Web Vitals
-    const reportWebVitals = () => {
-      if ('web-vital' in window) {
-        import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-          getCLS(console.log);
-          getFID(console.log);
-          getFCP(console.log);
-          getLCP(console.log);
-          getTTFB(console.log);
-        });
+    // Basic performance monitoring without web-vitals dependency
+    const reportPerformance = () => {
+      if ('performance' in window && performance.getEntriesByType) {
+        // Report basic performance metrics
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        if (navigation) {
+          console.log('Page Load Time:', Math.round(navigation.loadEventEnd - navigation.fetchStart), 'ms');
+          console.log('DOM Content Loaded:', Math.round(navigation.domContentLoadedEventEnd - navigation.fetchStart), 'ms');
+        }
       }
     };
 
     // Report after page load
     if (document.readyState === 'complete') {
-      reportWebVitals();
+      reportPerformance();
     } else {
-      window.addEventListener('load', reportWebVitals);
+      window.addEventListener('load', reportPerformance);
     }
 
-    return () => window.removeEventListener('load', reportWebVitals);
+    return () => window.removeEventListener('load', reportPerformance);
   }, []);
 
   return null;
