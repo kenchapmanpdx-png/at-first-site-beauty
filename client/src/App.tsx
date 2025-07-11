@@ -12,6 +12,7 @@ import SprayTanning from "./pages/spray-tanning";
 import TeethWhitening from "./pages/teeth-whitening";
 import BookingPage from "./pages/booking-page";
 import NotFound from "./pages/not-found";
+import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 
 function Router() {
   return (
@@ -55,7 +56,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <PerformanceMonitor />
       </TooltipProvider>
     </QueryClientProvider>
   );
