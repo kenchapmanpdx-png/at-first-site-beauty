@@ -2,11 +2,18 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import viteCompression from "vite-plugin-compression";
 
 export default defineConfig({
   plugins: [
     react(),
     runtimeErrorOverlay(),
+    viteCompression({
+      algorithm: 'gzip',
+      verbose: true,
+      threshold: 1024,
+      deleteOriginFile: false
+    }),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
@@ -27,6 +34,13 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    }
   },
   server: {
     fs: {
