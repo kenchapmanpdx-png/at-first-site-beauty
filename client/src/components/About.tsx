@@ -5,9 +5,9 @@ import { useLocation } from "wouter";
 import LazyImage from "@/components/LazyImage";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
-// Import team photos
-import holliePhoto from "@assets/HollieD_1749336182646_1750713275911.png";
-import cedarPhoto from "@assets/IMG_8201.jpeg";
+// Import team photos from correct location
+const holliePhoto = "/attached_assets/HollieD_1749336182646_1750713275911.png";
+const cedarPhoto = "/attached_assets/IMG_8201.jpeg";
 
 export default function About() {
   const sectionRef = useRef<HTMLElement>(null);
