@@ -7,7 +7,6 @@ import LazyGallery from "../components/LazyGallery";
 import Booking from "../components/Booking";
 import Footer from "../components/Footer";
 import PageHead from "../components/PageHead";
-import Testimonials from "../components/Testimonials";
 
 interface HomeProps {
   scrollToAbout?: boolean;
@@ -71,7 +70,6 @@ export default function Home({ scrollToAbout, scrollToServices }: HomeProps) {
         </div>
       </section>
       <LazyGallery />
-      <Testimonials />
       {/* Booking CTA before main Booking section */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
