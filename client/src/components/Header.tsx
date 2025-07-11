@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
@@ -6,91 +6,80 @@ import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
 export default function Header() {
   const [location, setLocation] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showDebug, setShowDebug] = useState(false);
+  const [debugInfo, setDebugInfo] = useState<any>(null);
 
-  // Debug function to check what's on the page
-  const debugPage = () => {
-    const allIds = Array.from(document.querySelectorAll('[id]')).map(el => ({
-      id: el.id,
-      tag: el.tagName.toLowerCase(),
-      text: el.textContent?.substring(0, 50) + '...'
-    }));
+  // Auto-run debug on mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const allIds = Array.from(document.querySelectorAll('[id]')).map(el => el.id);
+      const sections = ['about', 'services', 'gallery'];
+      const foundSections = sections.map(id => ({
+        id,
+        found: !!document.getElementById(id)
+      }));
+      
+      console.log('🔍 AUTO DEBUG RESULTS:');
+      console.log('Current path:', location);
+      console.log('Looking for sections:', sections);
+      console.log('Found sections:', foundSections);
+      console.log('All IDs on page:', allIds);
+      
+      setDebugInfo({
+        allIds,
+        foundSections,
+        currentPath: location
+      });
+    }, 1000);
     
-    const sections = ['about', 'services', 'gallery', 'booking'];
-    const foundSections = sections.map(id => ({
-      id,
-      found: !!document.getElementById(id),
-      element: document.getElementById(id)
-    }));
-
-    return { allIds, foundSections, currentPath: location };
-  };
+    return () => clearTimeout(timer);
+  }, [location]);
 
   const navigateToSection = useCallback((sectionId: string) => {
-    console.log(`🎯 Navigation clicked for: ${sectionId}`);
-    console.log(`📍 Current location: ${location}`);
+    // Test if click is working
+    alert(`Clicked: ${sectionId}`);
+    console.log(`Navigation clicked: ${sectionId}`);
     
     // Close mobile menu
     setIsMenuOpen(false);
     
-    // Special handling for home section - scroll to top
+    // Special handling for home section
     if (sectionId === "home") {
-      console.log("🏠 Going home - scrolling to top");
-      if (location !== '/') {
-        setLocation('/');
-        setTimeout(() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }, 100);
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
 
     // Special handling for booking page
     if (sectionId === "booking") {
-      console.log("📅 Navigating to booking page");
       setLocation('/book');
       return;
     }
 
     // For section navigation
-    const scrollToElement = () => {
-      console.log(`🔍 Looking for section: ${sectionId}`);
-      const element = document.getElementById(sectionId);
-      
-      if (element) {
-        console.log(`✅ Found element!`);
-        const headerHeight = 300;
-        const elementPosition = element.getBoundingClientRect().top + window.scrollY - headerHeight;
-        
-        window.scrollTo({
-          top: Math.max(0, elementPosition),
-          behavior: "smooth"
-        });
-      } else {
-        console.error(`❌ Element with id "${sectionId}" not found!`);
-        alert(`Section "${sectionId}" not found! Check the debug panel.`);
-        setShowDebug(true);
-      }
-    };
-
-    // If we're already on the home page, scroll to the section
-    if (location === '/') {
-      scrollToElement();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 300;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY - headerHeight;
+      window.scrollTo({
+        top: Math.max(0, elementPosition),
+        behavior: "smooth"
+      });
     } else {
-      // Navigate to home first, then scroll
-      console.log("📍 Navigating to home page first...");
-      setLocation('/');
-      setTimeout(scrollToElement, 500);
+      alert(`Section "${sectionId}" not found on page!`);
     }
-  }, [location, setLocation]);
-
-  const debugInfo = showDebug ? debugPage() : null;
+  }, [setLocation]);
 
   return (
     <>
-      <header className="relative bg-white" style={{ height: '280px' }}>
+      {/* Debug Info at Top */}
+      <div className="fixed top-0 left-0 right-0 bg-red-600 text-white p-2 z-[9999] text-xs">
+        <div className="max-w-6xl mx-auto">
+          <strong>DEBUG MODE:</strong> Path: {location} | 
+          Sections found: {debugInfo?.foundSections.filter(s => s.found).map(s => s.id).join(', ') || 'checking...'} | 
+          Missing: {debugInfo?.foundSections.filter(s => !s.found).map(s => s.id).join(', ') || 'checking...'}
+        </div>
+      </div>
+
+      <header className="relative bg-white mt-8" style={{ height: '280px' }}>
         {/* Logo Section */}
         <div className="flex items-center justify-center pt-2 md:pt-8 pb-1">
           <div className="container mx-auto px-4 flex justify-center">
@@ -137,12 +126,6 @@ export default function Header() {
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation"
             >
               Booking
-            </button>
-            <button
-              onClick={() => setShowDebug(!showDebug)}
-              className="ml-8 px-3 py-1 bg-red-500 text-white rounded text-sm"
-            >
-              {showDebug ? 'Hide' : 'Show'} Debug
             </button>
           </div>
         </nav>
@@ -193,12 +176,6 @@ export default function Header() {
               >
                 Booking
               </button>
-              <button
-                onClick={() => setShowDebug(!showDebug)}
-                className="text-red-500 font-medium px-6 py-3 text-left border-t mt-2"
-              >
-                {showDebug ? 'Hide' : 'Show'} Debug Info
-              </button>
             </nav>
           </div>
         )}
@@ -206,57 +183,6 @@ export default function Header() {
         {/* Soft white transition to hero photo */}
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-b from-white/80 to-transparent"></div>
       </header>
-
-      {/* Debug Panel */}
-      {showDebug && debugInfo && (
-        <div className="fixed top-80 left-4 right-4 md:left-auto md:right-4 md:w-96 bg-black text-white p-4 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto">
-          <h3 className="text-lg font-bold mb-2">🐛 Debug Panel</h3>
-          
-          <div className="mb-4">
-            <h4 className="font-semibold text-yellow-300">Current Path:</h4>
-            <p className="font-mono">{debugInfo.currentPath}</p>
-          </div>
-
-          <div className="mb-4">
-            <h4 className="font-semibold text-yellow-300">Navigation Sections Status:</h4>
-            {debugInfo.foundSections.map(section => (
-              <div key={section.id} className="flex items-center gap-2">
-                <span className={section.found ? 'text-green-400' : 'text-red-400'}>
-                  {section.found ? '✅' : '❌'}
-                </span>
-                <span className="font-mono">#{section.id}</span>
-                <span className="text-gray-400">
-                  {section.found ? 'Found' : 'NOT FOUND!'}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <div className="mb-4">
-            <h4 className="font-semibold text-yellow-300">All IDs on page ({debugInfo.allIds.length}):</h4>
-            <div className="max-h-48 overflow-y-auto bg-gray-900 p-2 rounded">
-              {debugInfo.allIds.length === 0 ? (
-                <p className="text-red-400">No elements with IDs found!</p>
-              ) : (
-                debugInfo.allIds.map((item, i) => (
-                  <div key={i} className="text-xs font-mono mb-1">
-                    <span className="text-blue-400">&lt;{item.tag}&gt;</span>{' '}
-                    <span className="text-green-400">id="{item.id}"</span>{' '}
-                    <span className="text-gray-500">{item.text}</span>
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-
-          <button
-            onClick={() => setShowDebug(false)}
-            className="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-          >
-            Close Debug
-          </button>
-        </div>
-      )}
     </>
   );
 }
