@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroImage from "@assets/IMG_0970_1749066905982.png";
+// Using direct path for asset loading
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -25,7 +25,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover parallax-bg filter grayscale"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: `url(/attached_assets/IMG_0970_1749066905982.png)`,
           backgroundPosition: 'center 35%',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',

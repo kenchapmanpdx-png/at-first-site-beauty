@@ -7,11 +7,7 @@ import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import LazyImage from "@/components/LazyImage";
 
-// Import images for the bridal party services
-import bridalPartyImage1 from "@assets/IMG_0973_1749066905983.png";
-import bridalPartyImage2 from "@assets/IMG_0944.png";
-import bridalPartyImage3 from "@assets/IMG_0971_1749066905983.png";
-import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
+// Using direct paths for asset loading
 
 export default function BridalParty() {
   const [, setLocation] = useLocation();
@@ -203,7 +199,7 @@ export default function BridalParty() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div data-aos="fade-up">
               <LazyImage
-                src={bridalPartyImage1}
+                src="/attached_assets/IMG_0973_1749066905983.png"
                 alt="Professional bridal party makeup application with coordinated styling"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg mb-4"
                 loading="lazy"
@@ -218,7 +214,7 @@ export default function BridalParty() {
 
             <div data-aos="fade-up">
               <LazyImage
-                src={bridalPartyImage2}
+                src="/attached_assets/IMG_0944.png"
                 alt="Bridal party hair styling with cohesive elegant looks"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg mb-4"
                 loading="lazy"
@@ -233,7 +229,7 @@ export default function BridalParty() {
 
             <div data-aos="fade-up">
               <LazyImage
-                src={bridalPartyImage3}
+                src="/attached_assets/IMG_0971_1749066905983.png"
                 alt="Finished bridal party look showcasing professional styling results"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg mb-4"
                 loading="lazy"

@@ -1,11 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import LazyImage from "./LazyImage";
-import bridalImage1 from "@assets/IMG_0970_1749066905982.png";
-import makeupApplication from "@assets/IMG_0944.png";
-import bridalHair from "@assets/IMG_0943.png";
-import holliePhoto from "@assets/HollieD_1749336182646_1750713275911.png";
-import cedarPhoto from "@assets/IMG_8201.jpeg";
+// Using direct paths for asset loading
 
 export default function Gallery() {
   const [filter, setFilter] = useState("all");
@@ -35,35 +31,35 @@ export default function Gallery() {
 
   const galleryImages = [
     {
-      src: bridalImage1,
+      src: "/attached_assets/IMG_0970_1749066905982.png",
       alt: "Bridal makeup application by At First Site Beauty - luxury on-location wedding styling in Pacific Northwest",
       category: "bridal",
       title: "Outdoor Bridal Styling",
       description: "Natural bridal beauty with outdoor elegance in the Pacific Northwest",
     },
     {
-      src: makeupApplication,
+      src: "/attached_assets/IMG_0944.png",
       alt: "Professional bridal makeup application by At First Site Beauty certified makeup artist",
       category: "bridal",
       title: "Professional Makeup Application",
       description: "Expert bridal makeup application using premium products",
     },
     {
-      src: bridalHair,
+      src: "/attached_assets/IMG_0943.png",
       alt: "Elegant bridal hair styling by At First Site Beauty - Pacific Northwest wedding hair specialist",
       category: "party",
       title: "Bridal Party Hair Styling",
       description: "Professional hair styling for bridal party members",
     },
     {
-      src: holliePhoto,
+      src: "/attached_assets/HollieD_1749336182646_1750713275911.png",
       alt: "Bridal party coordination by At First Site Beauty - coordinated beauty looks for wedding party",
       category: "party",
       title: "Bridal Party Coordination",
       description: "Coordinated bridal party looks maintaining bride as focal point",
     },
     {
-      src: cedarPhoto,
+      src: "/attached_assets/IMG_8201.jpeg",
       alt: "Bridal party makeup application by At First Site Beauty professional makeup artist",
       category: "party",
       title: "Bridal Party Makeup",

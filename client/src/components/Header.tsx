@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "wouter";
 import LazyImage from "./LazyImage";
-import logo from "@assets/1At First Site Logo (1000 x 350 px).png";
+// Using direct path for asset loading
 
 export default function Header() {
   const [location, setLocation] = useLocation();
@@ -37,7 +37,7 @@ export default function Header() {
       <div className="flex items-center justify-center pt-2 md:pt-8 pb-1 relative z-10">
         <div className="container mx-auto px-4 flex justify-center">
           <LazyImage
-            src={logo}
+            src="/attached_assets/1At First Site Logo (1000 x 350 px).png"
             alt="At First Site Beauty On Location"
             className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
             style={{ maxHeight: '180px' }}

@@ -5,7 +5,7 @@ import { useLocation } from "wouter";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PageHead from "../components/PageHead";
-import bridalDesignImage from "@assets/IMG_0971_1749066905983.png";
+// Using direct paths for asset loading
 
 export default function BridalDesignSession() {
   const [, setLocation] = useLocation();
@@ -99,7 +99,7 @@ export default function BridalDesignSession() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-8">
                 <div data-aos="zoom-in" data-aos-delay="100">
                   <img
-                    src={bridalDesignImage}
+                    src="/attached_assets/IMG_0971_1749066905983.png"
                     alt="Luxury bridal design session showing professional makeup application and hair styling in private bridal suite with comprehensive wear testing protocol"
                     className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-2xl"
                     loading="lazy"

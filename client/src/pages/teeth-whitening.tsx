@@ -7,11 +7,7 @@ import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
 import LazyImage from "@/components/LazyImage";
 
-// Import before/after images
-import beforeImage1 from "@assets/IMG_0959.jpeg";
-import afterImage1 from "@assets/IMG_6201.jpeg";
-import beforeImage2 from "@assets/IMG_6202.jpeg";
-import afterImage2 from "@assets/IMG_0943.png";
+// Using direct paths for asset loading
 
 export default function TeethWhitening() {
   const [, setLocation] = useLocation();
@@ -51,8 +47,8 @@ export default function TeethWhitening() {
 
   const beforeAfterImages = [
     {
-      before: beforeImage1,
-      after: afterImage1,
+      before: "/attached_assets/IMG_0959.jpeg",
+      after: "/attached_assets/IMG_6201.jpeg",
       description: "Professional whitening results - immediate brightness improvement"
     }
   ];
@@ -86,7 +82,7 @@ export default function TeethWhitening() {
         title="Professional Teeth Whitening for Weddings | At First Site Beauty"
         description="Professional-grade teeth whitening for brides. Higher percentage Hydrogen Peroxide with specialized light activation. Safe, effective, immediate results for your wedding day smile."
         path="/teeth-whitening"
-        ogImage="/attached_assets/webp/IMG_0970_1749066905982.webp"
+        ogImage="/attached_assets/IMG_0970_1749066905982.png"
         pageType="service-detail"
       />
       <Header />
