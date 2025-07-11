@@ -1,12 +1,14 @@
 
-const sharp = require('sharp');
-const fs = require('fs');
+import sharp from 'sharp';
+import fs from 'fs';
 
 async function optimizeLogo() {
   const logoPath = './attached_assets/1At First Site Logo (1000 x 350 px).png';
   const outputPath = './attached_assets/logo-optimized.png';
   
   try {
+    console.log('🔍 Checking for logo file...');
+    
     // Check if file exists first
     if (!fs.existsSync(logoPath)) {
       console.error('❌ Logo file not found at:', logoPath);
@@ -15,6 +17,8 @@ async function optimizeLogo() {
       files.forEach(file => console.log('  -', file));
       return;
     }
+    
+    console.log('✅ Logo file found, optimizing...');
     
     await sharp(logoPath)
       .png({ 
@@ -35,6 +39,7 @@ async function optimizeLogo() {
     
   } catch (error) {
     console.error('❌ Error:', error.message);
+    console.error('Stack:', error.stack);
   }
 }
 
