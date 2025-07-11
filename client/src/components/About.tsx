@@ -84,7 +84,7 @@ export default function About() {
             <LazyImage
               src={cedarPhoto}
               alt="Cedar Lapp-Ngauamo - Founder and owner of Cedars Academy of Makeup Artistry, the only private career college in the Pacific Northwest focused exclusively on professional makeup artistry education and bridal beauty training"
-              className="w-64 md:w-80 h-80 md:h-96 object-cover object-[center_top] rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+              className="w-64 md:w-80 h-80 md:h-96 object-cover object-top rounded-2xl mx-auto mb-6 shadow-lg filter grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
               loading="lazy"
               width={320}
               height={384}
