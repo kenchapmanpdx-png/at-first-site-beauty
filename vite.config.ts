@@ -11,8 +11,18 @@ export default defineConfig({
     viteCompression({
       algorithm: 'gzip',
       verbose: true,
-      threshold: 1024,
-      deleteOriginFile: false
+      threshold: 512,
+      deleteOriginFile: false,
+      compressionOptions: {
+        level: 9
+      }
+    }),
+    viteCompression({
+      algorithm: 'brotliCompress',
+      verbose: true,
+      threshold: 512,
+      deleteOriginFile: false,
+      ext: '.br'
     }),
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
@@ -39,6 +49,14 @@ export default defineConfig({
       compress: {
         drop_console: true,
         drop_debugger: true
+      }
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['@radix-ui/react-dialog', '@radix-ui/react-button']
+        }
       }
     }
   },
