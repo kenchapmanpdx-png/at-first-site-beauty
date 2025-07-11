@@ -47,14 +47,6 @@ export default function Hero() {
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
         <h1 className="sr-only">At First Site Beauty</h1>
-        <LazyImage
-            src="/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp"
-            alt="At First Site Beauty On Location - Premier bridal hair styling and makeup artistry services delivered to your venue throughout the Pacific Northwest"
-            className="w-full max-w-md mx-auto mb-8 filter drop-shadow-2xl"
-            loading="eager"
-            width={1000}
-            height={350}
-          />
         <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-light opacity-90 fade-slide-up ${
           isLoaded ? 'stagger-2' : ''
         }`}>
