@@ -5,9 +5,6 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      fontFamily: {
-        cursive: ["Great Vibes", "Dancing Script", "cursive"],
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -48,6 +45,25 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
 
+        // Custom bridal colors
+        blush: {
+          50: "hsl(var(--blush-50))",
+          100: "hsl(var(--blush-100))",
+          200: "hsl(var(--blush-200))",
+          300: "hsl(var(--blush-300))",
+          400: "hsl(var(--blush-400))",
+          500: "hsl(var(--blush-500))",
+        },
+        sage: {
+          50: "hsl(var(--sage-50))",
+          100: "hsl(var(--sage-100))",
+          200: "hsl(var(--sage-200))",
+        },
+      },
+      fontFamily: {
+        playfair: ["Playfair Display", "serif"],
+        lato: ["Lato", "sans-serif"],
+        dancing: ["Dancing Script", "cursive"],
       },
 
     },
