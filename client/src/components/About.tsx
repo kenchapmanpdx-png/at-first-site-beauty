@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Sparkles, Heart, CheckCircle, Star } from "lucide-react";
 import { useLocation } from "wouter";
 import LazyImage from "@/components/LazyImage";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 // Import team photos
 import holliePhoto from "@assets/HollieD_1749336182646_1750713275911.png";
