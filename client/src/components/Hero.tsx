@@ -1,7 +1,19 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-// Using direct path for asset loading
+import Image from 'next/image'; // Assuming next/image is used for optimization
+
+// Define LazyImage component (or replace with your actual LazyImage component)
+const LazyImage = ({ src, alt, width, height, className, loading }) => (
+  <Image
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    className={className}
+    loading={loading}
+  />
+);
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -47,6 +59,14 @@ export default function Hero() {
         isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}>
         <h1 className="sr-only">At First Site Beauty</h1>
+        <LazyImage
+            src="/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp"
+            alt="At First Site Beauty On Location - Premier bridal hair styling and makeup artistry services delivered to your venue throughout the Pacific Northwest"
+            className="w-full max-w-md mx-auto mb-8 filter drop-shadow-2xl"
+            loading="eager"
+            width={1000}
+            height={350}
+          />
         <div className={`font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight fade-slide-up ${
           isLoaded ? 'stagger-1' : ''
         }`}>
