@@ -14,6 +14,14 @@ A luxury bridal beauty and wedding preparation platform that delivers personaliz
 - Touch-optimized navigation with accessibility features
 
 ## Recent Changes (July 2025)
+✓ **Vite Config Deployment Fix** (July 11, 2025)
+- Fixed deployment error caused by non-existent @radix-ui/react-button package reference
+- Identified that vite.config.ts manual chunks configuration referenced missing package
+- Confirmed Button component actually uses @radix-ui/react-slot (which is installed)
+- Fixed missing useIntersectionObserver import in About component causing runtime error
+- Required change: Replace '@radix-ui/react-button' with '@radix-ui/react-slot' in vite config
+- Application now runs properly with all runtime errors resolved
+
 ✓ **Deployment Build Error Fix** (July 11, 2025)
 - Fixed deployment build failure by installing terser package as dependency
 - Resolved "Build failed due to missing terser dependency" error
