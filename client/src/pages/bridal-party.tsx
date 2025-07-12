@@ -131,7 +131,7 @@ export default function BridalParty() {
 
           <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
             <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Bridal Party <span className="text-blush-400">Hair & Makeup</span>
+              Bridal Party Hair & Makeup <span className="text-blush-400">Services</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
               Creating a cohesive, stunning bridal party look that complements your vision while celebrating each individual's unique beauty.

@@ -40,7 +40,7 @@ export default function Header() {
             src="/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp"
             alt="At First Site Beauty On Location"
             className="h-auto object-contain w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl"
-            style={{ maxHeight: '180px' }}
+            style={{ maxHeight: '180px', maxWidth: '100%' }}
             loading="eager"
             width={1000}
             height={350}
@@ -71,6 +71,34 @@ export default function Header() {
             style={{ position: 'relative', zIndex: 30 }}
           >
             Services
+          </button>
+          <button
+            onClick={() => setLocation('/bridal-design-session')}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30"
+            style={{ position: 'relative', zIndex: 30 }}
+          >
+            Bridal Design
+          </button>
+          <button
+            onClick={() => setLocation('/bridal-party')}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30"
+            style={{ position: 'relative', zIndex: 30 }}
+          >
+            Bridal Party
+          </button>
+          <button
+            onClick={() => setLocation('/teeth-whitening')}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30"
+            style={{ position: 'relative', zIndex: 30 }}
+          >
+            Teeth Whitening
+          </button>
+          <button
+            onClick={() => setLocation('/spray-tanning')}
+            className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30"
+            style={{ position: 'relative', zIndex: 30 }}
+          >
+            Spray Tanning
           </button>
           <button
             onClick={() => navigateToSection("gallery")}
@@ -123,6 +151,30 @@ export default function Header() {
               className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30"
             >
               Services
+            </button>
+            <button
+              onClick={() => setLocation('/bridal-design-session')}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30"
+            >
+              Bridal Design
+            </button>
+            <button
+              onClick={() => setLocation('/bridal-party')}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30"
+            >
+              Bridal Party
+            </button>
+            <button
+              onClick={() => setLocation('/teeth-whitening')}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30"
+            >
+              Teeth Whitening
+            </button>
+            <button
+              onClick={() => setLocation('/spray-tanning')}
+              className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30"
+            >
+              Spray Tanning
             </button>
             <button
               onClick={() => navigateToSection("gallery")}

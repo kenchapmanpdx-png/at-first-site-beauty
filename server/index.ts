@@ -17,6 +17,14 @@ app.use(compression({
   }
 }));
 
+// Add security headers
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  next();
+});
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -52,6 +60,16 @@ app.use((req, res, next) => {
 
 (async () => {
   const server = await registerRoutes(app);
+
+  // Handle 404 for invalid routes
+  const validPaths = ['/', '/book', '/teeth-whitening', '/spray-tanning', '/bridal-design-session', '/bridal-party'];
+
+  app.get('*', (req, res, next) => {
+    if (!validPaths.includes(req.path) && !req.path.startsWith('/api')) {
+      res.status(404);
+    }
+    next();
+  });
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
