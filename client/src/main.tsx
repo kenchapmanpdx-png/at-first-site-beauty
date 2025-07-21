@@ -2,12 +2,17 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-// Simple app initialization
-const root = createRoot(document.getElementById("root")!);
-root.render(<App />);
+// Immediate app initialization without waiting for DOM
+const rootElement = document.getElementById("root");
+if (rootElement) {
+  const root = createRoot(rootElement);
+  root.render(<App />);
+} else {
+  console.error("Root element not found");
+}
 
-// Initialize AOS after React renders
-document.addEventListener('DOMContentLoaded', async () => {
+// Initialize AOS after a short delay to ensure React has mounted
+setTimeout(async () => {
   try {
     const AOS = await import('aos');
     await import('aos/dist/aos.css');
@@ -22,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   } catch (error) {
     console.warn('AOS failed to load, continuing without animations');
   }
-});
+}, 100);
 
 // Register service worker for production only
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
