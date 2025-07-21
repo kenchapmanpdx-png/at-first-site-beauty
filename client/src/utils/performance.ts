@@ -87,9 +87,7 @@ export const compressImage = (file: File, quality: number = 0.8): Promise<Blob> 
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-      canvas.toBlob((blob) => {
-        if (blob) resolve(blob);
-      }, 'image/jpeg', quality);
+      canvas.toBlob(resolve, 'image/jpeg', quality);
     };
     
     img.src = URL.createObjectURL(file);

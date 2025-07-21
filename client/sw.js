@@ -1,5 +1,4 @@
 const CACHE_NAME = 'at-first-sight-v1';
-const CACHE_NAME = 'atfirstsite-v3';
 const CRITICAL_RESOURCES = [
   '/',
   '/src/main.tsx',
@@ -7,15 +6,6 @@ const CRITICAL_RESOURCES = [
   '/attached_assets/webp/IMG_0970_1749066905982.webp',
   '/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp'
 ];
-
-// Cache strategy for different resource types
-const CACHE_STRATEGIES = {
-  'fonts': 'cache-first',
-  'images': 'cache-first', 
-  'js': 'stale-while-revalidate',
-  'css': 'stale-while-revalidate',
-  'html': 'network-first'
-};
 
 // Install event - cache critical resources
 self.addEventListener('install', (event) => {

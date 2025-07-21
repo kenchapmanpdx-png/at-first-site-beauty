@@ -72,7 +72,7 @@ export default function BridalDesignSession() {
               </div>
 
               <h1 className="font-playfair text-4xl md:text-6xl font-bold text-gray-900 mb-9">
-                Luxury Bridal Design Session - Your Look, <span className="text-blush-400">Locked In.</span>
+                Where Your Dream Look Begins. Your Look, <span className="text-blush-400">Locked In.</span>
               </h1>
 
               <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100 text-center" data-aos="fade-up" data-aos-delay="200">

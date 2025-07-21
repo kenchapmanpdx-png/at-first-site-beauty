@@ -17,14 +17,6 @@ app.use(compression({
   }
 }));
 
-// Add security headers
-app.use((req, res, next) => {
-  res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
-  res.setHeader('X-XSS-Protection', '1; mode=block');
-  next();
-});
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -61,16 +53,6 @@ app.use((req, res, next) => {
 (async () => {
   const server = await registerRoutes(app);
 
-  // Handle 404 for invalid routes
-  const validPaths = ['/', '/book', '/teeth-whitening', '/spray-tanning', '/bridal-design-session', '/bridal-party'];
-
-  app.get('*', (req, res, next) => {
-    if (!validPaths.includes(req.path) && !req.path.startsWith('/api')) {
-      res.status(404);
-    }
-    next();
-  });
-
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
@@ -88,22 +70,15 @@ app.use((req, res, next) => {
     serveStatic(app);
   }
 
-  // ALWAYS serve the app on port 5000 as required by Replit workflow
-  const port = parseInt(process.env.PORT || "5000");
-  const host = "0.0.0.0";
-  
-  server.listen(port, host, () => {
-    log(`serving on http://${host}:${port}`);
-    console.log(`🚀 Server ready at http://${host}:${port}`);
-    console.log(`🌐 Replit preview should be available`);
-    console.log(`📱 App accessible on all network interfaces`);
-  });
-  
-  // Handle server errors
-  server.on('error', (err) => {
-    console.error('❌ Server error:', err);
-    if (err.code === 'EADDRINUSE') {
-      console.error(`❌ Port ${port} is already in use`);
-    }
+  // ALWAYS serve the app on port 5000
+  // this serves both the API and the client.
+  // It is the only port that is not firewalled.
+  const port = 5000;
+  server.listen({
+    port,
+    host: "0.0.0.0",
+    reusePort: true,
+  }, () => {
+    log(`serving on port ${port}`);
   });
 })();
