@@ -15,3 +15,22 @@ if (rootElement) {
 } else {
   console.error("main.tsx: Root element not found");
 }
+
+// Initialize AOS after React has mounted and DOM is ready
+setTimeout(async () => {
+  try {
+    const AOS = await import('aos');
+    await import('aos/dist/aos.css');
+    
+    AOS.default.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      offset: 120,
+      delay: 100
+    });
+    console.log("AOS initialized successfully");
+  } catch (error) {
+    console.warn('AOS failed to load, continuing without animations');
+  }
+}, 1000);

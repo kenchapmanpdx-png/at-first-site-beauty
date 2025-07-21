@@ -1,4 +1,12 @@
 import { useEffect } from "react";
+import { Route, Switch } from "wouter";
+import Home from "./pages/home";
+import BookingPage from "./pages/booking-page";
+import BridalDesignSession from "./pages/bridal-design-session";
+import BridalParty from "./pages/bridal-party";
+import SprayTanning from "./pages/spray-tanning";
+import TeethWhitening from "./pages/teeth-whitening";
+import NotFound from "./pages/not-found";
 
 function App() {
   console.log("App: Component function called");
@@ -16,21 +24,29 @@ function App() {
   console.log("App: About to render JSX");
   
   return (
-    <div style={{ 
-      padding: '40px', 
-      fontFamily: 'Arial, sans-serif',
-      backgroundColor: '#f5f7fa',
-      minHeight: '100vh',
-      textAlign: 'center'
-    }}>
-      <h1 style={{ color: '#ad3b68', marginBottom: '20px' }}>At First Site Beauty</h1>
-      <p style={{ fontSize: '18px', color: '#333' }}>✅ App is loading successfully!</p>
-      <p style={{ fontSize: '16px', color: '#666' }}>React is now working properly. Ready to restore the full site.</p>
-      <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
-        <h3 style={{ color: '#4f46e5' }}>Loading Issue Fixed!</h3>
-        <p>The React app is now mounting correctly. The previous loading screen issue has been resolved.</p>
-      </div>
-    </div>
+    <Switch>
+      <Route path="/">
+        {() => <Home />}
+      </Route>
+      <Route path="/book">
+        {() => <BookingPage />}
+      </Route>
+      <Route path="/bridal-design-session">
+        {() => <BridalDesignSession />}
+      </Route>
+      <Route path="/bridal-party">
+        {() => <BridalParty />}
+      </Route>
+      <Route path="/spray-tanning">
+        {() => <SprayTanning />}
+      </Route>
+      <Route path="/teeth-whitening">
+        {() => <TeethWhitening />}
+      </Route>
+      <Route>
+        {() => <NotFound />}
+      </Route>
+    </Switch>
   );
 }
 
