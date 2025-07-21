@@ -140,14 +140,6 @@
       <div class="loading">Loading At First Site Beauty...</div>
     </div>
     
-    <!-- Async script loading to prevent render blocking -->
-    <script>
-      // Load main script asynchronously
-      const script = document.createElement('script');
-      script.type = 'module';
-      script.src = '/src/main.tsx';
-      script.async = true;
-      document.body.appendChild(script);
-    </script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
