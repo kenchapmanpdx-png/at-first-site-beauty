@@ -17,7 +17,7 @@ import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={() => <Home />} />
+      <Route path="/" component={Home} />
       <Route path="/about" component={() => <Home scrollToAbout={true} />} />
       <Route path="/services" component={() => <Home scrollToServices={true} />} />
       <Route path="/teeth-whitening" component={TeethWhitening} />
