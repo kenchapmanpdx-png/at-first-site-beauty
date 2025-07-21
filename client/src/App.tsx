@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Home from "./pages/home";
 
 function App() {
   useEffect(() => {
@@ -7,8 +6,10 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Home />
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+      <h1>At First Site Beauty</h1>
+      <p>App is loading successfully!</p>
+      <p>Test version - working on fixing the full site.</p>
     </div>
   );
 }
