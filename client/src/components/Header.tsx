@@ -34,7 +34,7 @@ export default function Header() {
   return (
     <header className="relative bg-white" style={{ height: '320px' }}>
       {/* Logo Section */}
-      <div className="flex items-center justify-center pt-6 md:pt-12 pb-1 relative z-10">
+      <div className="flex items-center justify-center pt-10 md:pt-16 pb-1 relative z-10">
         <div className="container mx-auto px-4 flex justify-center">
           <LazyImage
             src="/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp"
