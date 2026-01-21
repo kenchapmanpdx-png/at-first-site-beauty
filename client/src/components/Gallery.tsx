@@ -29,43 +29,7 @@ export default function Gallery() {
     return () => observer.disconnect();
   }, []);
 
-  const galleryImages = [
-    {
-      src: "/attached_assets/IMG_0970_1749066905982.png",
-      alt: "Bridal makeup application by At First Site Beauty - luxury on-location wedding styling in Pacific Northwest",
-      category: "bridal",
-      title: "Outdoor Bridal Styling",
-      description: "Natural bridal beauty with outdoor elegance in the Pacific Northwest",
-    },
-    {
-      src: "/attached_assets/IMG_0944.png",
-      alt: "Professional bridal makeup application by At First Site Beauty certified makeup artist",
-      category: "bridal",
-      title: "Professional Makeup Application",
-      description: "Expert bridal makeup application using premium products",
-    },
-    {
-      src: "/attached_assets/IMG_0943.png",
-      alt: "Elegant bridal hair styling by At First Site Beauty - Pacific Northwest wedding hair specialist",
-      category: "party",
-      title: "Bridal Party Hair Styling",
-      description: "Professional hair styling for bridal party members",
-    },
-    {
-      src: "/attached_assets/HollieD_1749336182646_1750713275911.png",
-      alt: "Bridal party coordination by At First Site Beauty - coordinated beauty looks for wedding party",
-      category: "party",
-      title: "Bridal Party Coordination",
-      description: "Coordinated bridal party looks maintaining bride as focal point",
-    },
-    {
-      src: "/attached_assets/IMG_8201.jpeg",
-      alt: "Bridal party makeup application by At First Site Beauty professional makeup artist",
-      category: "party",
-      title: "Bridal Party Makeup",
-      description: "Expert makeup application for bridal party members",
-    },
-  ];
+  const galleryImages: { src: string; alt: string; category: string; title: string; description: string; }[] = [];
 
   const filterButtons = [
     { id: "all", label: "All" },
@@ -73,15 +37,15 @@ export default function Gallery() {
     { id: "party", label: "Bridal Party" },
   ];
 
-  const filteredImages = filter === "all" 
-    ? galleryImages 
+  const filteredImages = filter === "all"
+    ? galleryImages
     : galleryImages.filter(image => image.category === filter);
 
   return (
     <section ref={sectionRef} id="gallery" className="py-20 bg-gray-50 paper-texture">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <div className="rounded-3xl p-8 md:p-10 max-w3xl mx-auto sparkle-section luxury-hover luxury-texture shimmer-effect" style={{background: 'linear-gradient(135deg, #f5f1f2 0%, #e6d0d6 100%)'}}>
+          <div className="rounded-3xl p-8 md:p-10 max-w3xl mx-auto sparkle-section luxury-hover luxury-texture shimmer-effect" style={{ background: 'linear-gradient(135deg, #f5f1f2 0%, #e6d0d6 100%)' }}>
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
@@ -107,11 +71,10 @@ export default function Gallery() {
                 <Button
                   key={button.id}
                   onClick={() => setFilter(button.id)}
-                  className={`px-4 sm:px-6 py-2 rounded-full transition-all duration-300 text-sm sm:text-base touch-manipulation ${
-                    filter === button.id
-                      ? "bg-blush-400 text-white"
-                      : "bg-white/80 text-gray-700 hover:bg-white hover:text-gray-900 shadow-md"
-                  }`}
+                  className={`px-4 sm:px-6 py-2 rounded-full transition-all duration-300 text-sm sm:text-base touch-manipulation ${filter === button.id
+                    ? "bg-blush-400 text-white"
+                    : "bg-white/80 text-gray-700 hover:bg-white hover:text-gray-900 shadow-md"
+                    }`}
                 >
                   {button.label}
                 </Button>
@@ -122,27 +85,35 @@ export default function Gallery() {
 
         {/* Masonry Gallery Grid with SEO optimization */}
         <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-3 md:gap-4 lg:gap-6 space-y-3 md:space-y-4 lg:space-y-6" itemScope itemType="https://schema.org/ImageGallery">
-          {filteredImages.map((image, index) => (
-            <figure
-              key={index}
-              className="scroll-animation gallery-item break-inside-avoid"
-              itemScope
-              itemType="https://schema.org/ImageObject"
-            >
-              <LazyImage
-                src={image.src}
-                alt={image.alt}
-                className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-white/20"
-                loading={index < 4 ? "eager" : "lazy"}
-                style={{ aspectRatio: 'auto' }}
-              />
-              <meta itemProp="name" content={image.title} />
-              <meta itemProp="description" content={image.description} />
-              <meta itemProp="author" content="At First Sight Beauty On Location" />
-              <meta itemProp="copyrightHolder" content="At First Sight Beauty On Location" />
-              <meta itemProp="keywords" content={`bridal makeup, bridal hair, Pacific Northwest wedding, ${image.category}, luxury beauty services`} />
-            </figure>
-          ))}
+          {filteredImages.length > 0 ? (
+            filteredImages.map((image, index) => (
+              <figure
+                key={index}
+                className="scroll-animation gallery-item break-inside-avoid"
+                itemScope
+                itemType="https://schema.org/ImageObject"
+              >
+                <LazyImage
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-white/20"
+                  loading={index < 4 ? "eager" : "lazy"}
+                  style={{ aspectRatio: 'auto' }}
+                />
+                <meta itemProp="name" content={image.title} />
+                <meta itemProp="description" content={image.description} />
+                <meta itemProp="author" content="At First Sight Beauty On Location" />
+                <meta itemProp="copyrightHolder" content="At First Sight Beauty On Location" />
+                <meta itemProp="keywords" content={`bridal makeup, bridal hair, Pacific Northwest wedding, ${image.category}, luxury beauty services`} />
+              </figure>
+            ))
+          ) : (
+            <div className="col-span-full flex flex-col items-center justify-center py-12">
+              <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-blush-100/50">
+                <span className="text-2xl md:text-3xl font-playfair font-medium text-gray-400 italic">Coming Soon...</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

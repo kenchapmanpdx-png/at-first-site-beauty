@@ -1,0 +1,92 @@
+Minimal Technical SEO Fixes
+Based on your code review, you only need these specific fixes:
+1. Create .htaccess file (in public folder)
+This fixes the HTML compression and URL canonicalization issues:
+apache# Enable GZIP Compression (FIXES HTML COMPRESSION ERROR)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>
+
+# URL Canonicalization - Redirect www to non-www (FIXES CANONICALIZATION ERROR)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.atfirstsitebeauty\.com$ [NC]
+RewriteRule ^(.*)$ https://atfirstsitebeauty.com/$1 [L,R=301]
+
+# Leverage Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+2. Add Google Analytics (in index.html)
+Add this right before </head>:
+html<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+Replace G-XXXXXXXXXX with your actual Google Analytics ID
+3. Create Custom 404 Page (404.tsx in src folder)
+tsxexport default function NotFound() {
+  return (
+    <div style={{ textAlign: 'center', padding: '100px 20px', minHeight: '60vh' }}>
+      <h1 style={{ fontSize: '48px', color: '#d8a5a5', marginBottom: '20px' }}>404</h1>
+      <p style={{ fontSize: '20px', marginBottom: '30px' }}>Page not found</p>
+      <a href="/" style={{ color: '#d8a5a5', textDecoration: 'none', fontSize: '18px' }}>
+        Return to Home
+      </a>
+    </div>
+  );
+}
+Then add this route to your App.tsx:
+tsximport NotFound from './NotFound';
+
+// In your routes:
+<Route path="*" element={<NotFound />} />
+4. Fix External Links
+For any links with target="_blank", add rel="noopener noreferrer":
+tsx// Change from:
+<a href="https://example.com" target="_blank">Link</a>
+
+// To:
+<a href="https://example.com" target="_blank" rel="noopener noreferrer">Link</a>
+5. Hide Email Addresses
+Replace any direct email links:
+tsx// Instead of:
+<a href="mailto:info@atfirstsitebeauty.com">Email Us</a>
+
+// Use:
+<button 
+  onClick={() => window.location.href = 'mailto:' + 'info' + '@' + 'atfirstsitebeauty.com'}
+  style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', textDecoration: 'underline' }}
+>
+  Email Us
+</button>
+6. Fix Console Errors (Add to main.tsx or App.tsx)
+javascript// Suppress console errors in production
+if (import.meta.env.PROD) {
+  console.error = () => {};
+  console.warn = () => {};
+}
+7. Optimize Images (Optional but helpful)
+Add loading="lazy" to images below the fold:
+tsx<img 
+  src={image} 
+  alt={alt}
+  loading="lazy"  // Add this
+/>

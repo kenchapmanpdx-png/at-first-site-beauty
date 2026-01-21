@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import { ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
-import bridalImage from "@assets/IMG_0971_1749066905983.png";
-import makeupImage from "@assets/IMG_0944.png";
-import hairImage from "@assets/IMG_0943.png";
-import holliePhoto from "@assets/att.c_pJDIdiUkBKo0fJ-QlY4UBkoe1B5rNtETSP-pvLjIM.jpeg";
+import servicePlaceholder from "/attached_assets/service_placeholder.png";
+import servicePlaceholderMakeup from "/attached_assets/service_placeholder_makeup.png";
 import teethWhiteningImage from "@assets/IMG_0964.jpeg";
 import sprayTanningImage from "@assets/IMG_0969.webp";
 
@@ -38,7 +36,7 @@ export default function Services() {
 
   const services = [
     {
-      image: bridalImage,
+      image: servicePlaceholder,
       title: "Bridal Design Session",
       description: "Our signature luxury experience where your dream look begins. Set in our private bridal suite, this isn't your average trial — it's a complete design session with wear testing and personalized touch-up kit.",
       alt: "Luxury bridal design session at private bridal suite - comprehensive hair and makeup trial with wear testing",
@@ -47,7 +45,7 @@ export default function Services() {
       link: "/bridal-design-session"
     },
     {
-      image: makeupImage,
+      image: servicePlaceholderMakeup,
       title: "Bridal Party Hair & Makeup",
       description: "Coordinated looks for your entire bridal party. We ensure everyone looks stunning while maintaining the bride as the focal point. A cohesive look is essential for creating harmonious, photo-ready results.",
       alt: "Professional bridal party hair and makeup coordination by certified artists - Pacific Northwest wedding party beauty services",
@@ -79,7 +77,7 @@ export default function Services() {
     <section ref={sectionRef} id="services" className="pt-10 pb-20 bg-white silk-texture" itemScope itemType="https://schema.org/Service">
       <div className="container mx-auto px-4">
         <div className="scroll-animation text-center mb-16">
-          <div className="rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle-section luxury-hover luxury-texture shimmer-effect" style={{background: 'linear-gradient(135deg, #f5f1f2 0%, #e6d0d6 100%)'}}>
+          <div className="rounded-3xl p-8 md:p-10 max-w-3xl mx-auto sparkle-section luxury-hover luxury-texture shimmer-effect" style={{ background: 'linear-gradient(135deg, #f5f1f2 0%, #e6d0d6 100%)' }}>
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>
             <div className="sparkle">✦</div>

@@ -1,0 +1,79 @@
+import sharp from 'sharp';
+import fs from 'fs/promises';
+import path from 'path';
+
+async function compressImages() {
+  const inputDir = './public/assets'; // Adjust to your image directory
+  const outputDir = './public/assets/compressed';
+  
+  // Create output directory if it doesn't exist
+  try {
+    await fs.mkdir(outputDir, { recursive: true });
+  } catch (err) {
+    console.error('Error creating directory:', err);
+  }
+
+  // List of images to compress from your SEO report
+  const images = [
+    '6905982-CINLXwyv.png',
+    '6905983-BpvQEGhd.png',
+    'MG_0943-CiRn8Eb.png',
+    'MG_0944-Dpkidslu.png',
+    'G_0964-B7wz2YKH.jpeg',
+    '3275911-BzKSnPrd.png',
+    '0%20px)-CeGnY1bk.png',
+    'G_8201-CVRZA-kc.jpeg',
+    'G_0969-ylzAKt6s.webp'
+  ];
+
+  for (const image of images) {
+    const inputPath = path.join(inputDir, image);
+    const outputPath = path.join(outputDir, image);
+    
+    try {
+      // Check if file exists
+      await fs.access(inputPath);
+      
+      if (image.endsWith('.png')) {
+        await sharp(inputPath)
+          .resize(1920, null, { 
+            withoutEnlargement: true,
+            fit: 'inside'
+          })
+          .png({ quality: 85, compressionLevel: 9 })
+          .toFile(outputPath);
+      } else if (image.endsWith('.jpeg') || image.endsWith('.jpg')) {
+        await sharp(inputPath)
+          .resize(1920, null, { 
+            withoutEnlargement: true,
+            fit: 'inside'
+          })
+          .jpeg({ quality: 85, progressive: true })
+          .toFile(outputPath);
+      } else if (image.endsWith('.webp')) {
+        await sharp(inputPath)
+          .resize(1920, null, { 
+            withoutEnlargement: true,
+            fit: 'inside'
+          })
+          .webp({ quality: 85 })
+          .toFile(outputPath);
+      }
+      
+      const inputStats = await fs.stat(inputPath);
+      const outputStats = await fs.stat(outputPath);
+      const savings = ((1 - outputStats.size / inputStats.size) * 100).toFixed(1);
+      
+      console.log(`✓ ${image}: ${(inputStats.size / 1024).toFixed(0)}KB → ${(outputStats.size / 1024).toFixed(0)}KB (saved ${savings}%)`);
+      
+    } catch (err) {
+      console.error(`✗ Error processing ${image}:`, err.message);
+    }
+  }
+  
+  console.log('\nCompression complete! Find compressed images in:', outputDir);
+  console.log('Remember to move them back to replace the originals.');
+}
+
+// Run the compression
+compressImages();

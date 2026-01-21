@@ -25,7 +25,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover parallax-bg filter grayscale"
         style={{
-          backgroundImage: `url(/attached_assets/IMG_0970_1749066905982.png)`,
+          backgroundImage: `url(/attached_assets/hero_placeholder.png)`,
           backgroundPosition: 'center 40%',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
