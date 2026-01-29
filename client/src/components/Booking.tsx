@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -53,10 +54,10 @@ export default function Booking() {
   };
 
   return (
-    <section ref={sectionRef} id="booking" className="py-20 text-white relative overflow-hidden" style={{background: 'linear-gradient(to bottom right, #43495E, #3A4052, #43495E)'}}>
+    <section ref={sectionRef} id="booking" className="py-20 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to bottom right, #43495E, #3A4052, #43495E)' }}>
       {/* Background decorative elements */}
       <div className="absolute top-10 left-10 w-40 h-40 bg-blush-500/10 rounded-full blur-3xl floating-element"></div>
-      <div className="absolute bottom-10 right-10 w-60 h-60 bg-blush-400/5 rounded-full blur-3xl floating-element" style={{animationDelay: '2s'}}></div>
+      <div className="absolute bottom-10 right-10 w-60 h-60 bg-blush-400/5 rounded-full blur-3xl floating-element" style={{ animationDelay: '2s' }}></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -82,9 +83,11 @@ export default function Booking() {
                   To ensure your trial is tailored to your unique vision, we require a brief phone consultation before scheduling. This helps us match you with the right artist and craft an experience that's seamless, personalized, and stress-free from the very beginning.
                 </p>
                 <div className="text-center">
-                  <Button className="bg-gradient-to-r from-blush-300 to-blush-400 hover:from-blush-400 hover:to-blush-500 text-white px-8 py-3 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Schedule Your Consultation
-                  </Button>
+                  <Link href="/book">
+                    <a className="inline-block bg-gradient-to-r from-blush-300 to-blush-400 hover:from-blush-400 hover:to-blush-500 text-white px-8 py-3 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      Schedule Your Consultation
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -131,13 +134,17 @@ export default function Booking() {
                 <p className="text-gray-400 text-sm mb-4">Follow us for inspiration:</p>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://instagram.com/atfirstsitebeauty"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-blush-300 hover:bg-blush-300 hover:text-white transition-colors duration-200"
                   >
                     <FaInstagram size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="https://facebook.com/atfirstsitebeauty"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-blush-300 hover:bg-blush-300 hover:text-white transition-colors duration-200"
                   >
                     <FaPinterest size={20} />

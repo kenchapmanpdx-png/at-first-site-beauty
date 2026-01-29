@@ -29,7 +29,43 @@ export default function Gallery() {
     return () => observer.disconnect();
   }, []);
 
-  const galleryImages: { src: string; alt: string; category: string; title: string; description: string; }[] = [];
+  const galleryImages: { src: string; alt: string; category: string; title: string; description: string; }[] = [
+    {
+      src: "/attached_assets/portfolio_1.jpg",
+      alt: "Bridal hair styling in progress, attaching veil",
+      category: "bridal",
+      title: "Bridal Veil Styling",
+      description: "Delicate placement of the bridal veil, ensuring every detail is perfect for the ceremony."
+    },
+    {
+      src: "/attached_assets/portfolio_2.jpg",
+      alt: "Radiant bride holding 'Say Yes to the Dress' sign",
+      category: "bridal",
+      title: "Saying Yes",
+      description: "A joyous moment capturing the excitement of finding the perfect dress, complemented by flawless bridal makeup."
+    },
+    {
+      src: "/attached_assets/portfolio_3.jpg",
+      alt: "Close-up of bridal hair down with veil and hairpiece",
+      category: "bridal",
+      title: "Romantic Waves & Veil",
+      description: "Soft romantic waves paired with a crystal hairpiece and veil for a timeless bridal look."
+    },
+    {
+      src: "/attached_assets/portfolio_4.jpg",
+      alt: "Groom kissing bride on cheek in vineyard setting",
+      category: "bridal",
+      title: "Vineyard Romance",
+      description: "A tender moment in the vineyard, showcasing natural, glowing bridal makeup that lasts all day."
+    },
+    {
+      src: "/attached_assets/portfolio_5.jpg",
+      alt: "Bride taking a photo of her ring, showcasing dress details",
+      category: "bridal",
+      title: "Elegant Details",
+      description: "Capturing the intricate details of the bridal gown and accessories, with a look of pure elegance."
+    }
+  ];
 
   const filterButtons = [
     { id: "all", label: "All" },
@@ -99,6 +135,7 @@ export default function Gallery() {
                   className="w-full rounded-xl md:rounded-2xl shadow-2xl border border-white/20"
                   loading={index < 4 ? "eager" : "lazy"}
                   style={{ aspectRatio: 'auto' }}
+                  disableWebp={true}
                 />
                 <meta itemProp="name" content={image.title} />
                 <meta itemProp="description" content={image.description} />

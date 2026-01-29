@@ -15,7 +15,8 @@
   --card-foreground: 240 10% 3.9%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
-  --primary: 343 35% 85%; /* Softer pastel pink */
+  --primary: 343 35% 85%;
+  /* Softer pastel pink */
   --primary-foreground: 0 0% 100%;
   --secondary: 240 4.8% 95.9%;
   --secondary-foreground: 240 5.9% 10%;
@@ -79,12 +80,15 @@
   }
 
   /* Prevent zoom on input focus on iOS */
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     font-size: 16px;
   }
 
   /* Improve touch targets */
-  button, a {
+  button,
+  a {
     min-height: 44px;
     min-width: 44px;
   }
@@ -104,13 +108,13 @@
   }
 
   .watercolor-bg {
-    background-image: 
+    background-image:
       radial-gradient(circle at 20% 50%, hsla(343, 40%, 90%, 0.08) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, hsla(343, 40%, 90%, 0.04) 0%, transparent 50%);
   }
 
   .hero-overlay {
-    background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 100%);
   }
 
   .scroll-animation {
@@ -141,18 +145,25 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   /* Luxury gradient backgrounds */
   .premium-gradient {
-    background: linear-gradient(135deg, 
-      rgba(255,255,255,0.95) 0%, 
-      rgba(248,245,250,0.95) 35%, 
-      rgba(255,255,255,0.95) 100%);
+    background: linear-gradient(135deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(248, 245, 250, 0.95) 35%,
+        rgba(255, 255, 255, 0.95) 100%);
     backdrop-filter: blur(20px);
-    box-shadow: 
+    box-shadow:
       0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -5px rgba(0, 0, 0, 0.04),
       inset 0 1px 0 rgba(255, 255, 255, 0.6);
@@ -160,79 +171,79 @@
 
   /* Elegant hover effects */
   .luxury-hover {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  transform-origin: center;
-  will-change: transform, box-shadow;
-}
+    position: relative;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: center;
+    will-change: transform, box-shadow;
+  }
 
-.luxury-hover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.9) 2px, transparent 2px),
-    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
-    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.8) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
-    radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
-    radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
-    radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.6) 2px, transparent 2px),
-    radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
-    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px),
-    radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.9) 1px, transparent 1px),
-    radial-gradient(circle at 75% 70%, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
-  background-size: 80px 80px;
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  pointer-events: none;
-  z-index: 1;
-}
+  .luxury-hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.9) 2px, transparent 2px),
+      radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
+      radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.8) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+      radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
+      radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+      radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.6) 2px, transparent 2px),
+      radial-gradient(circle at 40% 90%, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
+      radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.5) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.9) 1px, transparent 1px),
+      radial-gradient(circle at 75% 70%, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+    z-index: 1;
+  }
 
-.luxury-hover:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 
-    0 25px 80px rgba(0, 0, 0, 0.12),
-    0 12px 32px rgba(0, 0, 0, 0.08),
-    0 4px 16px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
-}
+  .luxury-hover:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow:
+      0 25px 80px rgba(0, 0, 0, 0.12),
+      0 12px 32px rgba(0, 0, 0, 0.08),
+      0 4px 16px rgba(0, 0, 0, 0.04),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
 
-.luxury-hover:hover::before {
-  opacity: 0.6;
-}
+  .luxury-hover:hover::before {
+    opacity: 0.6;
+  }
 
-/* Service cards without sparkle effect */
-.service-hover {
-  position: relative;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-  transform-origin: center;
-  will-change: transform, box-shadow;
-}
+  /* Service cards without sparkle effect */
+  .service-hover {
+    position: relative;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: center;
+    will-change: transform, box-shadow;
+  }
 
-.service-hover:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 
-    0 25px 80px rgba(0, 0, 0, 0.12),
-    0 12px 32px rgba(0, 0, 0, 0.08),
-    0 4px 16px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
-}
+  .service-hover:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow:
+      0 25px 80px rgba(0, 0, 0, 0.12),
+      0 12px 32px rgba(0, 0, 0, 0.08),
+      0 4px 16px rgba(0, 0, 0, 0.04),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+  }
 
-/* Old luxury-hover sparkle animation removed */
+  /* Old luxury-hover sparkle animation removed */
 
-  
+
 
   /* Sophisticated button effects */
   .premium-button {
     background: linear-gradient(135deg, hsl(var(--blush-300)) 0%, hsl(var(--blush-400)) 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 
+    box-shadow:
       0 4px 15px 0 hsla(343, 35%, 80%, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -242,7 +253,7 @@
 
   .premium-button:hover {
     transform: translateY(-6px) scale(1.02);
-    box-shadow: 
+    box-shadow:
       0 15px 40px 0 hsla(343, 35%, 80%, 0.4),
       0 8px 25px 0 hsla(343, 35%, 80%, 0.3),
       0 3px 10px 0 hsla(343, 35%, 80%, 0.2),
@@ -262,47 +273,49 @@
     transition: transform 0.1s;
   }
 
-  
+
 
   /* Silk fabric texture effect */
   .silk-texture {
-    background-image: 
-      repeating-linear-gradient(
-        45deg,
+    background-image:
+      repeating-linear-gradient(45deg,
         transparent,
         transparent 1px,
-        rgba(255,255,255,0.03) 1px,
-        rgba(255,255,255,0.03) 2px
-      ),
-      repeating-linear-gradient(
-        -45deg,
+        rgba(255, 255, 255, 0.03) 1px,
+        rgba(255, 255, 255, 0.03) 2px),
+      repeating-linear-gradient(-45deg,
         transparent,
         transparent 1px,
-        rgba(255,255,255,0.02) 1px,
-        rgba(255,255,255,0.02) 2px
-      );
+        rgba(255, 255, 255, 0.02) 1px,
+        rgba(255, 255, 255, 0.02) 2px);
   }
 
   /* Premium marble-like gradient */
   .marble-texture {
-    background: 
-      linear-gradient(110deg, 
-        rgba(255,255,255,0.95) 0%, 
-        rgba(248,245,250,0.97) 25%, 
-        rgba(255,255,255,0.95) 50%, 
-        rgba(250,248,252,0.97) 75%, 
-        rgba(255,255,255,0.95) 100%
-      );
+    background:
+      linear-gradient(110deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(248, 245, 250, 0.97) 25%,
+        rgba(255, 255, 255, 0.95) 50%,
+        rgba(250, 248, 252, 0.97) 75%,
+        rgba(255, 255, 255, 0.95) 100%);
     background-size: 200% 100%;
     animation: marbleShimmer 8s ease-in-out infinite;
   }
 
   @keyframes marbleShimmer {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
-  
+
 
   /* Elegant brush stroke accents */
   .brush-accent {
@@ -316,7 +329,7 @@
     left: -10px;
     right: -10px;
     bottom: -10px;
-    background: 
+    background:
       radial-gradient(ellipse 60% 20% at 30% 20%, rgba(251, 207, 232, 0.3) 0%, transparent 50%),
       radial-gradient(ellipse 40% 30% at 70% 80%, rgba(251, 207, 232, 0.2) 0%, transparent 50%);
     border-radius: inherit;
@@ -326,8 +339,8 @@
 
   /* Luxury paper texture - optimized for mobile */
   .paper-texture {
-    background-image: 
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
     background-size: 20px 20px;
     background-position: 0 0, 10px 10px;
   }
@@ -340,11 +353,12 @@
 
   /* Mobile-first performance optimizations */
   @media (max-width: 768px) {
+
     /* Reduce header height and spacing on mobile */
     header[style*="height: 280px"] {
       height: 220px !important;
     }
-    
+
     header img[style*="maxHeight: 180px"] {
       max-height: 140px !important;
     }
@@ -380,7 +394,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
+    background-image:
       radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.03) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.03) 0%, transparent 50%),
       radial-gradient(circle at 40% 40%, rgba(120, 119, 198, 0.02) 0%, transparent 50%);
@@ -389,8 +403,15 @@
   }
 
   @keyframes subtleNoise {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.7;
+    }
   }
 
   /* Mobile performance optimizations */
@@ -442,7 +463,7 @@
     position: absolute;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.9);
-    text-shadow: 
+    text-shadow:
       0 0 8px rgba(255, 255, 255, 0.8),
       0 0 16px rgba(255, 255, 255, 0.6),
       0 0 24px rgba(255, 255, 255, 0.4);
@@ -454,13 +475,16 @@
   }
 
   @keyframes sparkleLoop {
-    0%, 100% { 
-      opacity: 0; 
-      transform: scale(0.5) rotate(0deg); 
+
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0.5) rotate(0deg);
     }
-    50% { 
-      opacity: 0.8; 
-      transform: scale(1) rotate(180deg); 
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1) rotate(180deg);
     }
   }
 
@@ -575,6 +599,7 @@
 
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
+
     .scroll-animation,
     .fade-slide-up,
     .animate-bounce {
@@ -635,8 +660,15 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
   }
 
   @keyframes fadeSlideUp {
@@ -644,16 +676,28 @@
       opacity: 0;
       transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
 
   .gallery-item {
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -663,14 +707,14 @@
   .gallery-item:hover {
     transform: translateY(-8px) scale(1.02);
     filter: grayscale(0%);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
   }
 
   .image-overlay {
-    background: linear-gradient(45deg, 
-      rgba(0,0,0,0.1) 0%, 
-      rgba(0,0,0,0.05) 50%, 
-      rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(45deg,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.05) 50%,
+        rgba(0, 0, 0, 0.1) 100%);
   }
 
   .text-blush-300 {
@@ -715,7 +759,7 @@
 
   .sparkle-button:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 
+    box-shadow:
       0 12px 32px rgba(0, 0, 0, 0.15),
       0 6px 16px rgba(0, 0, 0, 0.1),
       0 2px 8px rgba(0, 0, 0, 0.05);
@@ -736,7 +780,7 @@
     position: absolute;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.9);
-    text-shadow: 
+    text-shadow:
       0 0 8px rgba(255, 255, 255, 0.8),
       0 0 16px rgba(255, 255, 255, 0.6),
       0 0 24px rgba(255, 255, 255, 0.4);
@@ -750,7 +794,7 @@
   @media (max-width: 768px) {
     .sparkle-button .sparkle {
       font-size: 14px;
-      text-shadow: 
+      text-shadow:
         0 0 6px rgba(255, 255, 255, 0.8),
         0 0 12px rgba(255, 255, 255, 0.6);
     }
@@ -768,6 +812,7 @@
 
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -779,7 +824,9 @@
 
   /* Touch optimization for mobile */
   @media (max-width: 768px) {
-    button, a {
+
+    button,
+    a {
       min-height: 44px;
       min-width: 44px;
     }
@@ -790,9 +837,17 @@
     }
 
     /* Optimize mobile typography */
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.75rem; }
-    h3 { font-size: 1.5rem; }
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
 
     /* Reduce shadows on mobile for performance */
     .shadow-2xl {
@@ -805,7 +860,9 @@
     }
 
     /* Prevent zoom on input focus */
-    input, select, textarea {
+    input,
+    select,
+    textarea {
       font-size: 16px;
     }
 
@@ -834,29 +891,37 @@
   }
 
   @keyframes loading {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
   }
 
   /* Additional mobile optimizations */
   @media (max-width: 768px) {
+
     /* Reduce animation complexity on mobile */
     .animate-float {
       animation-duration: 8s;
     }
-    
+
     /* Optimize touch interactions */
-    button, a, [role="button"] {
+    button,
+    a,
+    [role="button"] {
       min-height: 44px;
       min-width: 44px;
     }
-    
+
     /* Prevent layout shifts */
     img {
       height: auto;
       width: 100%;
     }
-    
+
     /* Optimize font rendering */
     body {
       text-rendering: optimizeSpeed;
@@ -899,13 +964,16 @@
   }
 
   @keyframes sparkleHover {
-    0%, 100% { 
-      opacity: 0; 
-      transform: scale(0.5) rotate(0deg); 
+
+    0%,
+    100% {
+      opacity: 0;
+      transform: scale(0.5) rotate(0deg);
     }
-    50% { 
-      opacity: 0.8; 
-      transform: scale(1) rotate(180deg); 
+
+    50% {
+      opacity: 0.8;
+      transform: scale(1) rotate(180deg);
     }
   }
 
@@ -915,7 +983,7 @@
 
 /* Watercolor background effect */
 .watercolor-bg {
-  background-image: 
+  background-image:
     radial-gradient(circle at 20% 50%, rgba(241, 231, 233, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(230, 208, 214, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 40% 80%, rgba(248, 244, 245, 0.3) 0%, transparent 50%);
@@ -945,5 +1013,18 @@
 
 .scroll-animation img:hover {
   transform: scale(1.05);
-  filter: grayscale(0%);
+}
+
+/* Luxury text shadow for better readability on light backgrounds */
+.luxury-text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* Heading luxury effect */
+.luxury-text {
+  background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }

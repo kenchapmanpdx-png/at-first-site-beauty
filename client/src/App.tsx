@@ -17,9 +17,10 @@ import { PerformanceMonitor } from "@/components/PerformanceMonitor";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/about" component={() => <Home scrollToAbout={true} />} />
-      <Route path="/services" component={() => <Home scrollToServices={true} />} />
+      <Route path="/"><Home /></Route>
+      <Route path="/about"><Home scrollToAbout={true} /></Route>
+      <Route path="/services"><Home scrollToServices={true} /></Route>
+      <Route path="/gallery"><Home scrollToGallery={true} /></Route>
       <Route path="/teeth-whitening" component={TeethWhitening} />
       <Route path="/spray-tanning" component={SprayTanning} />
       <Route path="/bridal-design-session" component={BridalDesignSession} />
@@ -46,7 +47,7 @@ function App() {
     // Preload critical images for faster loading
     const criticalImages = [
       '/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp',
-'/attached_assets/webp/IMG_0970_1749066905982.webp',
+      '/attached_assets/webp/IMG_0970_1749066905982.webp',
     ];
 
     preloadCriticalImages(criticalImages);

@@ -1,5 +1,10 @@
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
 
 interface PageHeadProps {
   title: string;
@@ -7,20 +12,22 @@ interface PageHeadProps {
   path: string;
   ogImage?: string;
   pageType?: 'home' | 'about' | 'services' | 'service-detail' | 'contact';
+  faqs?: FAQItem[];
 }
 
-export default function PageHead({ 
-  title, 
-  description, 
-  path, 
+export default function PageHead({
+  title,
+  description,
+  path,
   ogImage = "/attached_assets/IMG_0970_1749066905982.png",
-  pageType = 'home'
+  pageType = 'home',
+  faqs
 }: PageHeadProps) {
   useEffect(() => {
     // Set page-specific titles and descriptions based on pageType
     let pageTitle = title;
     let pageDescription = description;
-    
+
     if (pageType === 'about') {
       pageTitle = "Meet Your Dream Team | At First Site Beauty";
       pageDescription = "Meet our elite bridal beauty team: Hollie DeMarais (18+ years salon owner) and Cedar Lapp-Ngauamo (founder Cedars Academy). Expert hair styling and makeup artistry for Pacific Northwest weddings.";
@@ -35,19 +42,19 @@ export default function PageHead({
       pageTitle = title;
       pageDescription = description;
     }
-    
+
     // Update document title
     document.title = pageTitle;
-    
+
     // Update or create canonical link
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');
       canonicalLink.rel = 'canonical';
       document.head.appendChild(canonicalLink);
     }
     canonicalLink.href = `https://atfirstsitebeauty.com${path}`;
-    
+
     // Only update meta tags if not on home page to prevent conflicts with static meta tags
     if (pageType !== 'home') {
       // Update meta description
@@ -55,27 +62,27 @@ export default function PageHead({
       if (metaDescription) {
         metaDescription.setAttribute('content', pageDescription);
       }
-      
+
       // Update Open Graph tags
       const ogTitle = document.querySelector('meta[property="og:title"]');
       if (ogTitle) ogTitle.setAttribute('content', pageTitle);
-      
+
       const ogDesc = document.querySelector('meta[property="og:description"]');
       if (ogDesc) ogDesc.setAttribute('content', pageDescription);
-      
+
       const ogUrl = document.querySelector('meta[property="og:url"]');
       if (ogUrl) ogUrl.setAttribute('content', `https://atfirstsitebeauty.com${path}`);
-      
+
       const ogImg = document.querySelector('meta[property="og:image"]');
       if (ogImg) ogImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);
-      
+
       // Update Twitter card tags
       const twitterTitle = document.querySelector('meta[name="twitter:title"]');
       if (twitterTitle) twitterTitle.setAttribute('content', pageTitle);
-      
+
       const twitterDesc = document.querySelector('meta[name="twitter:description"]');
       if (twitterDesc) twitterDesc.setAttribute('content', pageDescription);
-      
+
       const twitterImg = document.querySelector('meta[name="twitter:image"]');
       if (twitterImg) twitterImg.setAttribute('content', `https://atfirstsitebeauty.com${ogImage}`);
     }
@@ -83,6 +90,79 @@ export default function PageHead({
     // Remove existing schemas
     const existingSchemas = document.querySelectorAll('script[type="application/ld+json"].page-schema');
     existingSchemas.forEach(schema => schema.remove());
+
+    // LocalBusiness Schema (Home page and dynamic)
+    if (pageType === 'home' || pageType === 'contact') {
+      const businessSchema = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "At First Site Beauty On Location",
+        "image": "https://atfirstsitebeauty.com/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp",
+        "@id": "https://atfirstsitebeauty.com",
+        "url": "https://atfirstsitebeauty.com",
+        "telephone": "(360) 215-5444",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Serving Pacific Northwest",
+          "addressLocality": "Vancouver",
+          "addressRegion": "WA",
+          "postalCode": "98683",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.6277,
+          "longitude": -122.6735
+        },
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://facebook.com/atfirstsitebeauty",
+          "https://instagram.com/atfirstsitebeauty"
+        ]
+      };
+
+      const businessScript = document.createElement('script');
+      businessScript.type = 'application/ld+json';
+      businessScript.className = 'page-schema';
+      businessScript.textContent = JSON.stringify(businessSchema);
+      document.head.appendChild(businessScript);
+    }
+
+    // FAQ Schema
+    if (faqs && faqs.length > 0) {
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
+
+      const faqScript = document.createElement('script');
+      faqScript.type = 'application/ld+json';
+      faqScript.className = 'page-schema';
+      faqScript.textContent = JSON.stringify(faqSchema);
+      document.head.appendChild(faqScript);
+    }
 
     // Add breadcrumb schema for non-home pages
     if (pageType !== 'home') {
@@ -157,8 +237,8 @@ export default function PageHead({
         document.head.appendChild(personScript);
       });
     }
-    
-  }, [title, description, path, ogImage, pageType]);
+
+  }, [title, description, path, ogImage, pageType, faqs]);
 
   return null;
 }

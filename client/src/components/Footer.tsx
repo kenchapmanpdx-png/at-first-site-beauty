@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { SocialLinks } from "./SocialLinks";
 
 export default function Footer() {
@@ -13,27 +14,21 @@ export default function Footer() {
           </p>
 
           <div className="flex justify-center space-x-6 mb-8">
-            <a
-              href="#"
-              className="text-gray-600 hover:text-blush-400 transition-colors duration-200"
-              rel="noopener noreferrer"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-blush-400 transition-colors duration-200"
-              rel="noopener noreferrer"
-            >
-              Terms of Service
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-blush-400 transition-colors duration-200"
-              rel="noopener noreferrer"
-            >
-              Contact
-            </a>
+            <Link href="/">
+              <a className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
+                Home
+              </a>
+            </Link>
+            <Link href="/about">
+              <a className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
+                About
+              </a>
+            </Link>
+            <Link href="/book">
+              <a className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
+                Contact
+              </a>
+            </Link>
           </div>
 
           <SocialLinks />

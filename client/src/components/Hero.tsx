@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import { ChevronDown } from "lucide-react";
 import LazyImage from "./LazyImage";
 
@@ -43,24 +43,24 @@ export default function Hero() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent"></div>
       </div>
 
-      <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transform transition-all duration-1000 ${
-        isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-      }`}>
-        <h1 className="sr-only">At First Site Beauty</h1>
-        <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-light opacity-90 fade-slide-up ${
-          isLoaded ? 'stagger-2' : ''
+      <div className={`relative z-10 text-center text-white px-4 max-w-4xl mx-auto transform transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         }`}>
+        <h1 className="font-playfair text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6 luxury-text-shadow">
+          Luxury Bridal <span className="text-blush-200">Hair & Makeup</span>
+        </h1>
+        <p className={`text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 font-light opacity-90 fade-slide-up ${isLoaded ? 'stagger-2' : ''
+          }`}>
           Serving the Pacific Northwest with elegance, expertise, and ease
         </p>
         <div className="inline-block p-2">
-          <Button
-            onClick={() => window.location.href = '/book'}
-            className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation ${
-              isLoaded ? 'stagger-3' : ''
-            }`}
-          >
-            Book Your Design Session
-          </Button>
+          <Link href="/book">
+            <a
+              className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation inline-block ${isLoaded ? 'stagger-3' : ''
+                }`}
+            >
+              Book Your Design Session
+            </a>
+          </Link>
         </div>
       </div>
 

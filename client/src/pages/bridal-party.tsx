@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Users, Heart, Clock, Star, CheckCircle, Sparkles, Camera } from "lucide-react";
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHead from "@/components/PageHead";
@@ -107,7 +107,7 @@ export default function BridalParty() {
 
   return (
     <div className="min-h-screen bg-white">
-      <PageHead 
+      <PageHead
         title="Bridal Party Hair & Makeup Services | At First Site"
         description="Complete bridal party styling services in the Pacific Northwest. Professional hair and makeup for bridesmaids, mothers, and entire wedding parties on location."
         path="/bridal-party"
@@ -138,17 +138,16 @@ export default function BridalParty() {
             </p>
 
             <div data-aos="fade-in" data-aos-delay="400">
-              <Button
-                onClick={() => window.open('https://atfirstsite.glossgenius.com/book', '_blank')}
-                className="premium-button sparkle-button text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                <div className="sparkle">✦</div>
-                <div className="sparkle">✦</div>
-                <div className="sparkle">✦</div>
-                <div className="sparkle">✦</div>
-                <div className="sparkle">✦</div>
-                Reserve Bridal Party Services
-              </Button>
+              <Link href="/book">
+                <a className="premium-button sparkle-button inline-block text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  Reserve Bridal Party Services
+                </a>
+              </Link>
             </div>
           </div>
         </div>
