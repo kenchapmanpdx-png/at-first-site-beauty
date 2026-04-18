@@ -104,7 +104,7 @@ export default function SprayTanning() {
         title="Professional Spray Tanning for Brides | At First Site Beauty"
         description="Premium bridal spray tanning with hyaluronic acid formula. No orange undertones, natural radiant glow. Professional application by trained artists for Pacific Northwest weddings."
         path="/spray-tanning"
-        ogImage="/attached_assets/webp/IMG_0970_1749066905982.webp"
+        ogImage="/attached_assets/hero_placeholder.png"
         pageType="service-detail"
         faqs={tanningFAQs}
       />

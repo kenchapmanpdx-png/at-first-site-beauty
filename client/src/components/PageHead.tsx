@@ -19,7 +19,7 @@ export default function PageHead({
   title,
   description,
   path,
-  ogImage = "/attached_assets/IMG_0970_1749066905982.png",
+  ogImage = "/attached_assets/hero_placeholder.png",
   pageType = 'home',
   faqs
 }: PageHeadProps) {

@@ -1,8 +1,8 @@
 // Bump the cache name whenever CRITICAL_RESOURCES changes so clients pick up the new SW.
-const CACHE_NAME = 'at-first-site-v2';
+const CACHE_NAME = 'at-first-site-v3';
 const CRITICAL_RESOURCES = [
   '/',
-  '/attached_assets/webp/IMG_0970_1749066905982.webp',
+  '/attached_assets/hero_placeholder.png',
   '/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp'
 ];
 

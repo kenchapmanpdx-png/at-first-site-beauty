@@ -45,7 +45,7 @@ function App() {
     // Preload critical images for faster loading
     const criticalImages = [
       '/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp',
-      '/attached_assets/webp/IMG_0970_1749066905982.webp',
+      '/attached_assets/hero_placeholder.png',
     ];
 
     preloadCriticalImages(criticalImages);

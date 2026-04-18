@@ -91,7 +91,7 @@ export default function TeethWhitening() {
         title="Professional Teeth Whitening for Weddings | At First Site Beauty"
         description="Professional-grade teeth whitening for brides. Higher percentage Hydrogen Peroxide with specialized light activation. Safe, effective, immediate results for your wedding day smile."
         path="/teeth-whitening"
-        ogImage="/attached_assets/IMG_0970_1749066905982.png"
+        ogImage="/attached_assets/hero_placeholder.png"
         pageType="service-detail"
         faqs={whiteningFAQs}
       />
