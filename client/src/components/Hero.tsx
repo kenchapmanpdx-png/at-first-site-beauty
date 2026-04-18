@@ -30,6 +30,7 @@ export default function Hero() {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           transform: `translate3d(0, ${scrollY * 0.3}px, 0)`,
+          willChange: 'transform',
         }}
         role="img"
         aria-label="Luxury bridal styling showcase by At First Site Beauty - elegant outdoor bridal photography in Pacific Northwest"
@@ -53,13 +54,12 @@ export default function Hero() {
           Serving the Pacific Northwest with elegance, expertise, and ease
         </p>
         <div className="inline-block p-2">
-          <Link href="/book">
-            <a
-              className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation inline-block ${isLoaded ? 'stagger-3' : ''
-                }`}
-            >
-              Book Your Design Session
-            </a>
+          <Link
+            href="/book"
+            className={`bg-blush-300 hover:bg-blush-400 active:bg-blush-500 text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-lg fade-slide-up touch-manipulation inline-block ${isLoaded ? 'stagger-3' : ''
+              }`}
+          >
+            Book Your Design Session
           </Link>
         </div>
       </div>

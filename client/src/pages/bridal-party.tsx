@@ -138,15 +138,13 @@ export default function BridalParty() {
             </p>
 
             <div data-aos="fade-in" data-aos-delay="400">
-              <Link href="/book">
-                <a className="premium-button sparkle-button inline-block text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  <div className="sparkle">✦</div>
-                  <div className="sparkle">✦</div>
-                  <div className="sparkle">✦</div>
-                  <div className="sparkle">✦</div>
-                  <div className="sparkle">✦</div>
-                  Reserve Bridal Party Services
-                </a>
+              <Link href="/book" className="premium-button sparkle-button inline-block text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                <div className="sparkle">✦</div>
+                Reserve Bridal Party Services
               </Link>
             </div>
           </div>
@@ -430,7 +428,7 @@ export default function BridalParty() {
             </p>
             <div className="inline-block p-2">
               <Button
-                onClick={() => window.location.href = '/book'}
+                onClick={() => setLocation('/book')}
                 className="premium-button sparkle-button text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <div className="sparkle">✦</div>

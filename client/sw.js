@@ -1,8 +1,7 @@
-const CACHE_NAME = 'at-first-sight-v1';
+// Bump the cache name whenever CRITICAL_RESOURCES changes so clients pick up the new SW.
+const CACHE_NAME = 'at-first-site-v2';
 const CRITICAL_RESOURCES = [
   '/',
-  '/src/main.tsx',
-  '/src/index.css',
   '/attached_assets/webp/IMG_0970_1749066905982.webp',
   '/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp'
 ];
@@ -35,7 +34,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   if (!event.request.url.startsWith(self.location.origin)) return;
-  
+
   event.respondWith(
     caches.match(event.request)
       .then((cachedResponse) => {
@@ -49,7 +48,7 @@ self.addEventListener('fetch', (event) => {
           }).catch(() => {});
           return cachedResponse;
         }
-        
+
         return fetch(event.request).then((response) => {
           if (response.status === 200) {
             const responseClone = response.clone();

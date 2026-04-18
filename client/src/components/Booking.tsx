@@ -1,23 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaInstagram, FaPinterest } from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function Booking() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    weddingDate: "",
-    serviceType: "",
-    message: "",
-  });
-
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -41,17 +27,6 @@ export default function Booking() {
 
     return () => observer.disconnect();
   }, []);
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Integration with Go High Level would go here
-    alert("Thank you for your inquiry! We'll be in touch soon.");
-    console.log("Form submitted:", formData);
-  };
 
   return (
     <section ref={sectionRef} id="booking" className="py-20 text-white relative overflow-hidden" style={{ background: 'linear-gradient(to bottom right, #43495E, #3A4052, #43495E)' }}>
@@ -83,10 +58,8 @@ export default function Booking() {
                   To ensure your trial is tailored to your unique vision, we require a brief phone consultation before scheduling. This helps us match you with the right artist and craft an experience that's seamless, personalized, and stress-free from the very beginning.
                 </p>
                 <div className="text-center">
-                  <Link href="/book">
-                    <a className="inline-block bg-gradient-to-r from-blush-300 to-blush-400 hover:from-blush-400 hover:to-blush-500 text-white px-8 py-3 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                      Schedule Your Consultation
-                    </a>
+                  <Link href="/book" className="inline-block bg-gradient-to-r from-blush-300 to-blush-400 hover:from-blush-400 hover:to-blush-500 text-white px-8 py-3 text-lg rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    Schedule Your Consultation
                   </Link>
                 </div>
               </div>
@@ -137,6 +110,7 @@ export default function Booking() {
                     href="https://instagram.com/atfirstsitebeauty"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Follow us on Instagram"
                     className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-blush-300 hover:bg-blush-300 hover:text-white transition-colors duration-200"
                   >
                     <FaInstagram size={20} />
@@ -145,9 +119,10 @@ export default function Booking() {
                     href="https://facebook.com/atfirstsitebeauty"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Follow us on Facebook"
                     className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-blush-300 hover:bg-blush-300 hover:text-white transition-colors duration-200"
                   >
-                    <FaPinterest size={20} />
+                    <FaFacebook size={20} />
                   </a>
                 </div>
               </div>

@@ -1,7 +1,5 @@
 import { useEffect } from "react";
 import { Switch, Route } from "wouter";
-import { queryClient } from "./lib/queryClient";
-import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { optimizeTouch, preloadCriticalImages } from "./utils/performance";
@@ -36,8 +34,8 @@ function App() {
     // Initialize performance optimizations
     optimizeTouch();
 
-    // Performance monitoring
-    if ('performance' in window) {
+    // Performance monitoring — dev-only console output.
+    if (import.meta.env.DEV && 'performance' in window) {
       window.addEventListener('load', () => {
         const loadTime = performance.now();
         console.log(`Page loaded in ${Math.round(loadTime)}ms`);
@@ -54,13 +52,11 @@ function App() {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Router />
-        <Toaster />
-        <PerformanceMonitor />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <TooltipProvider>
+      <Router />
+      <Toaster />
+      <PerformanceMonitor />
+    </TooltipProvider>
   );
 }
 

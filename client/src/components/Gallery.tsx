@@ -139,8 +139,8 @@ export default function Gallery() {
                 />
                 <meta itemProp="name" content={image.title} />
                 <meta itemProp="description" content={image.description} />
-                <meta itemProp="author" content="At First Sight Beauty On Location" />
-                <meta itemProp="copyrightHolder" content="At First Sight Beauty On Location" />
+                <meta itemProp="author" content="At First Site Beauty On Location" />
+                <meta itemProp="copyrightHolder" content="At First Site Beauty On Location" />
                 <meta itemProp="keywords" content={`bridal makeup, bridal hair, Pacific Northwest wedding, ${image.category}, luxury beauty services`} />
               </figure>
             ))

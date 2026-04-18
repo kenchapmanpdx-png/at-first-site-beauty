@@ -67,11 +67,9 @@ export default function BridalDesignSession() {
         {/* Hero Section */}
         <section className="py-8 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
-            <Link href="/">
-              <a className="mb-8 text-gray-600 hover:text-blush-400 inline-flex items-center">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back to Home
-              </a>
+            <Link href="/" className="mb-8 text-gray-600 hover:text-blush-400 inline-flex items-center">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Home
             </Link>
 
             <div className="text-center max-w-4xl mx-auto" data-aos="fade-up">
@@ -110,15 +108,13 @@ export default function BridalDesignSession() {
               </div>
 
               <div data-aos="fade-in" data-aos-delay="400" className="mt-8">
-                <Link href="/book">
-                  <a className="premium-button sparkle-button inline-block text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover">
-                    <div className="sparkle">✦</div>
-                    <div className="sparkle">✦</div>
-                    <div className="sparkle">✦</div>
-                    <div className="sparkle">✦</div>
-                    <div className="sparkle">✦</div>
-                    Book Your Design Session
-                  </a>
+                <Link href="/book" className="premium-button sparkle-button inline-block text-white px-10 py-4 rounded-full text-lg font-medium luxury-hover">
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  <div className="sparkle">✦</div>
+                  Book Your Design Session
                 </Link>
               </div>
             </div>

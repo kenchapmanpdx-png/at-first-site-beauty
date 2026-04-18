@@ -1,55 +1,10 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { useLocation, Link } from "wouter";
+import { Link } from "wouter";
 import LazyImage from "./LazyImage";
 
 export default function Header() {
-  const [location, setLocation] = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigateToSection = useCallback((sectionId: string) => {
-    setIsMenuOpen(false);
-
-    if (sectionId === "home") {
-      if (location === "/") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        setLocation("/");
-      }
-      return;
-    }
-
-    if (sectionId === "about" || sectionId === "services") {
-      const targetPath = `/${sectionId}`;
-      if (location === targetPath) {
-        const element = document.getElementById(sectionId);
-        element?.scrollIntoView({ behavior: "smooth", block: "start" });
-      } else {
-        setLocation(targetPath);
-      }
-      return;
-    }
-
-    if (sectionId === "booking") {
-      setLocation('/book');
-      return;
-    }
-
-    if (sectionId === "gallery") {
-      if (location === "/") {
-        const element = document.getElementById("gallery");
-        element?.scrollIntoView({ behavior: "smooth", block: "start" });
-      } else {
-        // Fallback or navigate to home then scroll (complex)
-        // For now, let's just go home and scroll will happen if we add a route
-        setLocation("/");
-        setTimeout(() => {
-          document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" });
-        }, 500);
-      }
-      return;
-    }
-  }, [location, setLocation]);
 
   return (
     <header className="relative bg-white" style={{ height: '350px' }}>
@@ -71,30 +26,20 @@ export default function Header() {
       {/* Desktop Navigation Menu Bar */}
       <nav className="hidden md:flex justify-center pb-3 overflow-x-auto relative z-20">
         <div className="flex space-x-4 md:space-x-8 px-4 md:px-8 py-3 min-w-max items-center">
-          <Link href="/">
-            <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
-              Home
-            </a>
+          <Link href="/" className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
+            Home
           </Link>
-          <Link href="/about">
-            <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
-              About
-            </a>
+          <Link href="/about" className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
+            About
           </Link>
-          <Link href="/services">
-            <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
-              Services
-            </a>
+          <Link href="/services" className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
+            Services
           </Link>
-          <Link href="/gallery">
-            <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
-              Gallery
-            </a>
+          <Link href="/gallery" className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
+            Gallery
           </Link>
-          <Link href="/book">
-            <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
-              Booking
-            </a>
+          <Link href="/book" className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium text-sm md:text-base px-2 py-2 min-w-max touch-manipulation relative z-30">
+            Booking
           </Link>
         </div>
       </nav>
@@ -115,30 +60,20 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-md border-t shadow-lg relative z-40">
           <nav className="flex flex-col py-4">
-            <Link href="/">
-              <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
-                Home
-              </a>
+            <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
+              Home
             </Link>
-            <Link href="/about">
-              <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
-                About
-              </a>
+            <Link href="/about" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
+              About
             </Link>
-            <Link href="/services">
-              <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
-                Services
-              </a>
+            <Link href="/services" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
+              Services
             </Link>
-            <Link href="/gallery">
-              <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
-                Gallery
-              </a>
+            <Link href="/gallery" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
+              Gallery
             </Link>
-            <Link href="/book">
-              <a className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
-                Booking
-              </a>
+            <Link href="/book" onClick={() => setIsMenuOpen(false)} className="text-gray-700 hover:text-blush-400 active:text-blush-500 transition-colors duration-200 font-medium px-6 py-3 text-left relative z-30">
+              Booking
             </Link>
           </nav>
         </div>

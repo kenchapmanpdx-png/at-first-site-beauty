@@ -128,7 +128,7 @@ export default function Services() {
                   </div>
                   {/* Structured Data */}
                   <meta itemProp="serviceType" content={service.category} />
-                  <meta itemProp="provider" content="At First Sight Beauty On Location" />
+                  <meta itemProp="provider" content="At First Site Beauty On Location" />
                   <meta itemProp="areaServed" content="Pacific Northwest" />
                   <meta itemProp="availableLanguage" content="English" />
                 </div>

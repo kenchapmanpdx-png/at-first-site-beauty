@@ -3,10 +3,11 @@ import { useEffect } from 'react';
 
 export function PerformanceMonitor() {
   useEffect(() => {
-    // Basic performance monitoring without web-vitals dependency
+    // Basic performance monitoring without web-vitals dependency.
+    // Only log in dev — production users don't need to see this in their console.
     const reportPerformance = () => {
+      if (!import.meta.env.DEV) return;
       if ('performance' in window && performance.getEntriesByType) {
-        // Report basic performance metrics
         const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
         if (navigation) {
           console.log('Page Load Time:', Math.round(navigation.loadEventEnd - navigation.fetchStart), 'ms');

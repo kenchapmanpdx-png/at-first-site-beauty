@@ -33,11 +33,9 @@ export default function NotFound() {
             </p>
 
             <div className="space-y-3">
-              <Link href="/">
-                <a className="w-full inline-flex items-center justify-center bg-gradient-to-r from-blush-400 to-blush-500 hover:from-blush-500 hover:to-blush-600 text-white font-medium py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                  <Home className="mr-2 h-5 w-5" />
-                  Return to Home
-                </a>
+              <Link href="/" className="w-full inline-flex items-center justify-center bg-gradient-to-r from-blush-400 to-blush-500 hover:from-blush-500 hover:to-blush-600 text-white font-medium py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+                <Home className="mr-2 h-5 w-5" />
+                Return to Home
               </Link>
 
               <button
@@ -54,25 +52,17 @@ export default function NotFound() {
                 Looking for our services?
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 px-4">
-                <Link href="/bridal-design-session">
-                  <a className="text-blush-600 hover:bg-blush-50 text-sm justify-start p-2 rounded-lg flex items-center">
-                    💍 Bridal Design Session
-                  </a>
+                <Link href="/bridal-design-session" className="text-blush-600 hover:bg-blush-50 text-sm justify-start p-2 rounded-lg flex items-center">
+                  💍 Bridal Design Session
                 </Link>
-                <Link href="/bridal-party">
-                  <a className="text-blush-600 hover:bg-blush-50 text-sm justify-start p-2 rounded-lg flex items-center">
-                    👰 Bridal Party Services
-                  </a>
+                <Link href="/bridal-party" className="text-blush-600 hover:bg-blush-50 text-sm justify-start p-2 rounded-lg flex items-center">
+                  👰 Bridal Party Services
                 </Link>
-                <Link href="/spray-tanning">
-                  <a className="text-blush-600 hover:bg-blush-50 text-sm justify-start p-2 rounded-lg flex items-center">
-                    ☀️ Spray Tanning
-                  </a>
+                <Link href="/spray-tanning" className="text-blush-600 hover:bg-blush-50 text-sm justify-start p-2 rounded-lg flex items-center">
+                  ☀️ Spray Tanning
                 </Link>
-                <Link href="/teeth-whitening">
-                  <a className="text-blush-600 hover:bg-blush-50 text-sm justify-start p-2 rounded-lg flex items-center">
-                    ✨ Teeth Whitening
-                  </a>
+                <Link href="/teeth-whitening" className="text-blush-600 hover:bg-blush-50 text-sm justify-start p-2 rounded-lg flex items-center">
+                  ✨ Teeth Whitening
                 </Link>
               </div>
 
@@ -82,10 +72,8 @@ export default function NotFound() {
                   We're here to help you find exactly what you're looking for.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-2">
-                  <Link href="/book">
-                    <a className="border border-blush-300 text-blush-600 hover:bg-blush-50 p-2 rounded-lg text-sm flex-1">
-                      📞 Book Consultation
-                    </a>
+                  <Link href="/book" className="border border-blush-300 text-blush-600 hover:bg-blush-50 p-2 rounded-lg text-sm flex-1">
+                    📞 Book Consultation
                   </Link>
                   <a
                     href="mailto:hello@atfirstsitebeauty.com"

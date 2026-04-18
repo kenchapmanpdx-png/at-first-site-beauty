@@ -4,12 +4,6 @@ import "./index.css";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-// Suppress console errors in production
-if (import.meta.env.PROD) {
-  console.error = () => {};
-  console.warn = () => {};
-}
-
 // Handle HMR connection errors in development
 if (import.meta.env.DEV && import.meta.hot) {
   import.meta.hot.on('vite:error', (payload) => {

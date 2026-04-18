@@ -14,27 +14,21 @@ export default function Footer() {
           </p>
 
           <div className="flex justify-center space-x-6 mb-8">
-            <Link href="/">
-              <a className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
-                Home
-              </a>
+            <Link href="/" className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
+              Home
             </Link>
-            <Link href="/about">
-              <a className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
-                About
-              </a>
+            <Link href="/about" className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
+              About
             </Link>
-            <Link href="/book">
-              <a className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
-                Contact
-              </a>
+            <Link href="/book" className="text-gray-600 hover:text-blush-400 transition-colors duration-200">
+              Contact
             </Link>
           </div>
 
           <SocialLinks />
 
           <p className="text-gray-500 text-sm">
-            © 2024 At First Site Beauty. All rights reserved.
+            © {new Date().getFullYear()} At First Site Beauty. All rights reserved.
           </p>
         </div>
       </div>

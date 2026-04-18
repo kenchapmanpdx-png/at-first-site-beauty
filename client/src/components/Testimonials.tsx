@@ -99,7 +99,7 @@ export default function Testimonials() {
                 </div>
               </footer>
               <meta itemProp="reviewRating" content={testimonial.rating.toString()} />
-              <meta itemProp="itemReviewed" content="At First Sight Beauty On Location" />
+              <meta itemProp="itemReviewed" content="At First Site Beauty On Location" />
             </article>
           ))}
         </div>

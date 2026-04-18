@@ -48,6 +48,26 @@ export const preloadCriticalImages = async (images: string[]): Promise<void> => 
   }
 };
 
+// Scroll to an element that may not yet exist in the DOM (e.g. inside a
+// React.lazy Suspense boundary). Polls via requestAnimationFrame for up to
+// ~2 seconds, then gives up silently.
+export const scrollToElementWhenReady = (
+  id: string,
+  options: ScrollIntoViewOptions = { behavior: 'smooth', block: 'start' },
+  maxAttempts = 60
+) => {
+  let attempts = 0;
+  const tick = () => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView(options);
+      return;
+    }
+    if (++attempts < maxAttempts) requestAnimationFrame(tick);
+  };
+  tick();
+};
+
 export const optimizeTouch = () => {
   // Add passive listeners for better scroll performance
   const passiveEvents = ['touchstart', 'touchmove', 'wheel'];
@@ -77,19 +97,3 @@ export const lazyLoadImages = () => {
   images.forEach((img) => imageObserver.observe(img));
 };
 
-export const compressImage = (file: File, quality: number = 0.8): Promise<Blob> => {
-  return new Promise((resolve) => {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d')!;
-    const img = new Image();
-    
-    img.onload = () => {
-      canvas.width = img.width;
-      canvas.height = img.height;
-      ctx.drawImage(img, 0, 0);
-      canvas.toBlob(resolve, 'image/jpeg', quality);
-    };
-    
-    img.src = URL.createObjectURL(file);
-  });
-};

@@ -10,6 +10,7 @@ import FAQ from "../components/FAQ";
 import Booking from "../components/Booking";
 import Footer from "../components/Footer";
 import PageHead from "../components/PageHead";
+import { scrollToElementWhenReady } from "../utils/performance";
 
 interface HomeProps {
   scrollToAbout?: boolean;
@@ -19,35 +20,17 @@ interface HomeProps {
 
 export default function Home({ scrollToAbout, scrollToServices, scrollToGallery }: HomeProps) {
   useEffect(() => {
-    // Handle scrolling to specific sections based on route props
+    // LazyServices and LazyGallery mount asynchronously (React.lazy), so their
+    // target elements may not exist yet when this effect runs. scrollToElementWhenReady
+    // polls via rAF until the element is in the DOM or gives up after ~2s.
     if (scrollToAbout) {
-      setTimeout(() => {
-        const aboutSection = document.querySelector('#about');
-        aboutSection?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      scrollToElementWhenReady('about');
     } else if (scrollToServices) {
-      setTimeout(() => {
-        const servicesSection = document.querySelector('#services');
-        servicesSection?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      scrollToElementWhenReady('services');
     } else if (scrollToGallery) {
-      setTimeout(() => {
-        const gallerySection = document.querySelector('#gallery');
-        gallerySection?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      scrollToElementWhenReady('gallery');
     }
-
-    // Temporarily disable all AOS animations while testing
-    if (typeof window !== 'undefined') {
-      // AOS.init({
-      //   duration: 800,
-      //   easing: 'ease-in-out',
-      //   once: true,
-      //   offset: 120,
-      //   delay: 100
-      // });
-    }
-  }, [scrollToAbout, scrollToServices]);
+  }, [scrollToAbout, scrollToServices, scrollToGallery]);
 
   const faqs = [
     {
@@ -86,15 +69,13 @@ export default function Home({ scrollToAbout, scrollToServices, scrollToGallery 
       {/* Booking CTA between Services and Gallery */}
       <section className="py-8 bg-white">
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
-          <Link href="/book">
-            <a className="premium-button sparkle-button inline-block text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation">
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              Book Your Design Session
-            </a>
+          <Link href="/book" className="premium-button sparkle-button inline-block text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation">
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            Book Your Design Session
           </Link>
         </div>
       </section>
@@ -102,15 +83,13 @@ export default function Home({ scrollToAbout, scrollToServices, scrollToGallery 
       {/* Booking CTA before main Booking section */}
       <section className="py-8 bg-gray-50">
         <div className="container mx-auto px-4 text-center" data-aos="fade-up">
-          <Link href="/book">
-            <a className="premium-button sparkle-button inline-block text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation">
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              <div className="sparkle">✦</div>
-              Book Your Design Session
-            </a>
+          <Link href="/book" className="premium-button sparkle-button inline-block text-white px-8 md:px-10 py-3 md:py-4 rounded-full text-base md:text-lg font-medium luxury-hover shadow-lg touch-manipulation">
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            <div className="sparkle">✦</div>
+            Book Your Design Session
           </Link>
         </div>
       </section>

@@ -74,6 +74,18 @@ export default function BookingPage() {
                 id="ge2HN52PHjWliZSbo6T9_1750196042723"
               />
             </div>
+
+            <p className="text-center mt-6 text-gray-600 text-sm md:text-base">
+              Having trouble with the calendar? Call us at{' '}
+              <a href="tel:+13602155444" className="text-blush-400 hover:text-blush-500 font-medium underline">
+                (360) 215-5444
+              </a>{' '}
+              or email{' '}
+              <a href="mailto:bookings@atfirstsitebeauty.com" className="text-blush-400 hover:text-blush-500 font-medium underline">
+                bookings@atfirstsitebeauty.com
+              </a>
+              .
+            </p>
           </div>
         </div>
       </main>
