@@ -11,7 +11,6 @@ interface ServiceMeta {
   serviceType: string;
   image?: string;
   // Optional price spec
-  priceRange?: string;
   // Optional Offer object content
   offers?: Array<{
     name?: string;
