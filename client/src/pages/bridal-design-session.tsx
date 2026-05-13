@@ -60,6 +60,14 @@ export default function BridalDesignSession() {
         path="/bridal-design-session"
         pageType="service-detail"
         faqs={designFAQs}
+        ogImage="/attached_assets/IMG_0971_1749066905983.png"
+        serviceMeta={{
+          name: "Bridal Design Session",
+          serviceType: "Bridal Hair and Makeup Trial",
+          description:
+            "Comprehensive in-suite bridal trial: design and lock in your wedding-day hair and makeup look, then validate with a six-hour wear test under varied lighting.",
+          image: "/attached_assets/IMG_0971_1749066905983.png",
+        }}
       />
       <Header />
 

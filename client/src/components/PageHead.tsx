@@ -1,9 +1,26 @@
-
 import { useEffect } from 'react';
 
 interface FAQItem {
   question: string;
   answer: string;
+}
+
+interface ServiceMeta {
+  name: string;
+  description: string;
+  serviceType: string;
+  image?: string;
+  // Optional price spec
+  priceRange?: string;
+  // Optional Offer object content
+  offers?: Array<{
+    name?: string;
+    price: string;
+    priceCurrency?: string;
+    validFrom?: string;
+    validThrough?: string;
+    description?: string;
+  }>;
 }
 
 interface PageHeadProps {
@@ -13,15 +30,22 @@ interface PageHeadProps {
   ogImage?: string;
   pageType?: 'home' | 'about' | 'services' | 'service-detail' | 'contact';
   faqs?: FAQItem[];
+  serviceMeta?: ServiceMeta;
 }
+
+const ORG_ID = 'https://www.atfirstsitebeauty.com/#organization';
+const LOCAL_BUSINESS_ID = 'https://www.atfirstsitebeauty.com/#localbusiness';
+const SITE_URL = 'https://www.atfirstsitebeauty.com';
+const DEFAULT_OG_IMAGE = '/attached_assets/og-image.jpg';
 
 export default function PageHead({
   title,
   description,
   path,
-  ogImage = "/attached_assets/hero_placeholder.png",
+  ogImage = DEFAULT_OG_IMAGE,
   pageType = 'home',
-  faqs
+  faqs,
+  serviceMeta,
 }: PageHeadProps) {
   useEffect(() => {
     // Set page-specific titles and descriptions based on pageType
@@ -29,215 +53,287 @@ export default function PageHead({
     let pageDescription = description;
 
     if (pageType === 'about') {
-      pageTitle = "Meet Your Dream Team | At First Site Beauty";
-      pageDescription = "Meet our elite bridal beauty team: Hollie DeMarais (18+ years salon owner) and Cedar Lapp-Ngauamo (founder Cedars Academy). Expert hair styling and makeup artistry for Pacific Northwest weddings.";
+      pageTitle = 'Meet Your Dream Team | At First Site Beauty';
+      pageDescription =
+        'Meet our elite bridal beauty team: Hollie DeMarais (18+ years salon owner) and Cedar Lapp-Ngauamo (founder Cedars Academy). Expert hair styling and makeup artistry for Pacific Northwest weddings.';
     } else if (pageType === 'services') {
-      pageTitle = "Luxury Bridal Hair & Makeup Services | At First Site Beauty";
-      pageDescription = "Premium bridal beauty services: hair styling, makeup trials, spray tanning, teeth whitening. On-location wedding packages in Oregon and Washington. Professional artists, elegant results.";
+      pageTitle = 'Luxury Bridal Hair & Makeup Services | At First Site Beauty';
+      pageDescription =
+        'Premium bridal beauty services: hair styling, makeup trials, spray tanning, teeth whitening. On-location wedding packages in Oregon and Washington. Professional artists, elegant results.';
     } else if (pageType === 'contact') {
-      pageTitle = "Schedule Your Bridal Consultation | At First Site Beauty";
-      pageDescription = "Book your free bridal beauty consultation with our expert hair and makeup team. Serving Pacific Northwest weddings with luxury on-location services.";
-    } else if (pageType === 'service-detail') {
-      // Use the passed title and description for service detail pages
-      pageTitle = title;
-      pageDescription = description;
+      pageTitle = 'Schedule Your Bridal Consultation | At First Site Beauty';
+      pageDescription =
+        'Book your free bridal beauty consultation with our expert hair and makeup team. Serving Pacific Northwest weddings with luxury on-location services.';
     }
 
     // Update document title
     document.title = pageTitle;
 
-    // Update or create canonical link
+    // Canonical link (absolute URL per §10)
     let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');
       canonicalLink.rel = 'canonical';
       document.head.appendChild(canonicalLink);
     }
-    canonicalLink.href = `https://www.atfirstsitebeauty.com${path}`;
+    canonicalLink.href = `${SITE_URL}${path}`;
 
-    // Always update meta tags so they match the current page — if we skip this
-    // for the home page, returning to home via SPA navigation leaves stale OG
-    // tags from whichever sub-page was visited last.
+    // Description
     const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', pageDescription);
-    }
+    if (metaDescription) metaDescription.setAttribute('content', pageDescription);
 
-    // Update Open Graph tags
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+    // Helper to upsert <meta> by property/name
+    const upsertMeta = (selector: string, attr: 'property' | 'name', key: string, content: string) => {
+      let el = document.querySelector(selector) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, key);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
 
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute('content', pageDescription);
+    const absoluteOg = `${SITE_URL}${ogImage.startsWith('/') ? ogImage : '/' + ogImage}`;
 
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) ogUrl.setAttribute('content', `https://www.atfirstsitebeauty.com${path}`);
+    // Open Graph
+    upsertMeta('meta[property="og:title"]', 'property', 'og:title', pageTitle);
+    upsertMeta('meta[property="og:description"]', 'property', 'og:description', pageDescription);
+    upsertMeta('meta[property="og:url"]', 'property', 'og:url', `${SITE_URL}${path}`);
+    upsertMeta('meta[property="og:image"]', 'property', 'og:image', absoluteOg);
+    upsertMeta('meta[property="og:image:width"]', 'property', 'og:image:width', '1200');
+    upsertMeta('meta[property="og:image:height"]', 'property', 'og:image:height', '630');
+    upsertMeta('meta[property="og:image:alt"]', 'property', 'og:image:alt', `${pageTitle} — At First Site Beauty`);
+    upsertMeta('meta[property="og:type"]', 'property', 'og:type', pageType === 'service-detail' ? 'article' : 'website');
+    upsertMeta('meta[property="og:locale"]', 'property', 'og:locale', 'en_US');
+    upsertMeta('meta[property="og:site_name"]', 'property', 'og:site_name', 'At First Site Beauty');
 
-    const ogImg = document.querySelector('meta[property="og:image"]');
-    if (ogImg) ogImg.setAttribute('content', `https://www.atfirstsitebeauty.com${ogImage}`);
+    // Twitter
+    upsertMeta('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
+    upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', pageTitle);
+    upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', pageDescription);
+    upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', absoluteOg);
+    upsertMeta('meta[name="twitter:image:alt"]', 'name', 'twitter:image:alt', `${pageTitle} — At First Site Beauty`);
 
-    // Update Twitter card tags
-    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-    if (twitterTitle) twitterTitle.setAttribute('content', pageTitle);
-
-    const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-    if (twitterDesc) twitterDesc.setAttribute('content', pageDescription);
-
-    const twitterImg = document.querySelector('meta[name="twitter:image"]');
-    if (twitterImg) twitterImg.setAttribute('content', `https://www.atfirstsitebeauty.com${ogImage}`);
-
-    // Remove existing schemas
+    // Remove existing page schemas (we keep the persistent Organization schema in index.html)
     const existingSchemas = document.querySelectorAll('script[type="application/ld+json"].page-schema');
-    existingSchemas.forEach(schema => schema.remove());
+    existingSchemas.forEach((s) => s.remove());
 
-    // LocalBusiness Schema (Home page and dynamic)
-    if (pageType === 'home' || pageType === 'contact') {
-      const businessSchema = {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "At First Site Beauty On Location",
-        "image": "https://www.atfirstsitebeauty.com/attached_assets/webp/1At First Site Logo (1000 x 350 px).webp",
-        "@id": "https://www.atfirstsitebeauty.com",
-        "url": "https://www.atfirstsitebeauty.com",
-        "telephone": "(360) 215-5444",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Serving Pacific Northwest",
-          "addressLocality": "Vancouver",
-          "addressRegion": "WA",
-          "postalCode": "98683",
-          "addressCountry": "US"
+    const appendSchema = (data: unknown) => {
+      const el = document.createElement('script');
+      el.type = 'application/ld+json';
+      el.className = 'page-schema';
+      el.textContent = JSON.stringify(data);
+      document.head.appendChild(el);
+    };
+
+    // LocalBusiness (HealthAndBeautyBusiness subtype) on home + contact + every page
+    // — reference Organization via @id rather than duplicating.
+    if (pageType === 'home' || pageType === 'contact' || pageType === 'service-detail') {
+      appendSchema({
+        '@context': 'https://schema.org',
+        '@type': ['LocalBusiness', 'HealthAndBeautyBusiness'],
+        '@id': LOCAL_BUSINESS_ID,
+        name: 'At First Site Beauty On Location',
+        parentOrganization: { '@id': ORG_ID },
+        url: SITE_URL,
+        image: `${SITE_URL}/attached_assets/og-image.jpg`,
+        logo: `${SITE_URL}/attached_assets/webp/1At%20First%20Site%20Logo%20(1000%20x%20350%20px).webp`,
+        telephone: '+1-360-215-5444',
+        priceRange: '$$$',
+        description:
+          'Luxury on-location bridal hair styling, makeup artistry, spray tanning, and teeth whitening for Pacific Northwest weddings.',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Vancouver',
+          addressRegion: 'WA',
+          postalCode: '98683',
+          addressCountry: 'US',
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 45.6277,
-          "longitude": -122.6735
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: 45.6277,
+          longitude: -122.6735,
         },
-        "priceRange": "$$",
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "00:00",
-          "closes": "23:59"
-        },
-        "sameAs": [
-          "https://facebook.com/atfirstsitebeauty",
-          "https://instagram.com/atfirstsitebeauty"
-        ]
-      };
-
-      const businessScript = document.createElement('script');
-      businessScript.type = 'application/ld+json';
-      businessScript.className = 'page-schema';
-      businessScript.textContent = JSON.stringify(businessSchema);
-      document.head.appendChild(businessScript);
-    }
-
-    // FAQ Schema
-    if (faqs && faqs.length > 0) {
-      const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
-      };
-
-      const faqScript = document.createElement('script');
-      faqScript.type = 'application/ld+json';
-      faqScript.className = 'page-schema';
-      faqScript.textContent = JSON.stringify(faqSchema);
-      document.head.appendChild(faqScript);
-    }
-
-    // Add breadcrumb schema for non-home pages
-    if (pageType !== 'home') {
-      const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        // Service area — Oregon + Washington (PNW)
+        areaServed: [
+          { '@type': 'State', name: 'Oregon' },
+          { '@type': 'State', name: 'Washington' },
+        ],
+        // By-appointment business — daytime baseline window, all days
+        openingHoursSpecification: [
           {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://www.atfirstsitebeauty.com/"
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: [
+              'Monday',
+              'Tuesday',
+              'Wednesday',
+              'Thursday',
+              'Friday',
+              'Saturday',
+              'Sunday',
+            ],
+            opens: '08:00',
+            closes: '20:00',
+          },
+        ],
+        // By-appointment booking flag (Schema.org doesn't have a strict
+        // boolean, but reservationsAccepted + the booking action below
+        // signal the model.)
+        potentialAction: {
+          '@type': 'ReserveAction',
+          target: `${SITE_URL}/book`,
+          name: 'Book a consultation',
+        },
+        founder: [
+          {
+            '@type': 'Person',
+            name: 'Hollie DeMarais',
+            jobTitle: 'Professional Bridal Hairstylist & Salon Owner',
+            url: `${SITE_URL}/about`,
           },
           {
-            "@type": "ListItem",
-            "position": 2,
-            "name": pageType === 'about' ? 'About Us' : pageType === 'services' ? 'Services' : pageType === 'contact' ? 'Contact' : 'Service',
-            "item": `https://www.atfirstsitebeauty.com${path}`
-          }
-        ]
-      };
-
-      const breadcrumbScript = document.createElement('script');
-      breadcrumbScript.type = 'application/ld+json';
-      breadcrumbScript.className = 'page-schema';
-      breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema);
-      document.head.appendChild(breadcrumbScript);
-    }
-
-    // Add Person schemas for team members on about page
-    if (pageType === 'about') {
-      const teamSchema = [
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Hollie DeMarais",
-          "jobTitle": "Professional Bridal Hairstylist & Salon Owner",
-          "image": "https://www.atfirstsitebeauty.com/attached_assets/HollieD_1749336182646_1750713275911.png",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "At First Site Beauty"
+            '@type': 'Person',
+            name: 'Cedar Lapp-Ngauamo',
+            jobTitle: 'Founder of Cedars Academy of Makeup Artistry',
+            url: `${SITE_URL}/about`,
           },
-          "description": "Professional bridal hairstylist with over 18 years of salon ownership and countless bridal transformations, bringing unmatched expertise in creating stunning hairstyles.",
-          "knowsAbout": ["Bridal Hair Styling", "Hair Design", "Wedding Beauty", "Salon Management"],
-          "url": "https://www.atfirstsitebeauty.com/about"
-        },
-        {
-          "@context": "https://schema.org",
-          "@type": "Person",
-          "name": "Cedar Lapp-Ngauamo",
-          "jobTitle": "Founder of Cedars Academy of Makeup Artistry",
-          "image": "https://www.atfirstsitebeauty.com/attached_assets/IMG_8201.jpeg",
-          "worksFor": {
-            "@type": "Organization",
-            "name": "At First Site Beauty"
-          },
-          "founder": {
-            "@type": "Organization",
-            "name": "Cedars Academy of Makeup Artistry"
-          },
-          "description": "Owner of the only private career college focused exclusively on makeup artistry, personally training and certifying every makeup artist in the network.",
-          "knowsAbout": ["Makeup Artistry", "Bridal Makeup", "Beauty Education", "Cosmetic Application"],
-          "url": "https://www.atfirstsitebeauty.com/about"
-        }
-      ];
-
-      teamSchema.forEach(person => {
-        const personScript = document.createElement('script');
-        personScript.type = 'application/ld+json';
-        personScript.className = 'page-schema';
-        personScript.textContent = JSON.stringify(person);
-        document.head.appendChild(personScript);
+        ],
+        sameAs: [
+          'https://www.instagram.com/atfirstsitebeauty',
+          'https://www.facebook.com/atfirstsitebeauty',
+        ],
       });
     }
 
-  }, [title, description, path, ogImage, pageType, faqs]);
+    // Service schema on service-detail pages
+    if (pageType === 'service-detail' && serviceMeta) {
+      const serviceSchema: Record<string, unknown> = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: serviceMeta.name,
+        serviceType: serviceMeta.serviceType,
+        description: serviceMeta.description,
+        url: `${SITE_URL}${path}`,
+        provider: { '@id': ORG_ID },
+        areaServed: [
+          { '@type': 'State', name: 'Oregon' },
+          { '@type': 'State', name: 'Washington' },
+        ],
+        availableChannel: {
+          '@type': 'ServiceChannel',
+          serviceUrl: `${SITE_URL}/book`,
+          servicePhone: '+1-360-215-5444',
+        },
+      };
+
+      if (serviceMeta.image) {
+        serviceSchema.image = serviceMeta.image.startsWith('http')
+          ? serviceMeta.image
+          : `${SITE_URL}${serviceMeta.image}`;
+      }
+
+      if (serviceMeta.offers && serviceMeta.offers.length > 0) {
+        serviceSchema.offers = serviceMeta.offers.map((o) => ({
+          '@type': 'Offer',
+          name: o.name,
+          price: o.price,
+          priceCurrency: o.priceCurrency || 'USD',
+          availability: 'https://schema.org/InStock',
+          ...(o.validFrom ? { validFrom: o.validFrom } : {}),
+          ...(o.validThrough ? { validThrough: o.validThrough } : {}),
+          ...(o.description ? { description: o.description } : {}),
+        }));
+      }
+
+      appendSchema(serviceSchema);
+    }
+
+    // FAQPage schema
+    if (faqs && faqs.length > 0) {
+      appendSchema({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      });
+    }
+
+    // BreadcrumbList for non-home pages
+    if (pageType !== 'home') {
+      const breadcrumbName =
+        pageType === 'about'
+          ? 'About Us'
+          : pageType === 'services'
+            ? 'Services'
+            : pageType === 'contact'
+              ? 'Book a Consultation'
+              : serviceMeta?.name || 'Service';
+
+      appendSchema({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: breadcrumbName,
+            item: `${SITE_URL}${path}`,
+          },
+        ],
+      });
+    }
+
+    // Person schemas on the about page
+    if (pageType === 'about') {
+      const team = [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          '@id': `${SITE_URL}/about#hollie`,
+          name: 'Hollie DeMarais',
+          jobTitle: 'Professional Bridal Hairstylist & Salon Owner',
+          image: `${SITE_URL}/attached_assets/HollieD_1749336182646_1750713275911.png`,
+          worksFor: { '@id': ORG_ID },
+          description:
+            'Professional bridal hairstylist with over 18 years of salon ownership and countless bridal transformations, bringing unmatched expertise in creating stunning hairstyles.',
+          knowsAbout: [
+            'Bridal Hair Styling',
+            'Hair Design',
+            'Wedding Beauty',
+            'Salon Management',
+          ],
+          url: `${SITE_URL}/about`,
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          '@id': `${SITE_URL}/about#cedar`,
+          name: 'Cedar Lapp-Ngauamo',
+          jobTitle: 'Founder of Cedars Academy of Makeup Artistry',
+          image: `${SITE_URL}/attached_assets/IMG_8201.jpeg`,
+          worksFor: { '@id': ORG_ID },
+          founder: {
+            '@type': 'Organization',
+            name: 'Cedars Academy of Makeup Artistry',
+          },
+          description:
+            'Owner of the only private career college focused exclusively on makeup artistry, personally training and certifying every makeup artist in the network.',
+          knowsAbout: [
+            'Makeup Artistry',
+            'Bridal Makeup',
+            'Beauty Education',
+            'Cosmetic Application',
+          ],
+          url: `${SITE_URL}/about`,
+        },
+      ];
+      team.forEach(appendSchema);
+    }
+  }, [title, description, path, ogImage, pageType, faqs, serviceMeta]);
 
   return null;
 }

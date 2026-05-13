@@ -112,6 +112,20 @@ export default function BridalParty() {
         description="Complete bridal party styling services in the Pacific Northwest. Professional hair and makeup for bridesmaids, mothers, and entire wedding parties on location."
         path="/bridal-party"
         pageType="service-detail"
+        ogImage="/attached_assets/IMG_0973_1749066905983.png"
+        serviceMeta={{
+          name: "Bridal Party Hair & Makeup",
+          serviceType: "Bridal Party Beauty Services",
+          description:
+            "On-location hair styling and makeup for the full bridal party — bridesmaids, mothers, and wedding party members — coordinated to the bride's aesthetic. Scaled via a Cedars-Academy-trained artist network.",
+          image: "/attached_assets/IMG_0973_1749066905983.png",
+          offers: [
+            { name: "Bridal Party Hair & Makeup (Jan-Apr)", price: "325", priceCurrency: "USD", description: "Per-person, off-peak season" },
+            { name: "Bridal Party Hair & Makeup (May-Dec)", price: "375", priceCurrency: "USD", description: "Per-person, peak season" },
+            { name: "Mother of Bride & Groom (Jan-Apr)", price: "325", priceCurrency: "USD" },
+            { name: "Mother of Bride & Groom (May-Dec)", price: "375", priceCurrency: "USD" },
+          ],
+        }}
       />
       <Header />
 
