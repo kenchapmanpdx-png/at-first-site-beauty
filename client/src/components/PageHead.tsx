@@ -121,7 +121,7 @@ export default function PageHead({
     upsertMeta('meta[property="og:image"]', 'property', 'og:image', absoluteOg);
     upsertMeta('meta[property="og:image:width"]', 'property', 'og:image:width', '1200');
     upsertMeta('meta[property="og:image:height"]', 'property', 'og:image:height', '630');
-    upsertMeta('meta[property="og:image:alt"]', 'property', 'og:image:alt', `${pageTitle} — At First Site Beauty`);
+    upsertMeta('meta[property="og:image:alt"]', 'property', 'og:image:alt', `${pageTitle} - At First Site Beauty`);
     upsertMeta('meta[property="og:type"]', 'property', 'og:type', pageType === 'service-detail' ? 'article' : 'website');
     upsertMeta('meta[property="og:locale"]', 'property', 'og:locale', 'en_US');
     upsertMeta('meta[property="og:site_name"]', 'property', 'og:site_name', 'At First Site Beauty');
@@ -131,10 +131,10 @@ export default function PageHead({
     upsertMeta('meta[name="twitter:title"]', 'name', 'twitter:title', pageTitle);
     upsertMeta('meta[name="twitter:description"]', 'name', 'twitter:description', pageDescription);
     upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', absoluteOg);
-    upsertMeta('meta[name="twitter:image:alt"]', 'name', 'twitter:image:alt', `${pageTitle} — At First Site Beauty`);
+    upsertMeta('meta[name="twitter:image:alt"]', 'name', 'twitter:image:alt', `${pageTitle} - At First Site Beauty`);
 
     // Page schemas: if the build-time prerenderer already injected them for this
-    // route (script.page-schema[data-prerender]), keep them — they're identical to
+    // route (script.page-schema[data-prerender]), keep them - they're identical to
     // what we'd append at runtime, and removing/re-appending creates a brief no-schema
     // gap that some crawler snapshots could catch. Only clear stale schemas from
     // prior client-side navigations (those carry .page-schema without data-prerender).
@@ -142,7 +142,7 @@ export default function PageHead({
     const runtimeOnly = document.querySelectorAll('script[type="application/ld+json"].page-schema:not([data-prerender])');
     if (prerendered.length > 0) {
       runtimeOnly.forEach((el) => el.remove());
-      // The prerendered schemas already match this route — skip re-injection.
+      // The prerendered schemas already match this route - skip re-injection.
       return;
     }
     runtimeOnly.forEach((el) => el.remove());
@@ -156,7 +156,7 @@ export default function PageHead({
     };
 
     // LocalBusiness (HealthAndBeautyBusiness subtype) on home + contact + every page
-    // — reference Organization via @id rather than duplicating.
+    // - reference Organization via @id rather than duplicating.
     if (pageType === 'home' || pageType === 'contact' || pageType === 'service-detail') {
       appendSchema({
         '@context': 'https://schema.org',
@@ -168,7 +168,6 @@ export default function PageHead({
         image: `${SITE_URL}/attached_assets/og-image.jpg`,
         logo: `${SITE_URL}/attached_assets/webp/1At%20First%20Site%20Logo%20(1000%20x%20350%20px).webp`,
         telephone: '+1-360-215-5444',
-        priceRange: '$$$',
         description:
           'Luxury on-location bridal hair styling, makeup artistry, spray tanning, and teeth whitening for Pacific Northwest weddings.',
         address: {
@@ -183,12 +182,12 @@ export default function PageHead({
           latitude: 45.6277,
           longitude: -122.6735,
         },
-        // Service area — Oregon + Washington (PNW)
+        // Service area - Oregon + Washington (PNW)
         areaServed: [
           { '@type': 'State', name: 'Oregon' },
           { '@type': 'State', name: 'Washington' },
         ],
-        // By-appointment business — daytime baseline window, all days
+        // By-appointment business - daytime baseline window, all days
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',

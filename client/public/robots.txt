@@ -8,7 +8,7 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# === AI citation / search crawlers — ALLOW (cite with attribution) ===
+# === AI citation / search crawlers - ALLOW (cite with attribution) ===
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -33,7 +33,7 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-# === AI training crawlers — currently ALLOW for maximum reach ===
+# === AI training crawlers - currently ALLOW for maximum reach ===
 # Flip to Disallow if you decide to opt out of model training corpora.
 # Blocking these does NOT affect classic search rankings.
 User-agent: GPTBot

@@ -38,7 +38,7 @@ export default function Services() {
     {
       image: servicePlaceholder,
       title: "Bridal Design Session",
-      description: "Our signature luxury experience where your dream look begins. Set in our private bridal suite, this isn't your average trial — it's a complete design session with wear testing and personalized touch-up kit.",
+      description: "Our signature luxury experience where your dream look begins. Set in our private bridal suite, this isn't your average trial - it's a complete design session with wear testing and personalized touch-up kit.",
       alt: "Luxury bridal design session at private bridal suite - comprehensive hair and makeup trial with wear testing",
       keywords: "bridal design session, makeup trial, bridal consultation, wedding beauty planning",
       category: "Bridal Beauty Services",

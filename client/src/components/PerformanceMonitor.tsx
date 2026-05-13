@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 export function PerformanceMonitor() {
   useEffect(() => {
     // Basic performance monitoring without web-vitals dependency.
-    // Only log in dev — production users don't need to see this in their console.
+    // Only log in dev - production users don't need to see this in their console.
     const reportPerformance = () => {
       if (!import.meta.env.DEV) return;
       if ('performance' in window && performance.getEntriesByType) {

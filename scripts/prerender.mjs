@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { execSync } from 'child_process';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -10,14 +11,14 @@ const TODAY = new Date().toISOString().slice(0, 10);
 
 // === Route config ===
 // Each entry produces dist/public/<slug>/index.html and dist/public/<slug>.md.
-// keep .body short — it's a crawler-visible textual summary, not the full
+// keep .body short - it's a crawler-visible textual summary, not the full
 // page (the React app still hydrates after).
 const ORG_ID = `${SITE}/#organization`;
 const LOCAL_ID = `${SITE}/#localbusiness`;
 
 const FAQ_HOME = [
   { q: 'Do you travel to my location?',
-    a: 'Yes. At First Site Beauty is a 100% on-location service. We travel throughout the Pacific Northwest — including Oregon and Washington — to deliver luxury bridal hair and makeup at your venue or getting-ready location.' },
+    a: 'Yes. At First Site Beauty is a 100% on-location service. We travel throughout the Pacific Northwest - including Oregon and Washington - to deliver luxury bridal hair and makeup at your venue or getting-ready location.' },
   { q: 'What is a Bridal Design Session?',
     a: 'A Bridal Design Session is a comprehensive in-suite trial where we design, test, and perfect your wedding-day look. It includes a six-hour wear test with photo feedback under varied lighting to ensure absolute wedding-day longevity.' },
   { q: 'Can you accommodate large bridal parties?',
@@ -28,7 +29,7 @@ const FAQ_HOME = [
 
 const FAQ_DESIGN = [
   { q: 'What exactly is a Bridal Design Session?',
-    a: 'A Design Session is an elevated version of a standard trial — a comprehensive aesthetic consultation in our private bridal suite where we design, test, and perfect every detail of your wedding-day hair and makeup look.' },
+    a: 'A Design Session is an elevated version of a standard trial - a comprehensive aesthetic consultation in our private bridal suite where we design, test, and perfect every detail of your wedding-day hair and makeup look.' },
   { q: 'How long does the design session take?',
     a: 'Block 2.5 to 3 hours for your session. That gives us time to discuss your vision, try variations, and lock in every detail of the final wedding-day look.' },
   { q: 'What is the 6-hour wear test?',
@@ -61,14 +62,14 @@ const routes = [
     slug: '',
     path: '/',
     title: 'At First Site Beauty | Luxury Bridal Hair & Makeup PNW',
-    description: 'Luxury on-location bridal hair styling and makeup artistry throughout the Pacific Northwest. Serving Oregon and Washington weddings — Hollie DeMarais and Cedar Lapp-Ngauamo.',
+    description: 'Luxury on-location bridal hair styling and makeup artistry throughout the Pacific Northwest. Serving Oregon and Washington weddings - Hollie DeMarais and Cedar Lapp-Ngauamo.',
     ogImage: '/attached_assets/og-image.jpg',
-    h1: 'Luxury Bridal Hair & Makeup — Pacific Northwest',
+    h1: 'Luxury Bridal Hair & Makeup - Pacific Northwest',
     bluf: 'At First Site Beauty is a luxury on-location bridal hair and makeup studio serving Oregon, Washington, and the Pacific Northwest. Founded by Hollie DeMarais (VATA Salon, 18+ years) and Cedar Lapp-Ngauamo (Cedars Academy of Makeup Artistry). Call (360) 215-5444.',
     body: [
       'At First Site Beauty delivers on-location bridal hair styling, makeup artistry, spray tanning, and professional teeth whitening for Pacific Northwest weddings.',
       'Hollie DeMarais brings 18+ years of salon ownership and bridal hair expertise. Cedar Lapp-Ngauamo founded Cedars Academy of Makeup Artistry, the only private career college in the Pacific Northwest focused exclusively on makeup artistry, and personally trains and certifies every artist in the network.',
-      'Services include the in-suite Bridal Design Session with six-hour wear test, full Bridal Party hair and makeup, spray tanning, and teeth whitening — all delivered at your venue or getting-ready location.',
+      'Services include the in-suite Bridal Design Session with six-hour wear test, full Bridal Party hair and makeup, spray tanning, and teeth whitening - all delivered at your venue or getting-ready location.',
     ],
     faqs: FAQ_HOME,
     schemas: ['localBusiness', 'faq'],
@@ -80,7 +81,7 @@ const routes = [
     title: 'Bridal Design Session & Trial | At First Site Beauty',
     description: 'Perfect your wedding day look with our comprehensive bridal design session. Luxury trial hair and makeup services in our private PNW suite.',
     ogImage: '/attached_assets/og-bridal-design-session.jpg',
-    h1: 'Bridal Design Session — Where Your Dream Look Begins',
+    h1: 'Bridal Design Session - Where Your Dream Look Begins',
     bluf: 'A Bridal Design Session is a comprehensive in-suite trial that designs and locks in your wedding-day hair and makeup, then validates the look with a six-hour wear test under varied lighting.',
     body: [
       'The Design Session goes beyond a standard trial. In our private bridal suite we test colors, techniques, and product holds against your dress, veil, and venue lighting.',
@@ -102,8 +103,8 @@ const routes = [
     title: 'Bridal Party Hair & Makeup Services | At First Site',
     description: 'Complete bridal party styling services in the Pacific Northwest. Professional hair and makeup for bridesmaids, mothers, and entire wedding parties on location.',
     ogImage: '/attached_assets/og-bridal-party.jpg',
-    h1: 'Bridal Party Hair & Makeup — On-Location PNW',
-    bluf: 'On-location hair and makeup for the full bridal party — bridesmaids, mothers, and wedding-party members — coordinated to the bride’s aesthetic. $325 per person January–April, $375 per person May–December.',
+    h1: 'Bridal Party Hair & Makeup - On-Location PNW',
+    bluf: 'On-location hair and makeup for the full bridal party - bridesmaids, mothers, and wedding-party members - coordinated to the bride’s aesthetic. $325 per person January–April, $375 per person May–December.',
     body: [
       'Coordinated styling across the whole party means everyone photographs beautifully without competing with the bride.',
       'Pricing: Bridal Party Hair & Makeup is $325 per person off-peak (Jan-Apr) and $375 per person peak (May-Dec). Mother of the Bride and Mother of the Groom price the same.',
@@ -114,7 +115,7 @@ const routes = [
     serviceMeta: {
       name: 'Bridal Party Hair & Makeup',
       serviceType: 'Bridal Party Beauty Services',
-      description: 'On-location hair styling and makeup for the full bridal party — bridesmaids, mothers, and wedding party members — coordinated to the bride\'s aesthetic.',
+      description: 'On-location hair styling and makeup for the full bridal party - bridesmaids, mothers, and wedding party members - coordinated to the bride\'s aesthetic.',
       offers: [
         { name: 'Bridal Party Hair & Makeup (Jan-Apr)', price: '325', description: 'Per-person, off-peak season' },
         { name: 'Bridal Party Hair & Makeup (May-Dec)', price: '375', description: 'Per-person, peak season' },
@@ -129,7 +130,7 @@ const routes = [
     title: 'Professional Spray Tanning for Brides | At First Site Beauty',
     description: 'Premium bridal spray tanning with hyaluronic acid formula. No orange undertones, natural radiant glow. Professional application by trained artists for Pacific Northwest weddings.',
     ogImage: '/attached_assets/og-image.jpg',
-    h1: 'Bridal Spray Tanning — Natural-Toned, No Orange',
+    h1: 'Bridal Spray Tanning - Natural-Toned, No Orange',
     bluf: 'Professional sunless tanning for brides and bridal parties using a hyaluronic-acid-enriched formula. Hydrating, natural-toned, lasts 7–10 days. On-location across Oregon and Washington.',
     body: [
       'Luxe Dolce Glow formula with hyaluronic acid and squalane delivers a balanced bronze without orange undertones.',
@@ -151,7 +152,7 @@ const routes = [
     title: 'Professional Teeth Whitening for Weddings | At First Site Beauty',
     description: 'Professional-grade teeth whitening for brides. Higher percentage Hydrogen Peroxide with specialized light activation. Safe, effective, immediate results for your wedding day smile.',
     ogImage: '/attached_assets/og-image.jpg',
-    h1: 'Professional Teeth Whitening — Wedding-Day Smile',
+    h1: 'Professional Teeth Whitening - Wedding-Day Smile',
     bluf: 'Professional-grade teeth whitening for brides using higher-percentage hydrogen peroxide with specialized light activation. Safe, effective, same-day visible results.',
     body: [
       'Higher-percentage hydrogen peroxide combined with light activation produces noticeably brighter teeth in a single appointment.',
@@ -197,7 +198,6 @@ function localBusinessSchema() {
     image: `${SITE}/attached_assets/og-image.jpg`,
     logo: `${SITE}/attached_assets/webp/1At%20First%20Site%20Logo%20(1000%20x%20350%20px).webp`,
     telephone: '+1-360-215-5444',
-    priceRange: '$$$',
     description: 'Luxury on-location bridal hair styling, makeup artistry, spray tanning, and teeth whitening for Pacific Northwest weddings.',
     address: { '@type': 'PostalAddress', addressLocality: 'Vancouver', addressRegion: 'WA', postalCode: '98683', addressCountry: 'US' },
     geo: { '@type': 'GeoCoordinates', latitude: 45.6277, longitude: -122.6735 },
@@ -290,7 +290,7 @@ function buildHtml(route, template) {
   html = html.replace(/<meta property="og:url"[^>]*>/i, `<meta property="og:url" content="${canonical}">`);
   html = html.replace(/<meta property="og:image"[^>]*>/i, `<meta property="og:image" content="${absOg}">`);
   // og:type
-  html = html.replace(/<meta property="og:type"[^>]*>/i, `<meta property="og:type" content="${route.path === '/' ? 'website' : 'article'}">`);
+  html = html.replace(/<meta property="og:type"[^>]*>/i, `<meta property="og:type" content="website">`);
   // Twitter
   html = html.replace(/<meta name="twitter:title"[^>]*>/i, `<meta name="twitter:title" content="${htmlEscape(route.title)}">`);
   html = html.replace(/<meta name="twitter:description"[^>]*>/i, `<meta name="twitter:description" content="${htmlEscape(route.description)}">`);
@@ -306,7 +306,7 @@ function buildHtml(route, template) {
   // <noscript> so JS-running clients (Googlebot WRS, browsers) skip this block,
   // avoiding the duplicate-h1 collision with React-rendered headings. Non-JS HTML
   // parsers (GPTBot, ClaudeBot, OAI-SearchBot, PerplexityBot) still see it.
-  const fallback = `<div class="seo-fallback" data-seo-fallback>
+  const fallback = `<noscript><div class="seo-fallback" data-seo-fallback>
       <h1>${htmlEscape(route.h1)}</h1>
       <p><strong>${htmlEscape(route.bluf)}</strong></p>
       ${route.body.map(p => `<p>${htmlEscape(p)}</p>`).join('\n      ')}
@@ -327,18 +327,18 @@ function buildHtml(route, template) {
         </ul>
       </nav>
       <p><small>Last updated <time datetime="${TODAY}">${TODAY}</time>.</small></p>
-    </div>`;
+    </div></noscript>`;
 
   // Replace the seo-fallback div by matching its own closing </div>.
   // The <ul>/<li> inside don't contain divs, so the first </div> after the
   // opening tag is the correct close.
-  html = html.replace(/<div class="seo-fallback" data-seo-fallback>[\s\S]*?<\/div>/, fallback);
+  html = html.replace(/(?:<noscript>\s*)?<div class="seo-fallback" data-seo-fallback>[\s\S]*?<\/div>(?:\s*<\/noscript>)?/, fallback);
 
   return html;
 }
 
 function buildMarkdown(route) {
-  // Per spec §22 — append .md version of every page in llms.txt
+  // Per spec §22 - append .md version of every page in llms.txt
   const lines = [];
   lines.push(`# ${route.h1}`);
   lines.push('');
@@ -396,5 +396,36 @@ for (const route of routes) {
 // Write llms-full.txt
 fs.writeFileSync(path.join(dist, 'llms-full.txt'), llmsFullParts.join('\n'), 'utf8');
 console.log(`  ✓ llms-full.txt`);
+
+// === Sitemap with per-URL git-derived <lastmod> ===
+function gitDate(...paths) {
+  let latest = '';
+  for (const p of paths) {
+    try {
+      const out = execSync(`git log -1 --format=%cs -- "${p}"`, { cwd: root, encoding: 'utf8' }).trim();
+      if (out && out > latest) latest = out;
+    } catch {}
+  }
+  return latest || TODAY;
+}
+
+const ROUTE_SOURCES = {
+  '/': ['client/src/pages/home.tsx','client/src/components/Hero.tsx','client/src/components/About.tsx','client/src/components/Services.tsx','client/src/components/FAQ.tsx','client/src/components/Testimonials.tsx'],
+  '/bridal-design-session': ['client/src/pages/bridal-design-session.tsx'],
+  '/bridal-party': ['client/src/pages/bridal-party.tsx'],
+  '/spray-tanning': ['client/src/pages/spray-tanning.tsx'],
+  '/teeth-whitening': ['client/src/pages/teeth-whitening.tsx'],
+  '/book': ['client/src/pages/booking-page.tsx','client/src/components/Booking.tsx'],
+};
+
+const sitemapEntries = routes.map(r => {
+  const lastmod = gitDate(...(ROUTE_SOURCES[r.path] || ['scripts/prerender.mjs']));
+  const priority = r.path === '/' ? '1.0' : (r.path.startsWith('/bridal') ? '0.9' : r.path === '/book' ? '0.7' : '0.8');
+  return `  <url>\n    <loc>${SITE}${r.path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <priority>${priority}</priority>\n  </url>`;
+}).join('\n');
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemapXml, 'utf8');
+console.log(`  ✓ sitemap.xml (per-URL git-derived lastmod)`);
 
 console.log('Prerender complete.');

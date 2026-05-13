@@ -93,7 +93,7 @@ export default function BridalDesignSession() {
               <div className="bg-gradient-to-r from-gray-50 to-white rounded-2xl p-6 mb-8 border border-gray-100 text-center">
                 <div className="text-xl text-gray-600 leading-relaxed">
                   <p className="mb-4">
-                    Your bridal glam journey begins well before the big day—inside our private bridal suite, where we go far beyond a simple "trial." Your Design Session is a fully immersive, luxury experience crafted to make sure your look is picture-perfect, timeless, and unmistakably you.
+                    Your bridal glam journey begins well before the big day - inside our private bridal suite, where we go far beyond a simple "trial." Your Design Session is a fully immersive, luxury experience crafted to make sure your look is picture-perfect, timeless, and unmistakably you.
                   </p>
                   <p className="mb-4 font-semibold text-gray-900">
                     The 6-Hour Wear Test

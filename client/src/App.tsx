@@ -34,7 +34,7 @@ function App() {
     // Initialize performance optimizations
     optimizeTouch();
 
-    // Performance monitoring — dev-only console output.
+    // Performance monitoring - dev-only console output.
     if (import.meta.env.DEV && 'performance' in window) {
       window.addEventListener('load', () => {
         const loadTime = performance.now();
