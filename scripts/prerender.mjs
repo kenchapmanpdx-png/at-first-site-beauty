@@ -79,7 +79,7 @@ const routes = [
     path: '/bridal-design-session',
     title: 'Bridal Design Session & Trial | At First Site Beauty',
     description: 'Perfect your wedding day look with our comprehensive bridal design session. Luxury trial hair and makeup services in our private PNW suite.',
-    ogImage: '/attached_assets/IMG_0971_1749066905983.png',
+    ogImage: '/attached_assets/og-bridal-design-session.jpg',
     h1: 'Bridal Design Session — Where Your Dream Look Begins',
     bluf: 'A Bridal Design Session is a comprehensive in-suite trial that designs and locks in your wedding-day hair and makeup, then validates the look with a six-hour wear test under varied lighting.',
     body: [
@@ -101,7 +101,7 @@ const routes = [
     path: '/bridal-party',
     title: 'Bridal Party Hair & Makeup Services | At First Site',
     description: 'Complete bridal party styling services in the Pacific Northwest. Professional hair and makeup for bridesmaids, mothers, and entire wedding parties on location.',
-    ogImage: '/attached_assets/IMG_0973_1749066905983.png',
+    ogImage: '/attached_assets/og-bridal-party.jpg',
     h1: 'Bridal Party Hair & Makeup — On-Location PNW',
     bluf: 'On-location hair and makeup for the full bridal party — bridesmaids, mothers, and wedding-party members — coordinated to the bride’s aesthetic. $325 per person January–April, $375 per person May–December.',
     body: [
@@ -303,7 +303,10 @@ function buildHtml(route, template) {
   );
 
   // Replace seo-fallback content with route-specific content
-  const fallback = `<div class="seo-fallback" aria-hidden="true">
+  // <noscript> so JS-running clients (Googlebot WRS, browsers) skip this block,
+  // avoiding the duplicate-h1 collision with React-rendered headings. Non-JS HTML
+  // parsers (GPTBot, ClaudeBot, OAI-SearchBot, PerplexityBot) still see it.
+  const fallback = `<noscript data-seo-fallback>
       <h1>${htmlEscape(route.h1)}</h1>
       <p><strong>${htmlEscape(route.bluf)}</strong></p>
       ${route.body.map(p => `<p>${htmlEscape(p)}</p>`).join('\n      ')}
@@ -324,12 +327,12 @@ function buildHtml(route, template) {
         </ul>
       </nav>
       <p><small>Last updated <time datetime="${TODAY}">${TODAY}</time>.</small></p>
-    </div>`;
+    </noscript>`;
 
   // Replace the seo-fallback div by matching its own closing </div>.
   // The <ul>/<li> inside don't contain divs, so the first </div> after the
   // opening tag is the correct close.
-  html = html.replace(/<div class="seo-fallback"[\s\S]*?<\/div>/, fallback);
+  html = html.replace(/<noscript data-seo-fallback>[\s\S]*?<\/noscript>/, fallback);
 
   return html;
 }

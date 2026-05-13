@@ -10,6 +10,7 @@ export default function NotFound() {
   return (
     <>
       <PageHead
+        noIndex
         title="Page Not Found | At First Site Beauty"
         description="The page you're looking for cannot be found. Return to At First Site Beauty's home page to explore our luxury bridal hair and makeup services."
         path="/404"

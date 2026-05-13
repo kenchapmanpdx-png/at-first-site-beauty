@@ -24,6 +24,8 @@ interface ServiceMeta {
 }
 
 interface PageHeadProps {
+  /** When true, emits <meta name="robots" content="noindex,follow"> so this page is not indexed. */
+  noIndex?: boolean;
   title: string;
   description: string;
   path: string;
@@ -39,6 +41,7 @@ const SITE_URL = 'https://www.atfirstsitebeauty.com';
 const DEFAULT_OG_IMAGE = '/attached_assets/og-image.jpg';
 
 export default function PageHead({
+  noIndex = false,
   title,
   description,
   path,
@@ -82,6 +85,22 @@ export default function PageHead({
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) metaDescription.setAttribute('content', pageDescription);
 
+    // Robots directive (noindex,follow when noIndex prop is set; remove tag otherwise)
+    const existingRobots = document.querySelector('meta[name="robots"]');
+    if (noIndex) {
+      if (existingRobots) {
+        existingRobots.setAttribute('content', 'noindex,follow');
+      } else {
+        const r = document.createElement('meta');
+        r.setAttribute('name', 'robots');
+        r.setAttribute('content', 'noindex,follow');
+        document.head.appendChild(r);
+      }
+    } else if (existingRobots && existingRobots.getAttribute('content')?.includes('noindex')) {
+      // Recover from a previous noindex page; reset to index default.
+      existingRobots.setAttribute('content', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1');
+    }
+
     // Helper to upsert <meta> by property/name
     const upsertMeta = (selector: string, attr: 'property' | 'name', key: string, content: string) => {
       let el = document.querySelector(selector) as HTMLMetaElement | null;
@@ -114,9 +133,19 @@ export default function PageHead({
     upsertMeta('meta[name="twitter:image"]', 'name', 'twitter:image', absoluteOg);
     upsertMeta('meta[name="twitter:image:alt"]', 'name', 'twitter:image:alt', `${pageTitle} — At First Site Beauty`);
 
-    // Remove existing page schemas (we keep the persistent Organization schema in index.html)
-    const existingSchemas = document.querySelectorAll('script[type="application/ld+json"].page-schema');
-    existingSchemas.forEach((s) => s.remove());
+    // Page schemas: if the build-time prerenderer already injected them for this
+    // route (script.page-schema[data-prerender]), keep them — they're identical to
+    // what we'd append at runtime, and removing/re-appending creates a brief no-schema
+    // gap that some crawler snapshots could catch. Only clear stale schemas from
+    // prior client-side navigations (those carry .page-schema without data-prerender).
+    const prerendered = document.querySelectorAll('script[type="application/ld+json"].page-schema[data-prerender]');
+    const runtimeOnly = document.querySelectorAll('script[type="application/ld+json"].page-schema:not([data-prerender])');
+    if (prerendered.length > 0) {
+      runtimeOnly.forEach((el) => el.remove());
+      // The prerendered schemas already match this route — skip re-injection.
+      return;
+    }
+    runtimeOnly.forEach((el) => el.remove());
 
     const appendSchema = (data: unknown) => {
       const el = document.createElement('script');

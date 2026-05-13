@@ -1,5 +1,5 @@
 // Bump the cache name whenever CRITICAL_RESOURCES changes so clients pick up the new SW.
-const CACHE_NAME = 'at-first-site-v3';
+const CACHE_NAME = 'at-first-site-v4-seo-prerender';
 const CRITICAL_RESOURCES = [
   '/',
   '/attached_assets/hero_placeholder.png',

@@ -22,7 +22,6 @@
     <!-- Core SEO -->
     <title>At First Site Beauty | Luxury Bridal Hair & Makeup PNW</title>
     <meta name="description" content="Luxury on-location bridal hair styling and makeup artistry throughout the Pacific Northwest. Serving Oregon and Washington weddings — Hollie DeMarais and Cedar Lapp-Ngauamo.">
-    <meta name="keywords" content="bridal hair, wedding makeup, on-location beauty, Pacific Northwest weddings, Oregon wedding makeup, Washington bridal hair">
     <meta name="author" content="At First Site Beauty">
     <link rel="canonical" href="https://www.atfirstsitebeauty.com/" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -87,8 +86,6 @@
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
       }
-      /* Hide noscript-only SEO content from sighted users while keeping it crawlable */
-      .seo-fallback { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
     </style>
 
     <!-- Font loading -->
@@ -145,10 +142,12 @@
       <div class="loading">Loading At First Site Beauty...</div>
     </div>
 
-    <!-- SEO fallback content for non-JS crawlers (AI bots, lightweight scrapers).
-         Visually hidden; keeps the brand summary, contact info, and primary links
-         in the initial HTML even before pre-rendering ships. -->
-    <div class="seo-fallback" aria-hidden="true">
+    <!-- SEO fallback for non-JS crawlers (AI bots, lightweight scrapers).
+         Wrapped in <noscript> so it disappears from the rendered DOM for
+         JS-running clients (Googlebot WRS, browsers) — preventing the
+         duplicate-h1 problem when React renders its own h1. Non-JS HTML
+         parsers (GPTBot, ClaudeBot, etc.) still see the content. -->
+    <noscript data-seo-fallback>
       <h1>At First Site Beauty — Luxury Bridal Hair &amp; Makeup, Pacific Northwest</h1>
       <p>At First Site Beauty is a luxury on-location bridal hair and makeup studio serving Oregon, Washington, and the Pacific Northwest. Founded by Hollie DeMarais (VATA Salon, 18+ years) and Cedar Lapp-Ngauamo (Cedars Academy of Makeup Artistry). Contact: (360) 215-5444.</p>
       <ul>
@@ -158,8 +157,7 @@
         <li><a href="/teeth-whitening">Teeth Whitening</a></li>
         <li><a href="/book">Book a consultation</a></li>
       </ul>
-    </div>
-
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
