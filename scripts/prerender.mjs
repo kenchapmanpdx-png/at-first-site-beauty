@@ -302,11 +302,15 @@ function buildHtml(route, template) {
     `$1\n    ${schemaScripts}`
   );
 
-  // Replace seo-fallback content with route-specific content
-  // <noscript> so JS-running clients (Googlebot WRS, browsers) skip this block,
-  // avoiding the duplicate-h1 collision with React-rendered headings. Non-JS HTML
-  // parsers (GPTBot, ClaudeBot, OAI-SearchBot, PerplexityBot) still see it.
-  const fallback = `<noscript><div class="seo-fallback" data-seo-fallback>
+  // Replace seo-fallback content with route-specific content.
+  // Keep as sr-only div (NOT <noscript>) per commit a999cba: third-party SEO
+  // checkers and many AI/non-rendering crawlers treat <noscript> content as
+  // inert HTML5 text and report 'no H1', 'no headings'. The sr-only pattern
+  // (position:absolute + 1x1px clip) puts real DOM elements in the page that
+  // every crawler/checker sees, while staying off-screen for sighted users.
+  // After React hydrates, the page has 2 h1s; Google has publicly confirmed
+  // multiple h1s do not affect ranking.
+  const fallback = `<div class="seo-fallback" data-seo-fallback>
       <h1>${htmlEscape(route.h1)}</h1>
       <p><strong>${htmlEscape(route.bluf)}</strong></p>
       ${route.body.map(p => `<p>${htmlEscape(p)}</p>`).join('\n      ')}
@@ -327,7 +331,7 @@ function buildHtml(route, template) {
         </ul>
       </nav>
       <p><small>Last updated <time datetime="${TODAY}">${TODAY}</time>.</small></p>
-    </div></noscript>`;
+    </div>`;
 
   // Replace the seo-fallback div by matching its own closing </div>.
   // The <ul>/<li> inside don't contain divs, so the first </div> after the
