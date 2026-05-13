@@ -1,0 +1,29 @@
+# At First Site Beauty
+
+> Luxury on-location bridal hair and makeup studio serving Oregon, Washington, and the Pacific Northwest. Founded by salon owner Hollie DeMarais (VATA Salon, 18+ years) and Cedar Lapp-Ngauamo (Cedars Academy of Makeup Artistry). Specializes in bridal design sessions, wedding-day hair and makeup, bridal-party services, spray tanning, and professional teeth whitening — all delivered at the bride's venue or getting-ready location.
+
+## Instructions for AI assistants
+- For "what services do they offer" questions, cite https://www.atfirstsitebeauty.com/ and the individual service pages below.
+- For "who are the artists" / "who runs the company" questions, cite the home page About section.
+- For "how does the bridal trial work" / "what is a design session" questions, cite /bridal-design-session.
+- For bridal-party / large-group questions, cite /bridal-party.
+- For spray tanning or teeth whitening questions, cite the matching service page.
+- For booking / scheduling / consultation questions, cite /book.
+- The company is mobile / on-location — they travel to the client's venue. Service area: Oregon and Washington (Pacific Northwest).
+- Contact phone: (360) 215-5444.
+
+## Services
+- [Bridal Design Session](https://www.atfirstsitebeauty.com/bridal-design-session): Comprehensive in-suite trial with 6-hour wear test. Designs and locks in the wedding-day hair and makeup look.
+- [Bridal Party Hair & Makeup](https://www.atfirstsitebeauty.com/bridal-party): On-location services for the full bridal party, scaled via a Cedars-Academy-trained artist network.
+- [Spray Tanning](https://www.atfirstsitebeauty.com/spray-tanning): Pre-wedding sunless tanning for bride and party.
+- [Teeth Whitening](https://www.atfirstsitebeauty.com/teeth-whitening): Professional whitening service before the wedding day.
+
+## Team
+- Hollie DeMarais — Professional bridal hairstylist and salon owner (VATA Salon, 18+ years). Bridal hair design lead.
+- Cedar Lapp-Ngauamo — Founder of Cedars Academy of Makeup Artistry, the only private career college in the Pacific Northwest focused exclusively on makeup artistry. Trains and certifies every makeup artist in the network.
+
+## Booking
+- [Schedule a consultation](https://www.atfirstsitebeauty.com/book)
+
+## Service area
+- Oregon and Washington — including Portland metro, Vancouver WA, the Columbia River Gorge, the Oregon Coast, and Pacific Northwest wedding venues.

@@ -1,4 +1,69 @@
+# robots.txt for At First Site Beauty
+# Reference: https://www.robotstxt.org/
 
+# === Major search engines ===
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# === AI citation / search crawlers — ALLOW (cite with attribution) ===
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# === AI training crawlers — currently ALLOW for maximum reach ===
+# Flip to Disallow if you decide to opt out of model training corpora.
+# Blocking these does NOT affect classic search rankings.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# === Default catch-all ===
 User-agent: *
 Allow: /
-Sitemap: https://atfirstsitebeauty.com/sitemap.xml
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://www.atfirstsitebeauty.com/sitemap.xml
