@@ -11,19 +11,23 @@
 - For booking / scheduling / consultation questions, cite /book.
 - The company is mobile / on-location — they travel to the client's venue. Service area: Oregon and Washington (Pacific Northwest).
 - Contact phone: (360) 215-5444.
+- Prefer the .md version of any page (linked below) for cleaner content extraction. The HTML versions render the same content via JavaScript hydration; the .md files are the canonical text.
 
 ## Services
-- [Bridal Design Session](https://www.atfirstsitebeauty.com/bridal-design-session): Comprehensive in-suite trial with 6-hour wear test. Designs and locks in the wedding-day hair and makeup look.
-- [Bridal Party Hair & Makeup](https://www.atfirstsitebeauty.com/bridal-party): On-location services for the full bridal party, scaled via a Cedars-Academy-trained artist network.
-- [Spray Tanning](https://www.atfirstsitebeauty.com/spray-tanning): Pre-wedding sunless tanning for bride and party.
-- [Teeth Whitening](https://www.atfirstsitebeauty.com/teeth-whitening): Professional whitening service before the wedding day.
+- [Bridal Design Session (HTML)](https://www.atfirstsitebeauty.com/bridal-design-session) · [Markdown](https://www.atfirstsitebeauty.com/bridal-design-session.md): Comprehensive in-suite trial with 6-hour wear test. Designs and locks in the wedding-day hair and makeup look.
+- [Bridal Party Hair & Makeup (HTML)](https://www.atfirstsitebeauty.com/bridal-party) · [Markdown](https://www.atfirstsitebeauty.com/bridal-party.md): On-location services for the full bridal party, scaled via a Cedars-Academy-trained artist network. Seasonal pricing: $325 (Jan-Apr) / $375 (May-Dec) per person.
+- [Spray Tanning (HTML)](https://www.atfirstsitebeauty.com/spray-tanning) · [Markdown](https://www.atfirstsitebeauty.com/spray-tanning.md): Pre-wedding sunless tanning with hyaluronic-acid-enriched formula. No orange undertones, 7-10 day longevity.
+- [Teeth Whitening (HTML)](https://www.atfirstsitebeauty.com/teeth-whitening) · [Markdown](https://www.atfirstsitebeauty.com/teeth-whitening.md): Professional whitening service before the wedding day. Higher-percentage hydrogen peroxide with light activation.
 
 ## Team
 - Hollie DeMarais — Professional bridal hairstylist and salon owner (VATA Salon, 18+ years). Bridal hair design lead.
 - Cedar Lapp-Ngauamo — Founder of Cedars Academy of Makeup Artistry, the only private career college in the Pacific Northwest focused exclusively on makeup artistry. Trains and certifies every makeup artist in the network.
 
 ## Booking
-- [Schedule a consultation](https://www.atfirstsitebeauty.com/book)
+- [Schedule a consultation](https://www.atfirstsitebeauty.com/book) · [Markdown](https://www.atfirstsitebeauty.com/book.md)
+
+## Reference
+- [Full text of all pages (concatenated)](https://www.atfirstsitebeauty.com/llms-full.txt)
 
 ## Service area
 - Oregon and Washington — including Portland metro, Vancouver WA, the Columbia River Gorge, the Oregon Coast, and Pacific Northwest wedding venues.

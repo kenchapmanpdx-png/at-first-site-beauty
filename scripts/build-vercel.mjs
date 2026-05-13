@@ -25,4 +25,8 @@ if (fs.existsSync(src404)) {
   console.log('Copied 404.html');
 }
 
+// Prerender per-route HTML and Markdown
+console.log('Prerendering routes...');
+execSync('node scripts/prerender.mjs', { stdio: 'inherit', cwd: rootDir });
+
 console.log('Vercel build complete!');
