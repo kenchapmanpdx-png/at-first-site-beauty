@@ -306,7 +306,7 @@ function buildHtml(route, template) {
   // <noscript> so JS-running clients (Googlebot WRS, browsers) skip this block,
   // avoiding the duplicate-h1 collision with React-rendered headings. Non-JS HTML
   // parsers (GPTBot, ClaudeBot, OAI-SearchBot, PerplexityBot) still see it.
-  const fallback = `<noscript data-seo-fallback>
+  const fallback = `<div class="seo-fallback" data-seo-fallback>
       <h1>${htmlEscape(route.h1)}</h1>
       <p><strong>${htmlEscape(route.bluf)}</strong></p>
       ${route.body.map(p => `<p>${htmlEscape(p)}</p>`).join('\n      ')}
@@ -327,12 +327,12 @@ function buildHtml(route, template) {
         </ul>
       </nav>
       <p><small>Last updated <time datetime="${TODAY}">${TODAY}</time>.</small></p>
-    </noscript>`;
+    </div>`;
 
   // Replace the seo-fallback div by matching its own closing </div>.
   // The <ul>/<li> inside don't contain divs, so the first </div> after the
   // opening tag is the correct close.
-  html = html.replace(/<noscript data-seo-fallback>[\s\S]*?<\/noscript>/, fallback);
+  html = html.replace(/<div class="seo-fallback" data-seo-fallback>[\s\S]*?<\/div>/, fallback);
 
   return html;
 }
